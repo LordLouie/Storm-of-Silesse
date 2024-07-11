@@ -1,0 +1,17 @@
+Dynamic Portrait Loading of Currently Used Unit in Dialogue
+
+Before 
+DIALOGUE
+Use
+CALL_ASM_SKIPPABLE rlASMCPrepActiveUnitPortrait :?= address($8CC731)
+
+And then use
+
+DIALOGUE_LOAD_RAM .segment
+	.byte $00, $32
+.endm
+
+in asm/Code838000.asm rlCheckIfHeldGameOver, #Leif -> #Finn
+
+in asm/GetWarpTileTargetCoords.asm rlGetWarpTileTargetCoords, added_Chapter3Table
+         

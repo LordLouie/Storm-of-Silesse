@@ -1,0 +1,30 @@
+		  CALL_ASM_SKIPPABLE rlClearHDMAArray
+
+	  STORE_LONG lEventEngineLongParameter, _OlwenScriptedBattleRounds
+			CALL_ASM_SKIPPABLE $9A8D0F, $0000
+
+			STORE_WORD wEventEngineParameter1, Javelin
+			STORE_WORD wEventEngineParameter2, DireThunder
+			STORE_WORD wEventEngineXCoordinate, 19
+			STORE_WORD wEventEngineYCoordinate, 11
+			STORE_WORD wEventEngineXCoordinateAlt, 20
+			STORE_WORD wEventEngineYCoordinateAlt, 10
+			CALL_ASM_SKIPPABLE $9A8E50, $0000
+
+			CALL_ASM_SKIPPABLE $84B719, $0000
+
+			HALT_UNTIL_WORD_SKIPPABLE $7FAA14, $0000
+
+			CALL_ASM_SKIPPABLE rlUpdateUnitMaps, $0000
+			CALL_ASM_SKIPPABLE rlUpdateVisibilityMap, $0000
+	
+			PAUSE_SKIPPABLE 2
+			YIELD	
+			
+			  _OlwenScriptedBattleRounds ; 9A/E50A
+			.byte $80, $02, $00, $00
+
+			.byte $02, $00, $02, $28
+
+			.byte $02, $00, $02, $28
+			.word $FFFF, $FFFF

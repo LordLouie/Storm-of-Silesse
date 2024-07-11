@@ -1,0 +1,741 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER20 :?= false
+.if (!GUARD_FE5_CHAPTER20)
+  GUARD_FE5_CHAPTER20 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter20EventsSection
+
+			eventChapter20Events ; FD/D942
+
+					_FlagBharatBattleQuote 					= enum.enum($05)
+					_FlagEnemiesFlee 								= enum.enum()
+
+					_FlagDoor1											= enum.enum($21)
+					_FlagDoor2											= enum.enum()
+					_FlagDoor3											= enum.enum()
+					_FlagDoor4											= enum.enum()
+					_FlagDoor5											= enum.enum()
+					_FlagDoor6											= enum.enum()
+					_FlagDoor7											= enum.enum()
+					_FlagDoor8											= enum.enum()
+					_FlagDoor9											= enum.enum()
+					_FlagDoor10											= enum.enum()
+					_FlagDoor11											= enum.enum()
+					_FlagDoor12											= enum.enum()
+					_FlagDoor13											= enum.enum()
+					_FlagDoor14											= enum.enum()
+					_FlagDoor15											= enum.enum()
+					_FlagDoor16											= enum.enum()
+					_FlagBreak1											= enum.enum()
+					_FlagBreak2											= enum.enum()
+					_FlagBreak3											= enum.enum()
+					_FlagBreak4											= enum.enum()
+					_FlagBreak5											= enum.enum()
+					_FlagBreak6											= enum.enum()
+					_FlagSilenceHouseVisit					= enum.enum()
+					_FlagSilenceHouseDestroy				= enum.enum()
+					_FlagChest 											= enum.enum()
+
+				_OpeningEventDefinitions ; FD/D942
+					EVENT FlagAlwaysZero, _OpeningEvent
+						CMP_WORD wCurrentTurn, 0
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_TurnEventDefinitions ; FD/D94F
+					EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+						CHECK_IF_BOSS_DEAD Bharat
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+						TEST_FLAG_SET FlagPlayerDeath
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _EndingEvent
+						TEST_FLAG_UNSET _FlagEnemiesFlee
+						TEST_FLAG_SET FlagBossDeath
+						CMP_WORD_RANGE wCurrentTurn, 15, $FFFF
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _BharatRemoveImmortality
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 3
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _Turn3Reinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 3
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _Turn5Reinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 5
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _Turn7Reinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 7
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _Turn10Reinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 10
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _Turn12Reinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 12
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _MageReinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_UNSET FlagBossDeath
+						CMP_WORD wCurrentTurn, 15
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _BharatCharge
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_UNSET FlagBossDeath
+						CMP_WORD wCurrentTurn, 15
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _ReoccurringReinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_UNSET FlagBossDeath
+						CMP_WORD_RANGE wCurrentTurn, 12, 15
+					END_DEFINITION
+					EVENT _FlagEnemiesFlee, _EnemiesFlee
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_SET FlagBossDeath
+						CMP_WORD wCurrentTurn, 14
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _EndingEvent
+						CMP_WORD wCurrentPhase, Player
+						TEST_FLAG_SET FlagBossDeath
+						CMP_WORD wCurrentTurn, 15
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_TalkEventDefinitions ; FD/DA3E
+				END_DEFINITION_ARRAY
+			
+				_LocationEventDefinitions ; FD/DA40
+					macroECVanillaChest _FlagChest, eventChapter20Data._Chest1
+					EVENT _FlagSilenceHouseVisit, _SilenceHouseVisit
+						macroECCheckCoordinates [16, 1]
+						CMP_WORD wCurrentPhase, Player
+					END_DEFINITION
+					EVENT _FlagSilenceHouseDestroy, _SilenceHouseDestroy
+						macroECCheckCoordinates [16, 1]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBreak1, _WallBreak1
+						macroECCheckCoordinates [13, 10]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBreak2, _WallBreak2
+						macroECCheckCoordinates [9, 19]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBreak3, _WallBreak3
+						macroECCheckCoordinates [18, 19]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBreak4, _WallBreak4
+						macroECCheckCoordinates [28, 19]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBreak5, _WallBreak5
+						macroECCheckCoordinates [7, 26]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBreak6, _WallBreak6
+						macroECCheckCoordinates [21, 26]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					macroECDoor _FlagDoor1, [20, 3], _Door1
+					macroECDoor _FlagDoor2, [28, 6], _Door2
+					macroECDoor _FlagDoor3, [20, 8], _Door3
+					macroECDoor _FlagDoor4, [3, 9], _Door4
+					macroECDoor _FlagDoor5, [0, 12], _Door5
+					macroECDoor _FlagDoor6, [26, 12], _Door6
+					macroECDoor _FlagDoor7, [31, 12], _Door7
+					macroECDoor _FlagDoor8, [6, 16], _Door8
+					macroECDoor _FlagDoor9, [3, 20], _Door9
+					macroECDoor _FlagDoor10, [23, 20], _Door10
+					macroECDoor _FlagDoor11, [3, 23], _Door11
+					macroECDoor _FlagDoor12, [5, 23], _Door12
+					macroECDoor _FlagDoor13, [26, 23], _Door13
+					macroECDoor _FlagDoor14, [28, 23], _Door14
+					macroECDoor _FlagDoor15, [3, 26], _Door15
+					macroECDoor _FlagDoor16, [28, 26], _Door16
+				END_DEFINITION_ARRAY
+			
+				_BeforeActionEventDefinitions ; FD/DBED
+					EVENT FlagAlwaysZero, _PlayerLoss
+						macroECCheckCoordinates [3, 6]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_AfterActionEventDefinitions ; FD/DC04
+				END_DEFINITION_ARRAY
+			
+				_BattleEventDefinitions ; FD/DC06
+					macroECBossQuote _FlagBharatBattleQuote, Bharat
+				END_DEFINITION_ARRAY
+			
+				_ShopEventDefinitions ; FD/DC10
+					macroECShop eventChapter20Data._Vendor
+				END_DEFINITION_ARRAY
+			
+				_SilenceHouseVisit ; FD/DC25
+					macroItemHouse dialogueChapter20SilenceHouse, Silence, [16, 1], $03F1
+				END2
+			
+				_SilenceHouseDestroy ; FD/DC88
+					macroDestroyHouseByTileChangeID 16
+				END1
+			
+				_WallBreak1 ; FD/DCB7
+					macroDestroyHouseByTileChangeID 17
+				END1
+			
+				_WallBreak2 ; FD/DCE6
+					macroDestroyHouseByTileChangeID 18
+				END1
+			
+				_WallBreak3 ; FD/DD15
+					macroDestroyHouseByTileChangeID 19
+				END1
+			
+				_WallBreak4 ; FD/DD44
+					macroDestroyHouseByTileChangeID 20
+				END1
+			
+				_WallBreak5 ; FD/DD73
+					macroDestroyHouseByTileChangeID 21
+				END1
+			
+				_WallBreak6 ; FD/DDA2
+					macroDestroyHouseByTileChangeID 22
+				END1
+			
+				_Door1 ; FD/DDD1
+					macroOpenDoorByTileChangeID 0
+				END1
+			
+				_Door2 ; FD/DDFC
+					macroOpenDoorByTileChangeID 1
+
+					macroSetCharacterAI FriegeArmoredSword2, [$00, $00, $00, $00]
+				END1
+			
+				_Door3 ; FD/DE87
+					macroOpenDoorByTileChangeID 2
+				END1
+			
+				_Door4 ; FD/DEB2
+					macroOpenDoorByTileChangeID 3
+				END1
+			
+				_Door5 ; FD/DEDD
+					macroOpenDoorByTileChangeID 4
+				END1
+			
+				_Door6 ; FD/DF08
+					macroOpenDoorByTileChangeID 5
+				END1
+			
+				_Door7 ; FD/DF33
+					macroOpenDoorByTileChangeID 6
+				END1
+			
+				_Door8 ; FD/DF5E
+					macroOpenDoorByTileChangeID 7
+				END1
+			
+				_Door9 ; FD/DF89
+					macroOpenDoorByTileChangeID 8
+				END1
+			
+				_Door10 ; FD/DFB4
+					macroOpenDoorByTileChangeID 9
+				END1
+			
+				_Door11 ; FD/DFDF
+					macroOpenDoorByTileChangeID 10
+				END1
+			
+				_Door12 ; FD/E00A
+					macroOpenDoorByTileChangeID 11
+				END1
+			
+				_Door13 ; FD/E035
+					macroOpenDoorByTileChangeID 12
+				END1
+			
+				_Door14 ; FD/E060
+					macroOpenDoorByTileChangeID 13
+				END1
+			
+				_Door15 ; FD/E08B
+					macroOpenDoorByTileChangeID 14
+				END1
+			
+				_Door16 ; FD/E0B6
+					macroOpenDoorByTileChangeID 15
+				END1
+			
+				_Turn3Reinforcements ; FD/E0E1
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._Turn3ReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._Turn3ReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_Turn5Reinforcements ; FD/E0EE
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._Turn5ReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._Turn5ReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_Turn7Reinforcements ; FD/E0FB
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._Turn7ReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._Turn7ReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_Turn10Reinforcements ; FD/E108
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._Turn10ReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._Turn10ReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_Turn12Reinforcements ; FD/E115
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._Turn12ReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._Turn12ReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_MageReinforcements ; FD/E122
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._MageReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._MageReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_ReoccurringReinforcements ; FD/E12F
+					SCROLL_CAMERA_ADDRESS eventChapter20Data._ReoccurringReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter20Data._ReoccuringReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_BharatCharge ; FD/E13C
+					macroSetCharacterAI Bharat, [$00, $00, $00, $00]
+					macroSetCharacterAI FriegeGeneral1, [$00, $00, $00, $00]
+				END2
+			
+				_BharatRemoveImmortality ; FD/E1FD
+					macroASMCUnsetBitsCharacterDataWord Bharat, Skills2, pack([Skill2Anchor, Skill3Immortal])
+				END2
+			
+				_EnemiesFlee ; FD/E216
+					macroSetAllUnitsAIIfCharacterDataWord Leader, Bharat, [$02, $00, $0B, $00]
+				END2
+			
+				_PrepGroups ; FD/E28F
+					.long eventChapter20Data._PrepGroup1
+					.long eventChapter20Data._PrepGroup2
+				.word 0
+			
+				_OpeningEvent ; FD/E297
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $39
+					YIELD
+
+					macroChapterTitlePopup dialogueChapter20Title
+			
+					SCROLL_CAMERA_COORDS [13, 28], 4
+					YIELD
+			
+					LOAD_GROUP eventChapter20Data._ReinhardtGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD
+			
+					DIALOGUE dialogueChapter20Opening1
+					YIELD
+			
+					MOVE_UNIT Reinhardt, [0, 0], [30, 28], 2, None
+					YIELD_UNK
+			
+					WAIT_MOVE
+					YIELD
+
+					macroASMCRemoveUnit Reinhardt
+			
+					DIALOGUE dialogueChapter20Opening2
+					YIELD
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $33
+					YIELD
+			
+					GET_CHARACTER_COORDS Neill
+					SCROLL_CAMERA 4
+					YIELD
+			
+					DIALOGUE dialogueChapter20Opening3
+					YIELD
+				END2
+			
+				_EndingEvent ; FD/E306
+					macroASMCCheckUnitExists Neill
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 16
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $45
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCSaveChapterAndTurncount
+
+					macroASMCCountAllUnitsAlive Nanna
+
+					macroDialogueWithBG dialogueChapter20Closing1, 1
+			
+					JUMP_TRUE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter20Closing2NannaDead
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					STORE_LONG lEventEngineLongParameter, dialogueChapter20Closing2
+					CALL_ASM_LOOP rlASMCDialogueContinue
+
+					macroASMCCountAllUnitsAlive Nanna
+					JUMP_FALSE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter20Closing3
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+					YIELD
+			
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+
+					macroASMCCountAllUnitsAlive Dean
+					JUMP_FALSE +
+
+						macroASMCCountAllUnitsAlive Linoan
+						JUMP_TRUE +
+			
+							STORE_WORD wCurrentMapMusic, $0000
+							PLAY_SOUND_FORCED $00E0
+							PAUSE_SKIPPABLE 32
+							YIELD
+			
+							SET_MUSIC $42
+							YIELD
+
+							macroDialogueWithBG dialogueLinoanDeathDean, 3
+							YIELD
+			
+							HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+							FADE_OUT 1
+							YIELD
+			
+							CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+			
+							STORE_BYTE bBufferINIDISP, $00
+
+							macroASMCRemoveUnit Dean
+			
+					+
+					FADE_OUT 1
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCChapterEnd
+				END1
+			
+				_PlayerLoss ; FD/E411
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $28
+					YIELD
+			
+					DIALOGUE dialogueChapter20Fall
+					YIELD
+
+					macroASMCGameOver
+				END1
+
+    .endsection Chapter20EventsSection
+
+    .section Chapter20DataSection
+
+			eventChapter20Data ; B1/9194
+			
+				_PrepGroup1 ; B1/9194
+					.byte 14, 25
+			
+					UNIT Bharat, Enemy, [13, 30], [13, 30], Bharat, [MasterAxe, Fortify, Vulnerary, ThrudsScroll], 15, True, [$01, $03, $00, $80]
+					UNIT FriegeGeneral1, Enemy, [13, 29], [13, 29], Bharat, [MasterLance, Vulnerary], 18, False, [$01, $03, $00, $00]
+					UNIT FriegeGeneral1, Enemy, [12, 30], [12, 30], Bharat, [MasterLance, Vulnerary], 18, False, [$01, $03, $00, $00]
+					UNIT FriegeGeneral1, Enemy, [14, 30], [14, 30], Bharat, [MasterLance, Vulnerary], 18, False, [$01, $03, $00, $00]
+					UNIT FriegeArmoredSword2, Enemy, [28, 1], [28, 1], Bharat, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+					UNIT FriegeArmoredSword2, Enemy, [29, 2], [29, 2], Bharat, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+					UNIT FriegeArmoredSword2, Enemy, [30, 4], [30, 4], Bharat, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+					UNIT FriegeArmoredSword2, Enemy, [28, 4], [28, 4], Bharat, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+					UNIT FriegeArmoredSword2, Enemy, [29, 3], [29, 3], Bharat, [KillingEdge, Vulnerary], 10, False, [$00, $10, $00, $00]
+				UNIT
+			
+				_PrepGroup2 ; B1/924C
+					.byte 14, 24
+			
+					UNIT SupplyCorpsArmoredLance, Enemy, [9, 30], [9, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [7, 30], [7, 30], Bharat, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [5, 30], [5, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [3, 30], [3, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [11, 30], [11, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [1, 30], [1, 30], Bharat, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [16, 30], [16, 30], Bharat, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [18, 30], [18, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [20, 30], [20, 30], Bharat, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [22, 30], [22, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [24, 30], [24, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [26, 30], [26, 30], Bharat, [LongLance, DoorKey], 14, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [28, 30], [28, 30], Bharat, [LongLance, DoorKey], 14, False, [$16, $00, $00, $00]
+				UNIT
+			
+				_Turn3ReinforcementsCameraCoordinates ; B1/9354
+					.byte 14, 24
+			
+				_Turn3ReinforcementsGroup ; B1/9356
+					UNIT FriegeBishop3, Enemy, [21, 30], [21, 30], Bharat, [Fortify, Unlock, Thunder], 10, False, [$01, $03, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [1, 30], [1, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [3, 30], [3, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [5, 30], [5, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [7, 30], [7, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [9, 30], [9, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [11, 30], [11, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [16, 30], [16, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [18, 30], [18, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [20, 30], [20, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [22, 30], [22, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [24, 30], [24, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [26, 30], [26, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT SupplyCorpsArmoredLance, Enemy, [28, 30], [28, 30], Bharat, [Greatlance], 15, False, [$00, $24, $00, $00]
+					UNIT FriegeBishop3, Enemy, [6, 30], [6, 30], Bharat, [Fortify, Unlock, Thunder], 10, False, [$01, $03, $00, $00]
+					UNIT FriegePriest2, Enemy, [23, 30], [23, 30], Bharat, [Heal, Restore], 6, False, [$03, $07, $00, $00]
+					UNIT FriegePriest1, Enemy, [25, 30], [25, 30], Bharat, [Heal], 6, False, [$03, $07, $00, $00]
+					UNIT FriegePriest1, Enemy, [2, 30], [2, 30], Bharat, [Heal], 6, False, [$03, $07, $00, $00]
+					UNIT FriegePriest2, Enemy, [4, 30], [4, 30], Bharat, [Heal, Restore], 6, False, [$03, $07, $00, $00]
+				UNIT
+			
+				_Turn5ReinforcementsCameraCoordinates ; B1/94D4
+					.byte 14, 24
+			
+				_Turn5ReinforcementsGroup ; B1/94D6
+					UNIT MercenaryMage1, Enemy, [5, 30], [5, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [1, 30], [1, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [3, 30], [3, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [7, 30], [7, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [9, 30], [9, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [11, 30], [11, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [16, 30], [16, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [18, 30], [18, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [20, 30], [20, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [22, 30], [22, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [24, 30], [24, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [26, 30], [26, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [28, 30], [28, 30], Bharat, [Thunder, DoorKey], 10, False, [$16, $00, $00, $00]
+				UNIT
+			
+				_Turn7ReinforcementsCameraCoordinates ; B1/95DC
+					.byte 14, 24
+			
+				_Turn7ReinforcementsGroup ; B1/95DE
+					UNIT SupplyCorpsMageKnight, Enemy, [11, 30], [11, 30], Bharat, [Ballista], 6, False, [$00, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [15, 30], [15, 30], Bharat, [Ballista], 6, False, [$00, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [19, 30], [19, 30], Bharat, [Ballista], 6, False, [$00, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [7, 30], [7, 30], Bharat, [Ballista], 6, False, [$00, $03, $00, $00]
+				UNIT
+			
+				_Turn10ReinforcementsCameraCoordinates ; B1/9630
+					.byte 14, 25
+			
+				_Turn10ReinforcementsGroup ; B1/9632
+					UNIT FriegeBallista5, Enemy, [9, 30], [9, 30], Bharat, [IronBallista], 6, False, [$00, $03, $00, $00]
+					UNIT FriegeBallista5, Enemy, [17, 30], [17, 30], Bharat, [IronBallista], 6, False, [$00, $03, $00, $00]
+				UNIT
+			
+				_Turn12ReinforcementsCameraCoordinates ; B1/965C
+					.byte 14, 24
+			
+				_Turn12ReinforcementsGroup ; B1/965E
+					UNIT MercenaryMage1, Enemy, [23, 30], [23, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [25, 30], [25, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [3, 30], [3, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [1, 30], [1, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+				UNIT
+			
+				_MageReinforcementsCameraCoordinates ; B1/96B0
+					.byte 14, 24
+			
+				_MageReinforcementsGroup ; B1/96B2
+					UNIT MercenaryMage1, Enemy, [1, 30], [1, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [3, 30], [3, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [23, 30], [23, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+					UNIT MercenaryMage1, Enemy, [25, 30], [25, 30], Bharat, [Fire, Meteor], 16, False, [$00, $00, $00, $00]
+				UNIT
+			
+				_ReoccurringReinforcementsCameraCoordinates ; B1/9704
+					.byte 14, 24
+			
+				_ReoccuringReinforcementsGroup ; B1/9706
+					UNIT SupplyCorpsArmoredAxe, Enemy, [1, 30], [1, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [3, 30], [3, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [5, 30], [5, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [7, 30], [7, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [9, 30], [9, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [11, 30], [11, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [16, 30], [16, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [18, 30], [18, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [20, 30], [20, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [22, 30], [22, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [24, 30], [24, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [26, 30], [26, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [28, 30], [28, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+				UNIT
+			
+				_UnusedCoordinates1 ; B1/980C
+					.byte 8, 7
+			
+				_ReinhardtGroup ; B1/980E
+					UNIT Reinhardt, Enemy, [1, 28], [14, 29], Reinhardt, [], 2, False, [$00, $00, $00, $00]
+				UNIT
+			
+				_StartingPositions ; B1/9824
+					.byte 3, 6
+					.byte 24, 19
+					.byte 27, 12
+					.byte 16, 24
+					.byte 10, 24
+					.byte 2, 7
+					.byte 4, 7
+					.byte 26, 24
+					.byte 5, 24
+					.byte 2, 19
+					.byte 10, 17
+					.byte 16, 17
+					.byte 21, 19
+					.byte 5, 19
+					.byte 12, 8
+					.byte 14, 8
+				.byte $FF
+			
+				_Chest1 VANILLA_CHEST MasterSeal, [23, 12] ; B1/9845
+
+				_Vendor ; B1/9889
+					SHOP [9, 1], [Vulnerary, Torch, Heal, Thunder]
+
+    .endsection Chapter20DataSection
+
+    .section Chapter20WorldMapEventsSection
+
+			eventChapter20WorldMapEvents ; E7/F1BF
+			
+				SCROLL_CAMERA_COORDS [12, 8], 4
+				SET_CURSOR_POSITION
+				YIELD
+			
+				PLAY_SOUND_FORCED $00E0
+				PAUSE_SKIPPABLE 32
+				YIELD
+			
+				SET_MUSIC $2A
+				YIELD
+			
+				FADE_IN 1
+				YIELD
+			
+				macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+				macroWMDrawSpecialMarker [128, 56], WMMarkerTable.Crown, 0
+
+				macroASMCWMDialogue dialogueChapter20WorldMap
+			
+				HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+			
+				macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+				macroWMClearSpecialMarker 0
+			
+				PAUSE_SKIPPABLE 1
+				YIELD
+			
+				FADE_OUT 2
+				YIELD
+			
+				CALL_ASM_LOOP rlASMCEndWMEvents
+				YIELD
+			END1
+
+    .endsection Chapter20WorldMapEventsSection
+
+.endif ; GUARD_FE5_CHAPTER20

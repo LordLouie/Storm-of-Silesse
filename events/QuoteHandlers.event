@@ -1,0 +1,171 @@
+;	Note: Vanilla Thracia doesn't have a WaitForA
+;	at the end of its boss, death and release quotes.
+;	In combat, that means the textbox closes after it is
+;	done displaying text (or after the unit's death animation).
+;	Outside of combat, the game's code adds a WaitForA
+;	to all of these quotes.
+
+;	This removes said part of the game's code, as Lil' Manster
+;	has a WaitForA at the end of every quote for ease of reading.
+
+;	If you want to go back to vanilla's system, simply restore
+;	the commented out portions in this file, and remove all
+;	the WaitForAs at the end of the quotes in text_dialogues.
+
+
+eventBattleQuoteDummyEvent ; 99/8024
+END1
+
+eventMapBattleQuoteHandler ; 99/8025
+	PLAY_SOUND_FORCED $00E0
+	STORE_WORD wCurrentMapMusic, $0000
+	PAUSE_SKIPPABLE 10
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlASMCSetBattleQuoteMusic, $0000
+	DIALOGUE dialogueMapBattleQuoteHandler
+	YIELD
+END1
+
+dialogueMapBattleQuoteHandler ; 99/803E
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD_RAM
+	DIALOGUE_ASMC_0 rlGetBattleQuoteDialogue
+	DIALOGUE_END_SCENE							;	DIALOGUE_WAIT_PRESS	in vanilla
+DIALOGUE_END_SCENE
+
+eventMapDeathQuoteHandler ; 99/804A
+	DIALOGUE dialogueMapDeathQuoteHandler
+	YIELD
+END1
+
+dialogueMapDeathQuoteHandler ; 99/8050
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD_RAM
+	DIALOGUE_ASMC_0 rlGetDeathQuoteDialogue
+	DIALOGUE_END_SCENE							;	DIALOGUE_WAIT_PRESS	in vanilla
+DIALOGUE_END_SCENE
+
+eventMapReleaseQuoteHandler ; 99/805C
+	DIALOGUE dialogueMapReleaseQuoteHandler
+	YIELD
+END1
+
+dialogueMapReleaseQuoteHandler ; 99/8062
+	DIALOGUE_RIGHT
+	DIALOGUE_OPEN
+	DIALOGUE_LOAD_RAM
+	DIALOGUE_ASMC_0 rlGetReleaseQuoteDialogue
+	DIALOGUE_END_SCENE							;	DIALOGUE_WAIT_PRESS	in vanilla
+DIALOGUE_END_SCENE
+
+menutextUnknown99806E ; 99/806E
+	.byte $82 , $BE, $82, $C1, $82, $B5, $82, $E3, $82, $C2, $81, $49, $00, $00
+
+rlPickGameOverEvents ; 99/807C
+
+	.al
+	.xl
+	.autsiz
+	.databank ?
+
+	php
+	rep #$20
+	lda #(`eventCedDeathEvents)<<8
+	sta lR18+1
+	lda #<>eventCedDeathEvents
+	sta lR18
+	lda aBurstWindowCharacterBuffer.Character,b
+	cmp #CedChp23
+	beq +
+
+	lda #(`eventLeifDeathEvents)<<8
+	sta lR18+1
+	lda #<>eventLeifDeathEvents
+	sta lR18
+
+	+
+	jsl rlUnknown8C839F
+	lda #$2000
+	tsb wEventEngineStatus,b
+	plp
+	rtl
+
+eventLeifDeathEvents ; 99/80A7
+	PAUSE_SKIPPABLE 32
+	YIELD
+
+	HALT_UNTIL_WORD_SKIPPABLE wMapBattleFlag, $0000
+
+	STORE_WORD wEventEngineCharacterTarget, Seadna
+	CALL_ASM_LOOP rlASMCCheckUnitAvailableForDialogue, $0000
+	JUMP_FALSE +
+
+	DIALOGUE dialogueLeifDeathFinnReaction
+	YIELD
+
+	JUMP _End
+
+	+
+	STORE_WORD wEventEngineCharacterTarget, Nanna
+	CALL_ASM_LOOP rlASMCCheckUnitAvailableForDialogue, $0000
+	JUMP_FALSE +
+
+	DIALOGUE dialogueLeifDeathNannaReaction
+	YIELD
+
+	JUMP _End
+
+	+
+	STORE_WORD wEventEngineCharacterTarget, Gerald
+	CALL_ASM_LOOP rlASMCCheckUnitAvailableForDialogue, $0000
+	JUMP_FALSE +
+
+	DIALOGUE dialogueLeifDeathEyvelReaction
+	YIELD
+
+	JUMP _End
+
+	+
+	EVENT_CMP_BYTE_LT wCurrentChapter, Chapter10
+	JUMP_FALSE +
+
+	EVENT_CMP_BYTE_LT wCurrentChapter, Chapter18
+	JUMP_TRUE +
+
+	DIALOGUE dialogueLeifDeathDoriasReaction
+	YIELD
+	JUMP _End
+
+	+
+	EVENT_CMP_BYTE_EQ wCurrentChapter, Chapter02x
+	JUMP_TRUE +
+
+	EVENT_CMP_BYTE_LT wCurrentChapter, Chapter06
+	JUMP_FALSE _End
+
+	+
+	DIALOGUE dialogueLeifDeathAugustReaction
+	YIELD
+
+	_End
+	CALL_ASM_SKIPPABLE rlUnknown80C29D, $0000
+	STORE_WORD wEventEngineUnknown001791, $FFFF
+
+	eventMapDeathQuoteDummyEvent
+END1
+
+eventCedDeathEvents ; 99/8130
+	DIALOGUE dialogueChapter23Fall
+	YIELD
+
+	CALL_ASM_SKIPPABLE rlUnknown80C29D, $0000
+	STORE_WORD wEventEngineUnknown001791, $FFFF
+END1
+
+eventUnknownGameOver ; 99/8142
+	CALL_ASM_SKIPPABLE rlUnknown80C29D, $0000
+	STORE_WORD wEventEngineUnknown001791, $FFFF
+END1

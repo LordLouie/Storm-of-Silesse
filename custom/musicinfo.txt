@@ -1,0 +1,223 @@
+This list includes indices for tracks from Min's FE4 music patch
+
+ID	Title
+01	Leif's Search for Victory – Base
+02	Leif's Search for Victory – Assault A
+03	Leif's Search for Victory – Assault B
+04	Leif's Search for Victory – Adversity
+05	Leif's Search for Victory – The Cusp of Victory
+06	Leif's Search for Victory – The Edge of Defeat
+07	Leif's Search for Victory – Reconnoissance
+08	Leif's Search for Victory – Leif
+09	Pressing Threat – Base A
+0A	Pressing Threat – Base B
+0B	Pressing Threat – Assault
+0C	Pressing Threat – Dark Bishops
+0D	Pressing Threat – Reconnoissance
+0E	Pressing Threat – Endgame
+0F	 
+10	 
+11	Serving Justice – Attack
+12	Serving Justice – Defense
+13	Serving Justice – Recovery A
+14	Serving Justice – Recovery B
+15	Serving Justice – Dance
+16	Serving Justice – Class Change
+17	Serving Justice – Boss battle
+18	Serving Justice – Against Raydrik
+19	Serving Justice – Against Veld
+1A	Serving Justice – Arena Battle
+1B	Serving Justice – Level Up A
+1C	Serving Justice – Level Up B
+1D	Serving Justice – Defense
+1E	Serving Justice – Boss battle
+1F	Serving Justice – Against Raydrik
+20	Serving Justice – Against Veld
+21	Thracia 776 – In the Beginning...
+22	Thracia 776 – Fire Emblem Theme (Plus intro)
+23	Thracia 776 – Fire Emblem Theme (No intro)
+24	Finale – Results
+25	Afterwards
+26	Finale – Ballad
+27	Finale – Music Box
+28	Game Over
+29	Thracia 776 – Map A
+2A	Thracia 776 – Map B - A
+2B	Thracia 776 – Map B - B
+2C	Thracia 776 – Map C
+2D	Thracia 776 – Deployment
+2E	 
+2F	 
+30	 
+31	Amidst the Battle – Crisis
+32	Amidst the Battle – Assault
+33	Amidst the Battle – Destiny
+34	 
+35	 
+36	 
+37	 
+38	 
+39	Amidst the Battle – Battalion A
+3A	Amidst the Battle – Bandits
+3B	Amidst the Battle – Raydrik
+3C	Amidst the Battle – Loptrians A
+3D	Amidst the Battle – Thracia
+3E	Amidst the Battle – Loptrians B
+3F	Amidst the Battle – Battalion B
+40	 
+41	Chapter End – Victory
+42	Chapter End – Minor Victory
+43	Chapter End – Augustus Speaks A
+44	Chapter End – Augustus Speaks B
+45	Chapter End – Go, Leif!
+46	Chapter End – Conquest
+47	 
+48	 
+49	Mid Chapter – Arena's Front Desk
+4A	Mid Chapter – Recruitment
+4B	Mid Chapter – Meetings and Reunions
+4C	Mid Chapter – Comic Relief
+4D	Mid Chapter – Church
+4E	Mid Chapter – Sorrow
+4F	Mid Chapter – Sarah
+50	Mid Chapter – Eyvel
+51	 
+52	
+53	
+54	 
+55	 
+56	 
+57	Serving Justice – Arena Battle
+58
+59
+5A
+5B
+
+---FE4 Music Starts Here---
+
+5C	Glory to Grannvale
+5D	Prologue (Birth of the Holy Knight)
+5E	Chapter 1 (Girl of the Spirit Forest)
+5F	Chapter 2 (Uprising in Augustria)
+60	Chapter 3 (Eldigan, the Lionheart)
+61	Chapter 4 (Dance in the Skies)
+62	Flowing of Time
+63	Chapter 5 (Doorway of Destiny)
+64	Conspiracy
+65	Beloved One
+66	End of Dispair
+67	When the Rush Comes
+68 	Chapter 6 (Inheritors of Light)
+69	Chapter 7 (Crossing the Desert)
+6A	Chapter 8 (Dragon Knights of Thracia)
+6B	Chapter 9 (For Whose Sake)
+6C	Chapter 10 (Light and Dark)
+6D	Towards the Light
+6E	Epilogue (End of the Holy War) ((No Intro))
+6F
+70
+71
+72
+73	Victory is Near	
+74	Verdane Army
+75	Augustria Army
+76	Augustria Army (Pirates)
+77	Silesse Army
+78	Aed Army
+79	Isaach Army
+7A	Munster Army
+7B	Thracia Army
+7C	Miletos Army
+7D	Grannvale Army 1
+7E	Grannvale Army 2
+7F	Allied Army
+80	Neutral Army
+81	Ally Attack
+82	Enemy Attack
+83	Mid-Boss
+84	Fateful Showdown
+85	From Enemy to Ally
+86	Versus Arvis
+87	Versus Julius
+88 	Fighting Dancer
+89	Supporting Dancer
+8A	White Magic
+8B	Valkyrie Staff (No Loop)
+8C	Level Up!
+8D	Unit Change
+8E	
+8F	Arena (Match)
+90	Verdane Castle Town
+91	Grannvale Castle Town
+92	Augustria Castle Town
+93	Silesse Castle Town
+94	Isaach Castle Town
+95	Aed Castle Town
+96	Munster Castle Town
+97	Thracia Castle Town
+98	Miletos Castle Town
+99	Crisis 1
+9A	Crisis 2
+9B	A New Advance
+9C	The Final Challenge ~ Advance 
+9D	Victory 1
+9E	Victory 2
+9F	Enemy Message 1
+A0	Enemy Message 2
+A1	Enemy Message 3
+A2	Emporer Arvis
+A3	Lopt
+A4	Recruitment
+A5	Julius
+A6	Foolish Soldiers
+A7	Dew and Patty
+A8	Unused Song
+A9	Lover 1
+AA	Lover 2
+AB	Lover 3
+AC	Lover 4
+AD	Conversation 1
+AE	Conversation 2
+AF	Conversation on Legends
+B0	Decision 1
+B1	Decision 2
+B2	Decision 3
+B3	Lewyn's Speech
+B4	Tine's Theme
+B5	Edain's Theme
+B6	Deirdre's Theme
+B7	Julia's Theme
+B8	Seliph's Theme	
+B9	Time of Sadness 1
+BA	Time of Sadness 2 (GAME OVER...)
+BB	
+BC	Embracing Destiny
+BD	Augustira Palace
+BE	Royal Palace of Silesse 
+BF	Munster Palace
+C0	Isaach Palace
+C1	Kingdom of New Thracia Palace
+C2	Verdane Palace
+C3	Yngvi Palace
+C4	Friege Palace
+C5	Dozel Palace
+C6	Edda Palace
+C7	Velthomer Palace
+C8	Chalphy Palace
+C9	Wind Warrior Forseti
+CA	
+CB	Ally Attack (Again?)
+CC	Enemy Attack (Again?)
+CD	Mid-Boss (Again?)
+CE	Fateful Showdown (Again?)
+CF	From Enemy to Ally (Again?)
+D0	Versus Arvis (Again?)
+D1	Versus Julius (Again?)
+D2	Fighting Dancer (Again?)
+D3	Supporting Dancer (Again?)
+D4	White Magic (Again?)
+D6	Valkyrie Staff (No Loop) (Again?)
+D7	Level Up! (Again?)
+D8	Unit Change (Again?)
+D9
+DA	Game Crashes from here on

@@ -1,0 +1,434 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER24x :?= false
+.if (!GUARD_FE5_CHAPTER24x)
+  GUARD_FE5_CHAPTER24x := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter24xEventsSection
+
+			eventChapter24xEvents ; 97/8895
+			
+					_FlagEnding				 				= enum.enum($06)
+					_FlagEyvelTalk		 				= enum.enum()
+
+					_FlagDoor1				 				= enum.enum($21)
+					_FlagDoor2				 				= enum.enum()
+					_FlagDoor3				 				= enum.enum()
+					_FlagDoor4				 				= enum.enum()
+					_FlagDoor5				 				= enum.enum()
+					_FlagDoor6				 				= enum.enum()
+					_FlagChest1				 				= enum.enum()
+					_FlagChest2				 				= enum.enum()
+					_FlagChest3				 				= enum.enum()
+
+				_OpeningEventDefinitions ; 97/8895
+					EVENT FlagAlwaysZero, _OpeningEvent
+						CMP_WORD wCurrentTurn, 0
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_TurnEventDefinitions ; 97/88A2
+					EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+						TEST_FLAG_SET FlagPlayerDeath
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _SorcererReinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 2
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _SorcererReinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD_RANGE wCurrentTurn, 1, 32
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _SniperHeroReinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD_RANGE wCurrentTurn, 1, 20
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_TalkEventDefinitions ; 97/88E2
+					EVENT _FlagEyvelTalk, _LeifEyvelTalk
+						CHECK_CHARS2 Neill, Gerald
+					END_DEFINITION
+					EVENT _FlagEyvelTalk, _MareetaEyvelTalk
+						CHECK_CHARS2 Mareeta, Gerald
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_LocationEventDefinitions ; 97/88F8
+					macroECDoor _FlagDoor1, [13, 4], _Door1
+					macroECDoor _FlagDoor2, [4, 16], _Door2
+					macroECDoor _FlagDoor3, [22, 16], _Door3
+					macroECDoor _FlagDoor4, [13, 22], _Door4
+					macroECDoor _FlagDoor5, [4, 23], _Door5
+					macroECDoor _FlagDoor6, [3, 32], _Door6
+					macroECVanillaChest _FlagChest1, eventChapter24xData._Chest1
+					macroECVanillaChest _FlagChest2, eventChapter24xData._Chest2
+					macroECVanillaChest _FlagChest3, eventChapter24xData._Chest3
+				END_DEFINITION_ARRAY
+			
+				_BeforeActionEventDefinitions ; 97/898D
+					macroECPlayerRetreat _FlagEnding, _PlayerRetreat, Neill
+					EVENT FlagAlwaysZero, eventChapter16BEvents._WarpTile
+						RUN_ASM rlGetWarpTileTargetCoords
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_AfterActionEventDefinitions ; 97/89D6
+					EVENT FlagAlwaysZero, _EndingEvent
+						TEST_FLAG_SET _FlagEnding
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_BattleEventDefinitions ; 97/89DF
+				END_DEFINITION_ARRAY
+			
+				_ShopEventDefinitions ; 97/89E1
+				END_DEFINITION_ARRAY
+			
+				_SorcererReinforcements ; 97/89E3
+					SCROLL_CAMERA_ADDRESS eventChapter24xData._SorcererReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter24xData._SorcererReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_SniperHeroReinforcements ; 97/89F0
+					SCROLL_CAMERA_ADDRESS eventChapter24xData._SniperHeroReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter24xData._SniperHeroReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_Door1 ; 97/89FD
+					macroOpenDoorByTileChangeID 0
+				END1
+			
+				_Door2 ; 97/8A28
+					macroOpenDoorByTileChangeID 1
+				END1
+			
+				_Door3 ; 97/8A53
+					macroOpenDoorByTileChangeID 2
+				END1
+			
+				_Door4 ; 97/8A7E
+					macroOpenDoorByTileChangeID 3
+				END1
+			
+				_Door5 ; 97/8AA9
+					macroOpenDoorByTileChangeID 4
+				END1
+			
+				_Door6 ; 97/8AD4
+					macroOpenDoorByTileChangeID 5
+				END1
+			
+				_PlayerRetreat ; 97/8AFF
+					macroHaveActiveUnitRetreat _RetreatMovestring
+				END2
+			
+				_RetreatMovestring ; 97/8B3C
+				MS_END
+			
+				_LeifEyvelTalk ; 97/8B3D
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $50
+					YIELD
+			
+					DIALOGUE dialogueChapter24xKaiaEyvelLeif
+					YIELD
+
+					macroASMCChangeAllegianceToPlayer Gerald
+
+					macroASMCSetCharacterDataWord Gerald, Leader, Neill
+				END2
+			
+				_MareetaEyvelTalk ; 97/8B71
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $50
+					YIELD
+			
+					DIALOGUE dialogueChapter24xKaiaEyvelMareeta
+					YIELD
+
+					macroASMCChangeAllegianceToPlayer Gerald
+
+					macroASMCSetCharacterDataWord Gerald, Leader, Neill
+				END2
+			
+				_PrepGroups ; 97/8BA4
+					.long eventChapter24xData._PrepGroup
+				.word 0
+			
+				_OpeningEvent ; 97/8BAA
+					CALL_ASM_SKIPPABLE rlEventEngineCancelFading
+
+					macroASMCUnsetUnitState Gerald, UnitStateCaptured
+
+					macroASMCSetUnitState Gerald, UnitStateDisabled
+			
+					macroASMCCheckUnitStateSet Gerald, UnitStateDisabled
+					JUMP_FALSE +
+
+						macroASMCUnsetUnitState Gerald, UnitStateUnknown1 | UnitStateDisabled
+
+						macroASMCSetUnitPosition Gerald, [13, 2]
+
+						macroASMCSetCharacterDataByte Gerald, Fatigue, 0
+			
+					+
+					macroASMCChangeAllegianceToNPC Gerald
+
+					macroSetCharacterAI Gerald, [$02, $00, $03, $00]
+
+					macroASMCUnsetBitsCharacterDataWord Gerald, Skills2, pack([Skill2Anchor, Skill3Immortal])
+			
+					CALL_ASM_SKIPPABLE rlUpdateUnitMapsAndFog
+			
+					FADE_IN 2
+			
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $3C
+					YIELD
+
+					macroChapterTitlePopup dialogueChapter24xTitle
+			
+					GET_CHARACTER_COORDS Neill
+					SCROLL_CAMERA 4
+					YIELD
+			
+					DIALOGUE dialogueChapter24xOpening
+					YIELD
+				END2
+			
+				_EndingEvent ; 97/8CEC
+					CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
+
+					macroASMCCountAllUnitsAlive Gerald
+					JUMP_FALSE _SkipEyvel
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 16
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $45
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCSaveChapterAndTurncount
+
+					macroDialogueWithBG dialogueChapter24xEyvelLeif, 2
+			
+					macroASMCCountAllUnitsAlive Nanna
+					JUMP_FALSE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelNanna
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					macroASMCCountAllUnitsAlive Edith
+					JUMP_FALSE +
+
+						macroASMCCheckUnitStateSet Edith, UnitStateDisabled
+						JUMP_TRUE +
+			
+							STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelDagdar
+							CALL_ASM_LOOP rlASMCDialogueContinue
+				
+							macroASMCCountAllUnitsAlive Tanya
+							JUMP_FALSE +
+
+								macroASMCCheckUnitStateSet Tanya, UnitStateDisabled
+								JUMP_TRUE +
+			
+									STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelTanya
+									CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					macroASMCCountAllUnitsAlive Barra
+					JUMP_FALSE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelHalvan
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					macroASMCCountAllUnitsAlive Otto
+					JUMP_FALSE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelOsian
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					macroASMCCountAllUnitsAlive Mareeta
+					JUMP_FALSE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelMareeta
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+						macroASMCCountAllUnitsAlive Galzus
+						JUMP_FALSE +
+			
+							STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelGalzus
+							CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					macroASMCCountAllUnitsAlive Seadna
+					JUMP_FALSE +
+			
+						STORE_LONG lEventEngineLongParameter, dialogueChapter24xEyvelFinn
+						CALL_ASM_LOOP rlASMCDialogueContinue
+			
+					+
+					CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+					YIELD
+			
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					_SkipEyvel
+					macroASMCCountAllUnitsAlive Dean
+					JUMP_FALSE +
+
+						macroASMCCountAllUnitsAlive Linoan
+						JUMP_TRUE +
+			
+							STORE_WORD wCurrentMapMusic, $0000
+							PLAY_SOUND_FORCED $00E0
+							PAUSE_SKIPPABLE 32
+							YIELD
+			
+							SET_MUSIC $42
+							YIELD
+
+							macroDialogueWithBG dialogueLinoanDeathDean, 3
+							YIELD
+			
+							HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+							FADE_OUT 1
+							YIELD
+			
+							CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+			
+							STORE_BYTE bBufferINIDISP, $00
+
+							macroASMCRemoveUnit Dean
+			
+					+
+					FADE_OUT 1
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCChapterEnd
+				END1
+
+    .endsection Chapter24xEventsSection
+
+    .section Chapter24xDataSection
+
+			eventChapter24xData ; 99/F7B3
+			
+				_PrepGroup ; 99/F7B3
+					.byte 8, 7
+			
+					UNIT LoptrianDarkBishop, Enemy, [13, 19], [13, 19], LoptrianDarkBishop, [Venin, Berserk, Jormungand], 15, True, [$01, $03, $00, $80]
+					UNIT LoptrianSorcerer1, Enemy, [12, 19], [12, 19], LoptrianDarkBishop, [Jormungand, Fenrir, Silence], 20, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [14, 19], [14, 19], LoptrianDarkBishop, [Jormungand, Fenrir, Sleep], 20, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [11, 18], [11, 18], LoptrianDarkBishop, [Jormungand], 15, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [12, 18], [12, 18], LoptrianDarkBishop, [Jormungand], 15, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [13, 18], [13, 18], LoptrianDarkBishop, [Jormungand], 15, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [14, 18], [14, 18], LoptrianDarkBishop, [Jormungand], 15, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [15, 18], [15, 18], LoptrianDarkBishop, [Jormungand], 15, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [13, 8], [13, 8], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $15, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [12, 8], [12, 8], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $15, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [14, 8], [14, 8], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $15, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [11, 8], [11, 8], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $15, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [15, 8], [15, 8], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $15, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [15, 30], [15, 30], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [8, 30], [8, 30], LoptrianDarkBishop, [DevilAxe, Hammer, Torch], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [21, 26], [21, 26], LoptrianDarkBishop, [DevilAxe, Hammer, Torch], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [20, 19], [20, 19], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [21, 14], [21, 14], LoptrianDarkBishop, [DevilAxe, Hammer, Torch], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [23, 10], [23, 10], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [5, 13], [5, 13], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $03, $00, $00]
+					UNIT BerserkerEnemy1, Enemy, [4, 25], [4, 25], LoptrianDarkBishop, [DevilAxe, Hammer], 20, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [12, 37], [12, 37], LoptrianDarkBishop, [Warp, Warp, Jormungand, Physic, PureWater], 14, False, [$00, $03, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [14, 37], [14, 37], LoptrianDarkBishop, [Warp, Warp, Jormungand, Physic, PureWater], 14, False, [$00, $03, $00, $00]
+				UNIT
+			
+				_SorcererReinforcementsCameraCoordinates ; 99/F983
+					.byte 8, 7
+			
+				_SorcererReinforcementsGroup ; 99/F985
+					UNIT LoptrianSorcerer1, Enemy, [24, 14], [24, 14], LoptrianDarkBishop, [Hel, Jormungand, Rewarp], 16, False, [$00, $00, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [24, 17], [24, 17], LoptrianDarkBishop, [Hel, Jormungand, Rewarp], 16, False, [$00, $00, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [2, 14], [2, 14], LoptrianDarkBishop, [Hel, Jormungand, Rewarp], 16, False, [$00, $00, $00, $00]
+					UNIT LoptrianSorcerer1, Enemy, [2, 17], [2, 17], LoptrianDarkBishop, [Hel, Jormungand, Rewarp], 16, False, [$00, $00, $00, $00]
+				UNIT
+			
+				_SniperHeroReinforcementsCameraCoordinates ; 99/F9D7
+					.byte 8, 7
+			
+				_SniperHeroReinforcementsGroup ; 99/F9D9
+					UNIT SniperEnemy, Enemy, [11, 37], [11, 37], LoptrianDarkBishop, [VeninBow], 20, False, [$00, $00, $00, $00]
+					UNIT Hero3, Enemy, [15, 37], [15, 37], LoptrianDarkBishop, [SleepEdge], 20, False, [$00, $00, $00, $00]
+				UNIT
+			
+				_StartingPositions ; 99/FA03
+					.byte 19, 34
+					.byte 1, 33
+					.byte 20, 34
+					.byte 2, 33
+					.byte 21, 34
+					.byte 3, 33
+					.byte 22, 34
+					.byte 4, 33
+					.byte 23, 34
+					.byte 5, 33
+					.byte 24, 34
+					.byte 2, 34
+					.byte 21, 35
+					.byte 3, 34
+					.byte 22, 35
+					.byte 4, 34
+				.byte $FF
+			
+				_Chest1 VANILLA_CHEST MasterSeal, [3, 25] ; 99/FA24
+				_Chest2 VANILLA_CHEST StrengthRing, [5, 25] ; 99/FA68
+				_Chest3 VANILLA_CHEST ShieldRing, [4, 26] ; 99/FAAC
+
+    .endsection Chapter24xDataSection
+
+.endif ; GUARD_FE5_CHAPTER24x

@@ -1,0 +1,84 @@
+character stats
+
+Neill - Main Lord
+Knight Errant (Footlocked, 6 Move)
+Joins in Chapter 1
+D/C Swords, C/E Lances
+FCM: 3   Skills: Miracle
+Accost Prf Lance. Gives a small speed boost
+Son of a knight of the Weissritter, escaped Belhalla after fighting for its freedom and now helps the people of Silesse.
+
+Seadna - Pegasus Rider
+Joins in Chapter 1
+E Swords/D+25 Lances
+FCM: 1  Skills: Adept
+A self-taught pegasus rider. She forgoed stable employment in the corps for the thrill of being a mercenary. She took a few jobs with Storm Cabal
+before pledging herself to the cause full-time. She's smitten with Neill.
+
+Otto - Bow Knight
+Joins in Chapter 1
+C Bows
+FCM: 5  Skills: None
+High Skill, Low Strength
+Son of a Beigenritter scoundrel who left him and his mother to fend for themselves. His harsh, ugly upbringing has left him humorless, machine-like.
+Neill and his father saved his life, and he joined Storm Cabal to pay them back.
+
+Barra - Pirate
+Joins in Chapter 1
+FCM: 2  Skills: Vantage
+D Axes
+Huge HP and Strength, not a lot of anything else
+A former pirate from Orgahil and longtime member of Storm Cabal. He acts as a sort of mentor to Neill.
+
+Gerald - Sword Armor
+Joins in Chapter 2
+A stoic individual. He was there when Silesse first fell in 759. The most consistent thing about him is his use of fire swords.
+
+Edith - Wind Mage
+Joins in Chapter 3
+FCM: 0
+D+25 Wind, E Fire/Thunder
+Low Speed and Magic, decent skill and good bulk. Pure Waters recommended for combat, incentivises getting them
+Brave + Vantage Wind Prf. 0 might, high hit
+A mercenary from Grannvale hired to guard suspicious transports. She catches wind of some shady dealings, and abandons her duty
+in the middle of battle. She's captured by bandits, and then freed and recruited by Storm Cabal.
+
+Ilse - Female Paladin
+Joins in Chapter 4
+FCM: 1 Skills: None
+B Swords, C Staves
+An curate who works directly for the monarchy.
+blue hair
+
+Waulter - Axe Knight
+Joins in Chapter 4
+FCM: 3
+Balanced Stats
+A Axes, D+40 Swords
+A former occupant of Silesse sent by Grannvale during the war. He regrets a lot.
+red hair
+
+Sionnach - Baron
+Joins in Chapter 5
+The bastard son of Count Daccar from FE4. He has been steadily climbing the corporate ladder using his genealogical status and fast-talking skills.
+He becomes a benefactor of Storm Cabal and subsequently joins their ranks.
+
+Ghu - Soldier
+Joins in Chapter 6 if certain conditions are met
+secret character oooooo they wear a mask oooooo
+
+Fee - Pegasus Knight
+Joins in Chapter 7
+Y'know, from FE4? Her family is out right now. It's been a rough couple of months.
+
+[[[BOSSES]]]
+Maurice - Warrior
+Fachtna - Rogue
+Killian - General
+Devereux - Paladin
+Sluggo - Hero
+Grubbla - Berserker
+Werner - Sorcerer
+Durchval - Dark Bishop
+Agnes - Huntress (Inf. Sword/Bow)
+

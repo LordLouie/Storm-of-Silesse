@@ -1,0 +1,745 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER22 :?= false
+.if (!GUARD_FE5_CHAPTER22)
+  GUARD_FE5_CHAPTER22 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter22EventsSection
+
+			eventChapter22Events ; 8C/F611
+
+					_FlagCohenBattleQuote 					= enum.enum($05)
+					_FlagSaiasBattleQuote 					= enum.enum()
+					_FlagReinhardtBattleQuote 			= enum.enum()
+					_FlagCloseToCastle				 			= enum.enum()
+					_FlagBridgeCrossed				 			= enum.enum()
+					_FlagReinhardtAIChange		 			= enum.enum()
+					_FlagOlwenReinhardtTalk				 	= enum.enum()
+
+					_FlagPureWaterHouseVisit				= enum.enum($21)
+					_FlagWarpHouseVisit							= enum.enum()
+					_FlagRescueHouseVisit						= enum.enum()
+					_FlagPureWaterHouseDestroy			= enum.enum()
+					_FlagWarpHouseDestroy						= enum.enum()
+					_FlagRescueHouseDestroy					= enum.enum()
+					_FlagBridgeRaised								= enum.enum()
+					_FlagSaiasLeave									= enum.enum()
+
+				_OpeningEventDefinitions ; 8C/F611
+					EVENT FlagAlwaysZero, _OpeningEvent
+						CMP_WORD wCurrentTurn, 0
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_TurnEventDefinitions ; 8C/F61E
+					EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+						CHECK_IF_BOSS_DEAD Cohen
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
+						TEST_FLAG_SET FlagPlayerDeath
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _Reinforcements
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD_RANGE wCurrentTurn, 10, 20
+					END_DEFINITION
+					EVENT _FlagBridgeRaised, _SaiasApproachDialogue
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_SET _FlagBridgeCrossed
+					END_DEFINITION
+					EVENT _FlagReinhardtAIChange, _ReinhardtGroupAIChange
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_SET _FlagBridgeRaised
+					END_DEFINITION
+					EVENT _FlagSaiasLeave, _SaiasLeave
+						CMP_WORD wCurrentPhase, Enemy
+						CMP_WORD wCurrentTurn, 40
+					END_DEFINITION
+					EVENT _FlagSaiasLeave, _SaiasLeave
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_SET _FlagCloseToCastle
+					END_DEFINITION
+					EVENT _FlagSaiasLeave, _SaiasLeave
+						CMP_WORD wCurrentPhase, Enemy
+						TEST_FLAG_SET FlagBossDeath
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_TalkEventDefinitions ; 8C/F68D
+					EVENT _FlagOlwenReinhardtTalk, _OlwenReinhardtTalk
+						CHECK_CHARS2 Olwen, Reinhardt
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_LocationEventDefinitions ; 8C/F68D
+					EVENT _FlagPureWaterHouseVisit, _PureWaterHouseVisit
+						macroECCheckCoordinates [8, 11]
+						CMP_WORD wCurrentPhase, Player
+					END_DEFINITION
+					EVENT _FlagPureWaterHouseDestroy, _PureWaterHouseDestroy
+						macroECCheckCoordinates [8, 11]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagWarpHouseVisit, _WarpHouseVisit
+						macroECCheckCoordinates [1, 22]
+						CMP_WORD wCurrentPhase, Player
+					END_DEFINITION
+					EVENT _FlagWarpHouseDestroy, _WarpHouseDestroy
+						macroECCheckCoordinates [1, 22]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagRescueHouseVisit, _RescueHouseVisit
+						macroECCheckCoordinates [28, 27]
+						CMP_WORD wCurrentPhase, Player
+					END_DEFINITION
+					EVENT _FlagRescueHouseDestroy, _RescueHouseDestroy
+						macroECCheckCoordinates [28, 27]
+						CMP_WORD wCurrentPhase, Enemy
+					END_DEFINITION
+					EVENT _FlagBridgeRaised, _SaiasApproachDialogue
+					END_DEFINITION
+					EVENT FlagAlwaysZero, _EndingEvent
+						macroECCheckCoordinates [28, 3]
+						CMP_WORD wCurrentPhase, Player
+						CMP_WORD aSelectedCharacterBuffer.Character, Neill
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_BeforeActionEventDefinitions ; 8C/F739
+				END_DEFINITION_ARRAY
+			
+				_AfterActionEventDefinitions ; 8C/F73B
+					EVENT _FlagBridgeCrossed, eventMapDeathQuoteDummyEvent
+						CMP_WORD wCurrentPhase, Player
+						macroECCheckCoordinateRanges [21, 1], [30, 23]
+					END_DEFINITION
+					EVENT _FlagCloseToCastle, eventMapDeathQuoteDummyEvent
+						CMP_WORD wCurrentPhase, Player
+						macroECCheckCoordinateRanges [26, 2], [30, 6]
+					END_DEFINITION
+				END_DEFINITION_ARRAY
+			
+				_BattleEventDefinitions ; 8C/F76B
+					macroECBossQuote _FlagCohenBattleQuote, Cohen
+					macroECBossQuote _FlagSaiasBattleQuote, Saias
+					macroECBossQuote _FlagReinhardtBattleQuote, Reinhardt
+				END_DEFINITION_ARRAY
+			
+				_ShopEventDefinitions ; 8C/F785
+					macroECShop eventChapter22Data._Armory
+					macroECShop eventChapter22Data._Vendor
+				END_DEFINITION_ARRAY
+			
+				_rlUnknown8CF7AD ; 8C/F7AD
+			
+					.al
+					.xl
+					.autsiz
+					.databank ?
+			
+					lda #structCharacterDataRAM.MovementAI
+					sta wEventEngineParameter1,b
+			
+					lda #$15
+					sta wEventEngineParameter2,b
+			
+					jsl rlASMCCountAllUnitsWithCharacterDataByte
+			
+					lda wEventEngineParameter1,b
+					bne +
+			
+						sec
+						rtl
+			
+					+
+					clc
+					rtl
+			
+				_Reinforcements ; 8C/F7C6
+					SCROLL_CAMERA_ADDRESS eventChapter22Data._ReinforcementsCameraCoordinates
+					YIELD
+			
+					LOAD_GROUP_BLOCKABLE eventChapter22Data._ReinforcementsGroup
+					WAIT_MOVE
+					YIELD
+			
+					YIELD_UNK
+				END2
+			
+				_SaiasLeave ; 8C/F7D3
+					GET_CHARACTER_COORDS Saias
+					SCROLL_CAMERA 4
+					YIELD
+			
+					HALT_UNTIL_WORD_SKIPPABLE aSoundSystem.aUnknown0004BA, $0000
+			
+					RESET_PHASE_MUSIC
+					YIELD
+			
+					PLAY_SOUND_FORCED $00F7
+
+					macroASMCCheckIfUnitAtCoords Cohen, [28, 3]
+					JUMP_FALSE +
+
+						GET_CHARACTER_COORDS Cohen
+						SCROLL_CAMERA 4
+						YIELD
+			
+						DIALOGUE dialogueChapter22SaiasLeaveCohenAlive
+						YIELD
+
+						macroScriptedWarpStaff Cohen, Saias
+
+						macroASMCRemoveUnit Saias
+						JUMP ++
+			
+					+
+					GET_CHARACTER_COORDS Saias
+					SCROLL_CAMERA 4
+					YIELD
+			
+					DIALOGUE dialogueChapter22SaiasLeaveCohenDead
+					YIELD
+
+					macroScriptedRewarpStaff Saias
+
+					macroASMCRemoveUnit Saias
+
+					+
+				END2
+			
+				_ReinhardtGroupAIChange ; 8C/F8EC
+					macroASMCSetCharacterDataByte Reinhardt, MovementAI, $25
+					macroASMCSetCharacterDataByte Reinhardt, MovementAIOffset, $00
+
+					macroASMCSetCharacterDataByte Gelbenritter, MovementAI, $26
+					macroASMCSetCharacterDataByte Gelbenritter, MovementAIOffset, $00
+				END2
+			
+				_PureWaterHouseVisit ; 8C/F94D
+					macroItemHouse dialogueChapter22VillagerPureWater, PureWater, [8, 11], $0021
+				END2
+			
+				_WarpHouseVisit ; 8C/F9B0
+					macroItemHouse dialogueChapter22VillagerWarpStaff, Warp, [1, 22], $0021
+				END2
+			
+				_RescueHouseVisit ; 8C/FA13
+					macroItemHouse dialogueChapter22VillagerRescueStaff, Rescue, [28, 27], $0021
+				END2
+			
+				_PureWaterHouseDestroy ; 8C/FA76
+					macroDestroyHouseByTileChangeID 0
+				END1
+			
+				_WarpHouseDestroy ; 8C/FAA5
+					macroDestroyHouseByTileChangeID 1
+				END1
+			
+				_RescueHouseDestroy ; 8C/FAD4
+					macroDestroyHouseByTileChangeID 2
+				END1
+			
+				_SaiasApproachDialogue ; 8C/FB03
+					EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, $00
+					JUMP_FALSE _JustBridgeDrop
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $39
+					YIELD
+
+					macroASMCCountAllUnitsUncapturedAlive Saias
+					JUMP_FALSE +
+			
+						GET_CHARACTER_COORDS Saias
+						SCROLL_CAMERA 4
+						YIELD
+			
+						DIALOGUE dialogueChapter22SaiasBridge
+						YIELD
+			
+						JUMP ++
+			
+					+
+					SCROLL_CAMERA_COORDS [28, 3], 4
+					YIELD
+
+					macroDialogueWithBG dialogueChapter22NoSaiasBridge, 1
+			
+					CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+					YIELD
+			
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					+
+					SCROLL_CAMERA_COORDS [10, 20], 4
+					YIELD
+
+					macroASMCSetTileToDoor $0020, [10, 19]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [10, 19]
+					JUMP_FALSE +
+
+						MOVE_COORDS [10, 19], [10, 19], 1
+
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [10, 20]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [10, 20]
+					JUMP_FALSE +
+
+						MOVE_COORDS [10, 20], [10, 20], 1
+						
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [10, 21]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [10, 21]
+					JUMP_FALSE +
+
+						MOVE_COORDS [10, 21], [10, 21], 1
+						
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [9, 19]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [9, 19]
+					JUMP_FALSE +
+
+						MOVE_COORDS [9, 19], [9, 19], 1
+						
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [9, 20]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [9, 20]
+					JUMP_FALSE +
+
+						MOVE_COORDS [9, 20], [9, 20], 1
+					
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [9, 21]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [9, 21]
+					JUMP_FALSE +
+
+						MOVE_COORDS [9, 21], [9, 21], 1
+					
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [11, 19]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [11, 19]
+					JUMP_FALSE +
+
+						MOVE_COORDS [11, 19], [11, 19], 1
+					
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [11, 20]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [11, 20]
+					JUMP_FALSE +
+
+						MOVE_COORDS [11, 20], [11, 20], 1
+					
+						WAIT_MOVE
+						YIELD
+			
+					+
+					macroASMCSetTileToDoor $0020, [11, 21]
+					YIELD_UNK
+
+					macroASMCWriteUnitAtTileToBuffer [11, 21]
+					JUMP_FALSE +
+
+						MOVE_COORDS [11, 21], [11, 21], 1
+					
+						WAIT_MOVE
+						YIELD
+			
+					+
+					PLAY_EXTENDED_SOUND $6D
+					macroTileChangeByID 3
+
+					macroASMCCountAllUnitsUncapturedAlive Reinhardt
+					JUMP_FALSE +
+			
+						GET_CHARACTER_COORDS Reinhardt
+						SCROLL_CAMERA 4
+						YIELD
+			
+						DIALOGUE dialogueChapter22ReinhardtBridge
+						YIELD
+			
+					+
+				END2
+			
+				_JustBridgeDrop ; 8C/FDC3
+					macroDestroyHouseByTileChangeID 3
+				END1
+			
+				_OlwenReinhardtTalk ; 8C/FDF2
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $33
+					YIELD
+			
+					DIALOGUE dialogueChapter22ReinhardtOlwen
+
+					macroDialogueContinue dialogueChapter22ReinhardtOlwen2
+
+					macroASMCActiveUnitSetUnitState UnitStateHidden
+
+					macroGiveActiveUnitItem BlessedSword
+
+					macroASMCActiveUnitUnsetUnitState UnitStateHidden
+				END2
+			
+				_PrepGroups ; 8C/FE50
+					.long eventChapter22Data._PrepGroup
+				.word 0
+			
+				_OpeningEvent ; 8C/FE55
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $39
+					YIELD
+
+					macroChapterTitlePopup dialogueChapter22Title
+
+					macroASMCSetBitsCharacterDataWord FriegeGeneral1, Skills2, Skill2Charm
+			
+					SCROLL_CAMERA_COORDS [28, 3], 4
+					YIELD
+
+					macroDialogueWithBG dialogueChapter22SaiasCohen, 1
+			
+					CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+					YIELD
+			
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					LOAD_GROUP eventChapter22Data._SaiasGroup
+					WAIT_MOVE
+					YIELD
+
+					macroASMCCountAllUnitsAlive Olwen
+					JUMP_FALSE ++
+
+						MOVE_CHAR Saias, [28, 6], 1
+			
+						WAIT_MOVE
+						YIELD
+			
+						DIALOGUE dialogueChapter22SaiasReinhardt
+
+						macroASMCCountPlayerUnitsUncapturedAlive Olwen
+						JUMP_FALSE +
+			
+							STORE_LONG lEventEngineLongParameter, dialogueChapter22SaiasReinhardt2
+							CALL_ASM_LOOP rlASMCDialogueContinue
+			
+						+
+						YIELD
+
+						MOVE_CHAR Saias, [28, 4], 1
+			
+						WAIT_MOVE
+						YIELD
+			
+					+
+					LOAD_GROUP eventChapter22Data._CohenGroup
+					WAIT_MOVE
+					YIELD
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $33
+					YIELD
+			
+					GET_CHARACTER_COORDS Neill
+					SCROLL_CAMERA 4
+					YIELD
+			
+					DIALOGUE dialogueChapter22LeifIntro
+					YIELD
+				END2
+			
+				_EndingEvent ; 8C/FF31
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 16
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCSaveActiveUnitDataChapterEnd
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+			
+					SET_MUSIC $42
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCSaveChapterAndTurncount
+
+					macroDialogueWithBG dialogueChapter22LeifClosing, 1
+					YIELD
+			
+					HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+			
+					FADE_OUT 1
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+			
+					STORE_BYTE bBufferINIDISP, $00
+
+					macroASMCCountAllUnitsAlive Dean
+					JUMP_FALSE +
+
+						macroASMCCountAllUnitsAlive Linoan
+						JUMP_TRUE +
+			
+							STORE_WORD wCurrentMapMusic, $0000
+							PLAY_SOUND_FORCED $00E0
+							PAUSE_SKIPPABLE 32
+							YIELD
+			
+							SET_MUSIC $42
+							YIELD
+
+							macroDialogueWithBG dialogueLinoanDeathDean, 3
+							YIELD
+			
+							HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+			
+							FADE_OUT 1
+							YIELD
+			
+							CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+			
+							STORE_BYTE bBufferINIDISP, $00
+
+							macroASMCRemoveUnit Dean
+			
+					+
+					FADE_OUT 1
+					YIELD
+			
+					CALL_ASM_LOOP rlASMCChapterEnd
+				END1
+
+    .endsection Chapter22EventsSection
+
+    .section Chapter22DataSection
+
+			eventChapter22Data ; B1/8425
+			
+				_PrepGroup ; B1/8425
+					.byte 24, 23
+			
+					UNIT FriegeArmoredSword3, Enemy, [18, 17], [18, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredSword3, Enemy, [19, 17], [19, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredSword3, Enemy, [20, 17], [20, 17], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredSword3, Enemy, [22, 22], [22, 22], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredSword3, Enemy, [22, 23], [22, 23], Cohen, [Greatsword, KillingEdge], 19, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredAxe2, Enemy, [18, 15], [18, 15], Cohen, [Hammer, Poleax], 20, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredAxe2, Enemy, [19, 15], [19, 15], Cohen, [Hammer, Poleax], 20, False, [$02, $15, $00, $00]
+					UNIT FriegeArmoredAxe2, Enemy, [20, 15], [20, 15], Cohen, [Hammer, Poleax], 20, False, [$02, $15, $00, $00]
+					UNIT FriegeArchKnight2, Enemy, [18, 13], [18, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
+					UNIT FriegeArchKnight2, Enemy, [19, 13], [19, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
+					UNIT FriegeArchKnight2, Enemy, [20, 13], [20, 13], Cohen, [Greatbow, KillerBow], 16, False, [$02, $15, $00, $00]
+					UNIT FriegeBallista5, Enemy, [4, 27], [4, 27], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+					UNIT FriegeBallista5, Enemy, [25, 26], [25, 26], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+					UNIT FriegeBallista5, Enemy, [22, 6], [22, 6], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+					UNIT FriegeBallista5, Enemy, [28, 15], [28, 15], Cohen, [IronBallista], 14, False, [$01, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [7, 26], [7, 26], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [8, 26], [8, 26], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [7, 27], [7, 27], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+					UNIT SupplyCorpsMageKnight, Enemy, [8, 27], [8, 27], Cohen, [Ballista], 20, False, [$01, $03, $00, $00]
+					UNIT FriegeGeneral1, Enemy, [8, 25], [8, 25], Cohen, [Hammer, Ridersbane], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeBishop2, Enemy, [7, 28], [7, 28], Cohen, [Bolting, Thoron, Physic], 10, False, [$00, $07, $00, $00]
+					UNIT FriegeBishop2, Enemy, [8, 28], [8, 28], Cohen, [Bolting, Thoron, Physic], 10, False, [$00, $07, $00, $00]
+					UNIT FriegePriest1, Enemy, [9, 24], [9, 24], Cohen, [Physic, Silence, Heal], 16, False, [$00, $07, $00, $00]
+					UNIT FriegeMyrmidon, Enemy, [6, 23], [6, 23], Cohen, [ParagonSword, Vulnerary], 16, False, [$00, $03, $00, $00]
+					UNIT FriegeSniper, Enemy, [4, 23], [4, 23], Cohen, [MasterBow], 17, False, [$00, $03, $00, $00]
+					UNIT FriegeSoldier2, Enemy, [5, 15], [5, 15], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+					UNIT FriegeSoldier2, Enemy, [7, 18], [7, 18], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+					UNIT FriegeSoldier2, Enemy, [2, 19], [2, 19], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+					UNIT FriegeSoldier2, Enemy, [7, 15], [7, 15], Cohen, [KillerLance, Vulnerary, PureWater], 6, False, [$02, $0B, $00, $00]
+					UNIT FriegePaladin2, Enemy, [27, 4], [27, 4], Cohen, [Ridersbane, Armorslayer], 20, False, [$00, $03, $00, $00]
+					UNIT FriegePaladin2, Enemy, [28, 5], [28, 5], Cohen, [Ridersbane, Armorslayer], 20, False, [$00, $03, $00, $00]
+					UNIT FriegePaladin2, Enemy, [29, 4], [29, 4], Cohen, [Ridersbane, Armorslayer], 20, False, [$00, $03, $00, $00]
+					UNIT Reinhardt, Enemy, [28, 7], [28, 7], Cohen, [DireThunder, MasterSword, Vulnerary], 20, False, [$18, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [28, 10], [28, 10], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [28, 9], [28, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [28, 8], [28, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [27, 9], [27, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [29, 9], [29, 9], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [29, 8], [29, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [27, 7], [27, 7], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [29, 7], [29, 7], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [27, 6], [27, 6], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [29, 6], [29, 6], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+					UNIT Gelbenritter, Enemy, [27, 8], [27, 8], Cohen, [Thoron, Vulnerary], 18, False, [$00, $03, $00, $00]
+				UNIT
+			
+				_ReinforcementsCameraCoordinates ; B1/8799
+					.byte 23, 19
+			
+				_ReinforcementsGroup ; B1/879B
+					UNIT FriegeBowKnight2, Enemy, [30, 18], [30, 18], Cohen, [Greatbow], 17, False, [$00, $00, $00, $00]
+					UNIT FriegeLanceKnight2, Enemy, [30, 19], [30, 19], Cohen, [Greatlance], 18, False, [$00, $00, $00, $00]
+					UNIT FriegeArmoredAxe4, Enemy, [30, 20], [30, 20], Cohen, [BattleAxe], 15, False, [$00, $00, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [19, 16], [19, 16], Cohen, [BattleAxe], 19, False, [$00, $00, $00, $00]
+				UNIT
+			
+				_UnusedCoordinates1 ; B1/87ED
+					.byte 8, 7
+			
+				_SaiasGroup ; B1/87EF
+					UNIT Saias, Enemy, [28, 3], [28, 4], Cohen, [Sleep, Fortify, Silence, Light], 12, False, [$01, $03, $00, $00]
+				UNIT
+			
+				_UnusedCoordinates2 ; B1/8805
+					.byte 8, 7
+			
+				_CohenGroup ; B1/8807
+					UNIT Cohen, Enemy, [28, 3], [28, 3], Cohen, [Blizzard, Berserk, Restore, MasterLance], 20, True, [$01, $03, $00, $80]
+				UNIT
+			
+				_StartingPositions ; B1/881D
+					.byte 2, 3
+					.byte 5, 5
+					.byte 5, 4
+					.byte 4, 5
+					.byte 4, 4
+					.byte 4, 3
+					.byte 4, 2
+					.byte 3, 4
+					.byte 3, 3
+					.byte 3, 2
+					.byte 2, 4
+					.byte 2, 5
+					.byte 2, 1
+					.byte 1, 4
+					.byte 1, 3
+					.byte 1, 2
+				.byte $FF
+			
+				_Armory ; B1/883E
+					SHOP [5, 28], [KillingEdge, KillerLance, KillerAxe, KillerBow]
+			
+				_Vendor ; B1/8850
+					SHOP [3, 27], [Mend, Elfire, Light, DoorKey, MasterSeal]
+
+    .endsection Chapter22DataSection
+
+    .section Chapter22WorldMapEventsSection
+
+			eventChapter22WorldMapEvents ; E7/F412
+			
+				SCROLL_CAMERA_COORDS [12, 8], 4
+				SET_CURSOR_POSITION
+				YIELD
+			
+				PLAY_SOUND_FORCED $00E0
+				PAUSE_SKIPPABLE 32
+				YIELD
+			
+				SET_MUSIC $2A
+				YIELD
+			
+				FADE_IN 1
+				YIELD
+			
+				SCROLL_CAMERA_COORDS [18, 8], 1
+				SET_CURSOR_POSITION
+				YIELD
+			
+				macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+			
+				macroWMDrawSpecialMarker [96, 120], WMMarkerTable.Circle, 0
+
+				macroASMCWMDialogue dialogueChapter22WorldMap1
+			
+				HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+			
+				macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+				macroWMClearSpecialMarker 0
+			
+				PAUSE_SKIPPABLE 1
+				YIELD
+			
+				PAUSE_SKIPPABLE 32
+			
+				macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+			
+				macroWMDrawSpecialMarker [112, 128], WMMarkerTable.Circle, 0
+
+				macroASMCWMDialogue dialogueChapter22WorldMap2
+			
+				HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+			
+				macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+				macroWMClearSpecialMarker 0
+			
+				PAUSE_SKIPPABLE 1
+			  YIELD
+			
+				FADE_OUT 2
+				YIELD
+			
+				CALL_ASM_LOOP rlASMCEndWMEvents
+				YIELD
+			END1
+
+    .endsection Chapter22WorldMapEventsSection
+
+.endif ; GUARD_FE5_CHAPTER22

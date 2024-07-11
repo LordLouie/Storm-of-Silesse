@@ -1,0 +1,5 @@
+- boss music doesn't play a lot of the time.
+- edith events for her dying or not being recruited refuse to work.
+- after the opening event, neill and barra are placed in the upper left corner where they cannot be moved.
+- scripted battle with agnes isn't in.
+- some portraits aren't in, but complete and compressed and whatnot.

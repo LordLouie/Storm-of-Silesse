@@ -1,0 +1,594 @@
+
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER02 :?= false
+.if (!GUARD_FE5_CHAPTER02)
+  GUARD_FE5_CHAPTER02 := true
+
+  ; Definitions
+
+    .weak
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter02EventsSection
+
+      eventChapter02Events ; 99/81B4
+
+        ; Flag definitions
+
+          ; TODO: map installer definitions
+
+          _FlagBucksBattleQuote = enum.enum($05)
+		   _FlagEdithBattleQuote = enum.enum()
+
+          _FlagVillageAttacked = enum.enum($0A)
+		  
+          _FlagGeraldNeillTalk = enum.enum()
+          _FlagBarraEdithTalk  = enum.enum()
+		  _FlagKillianDead     = enum.enum()
+          _FlagGeraldHouse       = enum.enum()
+          _FlagSailaneScrollHouseVisit   = enum.enum()
+          _FlagJavelinHouseVisit   = enum.enum()
+          _FlagBraveSwordHouseVisit   = enum.enum()
+          _FlagSilverLanceHouseVisit   = enum.enum()
+          _FlagWreckageExamination   = enum.enum()
+
+        _OpeningEventDefinitions ; 99/81B4
+          EVENT FlagAlwaysZero, _OpeningEvent
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TurnEventDefinitions ; 99/81C1
+          EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+            CHECK_IF_BOSS_DEAD Killian
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+		 EVENT FlagAlwaysZero, _EdithWhines
+		  CHECK_NUM_UNITS_GTE Edith, 1
+		  TEST_FLAG_UNSET _FlagBarraEdithTalk
+			CMP_WORD wCurrentPhase, Enemy
+    	    CMP_WORD wCurrentTurn, 2
+			END_DEFINITION
+          EVENT FlagAlwaysZero, _1stSupplyCorpsReinforcements
+            CMP_WORD wCurrentTurn, 6
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _2ndSupplyCorpsReinforcements
+            CMP_WORD wCurrentTurn, 12
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _3rdSupplyCorpsReinforcements
+            CMP_WORD wCurrentTurn, 18
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TalkEventDefinitions ; FD/8669
+          EVENT _FlagGeraldNeillTalk, _GeraldNeillTalk
+            CHECK_CHARS2 Gerald, Neill
+          END_DEFINITION
+          EVENT _FlagGeraldNeillTalk, _NeillGeraldTalk
+            CHECK_CHARS2 Neill, Gerald
+          END_DEFINITION
+          EVENT _FlagBarraEdithTalk, _BarraEdithTalk
+            CHECK_CHARS2 Barra, Edith
+		  END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _LocationEventDefinitions ; 99/820C
+		  EVENT _FlagJavelinHouseVisit, _JavelinHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [2, 19]
+          END_DEFINITION
+          EVENT _FlagSailaneScrollHouseVisit, _SailaneScrollHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [4, 16]
+          END_DEFINITION
+          EVENT _FlagSilverLanceHouseVisit, _SilverLanceHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [18, 6]
+          END_DEFINITION
+		  EVENT _FlagBraveSwordHouseVisit, _BraveSwordHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [15, 36]
+          END_DEFINITION
+          EVENT _FlagGeraldHouse, _GeraldHouseGerald
+            macroECCheckCoordinates [16, 4]
+            CMP_WORD aSelectedCharacterBuffer.Character, Gerald
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _GeraldHouseOther
+            TEST_FLAG_UNSET _FlagGeraldHouse
+            macroECCheckCoordinates [16, 4]
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BeforeActionEventDefinitions ; 99/8301
+        EVENT FlagAlwaysZero, _PlayerLoss
+        CMP_WORD aSelectedCharacterBuffer.Character, Killian
+        macroECCheckCoordinateRanges [5, 1], [8, 1]
+        CMP_WORD wCurrentPhase, Enemy
+        END_DEFINITION
+        EVENT FlagAlwaysZero, _PlayerLoss
+        CMP_WORD aSelectedCharacterBuffer.Character, Killian
+        macroECCheckCoordinateRanges [1, 3], [1, 5]
+        CMP_WORD wCurrentPhase, Enemy
+        END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _AfterActionEventDefinitions ; 99/8307
+        EVENT FlagAlwaysZero, _EndingEvent
+        TEST_FLAG_SET _FlagKillianDead
+        END_DEFINITION
+          EVENT _FlagWreckageExamination, _WreckageExamination
+            macroECCheckCoordinates [6, 19]
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _BattleEventDefinitions ; 99/8309
+          macroECBossQuote _FlagBucksBattleQuote, Killian
+		  macroECBossQuote _FlagEdithBattleQuote, Edith
+        END_DEFINITION_ARRAY
+
+        _ShopEventDefinitions ; 99/830F
+          macroECShop eventChapter02Data._Vendor
+        END_DEFINITION_ARRAY
+
+		_GeraldNeillTalk ; FD/8DCE
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4A
+          YIELD
+
+          DIALOGUE geraldrecruitment
+          YIELD
+
+          macroASMCChangeAllegianceToPlayer Gerald
+          macroASMCSetCharacterDataWord Gerald, Leader, Neill
+        END2
+
+        _NeillGeraldTalk ; FD/8DE4
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4A
+          YIELD
+
+          DIALOGUE geraldrecruitment
+          YIELD
+
+          macroASMCChangeAllegianceToPlayer Gerald
+          macroASMCSetCharacterDataWord Gerald, Leader, Neill
+        END2
+		
+	    _EdithWhines ; FD/B384
+		  GET_CHARACTER_COORDS Edith
+	   	  SCROLL_CAMERA 4
+		  YIELD
+			
+		  RESET_PHASE_MUSIC
+		  YIELD
+				
+		  macroDialogue edithwhines
+    	END2
+
+        _BarraEdithTalk ; FD/8E18
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $4B
+          YIELD
+
+          DIALOGUE edithrecruitment
+          YIELD
+
+          macroASMCChangeAllegianceToPlayer Edith
+          macroASMCSetCharacterDataWord Edith, Leader, Neill
+		  
+        END2
+		
+		END_DEFINITION
+		END_DEFINITION_ARRAY
+
+        _JavelinHouseVisit ; 99/835B
+          macroItemHouse javelinhouse, Javelin, [2, 19], $0021
+        END2
+
+        _SailaneScrollHouseVisit ; 99/8364
+          macroItemHouse sailanescrollhouse, SailaneScroll, [4, 16], $0021
+        END2
+
+        _SilverLanceHouseVisit ; 99/83C7
+          macroItemHouse silverlancehouse, SilverLance, [18, 6], $0021
+        END2
+
+        _BraveSwordHouseVisit ; 99/83D0
+          macroItemHouse braveswordhouse, BraveSword, [15, 36], $0021
+        END2
+
+        _WreckageExamination
+        macrodialogue wreckageexamination
+        END2
+
+        _GeraldHouseOther ; 99/8433
+          macroDialogue purewaterhousenormal
+        END2
+
+        _GeraldHouseGerald ; 99/843C
+		  macroItemHouse purewaterhousegerald, PureWater, [16, 4], $0021
+        END2
+
+        _1stSupplyCorpsReinforcements ; 99/85A3
+          SCROLL_CAMERA_ADDRESS eventChapter02Data._1stSupplyCorpsReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter02Data._1stSupplyCorpsReinforcementsGroup
+          WAIT_MOVE
+
+          YIELD
+          YIELD_UNK
+        END2
+
+        _2ndSupplyCorpsReinforcements ; 99/85B0
+          SCROLL_CAMERA_ADDRESS eventChapter02Data._2ndSupplyCorpsReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter02Data._2ndSupplyCorpsReinforcementsGroup
+          WAIT_MOVE
+		  
+          YIELD
+          YIELD_UNK
+        END2
+
+        _3rdSupplyCorpsReinforcements ; 99/85BD
+          SCROLL_CAMERA_ADDRESS eventChapter02Data._3rdSupplyCorpsReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter02Data._3rdSupplyCorpsReinforcementsGroup
+          WAIT_MOVE
+		  
+          YIELD
+          YIELD_UNK
+        END2
+
+        _OpeningEvent ; 99/85CA
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+          macroLoadPlayerUnitsByStartingPositions
+
+          SET_CAMERA_POSITION [9, 35]
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $39
+          YIELD
+
+          macroChapterTitlePopup dialogueChapter02Title
+
+          SCROLL_CAMERA_ADDRESS eventChapter02Data._KillianCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter02Data._KillianGroup
+          WAIT_MOVE
+          YIELD
+
+          WAIT_MOVE
+          YIELD
+
+          DIALOGUE dialogueChapter02Opening1
+          YIELD
+
+          LOAD_GROUP eventChapter02Data._PirateGroup1
+          WAIT_MOVE
+          YIELD
+		  
+		  macroASMCSetCharacterDataWordBitsIfCharacterDataWord LeadershipStars, 1, Coordinates, pack([5, 22])
+		  WAIT_MOVE
+          YIELD
+
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $31
+          YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter02Data._NeillCameraCoordinates
+          YIELD
+
+          macroASMCCountAllUnitsUncapturedAlive Barra
+          JUMP_FALSE +
+
+            DIALOGUE dialogueChapter02Opening2A
+            YIELD
+			
+          SCROLL_CAMERA_ADDRESS eventChapter02Data._GeraldCameraCoordinates
+          YIELD
+			
+		  macroASMCLoadUnitGroup eventChapter02Data._GeraldGroup
+		  WAIT_MOVE
+          YIELD
+		  
+		  DIALOGUE geraldappears
+		  YIELD
+
+            JUMP _OpeningEvent_End
+
+          +
+          macroASMCCountAllUnitsUncapturedAlive Seadna
+          JUMP_FALSE +
+
+            DIALOGUE dialogueChapter02Opening2B
+            YIELD
+
+		  macroASMCLoadUnitGroup eventChapter02Data._GeraldGroup
+		  WAIT_MOVE
+          YIELD
+		  
+		  DIALOGUE geraldappears
+		  YIELD
+
+            JUMP _OpeningEvent_End
+
+          +
+          DIALOGUE dialogueChapter02Opening2C
+          YIELD
+
+		  macroASMCLoadUnitGroup eventChapter02Data._GeraldGroup
+		  WAIT_MOVE
+          YIELD
+		  
+		  DIALOGUE geraldappears
+		  YIELD
+
+          _OpeningEvent_End
+        END2
+
+        _EndingEvent ; 99/870A
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 16
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $41
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+          macroDialogueWithBG dialogueChapter02Ending1Regular, 1
+		  
+		  CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+		  YIELD
+		  
+	      ADD_WORD wCurrentChapter, Chapter03 - Chapter02 - 1
+          YIELD_UNK
+
+		  HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+          FADE_OUT $01
+          YIELD
+
+		  CALL_ASM_LOOP rlASMCDialogueWithBGEndFadeOut
+
+          STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
+
+          macroASMCUnsetUnitState Gerald, UnitStateCaptured
+
+          _UnitClearList  := [Edith]
+          _UnitClearList ..= []
+
+          .for _Unit in _UnitClearList
+
+            macroASMCCheckUnitStateSet _Unit, UnitStateCaptured
+            JUMP_TRUE +
+
+              macroASMCClearRescue _Unit
+
+              macroASMCUnsetUnitState _Unit, (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved | UnitStateUnknown2)
+              macroASMCSetUnitState _Unit, (UnitStateHidden | UnitStateDisabled)
+
+            +
+          .endfor
+
+          PLAY_SOUND_FORCED $00E7
+          FADE_OUT $01
+          YIELD
+
+          CALL_ASM_LOOP rlASMCChapterEnd
+        END1
+		
+	    _PlayerLoss ; 8C/F5F5
+
+        PLAY_SOUND_FORCED $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $28 ; TODO: music definitions
+        YIELD
+
+        DIALOGUE supplyescapes
+        YIELD
+
+        macroASMCGameOver
+
+        END1
+
+    .endsection Chapter02EventsSection
+
+    .section Chapter02DataSection
+
+      eventChapter02Data ; B1/F91C
+
+        _KillianCameraCoordinates ; B1/F91C
+          .byte [12, 33]
+
+        _KillianGroup ; B1/F91E
+          UNIT Killian, Enemy, [10, 38], [12, 33], Killian, [Longsword, Javelin], 10, true, [$00, $0B, $00, $00]
+		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 33], Killian, [Longlance], 7, false, [$00, $00, $00, $00]
+          UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [13, 33], Killian, [Longlance], 7, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 34], Killian, [Javelin], 5, false, [$00, $00, $00, $00]
+          UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [13, 34], Killian, [Javelin], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [11, 35], Killian, [SteelSword], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [13, 35], Killian, [KillingEdge], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 38], [12, 34], Killian, [Wind], 5, false, [$00, $00, $00, $00]
+		  UNIT Edith, Enemy, [10, 38], [12, 35], Killian, [Grafcalibur, Fire], 5, false, [$03, $00, $00, $00]
+        UNIT
+
+        _3rdSupplyCorpsReinforcementsCameraCoordinates ; B1/F934
+          .byte [12, 33]
+
+        _3rdSupplyCorpsReinforcementsGroup ; B1/F936
+		  UNIT SupplyCorpsMageKnight, Enemy, [10, 38], [11, 33], Killian, [Bolganone, MasterSword], 20, false, [$05, $00, $00, $00]
+		  UNIT SupplyCorpsMageKnight, Enemy, [10, 38], [13, 33], Killian, [Bolganone, MasterSword], 20, false, [$05, $00, $00, $00]
+		  UNIT SupplyCorpsMageKnight, Enemy, [10, 38], [11, 34], Killian, [Bolganone, MasterSword], 20, false, [$05, $00, $00, $00]
+		  UNIT SupplyCorpsMageKnight, Enemy, [10, 38], [13, 34], Killian, [Bolganone, MasterSword], 20, false, [$05, $00, $00, $00]
+		  UNIT SupplyCorpsTroubadour, Enemy, [10, 38], [12, 34], Killian, [KillingEdge, Heal], 15, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsTroubadour, Enemy, [10, 38], [12, 35], Killian, [KillingEdge, Heal], 15, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsCavalier, Enemy, [10, 38], [12, 33],  Killian, [Longsword, Javelin], 15, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsCavalier, Enemy, [10, 38], [11, 35],  Killian, [Longsword, Javelin], 15, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsCavalier, Enemy, [10, 38], [13, 35],  Killian, [Longsword, Javelin], 15, false, [$00, $00, $00, $00]
+        UNIT
+
+        _2ndSupplyCorpsReinforcementsCameraCoordinates ; B1/F9A0
+          .byte [12, 33]
+
+        _2ndSupplyCorpsReinforcementsGroup ; B1/F9A2
+		  UNIT MercenaryMage1, Enemy, [10, 38], [11, 33], Killian, [Wind], 7, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 38], [13, 33], Killian, [Fire], 5, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [12, 33], Killian, [BattleAxe], 7, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [11, 34], Killian, [BattleAxe], 5, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [13, 34], Killian, [BattleAxe], 5, false, [$00, $00, $00, $00]
+		  UNIT SniperEnemy, Enemy, [10, 38], [11, 35], Killian, [SilverBow], 10, false, [$00, $00, $00, $00]
+		  UNIT SniperEnemy, Enemy, [10, 38], [13, 35], Killian, [SilverBow], 10, false, [$00, $00, $00, $00]
+		  UNIT PriestEnemy, Enemy, [10, 38], [12, 34], Killian, [Physic], 5, false, [$00, $00, $00, $00]
+		  UNIT PriestEnemy, Enemy, [10, 38], [12, 35], Killian, [Physic], 5, false, [$00, $00, $00, $00]
+
+        UNIT
+
+        _1stSupplyCorpsReinforcementsCameraCoordinates ; B1/F9E0
+          .byte [12, 33]
+
+        _1stSupplyCorpsReinforcementsGroup ; B1/F9E2
+		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [13, 33], Killian, [SilverSword], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [10, 38], [11, 33], Killian, [SteelSword], 7, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 34], Killian, [Javelin], 7, false, [$00, $00, $00, $00]
+          UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [13, 34], Killian, [Javelin], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 38], [12, 33], Killian, [Wind], 7, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 38], [12, 34], Killian, [Fire], 5, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredBow, Enemy, [10, 38], [11, 35], Killian, [Longbow], 7, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredBow, Enemy, [10, 38], [13, 35], Killian, [Longbow], 5, false, [$00, $00, $00, $00]
+		  UNIT PriestEnemy, Enemy, [10, 38], [12, 35], Killian, [Physic], 5, false, [$00, $00, $00, $00]
+        UNIT
+
+        _NeillCameraCoordinates ; B1/FA4C
+          .byte [3, 1]
+
+        _PirateGroup1 ; B1/FA4E
+		  UNIT BanditBrigand1, Enemy, [16, 13], [16, 13], Maurice, [IronAxe], 2, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [17, 11], [17, 11], Maurice, [SteelAxe, Vulnerary], 5, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [17, 12], [17, 12], Maurice, [IronAxe], 2, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 12], [16, 12], Maurice, [IronAxe], 2, false, [$00, $03, $00, $00]
+		  UNIT BanditBrigand1, Enemy, [8, 22], [8, 22], Maurice, [IronAxe], 2, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [7, 21], [7, 21], Maurice, [IronAxe, Vulnerary], 3, false, [$00, $03, $00, $00]
+		  UNIT BanditHunter, Enemy, [5, 22], [5, 22], Maurice, [SilverBow], 8, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [4, 19], [4, 19], Maurice, [SteelAxe], 5, false, [$00, $03, $00, $00]
+		  UNIT BanditBrigand1, Enemy, [6, 20], [6, 20], Maurice, [HandAxe, Vulnerary], 5, false, [$00, $03, $00, $00]
+		  UNIT BanditBrigand1, Enemy, [1, 10], [1, 10], Maurice, [IronAxe], 5, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [2, 11], [2, 11], Maurice, [IronAxe], 5, false, [$00, $03, $00, $00]
+		  UNIT BanditBrigand1, Enemy, [15, 20], [15, 20], Maurice, [DevilAxe], 5, false, [$00, $02, $00, $00]
+		  UNIT BanditBrigand1, Enemy, [17, 21], [17, 21], Maurice, [HandAxe], 3, false, [$00, $02, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 22], [16, 22], Maurice, [IronAxe], 2, false, [$00, $02, $00, $00]
+        UNIT
+
+        _PirateGroup2CameraCoordinates ; B1/FA64
+          .byte [11, 18]
+
+        _PirateGroup2 ; B1/FA66
+        UNIT
+
+        _PirateGroup3CameraCoordinates ; B1/FA90
+          .byte [14, 7]
+
+        _PirateGroup3 ; B1/FA92
+        UNIT
+
+        _UnusedCameraCoordinates1 ; B1/FAE4
+          .byte [8, 7]
+
+        _GeraldGroup ; B1/FAE6
+          UNIT Gerald, NPC, [16, 4], [16, 5], Lemay, [FlameSword, Vulnerary], 7, false, [$0E, $11, $00, $00]
+        UNIT
+
+        _GeraldCameraCoordinates ; B1/FAFC
+          .byte [16, 1]
+
+        _StartingPositions ; B1/FB14
+          .byte [9, 5]
+          .byte [8, 5]
+          .byte [9, 6]
+          .byte [8, 6]
+        .char -1
+
+        _Vendor ; B1/FB25
+          SHOP [3, 6], [Vulnerary]
+
+    .endsection Chapter02DataSection
+
+    .section Chapter02WorldMapEventsSection
+
+      eventChapter02WorldMapEvents ; E7/E225
+
+        SCROLL_CAMERA_COORDS [20, 16], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_FORCED $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $29
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [144, 112], WMMarkerTable.Circle, 0
+
+        macroASMCWMDialogue dialogueChapter02WorldMap1
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter02WorldMapEventsSection
+
+.endif ; GUARD_FE5_CHAPTER02

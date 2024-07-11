@@ -1,0 +1,101 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        _IlsaWaulterGroup
+          UNIT Ilsa, Player, [6, 8], [6, 8], Neill, [Mend, Physic, Restore, SteelSword], 4, false, [$00, $00, $00, $00]
+          UNIT Waulter, Player, [6, 8], [6, 8], Neill, [SteelAxe, Vulnerary], 7, false, [$00, $00, $00, $00]
+        UNIT
+
+        _FirstCivilianGroup ; B1/F27F
+          UNIT Civilian2, NPC, [6, 8], [6, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _SecondCivilianGroup
+          UNIT Civilian3, NPC, [15, 8], [15, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _ThirdCivilianGroup
+          UNIT Civilian4, NPC, [8, 8], [8, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _FourthCivilianGroup
+          UNIT Civilian5, NPC, [15, 8], [15, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _FifthCivilianGroup
+          UNIT Civilian6, NPC, [16, 9], [16, 9], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _SixthCivilianGroup
+          UNIT Civilian7, NPC, [17, 8], [17, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _TrottierGroup
+          UNIT Trottier, Enemy, [17, 8], [17, 8], Werner, [Tornado, MasterSword], 10, false, [$01, $03, $00, $00]
+          UNIT GrannvaleArmoredAxe, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredAxe, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredAxe, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredAxe, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredLance, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredLance, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredLance, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredLance, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBishop, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBishop, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+
+        _Turn2Group
+          UNIT GrannvaleArcher, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleMage, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+        _Turn5Group
+          UNIT GrannvaleCavalier, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleCavalier, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBowKnight, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBowKnight, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+        _Turn7Group
+          UNIT MercenaryMage1, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMage2, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon2, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon2, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT PriestEnemy, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT SniperEnemy, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+        _Turn8Group
+        UNIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+

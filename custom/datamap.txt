@@ -1,0 +1,51 @@
+0D7E28  -  0D7FFF originally freespace, scripted battles will go here. ~8 More battles can fit atm
+3E7758 - 3E7C10 - originally freespace, custom map palettes inserted here
+476743 - 480B12 - originally freespace, tileset data here
+4ABF36 - 4FFFFF - originally freespace, more tileset data here
+546950 - 5FFFFF After FE4 Music Data to End of rom, Map data will go here
+
+The following map is what Min's FE4 patch covers
+
+| 0x000ed7 - 0x001022 | $80:8ed7 - $80:9022 | 332 bytes | (sound asm) |
+| 0x0010d9 - 0x0010e8 | $80:90d9 - $80:90e8 | 16 bytes | (sound asm) |
+| 0x0010ea - 0x0010ed | $80:90ea - $80:90ed | 4 bytes | (sound asm) |
+| 0x0254de - 0x025537 | $84:d4de - $84:d537 | 90 bytes | asm for map magic |
+| 0x080dc4 - 0x080dc7 | $90:8dc4 - $90:8dc7 | 4 bytes | volganone map |
+| 0x0819a7 - 0x0819aa | $90:99a7 - $90:99aa | 4 bytes | map magic ptr |
+| 0x0819b3 - 0x0819b4 | $90:99b3 - $90:99b4 | 2 bytes | map magic ptr |
+| 0x0819c7 - 0x0819c8 | $90:99c7 - $90:99c8 | 2 bytes | map magic ptr |
+| 0x0819db - 0x0819dc | $90:99db - $90:99dc | 2 bytes | map magic ptr |
+| 0x0819f5 - 0x0819f6 | $90:99f5 - $90:99f6 | 2 bytes | map magic ptr |
+| 0x081adf - 0x081af3 | $90:9adf - $90:9af3 | 21 bytes | map magic resource ptrs |
+| 0x081c05 - 0x081c19 | $90:9c05 - $90:9c19 | 21 bytes | map magic resource ptrs |
+| 0x081c44 - 0x081c58 | $90:9c44 - $90:9c58 | 21 bytes | map magic resource ptrs |
+| 0x081cc2 - 0x081cd6 | $90:9cc2 - $90:9cd6 | 21 bytes | map magic resource ptrs |
+| 0x08271e - 0x08277f | $90:a71e - $90:a77f | 98 bytes | (unused) |
+| 0x0b8f8e - 0x0b8f93 | $97:8f8e - $97:8f93 | 6 bytes | (map magic offsets) |
+| 0x0b9f5a - 0x0ba000 | $97:9f5a - $97:a000 | 167 bytes | Bolganone map |
+| 0x0ba02b - 0x0ba037 | $97:a02b - $97:a037 | 13 bytes | Bolganone map |
+| 0x0ba05d - 0x0ba359 | $97:a05d - $97:a359 | 765 bytes | Bolganone map |
+| 0x0ba480 - 0x0ba579 | $97:a480 - $97:a579 | 250 bytes | Aura map |
+| 0x0bc468 - 0x0bc58b | $97:c468 - $97:c58b | 292 bytes | Mjölnir map |
+| 0x0bc703 - 0x0bc70b | $97:c703 - $97:c70b | 9 bytes | Mjölnir map |
+| 0x0bc759 - 0x0bc86f | $97:c759 - $97:c86f | 279 bytes | Mjölnir map |
+| 0x0bd298 - 0x0bd29c | $97:d298 - $97:d29c | 5 bytes | Valflame map sfx id |
+| 0x0bd4ae - 0x0bd4b2 | $97:d4ae - $97:d4b2 | 5 bytes | Valflame map sfx id |
+| 0x0bd6c5 - 0x0bd6c9 | $97:d6c5 - $97:d6c9 | 5 bytes | Valflame map sfx id |
+| 0x1002e0 - 0x1002ff | $a0:82e0 - $a0:82ff | 32 bytes | Mjölnir map pal |
+| 0x2d8000 - 0x2f0c04 | $db:8000 - $de:8c04 | 101381 bytes | fe5 sound data |
+| 0x2f0c91 - 0x2f0c92 | $de:8c91 - $de:8c92 | 2 bytes | sfx offsets |
+| 0x2f0ccf - 0x2f0cd6 | $de:8ccf - $de:8cd6 | 8 bytes | sfx offsets |
+| 0x2f188b - 0x2f188c | $de:988b - $de:988c | 2 bytes | sfx offsets |
+| 0x2f18f3 - 0x2f18f8 | $de:98f3 - $de:98f8 | 6 bytes | sfx offsets |
+| 0x2f1945 - 0x2f194e | $de:9945 - $de:994e | 10 bytes | sfx offsets |
+| 0x500000 - 0x54694c | $20:8000 - $28:e94c | 289101 bytes | fe4 sound data |
+| 0x578000 - 0x579478 | $2f:8000 - $2f:9478 | 5241 bytes | map magic gfx |
+
+The following files are potential sources of confliction. It's best to build fe5trans first, and use that as the base rom for Min's patch
+
+- asm/SoundSystem.asm
+- asm/hacky/loop_epilogue_song.asm
+- tables/BATTLE/InstrumentsSpells.asm ($2DA0BE -> $2DC304 in _TablesInstaller.asm)
+- tables/BATTLE/InstrumentsClasses.asm (No changes needed)
+- (Map unused animation fixes) in _GraphicsInstaller.asm L288-L298.

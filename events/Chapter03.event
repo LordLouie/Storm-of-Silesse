@@ -1,0 +1,572 @@
+.weak
+  WARNINGS :?= "None"
+.endweak
+
+GUARD_FE5_CHAPTER03 :?= false
+.if (!GUARD_FE5_CHAPTER03)
+  GUARD_FE5_CHAPTER03 := true
+
+  ; Definitions
+
+    .weak
+
+      rlEventEngineCancelFading :?= address($8C8461)
+
+    .endweak
+
+  ; Freespace inclusions
+
+    .section Chapter03EventsSection
+
+      eventChapter03Events ; 8C/E435
+
+        ; Flag definitions
+
+          _FlagFachtnaBattleQuote     = enum.enum($06)
+          _FlagAgnesBattleQuote       = enum.enum()
+          _FlagAgnesNeillTalk         = enum.enum()
+
+          ; TODO: map installer definitions
+
+          _FlagDoor1                = enum.enum($21)
+          _FlagDoor2                = enum.enum()
+          _FlagDoor3                = enum.enum()
+          _FlagChest1               = enum.enum()
+          _FlagChest2               = enum.enum()
+          _FlagChest3               = enum.enum()
+
+       _OpeningEventDefinitions ; 8C/E435
+          EVENT FlagAlwaysZero, _OpeningEvent
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+
+        _TurnEventDefinitions ; 8C/E442
+          EVENT FlagBossDeath, eventMapDeathQuoteDummyEvent
+            CHECK_IF_BOSS_DEAD Fachtna
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _MyrmReinforcements
+            CMP_WORD wCurrentTurn, 7
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+		  
+          EVENT FlagAlwaysZero, _MageReinforcements
+            CMP_WORD wCurrentTurn, 9
+            CMP_WORD wCurrentPhase, Enemy
+            TEST_FLAG_UNSET FlagBossDeath
+          END_DEFINITION
+		  
+          EVENT FlagAlwaysZero, _EmpireReinforcements
+            CMP_WORD wCurrentTurn, 15
+            CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+		  
+        END_DEFINITION_ARRAY
+		  
+		_TalkEventDefinitions ; 8C/E4AE
+          EVENT _FlagAgnesNeillTalk, _NeillAgnesTalk
+            CHECK_CHARS2 Neill, Agnes
+          END_DEFINITION
+        END_DEFINITION_ARRAY
+		  
+	    _LocationEventDefinitions ; 8C/E4B0
+          macroECDoor _FlagDoor1, [4, 9], _Door1
+          macroECDoor _FlagDoor2, [13, 4], _Door2
+          macroECDoor _FlagDoor3, [16, 11], _Door3
+          macroECVanillaChest _FlagChest1, eventChapter03Data._Chest1
+          macroECVanillaChest _FlagChest2, eventChapter03Data._Chest2
+          macroECVanillaChest _FlagChest3, eventChapter03Data._Chest3
+
+          EVENT FlagAlwaysZero, _EndingEvent
+            macroECCheckCoordinates [19, 14]
+            CMP_WORD wCurrentPhase, Player
+            CMP_WORD aSelectedCharacterBuffer.Character, Neill
+          END_DEFINITION
+        END_DEFINITION_ARRAY  
+
+        _BeforeActionEventDefinitions ; 8C/E68A
+        END_DEFINITION_ARRAY
+
+        _AfterActionEventDefinitions ; 8C/E68C
+        END_DEFINITION_ARRAY
+
+        _BattleEventDefinitions ; 8C/E68E
+          macroECBossQuote _FlagFachtnaBattleQuote, Fachtna
+          macroECBossQuote _FlagAgnesBattleQuote, Agnes
+        END_DEFINITION_ARRAY
+
+        _ShopEventDefinitions ; 8C/E698
+          macroECShop eventChapter03Data._Vendor
+        END_DEFINITION_ARRAY
+
+        _Door1 ; 8C/E883
+          macroOpenDoorByTileChangeID 0 
+        END1
+
+        _Door2 ; 8C/E8AE
+          macroOpenDoorByTileChangeID 1
+        END1
+
+        _Door3 ; 8C/E8D9
+          macroOpenDoorByTileChangeID 2
+        END1
+
+        _MyrmReinforcements ; 8C/E6C0
+          SCROLL_CAMERA_ADDRESS eventChapter03Data._MyrmReinforcementsGroupCameraCoordinates
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter03Data._MyrmReinforcementsGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _MageReinforcements ; 8C/E6D3
+          SCROLL_CAMERA_ADDRESS eventChapter03Data._MageReinforcementsGroupCameraCoordinates
+          YIELD
+
+          LOAD_GROUP_BLOCKABLE eventChapter03Data._MageReinforcementsGroup
+          WAIT_MOVE
+          YIELD
+        END2
+
+        _EmpireReinforcements ; 8C/E6E0
+
+        SET_MUSIC $3E
+        YIELD
+
+          SCROLL_CAMERA_ADDRESS eventChapter03Data._EmpireGroupCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter03Data._EmpireGroup
+          WAIT_MOVE
+          YIELD
+
+          DIALOGUE empirestrikesback1
+          YIELD
+
+          SCROLL_CAMERA_COORDS [12, 12], 4
+          YIELD
+          SCROLL_CAMERA_COORDS [1, 24], 4
+          YIELD
+          DIALOGUE empirestrikesback2
+          YIELD
+
+          macroScriptedRewarpStaff Werner, [-1, -1]
+
+          macroASMCRemoveUnit Werner
+          YIELD
+        END2
+
+         _NeillAgnesTalk ; 8C/E800
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $43
+          YIELD
+
+          DIALOGUE neillagnes1
+          YIELD
+
+          ;cmacroCustomBattleAnimON 2
+
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          DIALOGUE neillagnes2
+          YIELD
+
+          macroScriptedRewarpStaff Agnes, [-1, -1]
+
+          macroASMCRemoveUnit Agnes
+          YIELD
+
+        END2
+
+        _PrepGroups ; 8C/EAC2
+        .word 0
+
+        _OpeningEvent ; 8C/EAC4
+          SET_CAMERA_POSITION [13, 8]
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          macroChapterTitlePopup dialogueChapter03Title
+
+          SCROLL_CAMERA_COORDS [2, 16], 4
+
+        macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
+        JUMP_FALSE _OpeningEvent_EdithDead
+
+            LOAD_GROUP eventChapter03Data._BarraGroup
+            WAIT_MOVE
+            YIELD
+
+            LOAD_GROUP eventChapter03Data._EdithGroup
+            WAIT_MOVE
+            YIELD
+
+            DIALOGUE dialogueChapter03OpeningA1
+            YIELD
+
+            macroASMCRemoveUnit PirateEnemy
+
+            MOVE_CHAR Shiva, [7, 16], 1
+            WAIT_MOVE
+            YIELD
+
+            DIALOGUE dialogueChapter03OpeningA2
+            YIELD
+
+            LOAD_GROUP eventChapter03Data._EnemyGroup1
+            WAIT_MOVE
+            YIELD
+
+            DIALOGUE dialogueChapter03OpeningA3
+            YIELD
+
+            LOAD_GROUP eventChapter03Data._FachtnaGroup
+            WAIT_MOVE
+            YIELD
+
+            SET_MUSIC $3C
+            YIELD
+
+            DIALOGUE dialogueChapter03OpeningA4
+            YIELD
+;the boss moves to unlock the doors in his keep and brings edith with him
+            MOVE_CHAR Shiva, [4, 9], 1
+            YIELD_UNK
+            MOVE_CHAR Fachtna, [4, 10], 1
+            YIELD_UNK
+            WAIT_MOVE
+            YIELD
+
+            macroOpenDoorByTileChangeID 0
+
+            macroOpenDoorByTileChangeID 2
+
+            SCROLL_CAMERA_COORDS [15, 8], 4
+
+            MOVE_CHAR Shiva, [18, 9], 1
+            YIELD_UNK
+            MOVE_CHAR Fachtna, [16, 12], 1
+            YIELD_UNK
+            WAIT_MOVE
+            YIELD
+
+            macroOpenDoorByTileChangeID 2
+
+            MOVE_CHAR Fachtna, [19, 14], 1
+
+            DIALOGUE dialogueChapter03OpeningA5
+            YIELD
+
+            SCROLL_CAMERA_COORDS [1, 18], 4
+
+            SET_MUSIC $31
+            YIELD
+;at this point players should spawn outside the keep but for some reason barra and neill get spawned in the top left corner
+            macroLoadPlayerUnitsByStartingPositions
+
+            DIALOGUE dialogueChapter03OpeningA6
+            YIELD
+
+            macroASMCRemoveUnit Shiva
+
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
+            macroASMCSetUnitPosition Edith, [18, 9]
+            macroASMCSetCharacterDataByte Edith, Fatigue, 0
+            YIELD
+            JUMP _OpeningEvent_End
+            
+       _OpeningEvent_EdithDead
+
+          LOAD_GROUP eventChapter03Data._BarraGroup
+          WAIT_MOVE
+          YIELD
+
+          LOAD_GROUP eventChapter03Data._NeillGroup
+          WAIT_MOVE
+          YIELD
+		  
+          DIALOGUE dialogueChapter03OpeningB1
+          YIELD
+		  
+		  macroASMCRemoveUnit MercenaryCavalier
+		  
+          DIALOGUE dialogueChapter03OpeningB2
+          YIELD
+
+          LOAD_GROUP eventChapter03Data._FachtnaGroup
+          WAIT_MOVE
+          YIELD
+
+          DIALOGUE dialogueChapter03OpeningB3
+          YIELD
+
+          DIALOGUE dialogueChapter03OpeningB4
+          YIELD
+
+		  MOVE_CHAR Fachtna, [4, 10], 1
+		  YIELD_UNK
+		  WAIT_MOVE
+          YIELD
+
+		  macroOpenDoorByTileChangeID 0
+		  
+          SCROLL_CAMERA_COORDS [15, 8], 4
+		  
+		  MOVE_CHAR Fachtna, [19, 14], 1
+
+		  macroASMCRemoveUnit PirateEnemy
+
+          LOAD_GROUP eventChapter03Data._EnemyGroup1
+          WAIT_MOVE
+          YIELD
+
+          macroLoadPlayerUnitsByStartingPositions
+          _OpeningEvent_End
+
+        END2
+
+        _EndingEvent ; 8C/EC8D
+          STORE_WORD wCurrentMapMusic, $00
+
+          PAUSE_SKIPPABLE 16
+          YIELD
+
+          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+
+          macroASMCSetUnitState Neill, UnitStateHidden
+
+            macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
+            ;JUMP_FALSE _EndingEvent_EdithDead
+
+            macroDialogueWithBG dialogueChapter03Ending1, 1
+
+            CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+            YIELD
+
+            macroASMAddGoldWord .segment Amount
+            STORE_WORD wEventEngineParameter1, 4000
+            CALL_ASM_LOOP rlASMCAddGoldWord
+            .endsegment
+            ;JUMP _CALL_ASM_LOOP rlASMCChapterEnd
+
+        ;_EndingEvent_EdithDead
+            
+            ;macroDialogueWithBG  dialogueChapter03ExceptEdithDied, 1
+            ;JUMP _CALL_ASM_LOOP rlASMCChapterEnd
+
+        ;_EndingEvent_EdithNotPresent
+;this is for if she was never recruited and idk how you even BEGIN to code that
+        ;dialogueChapter03Ending2A
+        ;dialogueChapter03Ending2B
+        ;JUMP _CALL_ASM_LOOP rlASMCChapterEnd
+
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 32
+          YIELD
+
+          SET_MUSIC $42
+          YIELD 
+		  
+          FADE_OUT 1
+          YIELD
+
+          CALL_ASM_LOOP rlASMCChapterEnd
+
+        END1
+		  
+   .endsection Chapter03EventsSection
+
+    .section Chapter03DataSection
+
+      eventChapter03Data ; B1/F318
+	  
+        _UnusedCoordinates1 ; B1/F318
+          .byte [11, 11]
+
+        _EdithGroup ; B1/F300
+          UNIT Shiva, Player, [12, 18], [12, 18], Fachtna, [],5, true, [$01, $03, $00, $80]
+          UNIT
+
+        _BarraGroup ; B1/F310
+          UNIT PirateEnemy, Player, [12, 17], [12, 17], Fachtna, [],1, true, [$01, $03, $00, $80]
+          UNIT
+
+        _FachtnaGroup ; B1/F31A
+          UNIT Fachtna, Enemy, [6, 16], [6, 16], Fachtna, [AssassinKnife],7, true, [$01, $03, $00, $80]
+          UNIT
+
+        _NeillGroup ; B1/F310
+          UNIT MercenaryCavalier, Player, [12, 18], [12, 18], Fachtna, [],1, true, [$01, $03, $00, $80]
+          UNIT
+
+        _EnemyGroup1 ; B1/F346
+          UNIT MercenaryMyrmidon1, Enemy, [2, 15], [2, 15], Fachtna, [KillingEdge, Vulnerary], 6, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [16, 13], [16, 13], Fachtna, [IronBlade, DoorKey, Vulnerary], 10, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [7, 1], [7, 1], Fachtna, [SteelSword], 9, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [2, 18], [2, 18], Fachtna, [IronSword], 7, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [22, 7], [22, 7], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 8, false, [$00, $03, $00, $00]
+          UNIT MercenaryMage1, Enemy, [21, 1], [21, 1], Fachtna, [Wind], 5, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [12, 15], [12, 15], Fachtna, [Wind], 6, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 5], [10, 5], Fachtna, [Wind], 5, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [13, 6], [13, 6], Fachtna, [Thunder, Vulnerary], 7, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [18, 5], [18, 5], Fachtna, [Thunder], 6, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [19, 18], [19, 18], Fachtna, [Thoron], 10, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [11, 3], [11, 3], Fachtna, [SteelBow, DoorKey], 6, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [21, 9], [21, 9], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [20, 16], [20, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [18, 16], [18, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
+		  UNIT BanditWarrior, Enemy, [25, 4], [25, 4], Fachtna, [Hammer, Vulnerary], 3, false, [$00, $03, $00, $00]
+		  UNIT ThiefEnemy1, Enemy, [23, 18], [23, 18], Fachtna, [VeninEdge, ChestKey], 5, false, [$00, $00, $00, $00]
+		  UNIT ThiefEnemy1, Enemy, [16, 4], [16, 4], Fachtna, [SlimSword, Lockpick], 4, false, [$10, $0B, $00, $00]
+          UNIT
+
+		_MyrmReinforcementsGroupCameraCoordinates ; B1/F520
+          .byte [13, 8]
+
+		_MyrmReinforcementsGroup ; B1/F50A
+		  UNIT MercenaryMyrmidon1, Enemy, [1, 6], [1, 6], Fachtna, [IronSword], 7, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMyrmidon1, Enemy, [16, 5], [16, 5], Fachtna, [SteelSword], 7, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMyrmidon1, Enemy, [24, 19], [24, 19], Fachtna, [IronSword], 7, false, [$00, $00, $00, $00]
+          UNIT
+
+		_MageReinforcementsGroupCameraCoordinates ; B1/F574
+          .byte [13, 8]
+
+		_MageReinforcementsGroup ; B1/F4F2
+		  UNIT MercenaryMage1, Enemy, [1, 6], [1, 6], Fachtna, [Wind], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [16, 5], [16, 5], Fachtna, [Thunder], 5, false, [$00, $00, $00, $00]
+          UNIT
+
+        _EmpireGroupCameraCoordinates ; B1/F344
+          .byte [1, 15]
+		  
+        _EmpireGroup ; B1/F31A
+          UNIT Agnes, Enemy, [7, 20], [7, 15], Durchval, [SilverSword, SilverBow], 10, true, [$00, $00, $00, $00]
+          UNIT Werner, Enemy, [7, 20], [8, 15], Durchval, [Jormungand], 7, true, [$00, $00, $00, $00]
+          UNIT
+
+        _StartingPositions ; B1/F5BC
+          .byte [5, 19]
+          .byte [6, 19]
+          .byte [7, 19]
+          .byte [8, 19]
+          .byte [9, 19]
+          .byte [9, 20]
+        .char -1
+
+        _Chest1 VANILLA_CHEST KillingEdge, [12, 6], $0002 ; B1/F5D3
+        _Chest2 VANILLA_CHEST SteelBow, [13, 7], $0002 ; B1/F5D3
+        _Chest3 VANILLA_CHEST KillerAxe, [14, 6], $0002 ; B1/F5D3
+
+        _Vendor SHOP [2, 1], [Vulnerary, DoorKey] ; B1/F65B
+
+    .endsection Chapter03DataSection
+
+    .section Chapter03WorldMapEventsSection
+
+      eventChapter03WorldMapEvents ; E7/E336
+
+        SCROLL_CAMERA_COORDS [20, 14], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_FORCED $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $29
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [20, 12], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [96, 80], WMMarkerTable.Crown, 0
+
+        macroASMCWMDialogue dialogueChapter03WorldMap1
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 2
+        YIELD
+
+        macroWMDrawSpecialMarker [136, 112], WMMarkerTable.Circle, 0
+
+        macroASMCWMDialogue dialogueChapter03WorldMap2
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter03WorldMapEventsSection
+
+
+.endif ; GUARD_FE5_CHAPTER03
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+		  

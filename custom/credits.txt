@@ -1,0 +1,29 @@
+ZaneAvernathy & Miacis - Basically teaching me everything I needed to know to get started with this project, and for making the buildfiles itself. Zane especially helping me out with various Assembly tricks.
+
+Flasuban - Major assistance in learning how to create and implement custom tilesets, palettes
+Creator of various tilesets used in this hack.
+
+Min - creator of the FE4 music patch, made it compatible with buildfiles simply out of request.
+
+FE5 Hacking Hel community, for helping me find various materials, and being a fun place to hang out and discuss FE5 hacking
+
+Original Lil' Munster / Project Exile team for translation work
+Original devs of FE4 and FE5
+
+Based off of events from Fire Emblem: Genealogy of the Holy War and Fire Emblem: Thracia 776, and supplemental materials
+
+"Lenster's Fall" - main inspiration for this hack, https://serenesforest.net/general/designers-notes/thracia-776/lensters-fall/
+
+FE4 Mitsuki Oosawa Manga - Additional events based off of plotlines from this story https://mangakakalot.com/chapter/fire_emblem_seisen_no_keifu/chapter_1
+
+Additional lore established by Kaga in an interview https://garmtranslations.wordpress.com/2019/02/13/fire-emblem-genealogy-of-the-holy-war-fan-special-roundtable-discussion/
+
+Fire Emblem Heroes - help in developing character personalities, various other ideas
+
+Various tools used in process of developing this hack, such as bsnes debugging, YY-Char, SnesGFX, 64tass, Lunar Expand, Lunar Address, FE5 Map Editor, FE5 Tileset Editor, FE45_Compress
+
+Tiled ver 1.8.4 - Used in the process of creating Maps and Tilesets
+
+*Need to identify the creator(s) of the updated FE4 char portraits
+
+Muffin from Mars - Me :) Director, developer, writer of this project

@@ -1,0 +1,1376 @@
+MAP
+The northern country of Silesse is in the midst of a rough patch. The country's king, Lewyn, has been missing for over a decade now.
+Determined to track him down, Ced has struck off on his own in the hopes of retrieving his father.
+He has yet to return, and worse yet, Silesse's beloved queen, Erinys, has recently passed away from heartbreak and terminal illness. 
+This leaves only the young and ill-prepared Princess Fee to govern the Silesse territory, and many have begun to take notice.
+Grannvale encroaches on Silesse's soil more and more as the weeks pass.
+Commonfolk especially are spared no quarter from all this strife; sweeping crop failure has begun to plague Silesse, and many are forced to seek jobs elsewhere just to survive.
+In spite of it all, some have perservered. A number of vigilante groups have sprung up around the country to provide Silessians relief- through any means necessary.
+This story follows the exploits of one of these groups- Storm Cabal, headed by the son of Belhalla survivor, Neill...
+
+OPENING
+
+Pah... you fiends... how... how could you?
+We already gave you food...
+
+Listen, old timer, I hear ya 'n I understand, 
+but we jus' need a 'lil more... that's all.
+
+A little more?! You and your goons stole our
+entire supply! With an appetite as bottomless
+as yours, it's a wonder you haven't taken
+the town off it's foundation!
+
+Say... that's a great idea.
+
+What?
+
+Aight, boys! This whole town is ours now!
+Shake the people for everything they've got!
+If they don't come quietly, introduce their
+pallets to the smooth taste of steel!
+
+Urgh... have the gods truly forsaken us?
+Someone... anyone... help...
+
+C'mon, guys, just a bit further! We gotta
+find a place to stay the night!
+
+Speak for yourself, Neill! At least you've
+got a comfortable horse to ride on...
+
+Just our luck- there's a village right
+in front of us!
+
+I wouldn't celebrate too soon... looks like
+it's being ravaged by bandits. Otto, you
+think we can take em?
+
+...
+...
+...Positive.
+
+If so, then we must make haste! Innocent
+people are under attack! Heroism now,
+sustenance later!
+
+Neill/Seadna 1
+
+HOUSES
+
+Oh, Maurice... I don't think he's such
+a bad fella, at heart. When he first
+crawled into town, the man was scrawnier
+than a seedling. 
+The townsfolk were quick to give him
+a room, and something to nosh on.
+He soon recovered, and as his way of
+thanking us, he invited his whole
+posse... 
+Overnight, we were swamped with demand
+for bread and booze. It's like
+we raised a swarm of locusts in a 
+crop field.
+When we ran out, they turned on us
+and seized this whole town. 
+The things people do just to survive...
+It's wild.
+
+Thanks for stopping by, and listening
+to my spiel. 
+
+If you're having trouble getting Maurice
+to stand down, give this bow a try. 
+These arrows are awful sharp... but 
+please try to go easy on him, ok?
+
+Confound Maurice and his entire posse!
+We starve ourselves ragged getting them
+back on their feet, and this is how they
+repay us? Grr...
+Luckily for us, there's a way out-
+See this sword? Stick it between his eyes!
+Tch... Lousy... Rotten...
+
+Don't tell anyone, but I think one of the
+bandits forgot to bring their axe to the
+rumble. They left it in my house.
+How 'bout instead of returning it, I 
+give it to you instead? 
+
+I jus' saw the strangest thing... 
+So, I was makin' breakfast, when I looked
+out my window and saw someone staring at
+me. It was early in the morning, and I was
+feeling groggy, so I couldn't quite tell you
+who it was, but if I had to wager a guess,
+I'd say it was some kind of burglar.
+I would hate to be robbed, so I'm trying to
+get rid of everything I have that would look
+appetizing to thieves. Like this here ring!
+It's yours now. I bet it has magical properties...
+
+Where's the dispenser... on this thing...
+I jus' wanna... fill a pint...
+Huh? D-Damn, I've been spotted! 
+Uhh... Listen, kid. this isn't what it looks like.
+Hey, you better not go squealing to Maury about this!
+He'll stamp on my face 'til I barf it all up!
+Just... take this and keep it shut. Go on, get!
+
+BATTLE QUOTES
+
+Watch out! Ye don't wanna see what this 
+beast is capable of when he's cornered!
+
+Guh... never thought I'd die over a few 
+crumbs of bread...
+
+I'll make myself scarce...
+
+ENDING
+
+Looks like we got the last of 'em.
+Where has this city's leader gone?
+
+I'm right here... forgive me...
+I've never been particularly brave...
+Do my eyes deceive me?
+Were you four able to defeat this
+entire gang by yourselves? 
+Without letting anyone come to harm?
+I've hardly seen anything like this...
+Truly, you lead an impeccable band of
+fighters.
+You have my sincerest gratitude. 
+
+Don't sweat it, pops. Helping people is
+just what we do. 
+Our long journey has made my friends and I weary.
+You wouldn't mind if we rested the night in town here,
+would you?
+
+Oh, not at all! Help yourselves to whatever provisions
+you desire. Within reason, of course. We don't want to
+have to clean you out too! Ha ha ha...
+
+Cool! We've nearly exhausted our supply from the past
+few missions.
+
+Missions? What kind of hairball team are you leading,
+young man?
+
+I am Neill, leader of the Silessian relief group,
+Storm Cabal! Our cause is dedicated to helping
+those who suffer all across the nation, by hitting
+the bad guys where it hurts them most- their wallets!
+
+That's quite a sales pitch you've got there! Alright,
+I've held you up long enough. Go, enjoy yourselves!
+Just don't be here too long!
+
+We'll be out of your hair by sunrise, tomorrow!
+
+Alright, we've secured housing for the next...
+couple of hours. Where do we go from here, Neill?
+
+I'm... not sure. Ever since father gave me the
+reigns to this group, I haven't
+been able to make a single confident decision.
+
+We've coasted by off of burglary for a while,
+but we took a hit trying to pillage Zaxon castle,
+and now we don't have any stuff...
+
+No food, no money, and we lost most of our
+weapons while making a break for it, too...
+
+Don't let it weigh too hard on ya, buddy.
+Your dearly departed pa put you in charge
+of us for a reason. We've got your back.
+
+Thanks... that really means the world to me.
+Regarding our future plans, Seadna and Otto 
+got some interesting news from one of the
+villagers here.
+
+Grannvale supply trains have been illegally
+transporting goods out of Silesse. The purpose
+of this cargo is unknown, but some suspect it 
+to be stolen crop from farmers near 
+the Zaxon-Lubeck border.
+
+What Otto has said should be enough cause for
+alarm, but it gets weirder. Not only are things
+being shipped out of Silesse, they're also being
+sent IN.
+People who try to follow the transports seem to
+disappear without a trace. At least, that's what
+we've heard from the villagers.
+
+The supply trains are most likely well-guarded.
+The fortitude of their security relative to our
+own power is unknown.
+
+We must consider our next action very carefully.
+
+Hmm... this is unlike anything we've ever 
+done before. We can get away with robbing
+greedy nobles every now and again, but to
+steal from the empire? We'd be on the run
+for the rest of our lives!
+Still... I think its the best option we've got.
+Work is drying up. Sticking up criminals isn't
+bringing home butter like it used to.
+We'll have to make do with what's available.
+
+Get a good night's sleep, everyone.
+It could very well be our last...
+
+...
+
+...
+
+...
+
+CHAPTER 2
+
+MAP
+Disregarding any sense of 
+self preservation,
+
+Neill and his friend journey to the
+Zaxon-Lubeck border.
+
+Though low on provisions, they are 
+brimming with hope...
+
+...And perhaps desperation as well.
+
+Fortunately for Storm Cabal, a
+caravan of imperial troops arrives,
+
+right on cue...
+
+OPENING
+
+Day 4. We are en route to cross Silesse's
+borders soon. I have utmost faith in the
+empire for the task I've been assigned,
+but I would be remiss were I not to 
+mention the mounting pressure my team feels.
+The citizenry scowl at us on the regular.
+The mercenaries hired to protect our cargo
+don't exactly have amicable relations with
+my crew, either.
+In order to avoid suspicion, an imperial
+supply train leaving Silesse has transfered
+their supply of children to us.
+Our destination is somewhere in the Tofa
+mountain range. This map shows the route,
+but leaves the destination ambiguous.
+The details are not my concern.
+We have countless weeks of travel ahead
+of us, but today will be the most difficult.
+I pray the children stay quiet as we
+pass through the village...
+- General Killian, 4th Supply Core of the Rotritter
+
+
+This is it. The empire's supply route...
+
+I would advise against travelling further
+south, Neill. We are officially in imperial
+territory. If we overstep our boundaries,
+we could be swamped by their most powerful
+soldiers very quickly.
+
+Heard you loud and clear.
+We'll ambush the first cargo we see
+entering Silesse, take out the
+imperial lackeys guarding it, and wheel 
+what we find back here before the main 
+force notices. Got it?
+
+Sounds like a plan. I can't wait to
+beat the tar out of those Grannvale
+creeps!
+
+Whoa! Slow your roll, Seadna! We're just
+here to take what we need, not get blood
+all over our hands!
+
+Hehe... got the better of myself there...
+Sorry...
+
+All we have to do... is lie in wait...
+
+Neill/Otto
+
+Gerald
+
+Things go in... things come out...
+Day... after day... after day...
+Damnable Grannvalians...
+How great is the depth of their greed?
+
+I cannot abide by them any longer.
+Action, swift, must be taken.
+
+...But what chance do I alone have
+against an entire army?
+
+Hmm...
+It appears that vigilante group is
+gearing up to attack a transport...
+
+Bah, I've seen many a bunch try that.
+Never once have they succeeded.
+
+If I remain idle, though... nothing
+will change. 
+
+I haven't done a thing... not since...
+that day...
+
+Perish the thought. I will go to them...
+
+
+Edith
+
+*yawn* Are we there yet?
+
+Silence, sellsword! You will only talk
+when you are being addressed to!
+
+(Sheesh... you imperial lauts outta be
+more respectful towards your associates...)
+
+(It's not like we're protecting your
+sorry asses out here, or anything...)
+
+(Come to think of it, this whole job has
+felt super weird... what do they need to 
+be guarded from?)
+
+(...This stinks. Something about these
+guys is seriously bad news.)
+
+(I need to get out of here. I bet they
+wouldn't notice if one of their mercs
+went missing in the heat of battle...)
+
+(Pfft, loyalty. I was paid up-front!
+I can quit whenever I want to!)
+
+GeraldRecruitment
+
+I am Gerald, armor of the arcane!
+Take this aid I bring to you!
+
+Whoa! What the hell are you thinking,
+sneaking up on us like that?
+You coulda blown our cover!
+
+Do you not understand? I am here to
+pledge myself to your cause!
+
+Yeah, yeah, I heard that much...
+Ah, excuse my temper there. I'm just
+a little on edge, that's all.
+
+Thing is... I'm not sure I trust you.
+
+I do not expect you to.
+My actions on the battlefield shall
+speak to my purity of heart.
+
+Is that so? I think we have a deal,
+then.
+
+If you can hold your own out there,
+we'll accept you as a permanent
+member of Storm Cabal.
+
+I have yearned to fight for a cause ever
+since Silesse first fell to Grannvale.
+I shall not fail you... er...
+
+The name's Neill.
+Show me what you can do, Gerald!
+
+EdithRecruitment
+
+*thud*
+
+Waaaaah! A bandit! I'll tear you apart
+with my wind magic!
+
+Who you callin' a bandit?
+
+Why, you of course, you bandit!
+No one that big would be carryin'
+around an axe if they weren't a bandit!
+
+That's a grave insult to every
+lumberjack in Jugdral.
+
+Hmm, that was definitely too quick of a 
+comeback for a bandit...
+
+That's because I'm not a bandit!
+I fight for Storm Cabal! We're a vigilantee
+group dedicated to-
+
+Pssh... a vigilantee group? Puh-leez! What
+kind of corny charity are you running here?
+
+A damn good one, that's what. Wait...
+aren't you supposed to be with the empire?
+
+Oh, those droners? I've washed my hands of them.
+I figure I'll use this money to buy some food,
+maybe crash at someone's place in Silesse.
+
+How about you team up with us instead? We're
+about to go in 'n fight them imperial scum
+ourselves.
+
+I don't see harm in getting a little bit of
+payback... hehe...
+
+HOUSES
+
+Pure Water
+
+(If Gerald)
+Ah, my pure water!
+To think that I left home without this...
+(If No Gerald)
+...Who lives like this?
+
+Javelin
+
+tossing javelins is cool! give it a try!
+
+Brave Sword
+
+Who could be knocking on my door at this hour?
+I am rotritter man
+here, deliver this shit
+
+Silver Lance
+
+I think I murdered somebody.
+take the weapon so I don't get
+caught with it.
+
+Sailane Scroll
+
+silesse had this big book detailing
+the country's founding.
+at some point, the codex was stolen and 
+all of its pages were auctioned off.
+its got some magic power or other.
+I don't feel fit to have it.
+this... was meant for a fighter.
+
+
+BATTLE QUOTES
+
+Ack, an ambush!
+Protect the cargo! They mustn't
+see what's inside-!
+
+Hrgh... I'm...
+not cut out... for t-this...
+
+I have buckled under the weight of shame.
+Letting me live only prolongs my suffering...
+
+This is the sort I'm supposed to fight off?
+Tch, go figure...
+
+Wow... what a lame way to die...
+
+I'll just be on my merry way, then.
+Cheers!
+
+ENDING
+
+Excellent work, team! We took a colossal
+risk, but it seems to have paid off.
+
+Let's get the cargo somewhere safe. 
+We don't want to attract any more attention
+than we already have.
+
+Ma... Pa...
+
+There are children here?! What are they 
+doing in a cage? 
+
+...
+
+Barra? Your face... this must be something
+grim, isn't it?
+
+It's just as I suspected... They're trying
+to conduct child hunts in Silesse.
+
+Child hunts? They're hunting children?
+
+It's the empire's most disgusting sin.
+
+They adduct children barely old enough to
+read, and indoctrinate them into a cult that
+preaches hatred as one of its core tenets.
+
+Your father and I visited Grannvale a few
+years ago, and bore witness to the atrocity
+of it all.
+
+That was when you and father left me in 
+charge to go find medicine for mother, right?
+
+Indeed, it was...
+
+You're very fortunate to have
+grown up in a place spared 
+from Loptyr's influence, Neill.
+
+From the looks of it, though... we won't
+be spared for much longer.
+
+Is there nothing we can do about this?
+I would hate to stand idle and allow
+the empire to just consume Silesse...
+
+If we were a fully-fledged army, maybe,
+but as we are now, there's no chance.
+
+You've seen it firsthand- we struggled
+mightly just to take down an armed
+transport.
+
+At the very least, there's one good
+thing that is within our power to 
+accomplish-
+
+Returning these children to their 
+parents. 
+
+We don't even know where they're from...
+I suppose we could ask them?
+
+Seadna, I don't know how to put this...
+I'm not very good at consoling children.
+Could you...?
+
+I can certainly try.
+
+*sniff* I jus' wanna go home...
+Those scary people... they took us...
+
+There, there... deep breaths...
+You're safe, now...
+I'm going to ask you a question now.
+
+Mhm...
+
+Can you tell us where you live?
+
+A town... called Skanor.
+We were playin' out in the forest...
+
+Then, a bunch of armored men found us.
+We were kidnapped. 
+
+We cried for days, but no one came...
+*sniff*
+
+Don't worry... we'll get you home.
+Safe... and sound... 
+
+T-thank you, lady! I uh-pree...
+uh-pree-sh... appreciate it!
+
+Well, I think we know where we're
+headed now.
+
+Otto, how much food is there in the
+cargo?
+
+By my estimate, enough provisions to
+last us for several weeks.
+
+Yeah! That's what I'm talking about!
+
+Alright, everyone! We march towards
+Skanor, starting tomorrow!
+
+CHAPTER 3
+
+MAP
+
+Our intrepid heroes are just a stone's
+throw away from Skanor.
+
+They've set up camp in an 
+abandoned town, 
+
+With plans to resume travel in the
+morning.
+
+Unfortunately for Neill and his 
+friends,
+
+There would be no respite from
+those who wished them harm...
+
+OPENING 
+
+If Edith recruited and alive
+
+Look's like the sun has set.
+This is when the nastier sort of
+thugs begin to stir.
+You're on guard duty for the next hour. 
+We sleep in shifts, got it?
+
+You can count on me!
+(I had half a mind to just ditch these guys... but they don't seem so bad? It's weird. Either way... gotta stay on
+the lookout for bad-) 
+(guys...)
+Keep your distance, mauraders!
+You dwell on the ground of the famed mage, Edith Othello!
+One wrong step, and you're out!
+Ksshhaaahh...
+Eek!
+You fool, this is my territory...
+The only way out of this place is to be cut to ribbons...
+
+Augh! Your breath smells like horse shit!
+
+You've failed your duty, and your friends... However, I have decided to give you a new purpose-
+You shall be the bait which draws the rest into my clutches.
+
+Hey-! Let go of me-! 
+
+Shush. You've got your whole life ahead of you. What little of it there's left, that is...
+
+Facthna... you disarmed her, right?
+...
+
+Ha! You're a capital S sucker! I can deliver you all to tartarus, even from the confines of this room!
+
+Cripes! Change of plans, everyone! Shoot arrows at the wench until she stops moving!
+
+You never learn, do ya? Here it comes!
+
+What's that racket?
+Edith?
+...
+
+Neill, get up! 
+We've been discovered by bandits!
+
+Bandits, again?
+Its been one of those days...
+
+Not really in the best shape to
+fight, but I know, life or death 
+'n all that.
+
+Grab your weapons, everyone!
+Edith can't hold them off forever!
+
+[]If edith dead or unrecruited[]
+
+I'm turning in for the night. 
+You coming to bed, Barra?
+
+I'm afraid not.
+Even in a deserted fortress, someone 
+has to keep a lookout for trouble.
+
+I getcha... 
+I really appreciate what you do
+for us, Barra.
+
+Just... don't burn yourself out.
+
+I'm working well within my limits, Neill.
+
+Are you sure about that?
+
+Ever since father died, You've been
+working yourself ragged!
+
+You buy the food, you recruit the 
+new blood, you draw the maps and 
+draft all of our plans.
+
+I'm supposed to be the leader, yet 
+you're the one doing all of the 
+heavy lifting.
+
+What am I... but a burden to be
+accounted for?
+
+The worst thing about you, Neill...
+Its that you always sell yourself short.
+
+Your support is what keeps me going,
+no matter how exhausted I get.
+
+Someday...
+Things in Silesse will get better.
+
+Everyone'll have a roof over their head,
+and we can finally clean the Empire 
+off of our plate.
+
+That may be a long way's off...
+but with our teamwork, I know it'll happen.
+
+I have a lot of things to think about...
+
+Save it for tomorrow. Try to catch as
+much shut eye as you can.
+
+As much as I can...
+You got it...
+
+...
+I know you're behind me.
+
+Hark! You're keener than the last
+bunch of fools I cut up...
+
+We're just camping here for the night.
+If you touch any of my friends, I'll
+cave your head in. 
+
+Feisty... I like that...
+
+Stepping on my turf, though...
+I take that a bit more personally.
+
+If you wanna live through tonight,
+You'll have to kill me first...
+
+If that's what it takes, so be it.
+
+Neill!
+
+Huh? Barra... who are these...
+
+Murderers. 
+Get everyone you can, we're
+going to be fighting till daybreak.
+On the double!
+
+Yes, sir!
+
+So this is our prey...
+Most interesting...
+Meet me inside... 
+If you long enough to see it...
+Ksshhaaahh...
+
+Seadna/Edith
+
+Barra/Gerald
+
+empirestikesback
+
+I assume you're aware of our plans, 
+Agnes?
+
+...Why them?
+
+We cannot leave these rebels alive...
+The knowledge they possess is far too
+valuable.
+
+It risks jeopardizing our entire operation.
+
+Heh. It appears they are already occupied.
+Your orders are to sneak past all the
+commotion and slaughter them.
+For your part in this cover up,
+lord Durchval shall reward you handsomely.
+
+Do you understand?
+
+I have no further questions.
+
+Do not disappoint us...
+
+agnesandneill1
+
+Who goes there?!
+
+The one who shall take your head.
+
+An assassin, huh?
+No doubt you're on the empire's payroll!
+If you want your precious goods back,
+you'll have to go through me first!
+
+(scripted battle where they miss each other)
+
+Huhhh... I would've been a goner...
+You... you went easy on me...
+Why...?
+
+Something stayed my hand. 
+You weren't ready to face me.
+I wasn't ready to face you either...
+
+We've met before... haven't we?
+I... I know you-!
+
+I'm sorry... 
+We weren't supposed to see each 
+other like this...
+
+Wait!
+
+BATTLE QUOTES
+
+Come, face your death!
+
+OOOOUUUUURAAAAAAGGGHHH!
+
+M-My knives! 
+They were all I had!
+I... I hate you! 
+
+I'll make it quick.
+May Naga rest your soul...
+
+
+ENDING
+
+Edith! Thank the heavens,
+you're alright!
+
+Oh, it was no trouble. 
+Bandits waste themselves harder
+than I ever could.
+
+I had my doubts about this cabal thing,
+But you were all surprisingly fierce
+out there. 
+
+Before this ambush deal started, I was
+actually considering leaving your 
+goody two-shoes group.
+
+Now that I've seen what you guys 
+get up to...
+
+I think I'll stick around.
+Its the least I can do to repay you.
+
+Wonderful. 
+I wouldn't be too pressured to stay
+if I were you, though.
+
+We can barely scrape by long enough
+to keep everyone fed.
+Wages are paltry, assuming we even have
+gold to distribute in the first place.
+
+Wages, bah! Who needs those?
+With friends like you around, we'll
+be raking in the dough someday!
+
+As of now, I'm making an investment
+towards the future I want to see.
+Here's a bag of gold.
+
+Whoa... there's gotta be at least 4000 in here!
+Is this your entire savings?
+
+Pretty much. When I was high-tailing it
+from those empire jerks, I made off with
+a few extra coins.
+
+Greed has always been one of my more
+pervasive sins...
+
+I... can't thank you enough, Edith.
+
+\branch\
+How could we fail to save her?
+
+
+\branch\
+
+Goodness... I'm exhausted...
+Was Silesse's crime rate always this high? 
+I can hardly keep my eyes open...
+
+Neill... who's protecting the children?
+
+Oh, gods! 
+I completely forgot about them!
+Hurry, Barra!
+
+\branch\
+
+...Phew. They're sound asleep.
+
+
+
+
+
+CHAPTER 4
+
+MAP
+
+At long last, Storm Cabal has reached
+its destination.
+The children they harbored were 
+reunited with their parents once more.
+The joy Neill and his friends felt
+for a job well done would not last.
+The empire remained steadfast in
+their manhunt for the cabal.
+But why do they so ardently pursue
+a group of ordinary mercenaries?
+Yet again, their work proved more
+laborious than initially thought...
+
+OPENING
+
+Greetings, travelers. 
+You all look thoroughly exhausted.
+Come, rest a spell.
+
+Thanks, I'd appreciate that...
+Are you the one in charge
+of this village here?
+
+You could say that...
+Months ago, I was but a wandering
+priestess, in service of helping
+those who fortune had long forgot.
+Many days spent aimlessly wandering 
+have brought me here.
+It was a grisly sight. 
+Illness had taken this village by storm. 
+With their leadership wiped out, 
+the people of Skanor were scared,
+and directionless.
+I could not sit idle and watch these
+pure and kind folk suffer.
+I tended to their wounds, bartered
+for medicine, and oversaw the
+reconstruction of rundown houses.
+Before I knew it, I had been put in
+charge of everything.
+I am every bit as grateful to them
+as they are to me. 
+
+Wow! You musta been like a one-man army!
+
+Don't be daft!
+That would discredit the efforts of
+those who've supported me for so long!
+
+...Oh, pardon me, young man, but 
+what is your name?
+
+Call me Neill!
+
+Neill, I would like to introduce 
+you to a friend of mine-
+He isn't very talkative, so please
+be patient with him.
+
+I'm Waulter, a local woodcutter.
+I thought Ilsa here could use a hand,
+so I did a few lifting jobs here 
+and there... that's all.
+Just wanted to do my part...
+I'll tell ya, if it weren't for her, 
+we'd all be lying under a pile of snow.
+
+I think we've been well addressed...
+Neill, what I would like to hear 
+about is how you and your scrappy
+friends saved this town's children.
+
+/branch\
+
+I can tell you how that happened.
+We hijacked an imperial supply,
+and found more than we bargained for.
+The empire has been abducting children
+for some kind of religious sacrifice.
+It's too repulsive for words...
+
+I'm speechless...
+May the gods bless thee for your 
+acts of kindness.
+This town would have no future if
+its youth were fed to Loptous.
+
+The part that hurts me the most is
+knowing the empire likely has way
+more kids captured somewhere.
+They're bleeding us dry, and once
+we run out of means to fight back,
+they'll come in 'n conquer us!
+How can we ever hope to stop them?!
+
+You need to take quick and effective
+action to have any hope of haulting
+further reinforcements.
+The best able-bodied soldiers in
+Silesse are currently positioned
+with Princess Fee in Tofa.
+If you can bring this news to her,
+you might be able to mobilize a force 
+strong enough to oppose Grannvale.
+
+First of all- how would we even
+reach Tofa? It's so far north!
+The mountain range is utterly 
+inhospitable! 
+There's no way we can travel
+through it and reach Tofa in time.
+Secondly, you expect the royalty
+to listen to some mercenaries out
+in the boonies like us?
+I'd almost sooner fight the empire
+head on than try that!
+
+...
+
+Seadna, please... 
+Try not to get too frustrated...
+She's only trying to help...
+
+I... you're right, Neill.
+
+Take solace in what good we've made.
+That's what Barra would say.
+I think it applies here.
+
+Let's just try to relax...
+We'll think of something, I'm
+sure of it.
+
+Lady Ilsa!　An imperial battalion
+has been sighted on the
+outskirts of town!
+
+(Oh, gods... could we not have
+a little more time to spare?)
+
+Have everyone escorted through
+the north exit of town.
+
+Waulter and I will hold them
+off for as long as it takes
+everyone to escape.
+
+Now, hurry!
+
+Wait! You can't possibly fend
+them all off by yourselves!
+
+You and Neill have a future
+together. 
+I will stay behind to protect
+that future even it costs me
+my life.
+
+Let us lend a hand!
+Any chance to lay into the 
+empire is a great one!
+
+I agree with the lass. 
+You might be ready to sacrifice
+yourself at the drop of a hat,
+but I'm not.
+I've got things left to do.
+Let Neill and his friends
+take arms.
+
+I-I'll allow it...
+
+Allow what?!
+You ain't the boss of us!
+
+...
+
+Let's get started, shall we?
+
+/branch\
+
+We just sorta... happened upon them.
+Most people guard their food and
+money pretty securely, but if the 
+empire is doing this with kids...
+Something beyond vile is afoot.
+
+I want to fight back. 
+I can feel it in my bones...
+The empire must be stopped!
+...But how?
+
+A group as small as yours doesn't
+have the numbers to battle the
+empire on any front.
+You would have to designate
+yourself an army, or join a 
+larger one.
+I say we take this to the highest
+authority we can find- 
+Princess Fee herself.
+She's currently positioned in Tofa
+with a regiment of the most skilled
+soldiers in the country.
+If you can bring this news to her,
+you might be able to mobilize a force 
+strong enough to oppose Grannvale.
+
+That's a nice thought... but do
+you really think that's possible?
+At best, I'd be a courier, delivering 
+urgent news to her majesty...
+Which she will promptly ignore.
+She wouldn't listen to me, even if
+I made it over the gates.
+I'm certainly not talented enough
+to lead a full-scale army or wage
+a war or something of that sort.
+Maybe my father could've, but not me.
+
+You have more potential than 
+you could ever imagine.
+Even if it feels hopeless... 
+it won't hurt you to try.
+
+That's easy for you to say.
+You're not the one who has
+to hike through a mountain
+range to get there.
+
+I wouldn't be opposed to 
+travelling with you...
+
+...
+
+Waulter! 
+
+Our worst fears have come
+to pass. The empire is on
+our doorstep.
+
+...There's no time to waste.
+Neill... are you and your
+men in any condition to fight?
+
+We will feel no relief until
+the enemy's ranks are routed.
+You have our support.
+
+Battle stations, everyone!
+Protect the civilians!
+
+Seadna...
+I must carry on...
+That's what you would 
+tell me to do...
+Right? Right!?
+...
+
+/branch\
+
+Gerald/Waulter 
+When I was out in thick of it...
+You were there.
+An armored giant, setting men
+ablaze with an ornate red sword...
+
+Ilsa/Otto
+
+Neill/Seadna 2
+
+BOSS QUOTES
+
+I'm told you lot are due
+for an execution...
+Line up!
+
+Hnnnghh... 
+You're only d-delaying...
+the inevitable...
+
+I don't suppose you have
+room for another hostage,
+do you?
+
+CIVILIAN ESCAPE QUOTES
+
+CIVILIANS ESCAPE
+Everyone's out!
+Make a break for the exit!
+
+FAILURE (civvy dies)
+H-how could I...
+They're... I couldn't...
+I'm worthless...
+
+FAILURE (Ilsa dies)
+...Ilsa? Ilsa? ILSA?!
+
+ENDING
+
+neill
+We're free...
+Looks like the empire has 
+lost our scent. 
+
+barra
+Don't let your guard down
+just yet. We still need to
+do a head count.
+
+...Looks like everyone's
+accounted for.
+
+Neill, I want you
+to grab extra blankets
+for the families.
+
+I have a feeling they'll
+be travelling with us
+for a while.
+
+neill
+Gotcha...
+
+ilsa
+Oh, brave warriors...
+The humble folk of Skanor
+and I owe their lives to you.
+
+
+seadna
+You have to wonder though...
+why's the empire comin'
+at us with full force?
+
+At first, I thought it was
+to recapture the kids...
+
+otto
+I believe I have found
+a rationale to their 
+motives.
+
+seadna
+Otto! 
+
+otto
+Further analysis of the
+cargo has revealed items
+previously undocumented.
+
+Among these items were staves,
+black-colored tomes, 
+and most notably, a map.
+
+
+CHAPTER 5
+
+CHAPTER 6
+
+PROMOTION CEREMONY
+
+CHAPTER 7
+
+BATTLE QUOTES
+Why must you misunderstand us?
+Do you yearn for death?
+
+DEATH QUOTES
+We are all equal... in the eyes of Loptous...
+
+RELEASE QUOTES
+You want to know more about... her?
+I don't have all of the details...
+She was found on the doorstep of one
+of our cathedrals, barely alive.
+A bishop took pity on the girl,
+raising her as his own.
+Bishop Maxima, I believe it was.
+Master Durchval ordered her to
+leave for Silesse while he lay
+bedridden.
+Her resentment towards the archbishop 
+is palpable. You may be able to reason
+with her.
+...May I be released now?
+
+DURCHVAL 2
+They've raided our complex?!
+
+I-I'm afraid so, sir.
+Our efforts to route them
+by bribing the local scum
+bear no fruit.
+
+And what of the fugitive 
+retrieval squad? Or the 
+mercenaries we hired?
+
+Not a single one has reported
+back, sir. The rebels and our
+stolen goods remain at large...
+
+That map they were carrying led
+them right to us! 
+
+...They had a map? 
+
+You're all unfathomably stupid!
+I want everyone responsible for 
+this string of failures flayed!
+
+Who, may I ask, was responsible
+for managing this string of 
+failures?
+
+A-Archbishop Manfroy!
+Your emminence, I...
+I am at fault here. 
+You've given me a task that
+another of my rank could
+handle without incident.
+I owe my continued existence
+to you, your bountiful mercy-
+
+Silence! 
+You will confront the army of
+Silesse in person.
+
+
+ENDING EVENT
+
+
+
+CHAPTER 8
+
+
+
+
+

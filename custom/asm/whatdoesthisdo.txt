@@ -1,0 +1,14 @@
+
+CALL_ASM_SKIPPABLE - Skippable, shocker
+CALL_ASM_LOOP          - Not skippable
+
+rlUnknown8C9E22, $0000 - Clears all moving map sprites
+$83FBDC, $0000              - Resets options to default
+$9A9D79, $0000               - Sets sfx to muted. Not music.
+
+$849485, $0000	- Swaps chapter maps
+$9A98CF, $0000	- Fade + "some callback" - Zane
+
+$9A98E6, $0000	- Part of AnimON Battle System
+
+

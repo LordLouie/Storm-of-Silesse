@@ -1,0 +1,57 @@
+[FLOWS FROM OPENING CUTSCENE]
+
+[Scene 1]
+
+SCENARIO: Two young men seem to be practicing with one another, swinging their lances. They seem to be in a village environment. It's sunset - the orange sky is bleeding its colors into the landscape around them.
+
+*After a couple of strikes back and forth, all missing...
+
+Unknown Figure 1: ...Hyah!
+
+*The teenager swings his lance once more, but this time hits his sparring partner.
+
+Unknown Figure 2: ...Urk!
+
+Stop... Stop!!
+
+*The battle ends. The first figure runs towards his partner. He's now identified.
+
+Finn: ...Glade! Are you alright?!
+
+Glade: ...Got you!
+
+Finn: Huh?
+
+*Cheerful music starts playing
+
+Glade: Come on, it's going to take a lot more than that for you to hit me!
+
+Finn: Glade, please... We don't have much daylight left. Instead of fooling around, I'd really like to make sur-
+
+Glade: Oh gods, can you relax already? You've been at this for weeks. At any rate, you need to save at least some energy for tomorrow. You're going to do great.
+
+Finn: I suppose you're right... But, what about you? Are you sure you're ready? I know a lot of generals have their eyes on you, anticipating your performance.
+
+Glade: *scoff* Finn, I come and hang out with you and have a good time. If I wanted a lecture, I'd be with my dad right now. You're sounding more like him every day.
+
+Finn: Sorry... I just... This is important to me. And I'd like to see you do well too.
+
+Glade: I know the odds are stacked against you, but you're a natural born survivor. I bet you could survive a week or more in those damned Thracian mountains with nothing but the clothes on your back. With the higher ups oogling at recruits born from noble houses, they'll be that much more shocked when they see you rise to the occasion.
+
+Finn: You think so? That really means a lot, coming from you.
+
+*The sun is now nearly gone
+
+Finn: Ah, I should pack my things... It's my turn this week to help with the soup kitchen.
+
+Glade: Couldn't they give you a break just this once, all things considered?
+
+Finn: Well, they did actually, but I turned that down.
+
+Glade: ...You turned down a break? Hah, you're something else. I'm getting out of here before your craziness rubs off on me. 
+
+Finn: See you tomorrow. Make sure to wake up on time!
+
+Glade, from a distance: Yeah, yeah!
+
+END SCENE
