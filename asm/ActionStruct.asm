@@ -4858,7 +4858,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
             and #$00FF
             sta wR0
 
-            lda #StatCap + 1
+            lda #33
             sec
             sbc wR0
             bpl +

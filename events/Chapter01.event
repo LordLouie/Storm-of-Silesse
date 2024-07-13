@@ -23,7 +23,7 @@ GUARD_FE5_CHAPTER01 :?= false
 
         ; Flag definitions
 
-          _FlagGaZowmnTalk         = enum.enum()
+          _FlagGaZowmnTalk         = enum.enum($05)
           _FlagWeissmannBattleQuote = enum.enum()
 
           ; TODO: map installer definitions
@@ -125,7 +125,7 @@ GUARD_FE5_CHAPTER01 :?= false
 
         _GaZowmnTalk ; FD/8324
           macroDialogue dialogueChapter01gazowmnfromhittvanimemobilesuitgundamdoublezeta
-          
+          macroASMCSetCharacterDataByte Seadna, MovementStars, 3 *5
         END2
 
         _PrepGroups ; FD/8396

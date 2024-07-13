@@ -1,26 +1,136 @@
 
+.weak
+  WARNINGS :?= "None"
+.endweak
 
+GUARD_FE5_CHAPTER04 :?= false
+.if (!GUARD_FE5_CHAPTER04)
+  GUARD_FE5_CHAPTER04 := true
 
+  ; Definitions
 
+    .weak
 
+      rlEventEngineCancelFading :?= address($8C8461)
 
+    .endweak
 
+  ; Freespace inclusions
 
+    .section Chapter04EventsSection
 
+      eventChapter04Events ; 99/8778
 
+        ; Flag definitions
 
+          _FlagGeraldWaulterTalk        = enum.enum($06)
+          _FlagTrottierBattleQuote = enum.enum()
 
+        _OpeningEventDefinitions ; 99/8778
+          EVENT FlagAlwaysZero,_OpeningEvent
+            CMP_WORD wCurrentTurn, 0
+          END_DEFINITION
+        END_DEFINITION_ARRAY
 
+        _TurnEventDefinitions ; 99/8785
+        END_DEFINITION_ARRAY
 
+        _TalkEventDefinitions ; 99/8848
+          EVENT _FlagGeraldWaulterTalk, _GeraldWaulterTalk
+            CHECK_CHARS2 Gerald, Waulter
+          END_DEFINITION
+        END_DEFINITION_ARRAY
 
+        _LocationEventDefinitions ; 99/8862
+          EVENT _FlagSleepEdgeHouseVisit, _SleepEdgeHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [2, 19]
+          END_DEFINITION
 
+        _BeforeActionEventDefinitions ; 99/891E
+          macroECPlayerRetreat _FlagEnding, _PlayerRetreat, Neill
+          EVENT FlagAlwaysZero, _NPCRetreat
+            CMP_WORD wCurrentPhase, NPC
+            TEST_FLAG_UNSET _FlagEnding
+          END_DEFINITION
+        END_DEFINITION_ARRAY
 
+        _AfterActionEventDefinitions ; 99/896B
+          EVENT FlagAlwaysZero, _EndingEvent
+            TEST_FLAG_SET _FlagEnding
+          END_DEFINITION
+        END_DEFINITION_ARRAY
 
+        _BattleEventDefinitions ; 99/8974
+          macroECBossQuote _FlagTrottierBattleQuote, Trottier
+        END_DEFINITION_ARRAY
 
+        _ShopEventDefinitions ; 99/897E
+        END_DEFINITION_ARRAY
 
+        _Turn2Reinforcements
+          SCROLL_CAMERA_ADDRESS eventChapter04Data._Turn2GroupCameraCoordinates
+          YIELD
 
+          LOAD_GROUP eventChapter04Data._Turn2Group
+          WAIT_MOVE
+          YIELD
 
+        _Turn4Reinforcements
+          SCROLL_CAMERA_ADDRESS eventChapter04Data._Turn4GroupCameraCoordinates
+          YIELD
 
+          LOAD_GROUP eventChapter04Data._Turn4Group
+          WAIT_MOVE
+          YIELD
+
+        _PlayerRetreat ; 99/8F5B
+          macroASMCSetFlagIfRetreatingUnitByTable _RetreatingNPCTable
+          macroHaveActiveUnitRetreat _RetreatMovestring
+        END2
+
+        _NPCRetreat ; 99/8FA5
+          EVENT_CMP_BYTE_EQ aAISelectedUnitInfo.bActionDecision, $05
+          JUMP_FALSE +
+
+            macroASMCSetFlagIfRetreatingUnitByTable _RetreatingNPCTable
+
+          +
+        END1
+
+        _RetreatingNPCTable ; 99/8FBB
+          RETREAT_FLAG Civilian2, FlagChp4Civilian2Saved
+          RETREAT_FLAG Civilian3, FlagChp4Civilian3Saved
+          RETREAT_FLAG Civilian4, FlagChp4Civilian4Saved
+          RETREAT_FLAG Civilian5, FlagChp4Civilian5Saved
+          RETREAT_FLAG Civilian6, FlagChp4Civilian6Saved
+          RETREAT_FLAG Civilian7, FlagChp4Civilian7Saved
+        RETREAT_FLAG
+
+        _RetreatMovestring ; 99/8FD1
+          MS_MOVE_UP
+          MS_MOVE_UP
+        MS_END
+
+        _OpeningEvent ; 99/8FD4
+        END2
+
+        _EndingEvent ; 99/9167
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 16
+          YIELD
+          CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
+          FADE_OUT $01
+          YIELD
+
+          CALL_ASM_LOOP rlASMCChapterEnd
+        END1
+
+    .endsection Chapter04EventsSection
+
+    .section Chapter04DataSection
+
+      eventChapter04Data ; B1/EF95
 
         _IlsaWaulterGroup
           UNIT Ilsa, Player, [6, 8], [6, 8], Neill, [Mend, Physic, Restore, SteelSword], 4, false, [$00, $00, $00, $00]
@@ -86,6 +196,89 @@
         _Turn8Group
         UNIT
 
+    .endsection Chapter04DataSection
+
+    .section Chapter04WorldMapEventsSection
+
+      eventChapter04WorldMapEvents ; E7/E40E
+
+        SCROLL_CAMERA_COORDS [20, 12], 4
+        SET_CURSOR_POSITION
+        YIELD
+
+        PLAY_SOUND_FORCED $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $29
+        YIELD
+
+        FADE_IN 1
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [96, 80], WMMarkerTable.Crown, 0
+
+        macroASMCWMDialogue dialogueChapter04WorldMap1
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroASMCWMDialogue dialogueChapter04WorldMap2
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [20, 8], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [104, 64], WMMarkerTable.Crown, 0
+
+        macroASMCWMDialogue dialogueChapter04WorldMap3
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        SCROLL_CAMERA_COORDS [20, 12], 1
+        SET_CURSOR_POSITION
+        YIELD
+
+        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
+
+        macroWMDrawSpecialMarker [96, 80], WMMarkerTable.Crown, 0
+
+        macroASMCWMDialogue dialogueChapter04WorldMap4
+        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
+
+        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
+
+        macroWMClearSpecialMarker 0
+
+        PAUSE_SKIPPABLE 1
+        YIELD
+
+        FADE_OUT 2
+        YIELD
+
+        CALL_ASM_LOOP rlASMCEndWMEvents
+        YIELD
+      END1
+
+    .endsection Chapter04WorldMapEventsSection
+
+.endif ; GUARD_FE5_CHAPTER04
 
 
 

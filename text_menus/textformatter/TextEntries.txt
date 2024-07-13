@@ -501,8 +501,9 @@ Dark Prince
 Fighter
 Pegasus Rider
 Soldier
-Loptrian (Mage
+Fire (Mage
 Huntress
+Marauder
 
 //ITEMS-------------------------------------------
 

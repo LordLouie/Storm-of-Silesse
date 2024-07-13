@@ -278,8 +278,10 @@
 			.text "Berserker \n"
 			
 		menutextClassBrigandName
-		menutextClassBrigandAlternateName
 			.text "Brigand \n"
+			
+		menutextClassBrigandAlternateName
+			.text "(Marauder \n"
 			
 		menutextClassWarriorName
 			.text ")Warrior\n"
@@ -314,9 +316,10 @@
 		menutextClassWindMageName
 		menutextClassWindMageFName
 			.text ")Wind (Mage \n"
+		
 		menutextClassLoptrianMageName
 		menutextClassLoptrianMageFName		; Unused
-			.text "Loptrian (Mage\n"
+			.text "Fire (Mage\n"
 		
 		menutextClassHighPriestName
 			.text "High Priest \n"

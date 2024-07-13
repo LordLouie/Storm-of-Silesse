@@ -168,15 +168,15 @@ GUARD_FE5_CHAPTER02 :?= false
           macroASMCChangeAllegianceToPlayer Gerald
           macroASMCSetCharacterDataWord Gerald, Leader, Neill
         END2
-		
+
 	    _EdithWhines ; FD/B384
 		  GET_CHARACTER_COORDS Edith
 	   	  SCROLL_CAMERA 4
 		  YIELD
-			
+
 		  RESET_PHASE_MUSIC
 		  YIELD
-				
+
 		  macroDialogue edithwhines
     	END2
 
@@ -193,7 +193,7 @@ GUARD_FE5_CHAPTER02 :?= false
 
           macroASMCChangeAllegianceToPlayer Edith
           macroASMCSetCharacterDataWord Edith, Leader, Neill
-		  
+
         END2
 		
 		END_DEFINITION
@@ -392,22 +392,6 @@ GUARD_FE5_CHAPTER02 :?= false
 
           macroASMCUnsetUnitState Gerald, UnitStateCaptured
 
-          _UnitClearList  := [Edith]
-          _UnitClearList ..= []
-
-          .for _Unit in _UnitClearList
-
-            macroASMCCheckUnitStateSet _Unit, UnitStateCaptured
-            JUMP_TRUE +
-
-              macroASMCClearRescue _Unit
-
-              macroASMCUnsetUnitState _Unit, (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved | UnitStateUnknown2)
-              macroASMCSetUnitState _Unit, (UnitStateHidden | UnitStateDisabled)
-
-            +
-          .endfor
-
           PLAY_SOUND_FORCED $00E7
           FADE_OUT $01
           YIELD
@@ -447,7 +431,7 @@ GUARD_FE5_CHAPTER02 :?= false
 		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 34], Killian, [Javelin], 5, false, [$00, $00, $00, $00]
           UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [13, 34], Killian, [Javelin], 5, false, [$00, $00, $00, $00]
 		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [11, 35], Killian, [SteelSword], 5, false, [$00, $00, $00, $00]
-		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [13, 35], Killian, [KillingEdge], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [13, 35], Killian, [SteelSword], 5, false, [$00, $00, $00, $00]
 		  UNIT MercenaryMage1, Enemy, [10, 38], [12, 34], Killian, [Wind], 5, false, [$00, $00, $00, $00]
 		  UNIT Edith, Enemy, [10, 38], [12, 35], Killian, [Grafcalibur, Fire], 5, false, [$03, $00, $00, $00]
         UNIT
@@ -513,9 +497,9 @@ GUARD_FE5_CHAPTER02 :?= false
 		  UNIT BanditBrigand1, Enemy, [6, 20], [6, 20], Maurice, [HandAxe, Vulnerary], 5, false, [$00, $03, $00, $00]
 		  UNIT BanditBrigand1, Enemy, [1, 10], [1, 10], Maurice, [IronAxe], 5, false, [$00, $03, $00, $00]
           UNIT BanditBrigand1, Enemy, [2, 11], [2, 11], Maurice, [IronAxe], 5, false, [$00, $03, $00, $00]
-		  UNIT BanditBrigand1, Enemy, [15, 20], [15, 20], Maurice, [DevilAxe], 5, false, [$00, $02, $00, $00]
-		  UNIT BanditBrigand1, Enemy, [17, 21], [17, 21], Maurice, [HandAxe], 3, false, [$00, $02, $00, $00]
-          UNIT BanditBrigand1, Enemy, [16, 22], [16, 22], Maurice, [IronAxe], 2, false, [$00, $02, $00, $00]
+		  UNIT BanditBrigand2, Enemy, [15, 20], [15, 20], Maurice, [SteelAxe], 5, false, [$00, $03, $00, $00]
+		  UNIT BanditHunter, Enemy, [17, 21], [17, 21], Maurice, [IronBow], 3, false, [$00, $03, $00, $00]
+          UNIT BanditBrigand1, Enemy, [16, 22], [16, 22], Maurice, [IronAxe], 2, false, [$00, $03, $00, $00]
         UNIT
 
         _PirateGroup2CameraCoordinates ; B1/FA64

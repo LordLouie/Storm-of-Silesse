@@ -172,13 +172,30 @@ GUARD_FE5_CHAPTER03 :?= false
 
           ;cmacroCustomBattleAnimON 2
 
+					STORE_WORD_FROM wEventEngineParameter1, wCurrentChapter
+					STORE_WORD wEventEngineParameter2, 1
+					CALL_ASM_SKIPPABLE $9AE8CC
+			
+					STORE_BYTE $7E41AC, $00
+					HALT_UNTIL_WORD_SKIPPABLE wMapBattleFlag, $00
+			
+					STORE_WORD_FROM wCurrentChapter, wEventEngineParameter1
+			
+					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
+			
+					PLAY_SOUND_FORCED $00E0
+					PAUSE_SKIPPABLE 32
+					YIELD
+
           PAUSE_SKIPPABLE 32
           YIELD
 
           DIALOGUE neillagnes2
           YIELD
 
-          macroScriptedRewarpStaff Agnes, [-1, -1]
+            MOVE_CHAR Agnes, [7, 25], 1
+            WAIT_MOVE
+            YIELD
 
           macroASMCRemoveUnit Agnes
           YIELD
@@ -198,7 +215,7 @@ GUARD_FE5_CHAPTER03 :?= false
 
           macroChapterTitlePopup dialogueChapter03Title
 
-          SCROLL_CAMERA_COORDS [2, 16], 4
+          SCROLL_CAMERA_COORDS [1, 14], 4
 
         macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
         JUMP_FALSE _OpeningEvent_EdithDead
@@ -264,6 +281,9 @@ GUARD_FE5_CHAPTER03 :?= false
 
             MOVE_CHAR Fachtna, [19, 14], 1
 
+            SET_MUSIC $31
+            YIELD
+
             DIALOGUE dialogueChapter03OpeningA5
             YIELD
 
@@ -272,6 +292,13 @@ GUARD_FE5_CHAPTER03 :?= false
             SET_MUSIC $31
             YIELD
 ;at this point players should spawn outside the keep but for some reason barra and neill get spawned in the top left corner
+
+            macroASMCSetUnitPosition Edith, [18, 9]
+            macroASMCSetCharacterDataByte Edith, Fatigue, 0
+
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
             macroLoadPlayerUnitsByStartingPositions
 
             DIALOGUE dialogueChapter03OpeningA6
@@ -279,11 +306,6 @@ GUARD_FE5_CHAPTER03 :?= false
 
             macroASMCRemoveUnit Shiva
 
-          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
-          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
-
-            macroASMCSetUnitPosition Edith, [18, 9]
-            macroASMCSetCharacterDataByte Edith, Fatigue, 0
             YIELD
             JUMP _OpeningEvent_End
             
@@ -296,14 +318,22 @@ GUARD_FE5_CHAPTER03 :?= false
           LOAD_GROUP eventChapter03Data._NeillGroup
           WAIT_MOVE
           YIELD
-		  
+
           DIALOGUE dialogueChapter03OpeningB1
           YIELD
-		  
-		  macroASMCRemoveUnit MercenaryCavalier
-		  
+
+          macroASMCRemoveUnit MercenaryCavalier
+
+          MOVE_CHAR PirateEnemy, [6, 15], 1
+          YIELD_UNK
+          WAIT_MOVE
+          YIELD
+
           DIALOGUE dialogueChapter03OpeningB2
           YIELD
+
+            SET_MUSIC $3C
+            YIELD
 
           LOAD_GROUP eventChapter03Data._FachtnaGroup
           WAIT_MOVE
@@ -312,27 +342,34 @@ GUARD_FE5_CHAPTER03 :?= false
           DIALOGUE dialogueChapter03OpeningB3
           YIELD
 
+            SET_MUSIC $31
+            YIELD
+
           DIALOGUE dialogueChapter03OpeningB4
           YIELD
 
 		  MOVE_CHAR Fachtna, [4, 10], 1
 		  YIELD_UNK
-		  WAIT_MOVE
+          WAIT_MOVE
           YIELD
 
 		  macroOpenDoorByTileChangeID 0
-		  
-          SCROLL_CAMERA_COORDS [15, 8], 4
-		  
-		  MOVE_CHAR Fachtna, [19, 14], 1
 
-		  macroASMCRemoveUnit PirateEnemy
+          SCROLL_CAMERA_COORDS [15, 8], 4
+
+          MOVE_CHAR Fachtna, [19, 14], 1
+
+          macroASMCRemoveUnit PirateEnemy
 
           LOAD_GROUP eventChapter03Data._EnemyGroup1
           WAIT_MOVE
           YIELD
 
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+
           macroLoadPlayerUnitsByStartingPositions
+
           _OpeningEvent_End
 
         END2
