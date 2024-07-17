@@ -29,7 +29,7 @@ FinnDeathQuote,Seadna,AnyChapter,FlagPlayerDeath,dialogueFinnDeathQuote
 OsianDeathQuote,Otto,AnyChapter,None,dialogueOsianDeathQuote
 HalvanDeathQuote,Barra,AnyChapter,None,dialogueHalvanDeathQuote
 EyvelDeathQuote,Gerald,AnyChapter,None,dialogueEyvelDeathQuote
-DagdarDeathQuote,Edith,AnyChapter,None,dialogueDagdarDeathQuote
+DagdarDeathQuote,Edith,AnyChapter,FlagEdithDead,dialogueDagdarDeathQuote
 RalphDeathQuote,Ilse,AnyChapter,None,dialogueRalphDeathQuote
 MartyDeathQuote,Waulter,AnyChapter,None,dialogueMartyDeathQuote
 RonanDeathQuote,Sionnach,AnyChapter,None,dialogueRonanDeathQuote

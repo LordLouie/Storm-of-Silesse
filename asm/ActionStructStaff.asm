@@ -162,69 +162,11 @@ GUARD_FE5_ACTIONSTRUCT_STAFF :?= false
           .autsiz
           .databank `aActionStructUnit1
 
-          _StaffFatigueTiers  := [(RankE, 1)]
-          _StaffFatigueTiers ..= [(RankD, 2)]
-          _StaffFatigueTiers ..= [(RankC, 3)]
-          _StaffFatigueTiers ..= [(RankB, 4)]
-          _StaffFatigueTiers ..= [(RankA, 5)]
-
-          lda aActionStructUnit1.EquippedItemID2
-          jsl rlCopyItemDataToBuffer
-
-          lda aItemDataBuffer.BaseWeapon,b
-          and #$00FF
-          ora #pack([None, 1])
-          jsl rlCopyItemDataToBuffer
-
-          lda aItemDataBuffer.WeaponRank,b
-          ldx #0
-
-          _Loop
-            cmp _CutoffTable,x
-            blt +
-
-              inc x
-              inc x
-              bra _Loop
-
-            +
-            sep #$20
-
-            lda aActionStructUnit1.Fatigue
-            cmp #-1
-            beq _End
-
-              clc
-              adc _FatigueTable,x
-
-              cmp #99
-              blt +
-
-                lda #99
-
-              +
-              sta aActionStructUnit1.Fatigue
-
-          _End
-          rep #$30
-
           rts
+          .fill $83EA7D - *, $FF
 
           endCode
           startData
-
-            _CutoffTable .for _Rank in _StaffFatigueTiers[:,0]
-              ; Automatically cap table
-              .if _Rank == _StaffFatigueTiers[-1][0]
-                .sint -1
-              .else
-                .word _Rank + WeaponRankIncrement
-              .endif
-            .endfor
-
-            _FatigueTable .for _Tier in _StaffFatigueTiers[:,1]
-              .word _Tier
-            .endfor
 
           endData
           startCode

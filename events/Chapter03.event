@@ -53,13 +53,13 @@ GUARD_FE5_CHAPTER03 :?= false
           END_DEFINITION
 		  
           EVENT FlagAlwaysZero, _MageReinforcements
-            CMP_WORD wCurrentTurn, 9
+            CMP_WORD wCurrentTurn, 11
             CMP_WORD wCurrentPhase, Enemy
             TEST_FLAG_UNSET FlagBossDeath
           END_DEFINITION
 		  
           EVENT FlagAlwaysZero, _EmpireReinforcements
-            CMP_WORD wCurrentTurn, 15
+            CMP_WORD wCurrentTurn, 16
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
 		  
@@ -172,21 +172,6 @@ GUARD_FE5_CHAPTER03 :?= false
 
           ;cmacroCustomBattleAnimON 2
 
-					STORE_WORD_FROM wEventEngineParameter1, wCurrentChapter
-					STORE_WORD wEventEngineParameter2, 1
-					CALL_ASM_SKIPPABLE $9AE8CC
-			
-					STORE_BYTE $7E41AC, $00
-					HALT_UNTIL_WORD_SKIPPABLE wMapBattleFlag, $00
-			
-					STORE_WORD_FROM wCurrentChapter, wEventEngineParameter1
-			
-					HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, $0F
-			
-					PLAY_SOUND_FORCED $00E0
-					PAUSE_SKIPPABLE 32
-					YIELD
-
           PAUSE_SKIPPABLE 32
           YIELD
 
@@ -219,6 +204,11 @@ GUARD_FE5_CHAPTER03 :?= false
 
         macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
         JUMP_FALSE _OpeningEvent_EdithDead
+
+          macroLoadPlayerUnitsByStartingPositions
+
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
 
             LOAD_GROUP eventChapter03Data._BarraGroup
             WAIT_MOVE
@@ -256,7 +246,9 @@ GUARD_FE5_CHAPTER03 :?= false
 
             DIALOGUE dialogueChapter03OpeningA4
             YIELD
+
 ;the boss moves to unlock the doors in his keep and brings edith with him
+
             MOVE_CHAR Shiva, [4, 9], 1
             YIELD_UNK
             MOVE_CHAR Fachtna, [4, 10], 1
@@ -277,12 +269,9 @@ GUARD_FE5_CHAPTER03 :?= false
             WAIT_MOVE
             YIELD
 
-            macroOpenDoorByTileChangeID 2
+            macroASMCSingleTileChangeByCoords [16, 11], $0043
 
             MOVE_CHAR Fachtna, [19, 14], 1
-
-            SET_MUSIC $31
-            YIELD
 
             DIALOGUE dialogueChapter03OpeningA5
             YIELD
@@ -291,25 +280,25 @@ GUARD_FE5_CHAPTER03 :?= false
 
             SET_MUSIC $31
             YIELD
-;at this point players should spawn outside the keep but for some reason barra and neill get spawned in the top left corner
-
-            macroASMCSetUnitPosition Edith, [18, 9]
-            macroASMCSetCharacterDataByte Edith, Fatigue, 0
-
-          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
-          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
-
-            macroLoadPlayerUnitsByStartingPositions
 
             DIALOGUE dialogueChapter03OpeningA6
             YIELD
 
             macroASMCRemoveUnit Shiva
 
+            macroASMCSetUnitPosition Edith, [18, 9]
+
+            macroASMCAllUnitsUnsetUnitState (UnitStateUnknown1 | UnitStateHidden)
+
             YIELD
             JUMP _OpeningEvent_End
             
        _OpeningEvent_EdithDead
+
+          macroLoadPlayerUnitsByStartingPositions
+
+          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
+          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
 
           LOAD_GROUP eventChapter03Data._BarraGroup
           WAIT_MOVE
@@ -348,90 +337,111 @@ GUARD_FE5_CHAPTER03 :?= false
           DIALOGUE dialogueChapter03OpeningB4
           YIELD
 
-		  MOVE_CHAR Fachtna, [4, 10], 1
-		  YIELD_UNK
+          MOVE_CHAR Fachtna, [4, 10], 1
+          YIELD_UNK
           WAIT_MOVE
           YIELD
 
-		  macroOpenDoorByTileChangeID 0
+          macroOpenDoorByTileChangeID 0
 
           SCROLL_CAMERA_COORDS [15, 8], 4
 
           MOVE_CHAR Fachtna, [19, 14], 1
 
-          macroASMCRemoveUnit PirateEnemy
-
           LOAD_GROUP eventChapter03Data._EnemyGroup1
           WAIT_MOVE
           YIELD
 
-          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
-          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
+          macroASMCRemoveUnit PirateEnemy
 
-          macroLoadPlayerUnitsByStartingPositions
+            macroASMCAllUnitsUnsetUnitState (UnitStateUnknown1 | UnitStateHidden)
 
           _OpeningEvent_End
 
         END2
 
-        _EndingEvent ; 8C/EC8D
-          STORE_WORD wCurrentMapMusic, $00
+_EndingEvent
 
-          PAUSE_SKIPPABLE 16
-          YIELD
+  STORE_WORD wCurrentMapMusic, $00
 
-          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
-          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+  PAUSE_SKIPPABLE 16
+  YIELD
 
-          macroASMCSetUnitState Neill, UnitStateHidden
+  CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+  CALL_ASM_LOOP rlASMCSaveChapterTurncount
 
-            macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
-            ;JUMP_FALSE _EndingEvent_EdithDead
+  PLAY_SOUND_FORCED $00E0
+  PAUSE_SKIPPABLE 32
+  YIELD
 
-            macroDialogueWithBG dialogueChapter03Ending1, 1
+  macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
+  JUMP_FALSE _EndingEvent_EdithMissing
 
-            CALL_ASM_LOOP rlASMCDialogueWithBGEnd
-            YIELD
+    ; Edith was recruited and is alive.
 
-            macroASMAddGoldWord .segment Amount
-            STORE_WORD wEventEngineParameter1, 4000
-            CALL_ASM_LOOP rlASMCAddGoldWord
-            .endsegment
-            ;JUMP _CALL_ASM_LOOP rlASMCChapterEnd
+    ; This `SET_MUSIC $41; YIELD` was put here to avoid
+    ; setting the music -> jumping to where Edith is missing
+    ; but died in a different chapter -> setting the music again.
 
-        ;_EndingEvent_EdithDead
-            
-            ;macroDialogueWithBG  dialogueChapter03ExceptEdithDied, 1
-            ;JUMP _CALL_ASM_LOOP rlASMCChapterEnd
+    ; This means that we'll have to duplicate setting the music for the
+    ; `died this chapter` case, too.
 
-        ;_EndingEvent_EdithNotPresent
-;this is for if she was never recruited and idk how you even BEGIN to code that
-        ;dialogueChapter03Ending2A
-        ;dialogueChapter03Ending2B
-        ;JUMP _CALL_ASM_LOOP rlASMCChapterEnd
+    SET_MUSIC $41
+    YIELD
 
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
+    macroDialogueWithBG dialogueChapter03Ending1, 1
+    CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+    YIELD
 
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
+    macroASMCAddGoldWord 4000
 
-          SET_MUSIC $42
-          YIELD 
-		  
-          FADE_OUT 1
-          YIELD
+    JUMP _EndingEvent_End
 
-          CALL_ASM_LOOP rlASMCChapterEnd
+  _EndingEvent_EdithMissing
 
-        END1
-		  
+    ; Edith is missing, check why.
+
+    EVENT_TEST_FLAG_SET FlagEdithDead
+    JUMP_TRUE _EndingEvent_EdithDiedThisChapter
+
+      ; Otherwise Edith was never recruited/died last chapter/etc.
+
+      SET_MUSIC $42
+      YIELD
+
+      DIALOGUE dialogueChapter03Ending2A
+
+      macroDialogueWithBG dialogueChapter03Ending2B, 1
+      CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+      YIELD
+
+      JUMP _EndingEvent_End
+
+    _EndingEvent_EdithDiedThisChapter
+
+      ; Edith died this chapter.
+
+      macroDialogueWithBG dialogueChapter03ExceptEdithDied, 1
+      CALL_ASM_LOOP rlASMCDialogueWithBGEnd
+      YIELD
+
+      ; JUMP _EndingEvent_End
+
+  _EndingEvent_End
+
+  FADE_OUT 1
+  YIELD
+
+  CALL_ASM_LOOP rlASMCChapterEnd
+
+END1
+
    .endsection Chapter03EventsSection
 
     .section Chapter03DataSection
 
       eventChapter03Data ; B1/F318
-	  
+
         _UnusedCoordinates1 ; B1/F318
           .byte [11, 11]
 
@@ -458,18 +468,18 @@ GUARD_FE5_CHAPTER03 :?= false
           UNIT MercenaryMyrmidon1, Enemy, [2, 18], [2, 18], Fachtna, [IronSword], 7, false, [$00, $00, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [22, 7], [22, 7], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 8, false, [$00, $03, $00, $00]
-          UNIT MercenaryMage1, Enemy, [21, 1], [21, 1], Fachtna, [Wind], 5, false, [$00, $03, $00, $00]
-		  UNIT MercenaryMage1, Enemy, [12, 15], [12, 15], Fachtna, [Wind], 6, false, [$00, $00, $00, $00]
-		  UNIT MercenaryMage1, Enemy, [10, 5], [10, 5], Fachtna, [Wind], 5, false, [$00, $03, $00, $00]
-		  UNIT MercenaryMage2, Enemy, [13, 6], [13, 6], Fachtna, [Thunder, Vulnerary], 7, false, [$00, $03, $00, $00]
-		  UNIT MercenaryMage2, Enemy, [18, 5], [18, 5], Fachtna, [Thunder], 6, false, [$00, $03, $00, $00]
-		  UNIT MercenaryMage2, Enemy, [19, 18], [19, 18], Fachtna, [Thoron], 10, false, [$00, $03, $00, $00]
+          UNIT MercenaryMage1, Enemy, [21, 1], [21, 1], Fachtna, [Wind], 2, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [12, 15], [12, 15], Fachtna, [Wind], 3, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 5], [10, 5], Fachtna, [Wind], 2, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [13, 6], [13, 6], Fachtna, [Thunder, Vulnerary], 4, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [18, 5], [18, 5], Fachtna, [Thunder], 3, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [19, 18], [19, 18], Fachtna, [Thoron], 9, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [11, 3], [11, 3], Fachtna, [SteelBow, DoorKey], 6, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [21, 9], [21, 9], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [20, 16], [20, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [18, 16], [18, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
-		  UNIT BanditWarrior, Enemy, [25, 4], [25, 4], Fachtna, [Hammer, Vulnerary], 3, false, [$00, $03, $00, $00]
-		  UNIT ThiefEnemy1, Enemy, [23, 18], [23, 18], Fachtna, [VeninEdge, ChestKey], 5, false, [$00, $00, $00, $00]
+		  UNIT BanditWarrior, Enemy, [25, 4], [25, 4], Fachtna, [Hammer, Vulnerary], 5, false, [$00, $03, $00, $00]
+		  UNIT ThiefEnemy1, Enemy, [23, 18], [23, 18], Fachtna, [SlimSword, ChestKey], 5, false, [$00, $00, $00, $00]
 		  UNIT ThiefEnemy1, Enemy, [16, 4], [16, 4], Fachtna, [SlimSword, Lockpick], 4, false, [$10, $0B, $00, $00]
           UNIT
 
@@ -486,8 +496,8 @@ GUARD_FE5_CHAPTER03 :?= false
           .byte [13, 8]
 
 		_MageReinforcementsGroup ; B1/F4F2
-		  UNIT MercenaryMage1, Enemy, [1, 6], [1, 6], Fachtna, [Wind], 5, false, [$00, $00, $00, $00]
-		  UNIT MercenaryMage1, Enemy, [16, 5], [16, 5], Fachtna, [Thunder], 5, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [1, 6], [1, 6], Fachtna, [Wind], 3, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [16, 5], [16, 5], Fachtna, [Thunder], 3, false, [$00, $00, $00, $00]
           UNIT
 
         _EmpireGroupCameraCoordinates ; B1/F344
@@ -507,8 +517,8 @@ GUARD_FE5_CHAPTER03 :?= false
           .byte [9, 20]
         .char -1
 
-        _Chest1 VANILLA_CHEST KillingEdge, [12, 6], $0002 ; B1/F5D3
-        _Chest2 VANILLA_CHEST SteelBow, [13, 7], $0002 ; B1/F5D3
+        _Chest1 VANILLA_CHEST BerserkEdge, [12, 6], $0002 ; B1/F5D3
+        _Chest2 VANILLA_CHEST Longbow, [13, 7], $0002 ; B1/F5D3
         _Chest3 VANILLA_CHEST KillerAxe, [14, 6], $0002 ; B1/F5D3
 
         _Vendor SHOP [2, 1], [Vulnerary, DoorKey] ; B1/F65B

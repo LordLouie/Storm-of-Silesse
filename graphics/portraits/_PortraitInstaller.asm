@@ -2,7 +2,7 @@
 .logical $EAC000
 
 	aPortraitPalette00 .binary "sprites/neillformatted.pal"
-	aPortraitPalette01 .binary "sprites/PortraitPalette01.bin"
+	aPortraitPalette01 .binary "sprites/seadnaformatted.pal"
 	aPortraitPalette02 .binary "sprites/PortraitPalette02.bin"
 	aPortraitPalette03 .binary "sprites/PortraitPalette03.bin"
 	aPortraitPalette04 .binary "sprites/PortraitPalette04.bin"
@@ -247,7 +247,7 @@
 	aPortraitPaletteF3 .binary "sprites/PortraitPaletteF3.bin"
 
 	g4bppcPortraitEADE80 .binary "sprites/neillformatted.4bpp.comp"
-	g4bppcPortraitEAE3B9 .binary "sprites/PortraitEAE3B9.4bpp.comp"
+	g4bppcPortraitEAE3B9 .binary "sprites/seadnaformatted.4bpp.comp"
 	g4bppcPortraitEAE8B7 .binary "sprites/PortraitEAE8B7.4bpp.comp"
 	g4bppcPortraitEAEE23 .binary "sprites/PortraitEAEE23.4bpp.comp"
 	g4bppcPortraitEAF322 .binary "sprites/PortraitEAF322.4bpp.comp"

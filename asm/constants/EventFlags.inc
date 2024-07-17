@@ -106,7 +106,7 @@
 	FlagCairpreSaved		= $81
 	FlagShivaDiedInChp2x	= $82
 	FlagJubelSaved			= $83
-;							= $84 ; $84 - $88 unused in vanilla
+	FlagEdithDead			= $84 ; $84 - $88 unused in vanilla
 ;							= $85
 ;							= $86
 ;							= $87

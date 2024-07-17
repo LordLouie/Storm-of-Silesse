@@ -3691,7 +3691,7 @@ GUARD_FE5_ACTIONSTRUCT :?= false
 
           lda structActionStructEntry.Fatigue,b,y
           cmp #99
-          bge +
+          bra +
 
             inc a
             sta structActionStructEntry.Fatigue,b,y
