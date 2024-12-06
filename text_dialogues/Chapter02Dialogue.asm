@@ -62,7 +62,7 @@ dialogueChapter02Opening1
 .text "pass through the village..."
 .byte $08
 .byte $04
-.text "- General Killian"
+.text "- General Tavares"
 .byte $02
 .text "4th Supply Core of the Rotritter"
 .byte $08

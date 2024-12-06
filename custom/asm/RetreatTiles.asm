@@ -108,8 +108,8 @@
       aEnemyRetreatTilesCh2 ; 8F8797
 
         .byte 1,  3, 2
-		.byte 1,  4, 2
-		.byte 1,  5, 2
+        .byte 1,  4, 2
+        .byte 1,  5, 2
         .byte 5,  1, 3
         .byte 6,  1, 3
         .byte 7,  1, 3

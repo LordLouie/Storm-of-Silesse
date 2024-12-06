@@ -32,7 +32,7 @@
 	aPortraitPalette1C .binary "sprites/PortraitPalette1C.bin"
 	aPortraitPalette1D .binary "sprites/PortraitPalette1D.bin"
 	aPortraitPalette1E .binary "sprites/gazowmnformatted.pal"
-	aPortraitPalette1F .binary "sprites/PortraitPalette1F.bin"
+	aPortraitPalette1F .binary "sprites/trottierformatted.pal"
 	aPortraitPalette20 .binary "sprites/PortraitPalette20.bin"
 	aPortraitPalette21 .binary "sprites/PortraitPalette21.bin"
 	aPortraitPalette22 .binary "sprites/PortraitPalette22.bin"
@@ -292,7 +292,7 @@
 	g4bppcPortraitEBEE1D .binary "sprites/PortraitEBEE1D.4bpp.comp"
 	g4bppcPortraitEBF2FF .binary "sprites/PortraitEBF2FF.4bpp.comp"
 	g4bppcPortraitEBF862 .binary "sprites/gazowmnformatted.4bpp.comp"
-	g4bppcPortraitEBFD2F .crossbank.start *, "sprites/PortraitEBFD2F.4bpp.comp"
+	g4bppcPortraitEBFD2F .crossbank.start *, "sprites/trottierformatted.4bpp.comp"
 
 .here
 

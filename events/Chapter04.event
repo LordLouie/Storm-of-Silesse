@@ -23,23 +23,10 @@ GUARD_FE5_CHAPTER04 :?= false
 
         ; Flag definitions
 
-          _FlagDalsinTalk        = enum.enum($06)
-          _FlagDetected           = enum.enum()
+          _FlagGeraldWaulterTalk        = enum.enum($06)
+          _FlagTrottierBattleQuote = enum.enum()
+          _FlagSleepEdgeHouseVisit = enum.enum()
           _FlagEnding             = enum.enum()
-          _FlagDalsinBattleQuote = enum.enum()
-
-          ; TODO: map installer definitions
-
-          _FlagDoor1              = enum.enum($23)
-          _FlagDoor2              = enum.enum()
-          _FlagDoor3              = enum.enum()
-          _FlagDoor4              = enum.enum()
-          _FlagDoor5              = enum.enum()
-          _FlagDoor6              = enum.enum()
-          _FlagDoor7              = enum.enum()
-          _FlagDoor8              = enum.enum()
-          _FlagDoor9              = enum.enum()
-          _FlagDoor10             = enum.enum()
 
         _OpeningEventDefinitions ; 99/8778
           EVENT FlagAlwaysZero,_OpeningEvent
@@ -48,88 +35,25 @@ GUARD_FE5_CHAPTER04 :?= false
         END_DEFINITION_ARRAY
 
         _TurnEventDefinitions ; 99/8785
-          EVENT FlagAlwaysZero, _DetectedCheck
-            CMP_WORD wCurrentPhase, Enemy
-            TEST_FLAG_UNSET _FlagDetected
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _LeftSoldierReinforcements
-            CMP_WORD wCurrentPhase, Enemy
-            TEST_FLAG_SET _FlagDetected
-            CMP_WORD_RANGE wCurrentTurn, 7, 20
-            ROLL_RNG 40
-            CHECK_NUM_UNITS_LTE MunsterSoldier2, 12
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _MiddleLeftSoldierReinforcements
-            CMP_WORD wCurrentPhase, Enemy
-            TEST_FLAG_SET _FlagDetected
-            CMP_WORD_RANGE wCurrentTurn, 8, 60
-            ROLL_RNG 40
-            CHECK_NUM_UNITS_LTE MunsterSoldier2, 12
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _MiddleRightSoldierReinforcements
-            CMP_WORD wCurrentPhase, Enemy
-            TEST_FLAG_SET _FlagDetected
-            CMP_WORD_RANGE wCurrentTurn, 12, 24
-            ROLL_RNG 40
-            CHECK_NUM_UNITS_LTE MunsterSoldier2, 12
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _RightSoldierReinforcements
-            CMP_WORD wCurrentPhase, Enemy
-            TEST_FLAG_SET _FlagDetected
-            CMP_WORD_RANGE wCurrentTurn, 10, 24
-            ROLL_RNG 40
-            CHECK_NUM_UNITS_LTE MunsterSoldier2, 12
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _LifisDialogue
-            CMP_WORD wCurrentPhase, Enemy
-            CMP_WORD wCurrentTurn, 1
-            TEST_FLAG_UNSET _FlagDoor10
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _LeifDialogue
-            CMP_WORD wCurrentPhase, Player
-            CMP_WORD wCurrentTurn, 2
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _NPCDialogue
-            CMP_WORD wCurrentPhase, NPC
-            CMP_WORD wCurrentTurn, 2
-            TEST_FLAG_UNSET _FlagDoor1
-          END_DEFINITION
-          EVENT FlagAlwaysZero, _BrigandFlee
-            CMP_WORD wCurrentPhase, NPC
-            CMP_WORD wCurrentTurn, 15
-          END_DEFINITION
         END_DEFINITION_ARRAY
 
         _TalkEventDefinitions ; 99/8848
-          EVENT _FlagDalsinTalk, _DalsinRecruitment
-            TEST_FLAG_SET FlagJubelSaved
-            CHECK_CHARS2 Neill, Dalsin
-          END_DEFINITION
-          EVENT _FlagDalsinTalk, _DalsinRecruitment
-            TEST_FLAG_SET FlagJubelSaved
-            CHECK_CHARS2 Lifis, Dalsin
+          EVENT _FlagGeraldWaulterTalk, _GeraldWaulterTalk
+            CHECK_CHARS2 Waulter, Gerald
           END_DEFINITION
         END_DEFINITION_ARRAY
 
         _LocationEventDefinitions ; 99/8862
-          macroECDoor _FlagDoor1, [7, 11], _Door1
-          macroECDoor _FlagDoor2, [11, 6], _Door2
-          macroECDoor _FlagDoor2, [12, 6], _Door2
-          macroECDoor _FlagDoor3, [16, 11], _Door3
-          macroECDoor _FlagDoor4, [5, 13], _Door4
-          macroECDoor _FlagDoor5, [18, 13], _Door5
-          macroECDoor _FlagDoor6, [5, 21], _Door6
-          macroECDoor _FlagDoor7, [11, 21], _Door7
-          macroECDoor _FlagDoor7, [12, 21], _Door7
-          macroECDoor _FlagDoor8, [18, 21], _Door8
-          macroECDoor _FlagDoor9, [7, 24], _Door9
-          macroECDoor _FlagDoor10, [16, 24], _Door10
-          EVENT FlagAlwaysZero, _RandomChest
-            CHECK_IF_RANDOM_CHEST
+          EVENT _FlagSleepEdgeHouseVisit, _SleepEdgeHouseVisit
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [2, 19]
           END_DEFINITION
-        END_DEFINITION_ARRAY
 
         _BeforeActionEventDefinitions ; 99/891E
+        EVENT FlagAlwaysZero, _PlayerLoss1
+          END_DEFINITION
+        EVENT FlagAlwaysZero, _PlayerLoss2
+          END_DEFINITION
           macroECPlayerRetreat _FlagEnding, _PlayerRetreat, Neill
           EVENT FlagAlwaysZero, _NPCRetreat
             CMP_WORD wCurrentPhase, NPC
@@ -144,259 +68,29 @@ GUARD_FE5_CHAPTER04 :?= false
         END_DEFINITION_ARRAY
 
         _BattleEventDefinitions ; 99/8974
-          macroECBossQuote _FlagDalsinBattleQuote, Dalsin
+          macroECBossQuote _FlagTrottierBattleQuote, Trottier
         END_DEFINITION_ARRAY
 
         _ShopEventDefinitions ; 99/897E
+                macroECShop eventChapter14Data._Armory
+                macroECShop eventChapter14Data._Vendor
         END_DEFINITION_ARRAY
 
-        _LeftSoldierReinforcements ; 99/8980
-          SCROLL_CAMERA_ADDRESS eventChapter04Data._LeftSoldierReinforcementsCameraCoordinates
+        _Turn2Reinforcements
+          SCROLL_CAMERA_ADDRESS eventChapter04Data._Turn2GroupCameraCoordinates
           YIELD
 
-          LOAD_GROUP_BLOCKABLE eventChapter04Data._LeftSoldierReinforcementsGroup
+          LOAD_GROUP eventChapter04Data._Turn2Group
           WAIT_MOVE
           YIELD
-          YIELD_UNK
-        END2
 
-        _MiddleLeftSoldierReinforcements ; 99/898D
-          SCROLL_CAMERA_ADDRESS eventChapter04Data._MiddleLeftSoldierReinforcementsCameraCoordinates
+        _Turn5Reinforcements
+          SCROLL_CAMERA_ADDRESS eventChapter04Data._Turn5GroupCameraCoordinates
           YIELD
 
-          LOAD_GROUP_BLOCKABLE eventChapter04Data._MiddleLeftSoldierReinforcementsGroup
+          LOAD_GROUP eventChapter04Data._Turn5Group
           WAIT_MOVE
           YIELD
-          YIELD_UNK
-        END2
-
-        _MiddleRightSoldierReinforcements ; 99/899A
-          SCROLL_CAMERA_ADDRESS eventChapter04Data._MiddleRightSoldierReinforcementsCameraCoordinates
-          YIELD
-
-          LOAD_GROUP_BLOCKABLE eventChapter04Data._MiddleRightSoldierReinforcementsGroup
-          WAIT_MOVE
-          YIELD
-          YIELD_UNK
-        END2
-
-        _RightSoldierReinforcements ; 99/89A7
-          SCROLL_CAMERA_ADDRESS eventChapter04Data._RightSoldierReinforcementsCameraCoordinates
-          YIELD
-
-          LOAD_GROUP_BLOCKABLE eventChapter04Data._RightSoldierReinforcementsGroup
-          WAIT_MOVE
-          YIELD
-          YIELD_UNK
-        END2
-
-        _DetectedCheck ; 99/89B4
-          macroASMCCountAllUnitsWithCharacterDataByte MovementAI, $0A
-
-          EVENT_CMP_BYTE_EQ wEventEngineParameter1, 0
-          JUMP_FALSE +
-
-            SET_FLAG _FlagDetected
-
-          +
-        END2
-
-        _BrigandFlee ; 99/89D1
-          macroSetCharacterAI BanditBrigand1, [ActionAI_NoAction, $00, MovementAI_Flee, $00]
-        END2
-
-        _Door1 ; 99/8A32
-          macroOpenDoorByTileChangeID 2
-
-          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, 0
-          JUMP_FALSE +
-
-            PLAY_SOUND_FORCED $00F7
-            DIALOGUE dialogueChapter04LeftCellUnlock
-            YIELD
-
-            PLAY_SOUND_FORCED $00E8
-          END2
-
-          +
-        END1
-
-        _Door2 ; 99/8A71
-          macroOpenDoorByTileChangeID 3, $6A
-
-          macroSetCharacterAI MunsterArmoredAxe, [ActionAI_IgnoreNone, $00, MovementAI_Pursue, $00]
-          macroSetCharacterAI GrannvaleCavalier, [ActionAI_IgnoreNone, $00, MovementAI_Pursue, $00]
-          macroSetCharacterAI MunsterArmoredLance, [ActionAI_IgnoreNone, $00, MovementAI_Pursue, $00]
-          macroSetCharacterAI MunsterMage1, [ActionAI_IgnoreNone, $00, MovementAI_Pursue, $00]
-          macroSetCharacterAI MunsterPriest1, [ActionAI_IgnoreNone, $00, MovementAI_StationaryIfWeapon, $00]
-          macroSetCharacterAI Dalsin, [ActionAI_IgnoreNone, $00, MovementAI_Pursue, $00]
-        END1
-
-        _Door3 ; 99/8CDC
-          macroOpenDoorByTileChangeID 4
-
-          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, 0
-          JUMP_FALSE +
-
-            PLAY_SOUND_FORCED $00F7
-            DIALOGUE dialogueChapter04RightCellUnlock
-            YIELD
-
-            PLAY_SOUND_FORCED $00E8
-
-          +
-        END1
-
-        _Door4 ; 99/8D1A
-          macroOpenDoorByTileChangeID 5
-        END1
-
-        _Door5 ; 99/8D45
-          macroOpenDoorByTileChangeID 6
-        END1
-
-        _Door6 ; 99/8D70
-          macroOpenDoorByTileChangeID 7
-        END1
-
-        _Door7 ; 99/8D9B
-          macroOpenDoorByTileChangeID 8
-        END1
-
-        _Door8 ; 99/8DC6
-          macroOpenDoorByTileChangeID 9
-        END1
-
-        _Door9 ; 99/8DF1
-          macroOpenDoorByTileChangeID 10
-
-          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, 0
-          JUMP_FALSE +
-
-          macroASMCCountAllUnitsRescuedByPlayerOrNPC Karin
-          JUMP_FALSE +
-
-          macroASMCCountAllUnitsRescuedByPlayerOrNPC Fergus
-          JUMP_FALSE +
-
-            PLAY_SOUND_FORCED $00E0
-            PAUSE_SKIPPABLE 32
-            YIELD
-
-            SET_MUSIC $31
-            YIELD
-
-            DIALOGUE dialogueChapter04LeifCellUnlock
-            YIELD
-          END2
-
-          +
-        END1
-
-        _Door10 ; 99/8E52
-          macroOpenDoorByTileChangeID 11
-
-          EVENT_CMP_BYTE_EQ wEventEngineMapChangeFlag, 0
-          JUMP_FALSE +
-
-          macroASMCCountAllUnitsRescuedByPlayerOrNPC Lifis
-          JUMP_FALSE +
-
-            PLAY_SOUND_FORCED $00F7
-            DIALOGUE dialogueChapter04LifisCellUnlock
-            YIELD
-
-            PLAY_SOUND_FORCED $00E8
-          END2
-
-          +
-        END1
-
-        _RandomChest ; 99/8EA0
-          STORE_WORD wMapBattleFlag, 1
-
-          CALL_ASM_LOOP rlASMCGetRandomChestItem
-          YIELD_UNK
-          YIELD_UNK
-
-          CALL_ASM_LOOP rlASMCSetupGiveItemPopup
-          CALL_ASM_LOOP rlASMCWaitWhileGiveItemPopup
-          CALL_ASM_LOOP rlASMCSetupGiveToConvoyIfInventoryFull
-          CALL_ASM_LOOP rlASMCWaitWhileGiveToConvoyIfInventoryFull
-
-          STORE_WORD wMapBattleFlag, 0
-        END1
-
-        _DalsinRecruitment ; 99/8ECD
-          PAUSE_SKIPPABLE 64
-          YIELD
-
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
-
-          SET_MUSIC $4A
-          YIELD
-
-          DIALOGUE dialogueChapter04DalsinRecruitment
-          YIELD
-
-          macroASMCChangeAllegianceToPlayer Dalsin
-          macroASMCSetCharacterDataWord Dalsin, Leader, Neill
-
-          SET_FLAG _FlagDalsinBattleQuote
-        END2
-
-        _LifisDialogue ; 99/8F07
-          macroASMCCountAllUnitsRescuedByPlayerOrNPC Lifis
-          JUMP_FALSE +
-
-            PLAY_SOUND_FORCED $00E0
-            PAUSE_SKIPPABLE 32
-            YIELD
-
-            SET_MUSIC $3A
-            YIELD
-
-            SCROLL_CAMERA_CHAR Lifis, 4
-
-            DIALOGUE dialogueChapter04LifisDialogue
-            YIELD
-
-          +
-        END2
-
-        _LeifDialogue ; 99/8F2B
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
-
-          SET_MUSIC $4A
-          YIELD
-
-          SCROLL_CAMERA_CHAR Neill, 4
-
-          DIALOGUE dialogueChapter04LeifDialogue
-          YIELD
-        END2
-
-        _NPCDialogue ; 99/8F40
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
-
-          SET_MUSIC $07
-          YIELD
-
-          PLAY_SOUND_FORCED $00F7
-
-          SCROLL_CAMERA_CHAR Civilian2, 4
-
-          DIALOGUE dialogueChapter04NPCDialogue
-          YIELD
-
-          PLAY_SOUND_FORCED $00E8
-        END2
 
         _PlayerRetreat ; 99/8F5B
           macroASMCSetFlagIfRetreatingUnitByTable _RetreatingNPCTable
@@ -426,109 +120,17 @@ GUARD_FE5_CHAPTER04 :?= false
           MS_MOVE_UP
         MS_END
 
-        _OpeningEvent ; 99/8FD4
-          CALL_ASM_SKIPPABLE rlEventEngineCancelFading
-
-          macroASMCAllUnitsSetCharacterDataByte Fatigue, 0
-
-          CALL_ASM_LOOP rlASMCSetLordIndefatigable
-
-          macroASMCAllUnitsSetUnitState (UnitStateUnknown1 | UnitStateHidden)
-          macroASMCAllUnitsUnsetUnitState (UnitStateGrayed | UnitStateMovementStar | UnitStateMoved)
-
-          SCROLL_CAMERA_ADDRESS eventChapter04Data._PlayerGroup2CameraCoordinates
+        _GeraldWaulterTalk
+          SET_MUSIC $43
           YIELD
-
-          LOAD_GROUP eventChapter04Data._PlayerGroup2
-          WAIT_MOVE
-          YIELD
-
-          macroASMCSetUnitPosition Neill, [7, 26]
-          macroASMCSetUnitPosition Lifis, [19, 26]
-
-          CALL_ASM_LOOP rlASMCCreateRandomChestItemArrayFromUnitInventories
-          CALL_ASM_LOOP rlASMCAddFixedItemsToRandomChestArray
-          CALL_ASM_LOOP rlASMCCreateRandomChestTiles
-
-          macroASMCLoadUnitGroup eventChapter04Data._EnemyGroup1
-          macroASMCLoadUnitGroup eventChapter04Data._EnemyGroup2
-          macroASMCLoadUnitGroup eventChapter04Data._EnemyGroup3
-
-          LOAD_GROUP eventChapter04Data._LifisBrigands
-          WAIT_MOVE
-          YIELD
-
-          LOAD_GROUP eventChapter04Data._RightCivilianGroup
-          WAIT_MOVE
-          YIELD
-
-          LOAD_GROUP eventChapter04Data._LeftCivilianGroup
-          WAIT_MOVE
-          YIELD
-
-          FADE_IN 2
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
-
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
-
-          SET_MUSIC $39
-          YIELD
-
-          macroChapterTitlePopup dialogueChapter04Title
-
-          macroDialogueWithBG dialogueChapter04Opening1, 1
-
-          CALL_ASM_LOOP rlASMCDialogueWithBGEnd
-          YIELD
-
-          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
-
-          SCROLL_CAMERA_ADDRESS eventChapter04Data._PlayerGroup1CameraCoordinates
-          YIELD
-
-          LOAD_GROUP eventChapter04Data._PlayerGroup1
-          WAIT_MOVE
-          YIELD
-
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
-
-          SET_MUSIC $32
-          YIELD
-
-          SCROLL_CAMERA_CHAR CedChp4x, 4
-
-          DIALOGUE dialogueChapter04Opening2
-          YIELD
-
-          MOVE_CHAR CedChp4x, [0, 0], 1, _CedAsbelMovestring
-          MOVE_CHAR Asbel, [0, 0], 1, _CedAsbelMovestring
-
-          WAIT_MOVE
-          YIELD
-
-          macroASMCRemoveUnit CedChp4x
-          macroASMCRemoveUnit Asbel
-
-          DIALOGUE dialogueChapter04Opening3
-          YIELD
+            macroDialogue geraldwalter
         END2
 
-        _CedAsbelMovestring ; 99/913E
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-          MS_MOVE_RIGHT
-        MS_END
+        _SleepEdgeHouseVisit
+          macroItemHouse dialogueChapter01IronSwordHouse, SleepEdge, [17, 8], $0021
+        END2
 
-        _ChestPositionTable ; 99/9147
+        _ChestPositionTable ; nothing actually spawns this just has to be here or the event engine will have a hissy fit
           .byte [2, 13]
           .byte [3, 13]
           .byte [2, 14]
@@ -546,63 +148,90 @@ GUARD_FE5_CHAPTER04 :?= false
           .byte [20, 22]
           .byte [21, 22]
 
-        _EndingEvent ; 99/9167
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 16
-          YIELD
-
-          CALL_ASM_LOOP rlASMCSaveActiveUnitClearHDMA
+        _OpeningEvent ; 99/8FD4
+          SET_CAMERA_POSITION [19, 1]
+          HALT_UNTIL_BYTE_SKIPPABLE bBufferINIDISP, INIDISP_Setting(false, 15)
 
           PLAY_SOUND_FORCED $00E0
           PAUSE_SKIPPABLE 32
           YIELD
 
-          SET_MUSIC $3C
+          SET_MUSIC $4F
           YIELD
 
-          CALL_ASM_LOOP rlASMCSaveChapterTurncount
+          macroChapterTitlePopup dialogueChapter04Title
 
-          macroASMCLoadUnitGroup eventChapter04Data._EndingGroup
-
-          SCROLL_CAMERA_COORDS [11, 17], 4
+          LOAD_GROUP eventChapter04Data._IlseWaulterGroup
+          WAIT_MOVE
           YIELD
+          
+          macroLoadPlayerUnitsByStartingPositions
+            DIALOGUE dialogueChapter04Opening1
+            YIELD
 
-          macroOpenDoorByTileChangeID 8, $6A
 
-          DIALOGUE dialogueChapter04Ending
+          SET_MUSIC $39
           YIELD
+          SCROLL_CAMERA_COORDS [1, 20], 4
+          LOAD_GROUP eventChapter04Data._TrottierGroup
+          WAIT_MOVE
+          YIELD
+            DIALOGUE dialogueChapter04Opening3
+            YIELD
+        END2
 
-          macroASMCSetCharacterDataWord Maurice, Leader, Neill
-          macroASMCSetCharacterDataWord Lara, Leader, Neill
-          macroASMCSetCharacterDataWord Brighton, Leader, Neill
+        _EndingEvent ; 99/9167
+          PLAY_SOUND_FORCED $00E0
+          PAUSE_SKIPPABLE 16
+          YIELD
+            macroASMCUnsetUnitState Barra, (UnitStateUnknown1 | UnitStateDead) ;RESURRECTION
 
-          _SavedCivilianFlags  := [FlagChp4Civilian2Saved]
-          _SavedCivilianFlags ..= [FlagChp4Civilian3Saved]
-          _SavedCivilianFlags ..= [FlagChp4Civilian4Saved]
-          _SavedCivilianFlags ..= [FlagChp4Civilian5Saved]
-          _SavedCivilianFlags ..= [FlagChp4Civilian6Saved]
-          _SavedCivilianFlags ..= [FlagChp4Civilian7Saved]
+            macroASMCGiveConvoyItem Jormungand ;Otto went through the goods and found a bunch of Loptrian gear
+            macroASMCGiveConvoyItem Jormungand
+            macroASMCGiveConvoyItem Jormungand
+            macroASMCGiveConvoyItem Jormungand
+            macroASMCGiveConvoyItem Jormungand
+            macroASMCGiveConvoyItem Ensorcel
+            macroASMCGiveConvoyItem Rescue
 
-          .for _Flag in _SavedCivilianFlags
-
-            EVENT_TEST_FLAG_SET _Flag
-            JUMP_FALSE +
-
-          .endfor
-
-            JUMP ++
-
-          +
-
-          ADD_WORD wCurrentChapter, Chapter05 - Chapter04 - 1
-          YIELD_UNK
-
-          +
-          CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured
+          CALL_ASM_LOOP rlASMCSetUnitsLeftBehindAsCaptured ;captured units never reappear so this is basically death
           FADE_OUT $01
           YIELD
 
           CALL_ASM_LOOP rlASMCChapterEnd
+
+        END1
+
+        _PlayerLoss1
+
+        PLAY_SOUND_FORCED $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $28 
+        YIELD
+
+        DIALOGUE civvydies
+        YIELD
+
+        macroASMCGameOver
+
+        END1
+
+        _PlayerLoss2
+
+        PLAY_SOUND_FORCED $00E0
+        PAUSE_SKIPPABLE 32
+        YIELD
+
+        SET_MUSIC $28 
+        YIELD
+
+        DIALOGUE civvydies
+        YIELD
+
+        macroASMCGameOver
+
         END1
 
     .endsection Chapter04EventsSection
@@ -611,131 +240,96 @@ GUARD_FE5_CHAPTER04 :?= false
 
       eventChapter04Data ; B1/EF95
 
-        _PlayerGroup1CameraCoordinates ; B1/EF95
-          .byte [8, 7]
-
-        _PlayerGroup1 ; B1/EF97
-          UNIT CedChp4x, Player, [17, 18], [17, 18], CedChp23, [Light, Forseti], 1, false, [$00, $00, $00, $30]
-          UNIT Asbel, Player, [16, 17], [16, 17], CedChp23, [Wind, Fire, DoorKey], 1, false, [$00, $00, $00, $30]
-          UNIT Brighton, Player, [18, 17], [18, 17], CedChp23, [SteelSword, SteelAxe, IronSword], 5, false, [$00, $00, $00, $30]
-          UNIT Maurice, Player, [19, 18], [19, 18], CedChp23, [IronSword, Vulnerary, Shortsword, ChestKey], 2, false, [$00, $00, $00, $30]
-          UNIT Lara, Player, [20, 17], [20, 17], CedChp23, [Lockpick, SlimSword], 2, false, [$00, $00, $00, $30]
+        _IlseWaulterGroup
+          UNIT Ilse, Player, [17, 3], [17, 3], Neill, [Mend, Physic, Restore, SteelSword], 4, false, [$00, $00, $00, $00]
+          UNIT Waulter, Player, [16, 4], [16, 4], Neill, [Bardiche, SteelAxe, Vulnerary], 7, false, [$00, $00, $00, $00]
         UNIT
 
-        _PlayerGroup2CameraCoordinates ; B1/EFFD
-        .byte [8, 7]
-
-        _PlayerGroup2 ; B1/EFFF
-          UNIT Fergus, Player, [6, 26], [6, 26], Neill, [], 3, false, [$00, $00, $00, $30]
-          UNIT Karin, Player, [8, 28], [8, 28], Neill, [], 1, false, [$00, $00, $00, $00]
-        UNIT
-
-        _UnusedCoordinates1 ; B1/F029
-          .byte [8, 7]
-
-        _EnemyGroup1 ; B1/F02B
-          UNIT MunsterArmoredLance, Enemy, [11, 12], [11, 12], Bandole, [ShortLance, Vulnerary], 1, false, [$01, $03, $00, $00]
-          UNIT MunsterArmoredLance, Enemy, [12, 12], [12, 12], Bandole, [ShortLance, DoorKey], 1, false, [$01, $03, $00, $00]
-          UNIT MunsterSoldier2, Enemy, [16, 13], [16, 13], Bandole, [ShortLance, Vulnerary], 1, false, [$02, $0A, $00, $20]
-          UNIT MunsterSoldier2, Enemy, [16, 22], [16, 22], Bandole, [ShortLance, Vulnerary], 1, false, [$02, $0A, $00, $30]
-          UNIT MunsterSoldier2, Enemy, [6, 23], [7, 22], Bandole, [ShortLance], 1, false, [$02, $0A, $00, $10]
-          UNIT MunsterSoldier2, Enemy, [7, 13], [7, 13], Bandole, [ShortLance], 1, false, [$02, $0A, $00, $00]
-        UNIT
-
-        _LeftSoldierReinforcementsCameraCoordinates ; B1/F0A5
-        .byte [9, 18]
-
-        _LeftSoldierReinforcementsGroup ; B1/F0A7
-          UNIT MunsterSoldier2, Enemy, [1, 17], [1, 17], Bandole, [ShortLance, Vulnerary], 1, false, [$00, $00, $00, $00]
-        UNIT
-
-        _MiddleLeftSoldierReinforcementsCameraCoordinates ; B1/F0BD
-          .byte [12, 22]
-
-        _MiddleLeftSoldierReinforcementsGroup ; B1/F0BF
-          UNIT MunsterSoldier2, Enemy, [11, 28], [11, 28], Bandole, [ShortLance, Vulnerary], 3, false, [$00, $00, $00, $00]
-        UNIT
-
-        _UnusedCoordinates2 ; B1/F0D5
-          .byte [9, 18]
-
-        _EnemyGroup2 ; B1/F0D7
-          UNIT MunsterArmoredLance, Enemy, [8, 3], [8, 3], Bandole, [Javelin], 5, false, [$02, $03, $00, $00]
-          UNIT MunsterMage1, Enemy, [6, 3], [6, 3], Bandole, [Thunder], 3, false, [$02, $03, $00, $00]
-          UNIT GrannvaleCavalier, Enemy, [7, 4], [7, 4], Bandole, [Shortbow], 3, false, [$02, $03, $00, $00]
-          UNIT MunsterPriest1, Enemy, [6, 4], [6, 4], Bandole, [Heal], 4, false, [$02, $03, $00, $00]
-          UNIT MunsterArmoredAxe, Enemy, [7, 3], [7, 3], Bandole, [HandAxe, Vulnerary], 4, false, [$02, $03, $00, $00]
-          UNIT Dalsin, Enemy, [8, 4], [8, 4], Bandole, [BattleAxe, Torch], 5, false, [$02, $03, $00, $00]
-        UNIT
-
-        _UnusedCoordinates3 ; B1/F151
-          .byte [12, 22]
-
-        _EnemyGroup3 ; B1/F153
-          UNIT MunsterArmoredAxe, Enemy, [15, 4], [15, 4], Bandole, [BattleAxe], 3, false, [$02, $03, $00, $00]
-          UNIT MunsterArmoredAxe, Enemy, [16, 3], [16, 3], Bandole, [HandAxe, Vulnerary], 4, false, [$02, $03, $00, $00]
-          UNIT MunsterPriest1, Enemy, [17, 4], [17, 4], Bandole, [Heal], 4, false, [$02, $03, $00, $00]
-          UNIT MunsterMage1, Enemy, [17, 3], [17, 3], Bandole, [Thunder], 3, false, [$02, $03, $00, $00]
-          UNIT GrannvaleCavalier, Enemy, [16, 4], [16, 4], Bandole, [Shortbow], 3, false, [$02, $03, $00, $00]
-          UNIT MunsterArmoredLance, Enemy, [15, 3], [15, 3], Bandole, [Javelin], 5, false, [$02, $03, $00, $00]
-        UNIT
-
-        _MiddleRightSoldierReinforcementsCameraCoordinates ; B1/F1CD
-          .byte [15, 18]
-
-        _MiddleRightSoldierReinforcementsGroup ; B1/F1CF
-          UNIT MunsterSoldier2, Enemy, [22, 18], [22, 18], Bandole, [ShortLance, Vulnerary], 2, false, [$00, $00, $00, $00]
-        UNIT
-
-        _RightSoldierReinforcementsCameraCoordinates ; B1/F1E5
-          .byte [12, 22]
-
-        _RightSoldierReinforcementsGroup ; B1/F1E7
-          UNIT MunsterSoldier2, Enemy, [12, 28], [12, 28], Bandole, [Javelin, Vulnerary], 4, false, [$00, $00, $00, $00]
-        UNIT
-
-        _UnusedCoordinates4 ; B1/F1FD
-          .byte [8, 7]
-
-        _LifisBrigands ; B1/F1FF
-          UNIT BanditBrigand1, NPC, [15, 26], [15, 26], Seil, [IronAxe], 4, false, [$00, $00, $00, $00]
-          UNIT BanditBrigand1, NPC, [17, 26], [17, 26], Seil, [IronAxe], 4, false, [$00, $00, $00, $00]
-          UNIT BanditBrigand1, NPC, [16, 27], [16, 27], Seil, [IronAxe], 4, false, [$00, $00, $00, $00]
-        UNIT
-
-        _UnusedCoordinates5 ; B1/F23D
-          .byte [8, 7]
-
-        _RightCivilianGroup ; B1/F23F
-          UNIT Civilian5, NPC, [15, 8], [15, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
-          UNIT Civilian6, NPC, [16, 9], [16, 9], Ishtar, [], 1, false, [$02, $0B, $00, $00]
-          UNIT Civilian7, NPC, [17, 8], [17, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
-        UNIT
-
-        _UnusedCoordinates6 ; B1/F27D
-          .byte [12, 18]
-
-        _LeftCivilianGroup ; B1/F27F
+        _FirstCivilianGroup ; B1/F27F
           UNIT Civilian2, NPC, [6, 8], [6, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
-          UNIT Civilian3, NPC, [7, 9], [7, 9], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _SecondCivilianGroup
+          UNIT Civilian3, NPC, [15, 8], [15, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _ThirdCivilianGroup
           UNIT Civilian4, NPC, [8, 8], [8, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
         UNIT
 
-        _UnusedCoordinates7 ; B1/F2BD
-          .byte [12, 18]
-
-        _EndingGroup ; B1/F2BF
-          UNIT Ishtar, Enemy, [11, 15], [11, 15], Raydrik, [], 1, false, [$00, $00, $00, $00]
-          UNIT JuliusJuliaPortrait, Enemy, [12, 15], [12, 15], Raydrik, [], 1, false, [$00, $00, $00, $00]
-          UNIT Veld, Enemy, [10, 16], [10, 16], Raydrik, [], 1, false, [$00, $00, $00, $00]
-          UNIT ManfroyMachaPortrait, Enemy, [13, 16], [13, 16], Raydrik, [], 1, false, [$00, $00, $00, $00]
+        _FourthCivilianGroup
+          UNIT Civilian5, NPC, [15, 8], [15, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
         UNIT
 
-        _StartingPositions ; B1/F311
-          .byte [11, 30]
-          .byte [1, 0]
-          .byte [1, 1]
+        _FifthCivilianGroup
+          UNIT Civilian6, NPC, [16, 9], [16, 9], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _SixthCivilianGroup
+          UNIT Civilian7, NPC, [17, 8], [17, 8], Ishtar, [], 1, false, [$02, $0B, $00, $00]
+        UNIT
+
+        _TrottierGroup
+          UNIT Trottier, Enemy, [4, 24], [6, 22], Werner, [Tornado, MasterSword], 10, false, [$01, $03, $00, $00]
+          UNIT GrannvaleCavalier, Enemy, [5, 24], [5, 22], Trottier, [Longsword], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleCavalier, Enemy, [6, 24], [6, 22], Trottier, [Shortsword], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleCavalier, Enemy, [7, 24], [7, 22], Trottier, [Longlance], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleCavalier, Enemy, [8, 24], [8, 22], Trottier, [Ridersbane], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBowKnight, Enemy, [9, 24], [9, 22], Trottier, [Longbow], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBowKnight, Enemy, [10, 24], [10, 22], Trottier, [Longbow], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredLance, Enemy, [17, 24], [17, 24], Trottier, [Longlance], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredLance, Enemy, [17, 24], [17, 24], Trottier, [Longlance], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredAxe, Enemy, [17, 24], [17, 24], Trottier, [SteelAxe], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleArmoredAxe, Enemy, [17, 24], [17, 24], Trottier, [SteelAxe], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBishop, Enemy, [17, 24], [17, 24], Trottier, [Physic, Silence], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBishop, Enemy, [17, 24], [17, 24], Trottier, [Heal, Physic], 10, false, [$00, $00, $00, $00]
+        UNIT
+
+        _Turn2GroupCameraCoordinates
+          .byte [13, 8]
+
+        _Turn2Group
+          UNIT GrannvaleArcher, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleMage, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+
+        _Turn5GroupCameraCoordinates
+          .byte [13, 8]
+
+        _Turn5Group
+          UNIT GrannvaleCavalier, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleCavalier, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBowKnight, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT GrannvaleBowKnight, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+
+
+
+        _Turn7Group
+          UNIT MercenaryMage1, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMage2, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon2, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon2, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT PriestEnemy, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+          UNIT SniperEnemy, Enemy, [17, 8], [17, 8], Trottier, [], 10, false, [$00, $00, $00, $00]
+        UNIT
+        _Turn8Group
+        UNIT
+
+        _StartingPositions ; B1/F5BC
+          .byte [18, 5]
+          .byte [18, 7]
+          .byte [16, 7]
+          .byte [20, 7]
+          .byte [18, 9]
+          .byte [10, 6]
         .char -1
+
+            _Armory
+            SHOP [13, 8], [SlimSword, IronBlade, SilverSword, SteelBow]
+
+            _Vendor ; B1/BFBC
+            SHOP [27, 2], [Thunder, Heal, Vulnerary, Antitoxin, StaminaDrink]
 
     .endsection Chapter04DataSection
 
@@ -764,45 +358,6 @@ GUARD_FE5_CHAPTER04 :?= false
         macroASMCWMDialogue dialogueChapter04WorldMap1
         HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
 
-        macroASMCWMDialogue dialogueChapter04WorldMap2
-        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
-
-        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
-
-        macroWMClearSpecialMarker 0
-
-        PAUSE_SKIPPABLE 1
-        YIELD
-
-        SCROLL_CAMERA_COORDS [20, 8], 1
-        SET_CURSOR_POSITION
-        YIELD
-
-        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
-
-        macroWMDrawSpecialMarker [104, 64], WMMarkerTable.Crown, 0
-
-        macroASMCWMDialogue dialogueChapter04WorldMap3
-        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
-
-        macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
-
-        macroWMClearSpecialMarker 0
-
-        PAUSE_SKIPPABLE 1
-        YIELD
-
-        SCROLL_CAMERA_COORDS [20, 12], 1
-        SET_CURSOR_POSITION
-        YIELD
-
-        macroWMSetCyclePalette 0, aBGPaletteBuffer.aPalette6
-
-        macroWMDrawSpecialMarker [96, 80], WMMarkerTable.Crown, 0
-
-        macroASMCWMDialogue dialogueChapter04WorldMap4
-        HALT_UNTIL_WORD_SKIPPABLE wDialogueEngineStatus, $0000
-
         macroWMClearCyclePalette aBGPaletteBuffer.aPalette6
 
         macroWMClearSpecialMarker 0
@@ -820,3 +375,16 @@ GUARD_FE5_CHAPTER04 :?= false
     .endsection Chapter04WorldMapEventsSection
 
 .endif ; GUARD_FE5_CHAPTER04
+
+
+
+
+
+
+
+
+
+
+
+
+

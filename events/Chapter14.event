@@ -769,17 +769,17 @@ GUARD_FE5_CHAPTER14 :?= false
 				_PrepEnemies ; B1/B9FF
 					.byte 8, 7
 			
-					UNIT SupplyCorpsArmoredAxe, Enemy, [10, 16], [10, 16], Baldach, [BattleAxe], 14, False, [$00, $0F, $01, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [10, 16], [10, 16], Baldach, [Bardiche], 14, False, [$00, $0F, $01, $00]
 					UNIT SupplyCorpsMageKnight, Enemy, [29, 4], [29, 4], Paulus, [Ballista], 5, False, [$01, $03, $00, $00]
 					UNIT SupplyCorpsMageKnight, Enemy, [26, 7], [26, 7], Paulus, [Ballista], 5, False, [$01, $03, $00, $00]
 					UNIT SupplyCorpsMageKnight, Enemy, [6, 7], [6, 7], Paulus, [Ballista], 5, False, [$01, $03, $00, $00]
 					UNIT SupplyCorpsMageKnight, Enemy, [3, 4], [3, 4], Paulus, [Ballista], 5, False, [$01, $03, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [12, 16], [12, 16], Baldach, [BattleAxe], 14, False, [$00, $17, $01, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [12, 16], [12, 16], Baldach, [Bardiche], 14, False, [$00, $17, $01, $00]
 					UNIT FriegeBallista5, Enemy, [3, 21], [3, 21], Paulus, [IronBallista], 5, False, [$01, $03, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [14, 16], [14, 16], Baldach, [BattleAxe], 14, False, [$00, $0F, $01, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [16, 16], [16, 16], Baldach, [BattleAxe], 14, False, [$00, $0F, $01, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [18, 16], [18, 16], Baldach, [BattleAxe], 14, False, [$00, $0F, $01, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [20, 16], [20, 16], Baldach, [BattleAxe], 14, False, [$00, $17, $01, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [14, 16], [14, 16], Baldach, [Bardiche], 14, False, [$00, $0F, $01, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [16, 16], [16, 16], Baldach, [Bardiche], 14, False, [$00, $0F, $01, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [18, 16], [18, 16], Baldach, [Bardiche], 14, False, [$00, $0F, $01, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [20, 16], [20, 16], Baldach, [Bardiche], 14, False, [$00, $17, $01, $00]
 					UNIT SupplyCorpsArmoredLance, Enemy, [11, 16], [11, 16], Baldach, [Javelin], 12, False, [$00, $0F, $01, $00]
 					UNIT SupplyCorpsArmoredLance, Enemy, [13, 16], [13, 16], Baldach, [Javelin], 12, False, [$00, $0F, $01, $00]
 					UNIT SupplyCorpsArmoredLance, Enemy, [15, 16], [15, 16], Baldach, [Javelin], 12, False, [$00, $0F, $01, $00]

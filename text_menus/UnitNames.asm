@@ -518,7 +518,7 @@
 			.text "(Maurice\n"
 		
 		menutextUnitHicksName
-			.text "Killian \n"
+			.text "Tavares \n"
 		
 		menutextUnitNannaName
 			.text "+Nanna\n"

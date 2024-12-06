@@ -4,7 +4,7 @@ dialogueChapterObjectiveChapter01
 
 
 dialogueChapterObjektiveChapter02
-	.text "Defeat Killian before he escapes."
+	.text "Defeat Tavares before he escapes."
 .byte EndTextNoPortraitFade
 
 

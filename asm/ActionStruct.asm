@@ -1529,14 +1529,14 @@ GUARD_FE5_ACTIONSTRUCT :?= false
           ; Bragi's Blade always does full damage.
 
           lda structActionStructEntry.EquippedItemID2,b,x
-          cmp #BragisBlade
+          cmp #Vulnerary
           beq +
 
             ; If not attacking with Bragi's Blade, check if
             ; defender is using Loptyr's Blade.
 
             lda structActionStructEntry.EquippedItemID1,b,y
-            cmp #LoptrianFang
+            cmp #Bardiche
             bne +
 
               ; Halve might if attacking someone who is

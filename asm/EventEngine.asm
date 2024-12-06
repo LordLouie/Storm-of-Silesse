@@ -12627,16 +12627,14 @@ rlGetRandomChestCoordinates ; 8C/BA4E
 	.xl
 	.autsiz
 	.databank ?
-
+	lda eventChapter04Events._ChestPositionTable,x ;TO DO
+	and #$00FF
+	sta wR0
 	tax
 	lda aRandomizedNumbers,x
 	and #$00FF
 	asl a
 	tax
-	lda eventChapter04Events._ChestPositionTable,x ;TO DO
-	and #$00FF
-	sta wR0
-
 	lda eventChapter04Events._ChestPositionTable+1,x
 	and #$00FF
 	sta wR1
@@ -12650,7 +12648,7 @@ rlGetTriggeredRandomChests ; 8C/BA6B
 	.databank ?
 
 	lda wCurrentChapter,b
-	cmp #Chapter04
+	cmp #Chapter09
 	bne _End
 
 	jsl rlASMCCreateRandomChestTiles

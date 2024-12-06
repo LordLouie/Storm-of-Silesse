@@ -94,10 +94,11 @@
     .text "\n"
     
     menutextBattleAxeDescription
-    .text "Deadly axe, but \n"
-    .text "difficult to ]wield \n"
+    .text "{Lock})Waulter  \n"
+    .text "Stained by [me[mory \n"
+    .text "Halves ene[my's \n"
+    .text "attack po]wer \n"
     .text "\n"
-    
     
     menutextIronBowDescription
     .text "Co{mm}non, quality\n"
@@ -509,11 +510,11 @@
     .text "Use to heal all {H}{P}\n"
     .text "\n"
     
-    menutextEarthSwordDescription
-    .text "{Lock}+Nanna\n"
-    .text "Casts potent light\n"
-    .text "[magic at range \n"
-    .text "Drains target's {H}{P}\n"
+    menutextAtmaisfearDescription
+    .text "{Lock}Gerald, a blade \n"
+    .text "that ]warps \n"
+    .text "the air around it \n"
+    .text "Casts aura [magic \n"
     .text "\n"
     
     menutextShadowSwordDescription
@@ -563,9 +564,9 @@
     
     menutextAenbharrDescription
     .text "{Lock}Barra \n"
+    .text "Duvall's Favorite \n"
     .text "Long range\n"
-    .text "throwing axe\n"
-    .text "High critical rate\n"
+    .text "thro]wing axe \n"
     .text "\n"
     
     

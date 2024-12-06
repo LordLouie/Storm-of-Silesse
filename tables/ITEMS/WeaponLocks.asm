@@ -1,10 +1,10 @@
 
-aUnknown1WeaponLock ; B0/99D6
-	.word Barra
+aBardicheWeaponLock ; B0/99D6
+	.word Waulter
 	.word 0
 
-aEarthSwordWeaponLock ; B0/99DA
-	.word Nanna
+aAtmaisfearWeaponLock ; B0/99DA
+	.word Gerald
 	.word 0
 
 aGrafcaliburWeaponLock ; B0/99DE

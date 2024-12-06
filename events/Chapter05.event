@@ -813,7 +813,7 @@ GUARD_FE5_CHAPTER05 :?= false
           .byte [14, 17]
 
         _NannaGroup ; B1/E6B3
-          UNIT Nanna, Player, [20, 16], [15, 16], Neill, [EarthSword, Heal], 1, false, [$00, $00, $00, $00]
+          UNIT Nanna, Player, [20, 16], [15, 16], Neill, [Atmaisfear, Heal], 1, false, [$00, $00, $00, $00]
         UNIT
 
         _UnusedCoordinates2 ; B1/E6C9
@@ -857,8 +857,8 @@ GUARD_FE5_CHAPTER05 :?= false
           UNIT MunsterSoldier2, Enemy, [8, 8], [8, 8], Bandole, [Javelin, Vulnerary], 12, false, [$00, $03, $00, $00]
           UNIT MunsterSoldier2, Enemy, [6, 6], [6, 6], Bandole, [Javelin, Vulnerary], 12, false, [$00, $03, $00, $00]
           UNIT MunsterSoldier2, Enemy, [8, 6], [8, 6], Bandole, [Javelin, Vulnerary], 12, false, [$00, $03, $00, $00]
-          UNIT MunsterArmoredAxe, Enemy, [7, 7], [7, 7], Bandole, [BattleAxe, Vulnerary], 15, false, [$00, $03, $00, $00]
-          UNIT MunsterArmoredAxe, Enemy, [23, 7], [23, 7], Bandole, [BattleAxe, Vulnerary], 15, false, [$00, $03, $00, $00]
+          UNIT MunsterArmoredAxe, Enemy, [7, 7], [7, 7], Bandole, [Bardiche, Vulnerary], 15, false, [$00, $03, $00, $00]
+          UNIT MunsterArmoredAxe, Enemy, [23, 7], [23, 7], Bandole, [Bardiche, Vulnerary], 15, false, [$00, $03, $00, $00]
           UNIT MunsterSoldier2, Enemy, [24, 8], [24, 8], Bandole, [ShortLance, Vulnerary], 12, false, [$00, $03, $00, $00]
           UNIT MunsterSoldier2, Enemy, [22, 6], [22, 6], Bandole, [ShortLance, Vulnerary], 12, false, [$00, $03, $00, $00]
           UNIT MunsterSoldier2, Enemy, [24, 6], [24, 6], Bandole, [ShortLance, Vulnerary], 12, false, [$00, $03, $00, $00]

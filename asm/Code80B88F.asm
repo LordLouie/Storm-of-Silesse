@@ -4549,7 +4549,7 @@ rsUnknown80DAA5 ; 80/DAA5
 
 	pla
 	and #$00FF
-	cmp #EarthSword
+	cmp #Atmaisfear
 	beq +++
 
 	cmp #LightBrand
@@ -4628,7 +4628,7 @@ rsUnknown80DB1C ; 80/DB1C
 	tax
 	lda structActionStructEntry.EquippedItemID1,b,x
 	and #$00FF
-	cmp #EarthSword
+	cmp #Atmaisfear
 	beq ++
 
 	cmp #LightBrand

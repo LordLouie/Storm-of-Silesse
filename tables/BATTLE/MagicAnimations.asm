@@ -24,8 +24,8 @@ _0x3
 
 _0x4
 	.byte 17 ; Item Number
-	.byte 18 ; Close Range Animation
-	.byte 18 ; Long Range Animation
+	.byte 19 ; Close Range Animation
+	.byte 19 ; Long Range Animation
 
 _0x5
 	.byte 20 ; Item Number

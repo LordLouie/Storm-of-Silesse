@@ -53,7 +53,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Maurice
 
 	.word HicksPortrait
-	.word Killian
+	.word Tavares
 
 	.word NannaPortrait
 	.word Nanna

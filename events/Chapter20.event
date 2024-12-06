@@ -649,19 +649,19 @@ GUARD_FE5_CHAPTER20 :?= false
 					.byte 14, 24
 			
 				_ReoccuringReinforcementsGroup ; B1/9706
-					UNIT SupplyCorpsArmoredAxe, Enemy, [1, 30], [1, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [3, 30], [3, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [5, 30], [5, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [7, 30], [7, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [9, 30], [9, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [11, 30], [11, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [16, 30], [16, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [18, 30], [18, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [20, 30], [20, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [22, 30], [22, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [24, 30], [24, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [26, 30], [26, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [28, 30], [28, 30], Bharat, [HandAxe, BattleAxe], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [1, 30], [1, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [3, 30], [3, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [5, 30], [5, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [7, 30], [7, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [9, 30], [9, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [11, 30], [11, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [16, 30], [16, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [18, 30], [18, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [20, 30], [20, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [22, 30], [22, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [24, 30], [24, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [26, 30], [26, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [28, 30], [28, 30], Bharat, [HandAxe, Bardiche], 18, False, [$00, $22, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates1 ; B1/980C

@@ -16,7 +16,7 @@ BragisBlade,TypeSword,None,10,100,10,-1,5,1,1,WeaponLocks.aBragisBladeWeaponLock
 LightBrand,TypeSword,TypeLight,12,90,9,60,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aLightBrandItemBonuses,0,<>menutextLightBrandDescription,VulneraryUse,None,None,None,TraitMagicRanged | TraitWeapon | TraitUnsellable,$D
 BraveSword,TypeSword,None,15,85,12,60,0,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBraveSwordDescription,None,None,None,Skill3Brave,TraitWeapon ,$E
 Kingmaker,TypeSword,None,13,70,10,60,20,1,1,RankC,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextKingmakerDescription,None,None,Skill2Charm,Skill3Brave,TraitWeapon | TraitUnsellable,$F
-EarthSword,TypeSword,TypeLight,12,80,7,60,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextEarthSwordDescription,None,WeaponEffects.LifestealWeaponEffect,None,None,TraitMagicRanged | TraitWeapon | TraitUnsellable,$10
+Atmaisfear,TypeSword,TypeLight,18,120,11,60,0,1,2,WeaponLocks.aAtmaisfearWeaponLock,ItemEffectivenesses.aNoEffectiveness,aBlessedSwordItemBonuses,0,<>menutextAtmaisfearDescription,None,None,None,None,TraitMagicRanged | TraitWeapon | TraitUnsellable,$10
 WindSword,TypeSword,TypeWind,10,75,9,40,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aWindSwordItemBonuses,8200,<>menutextWindSwordDescription,None,None,None,None,TraitMagicRanged | TraitWeapon,$11
 FlameSword,TypeSword,TypeFire,10,75,9,40,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aFlameSwordItemBonuses,8200,<>menutextFlameSwordDescription,None,None,None,None,TraitMagicRanged | TraitWeapon,$12
 LightningSword,TypeSword,TypeThunder,10,75,9,40,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aLightningSwordItemBonuses,8200,<>menutextLightningSwordDescription,None,None,None,None,TraitMagicRanged | TraitWeapon,$13
@@ -45,7 +45,7 @@ Javelin,TypeLance,None,6,65,12,20,0,1,2,RankD,ItemEffectivenesses.aNoEffectivene
 MasterLance,TypeLance,None,15,70,13,20,0,1,2,RankA,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,3400,<>menutextMasterLanceDescription,None,None,None,Skill3Brave,TraitWeapon,$2A
 Ridersbane,TypeLance,None,13,60,13,20,0,1,1,RankB,ItemEffectivenesses.aCavalryEffectiveness,aNoItemBonuses,3000,<>menutextRidersbaneDescription,None,None,None,None,TraitWeapon,$2B
 KillerLance,TypeLance,None,11,70,9,25,30,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,3000,<>menutextKillerLanceDescription,None,None,None,None,TraitWeapon,$2C
-Muirgheal,TypeLance,None,14,80,8,60,5,1,1,WeaponLocks.aMuirghealWeaponLock,ItemEffectivenesses.aNoEffectiveness,aWindSwordItemBonuses,0,<>menutextMuirghealDescription,None,None,Skill2Accost,None,TraitWeapon | TraitUnsellable,$2D
+Muirgheal,TypeLance,None,14,80,8,60,10,1,1,WeaponLocks.aMuirghealWeaponLock,ItemEffectivenesses.aNoEffectiveness,aWindSwordItemBonuses,0,<>menutextMuirghealDescription,None,None,Skill2Accost,None,TraitWeapon | TraitUnsellable,$2D
 Gungnir,TypeLance,None,20,100,1,90,70,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aGungnirItemBonuses,0,<>menutextGungnirDescription,None,None,Skill2Vantage | Skill2Nihil,Skill3Wrath | Skill3Paragon | Skill3Brave,TraitWeapon,$2E
 BrokenLance,TypeLance,None,0,30,15,-1,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,400,<>menutextBrokenLanceDescription,None,None,None,None,TraitWeapon | TraitUnbreakable | TraitBroken,$2F
 IronAxe,TypeAxe,None,9,70,9,40,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,1100,<>menutextIronAxeDescription,None,None,None,None,TraitWeapon,$30
@@ -55,10 +55,10 @@ SilverAxe,TypeAxe,None,17,75,11,25,0,1,1,RankB,ItemEffectivenesses.aNoEffectiven
 HandAxe,TypeAxe,None,7,60,13,20,0,1,2,RankD,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,1000,<>menutextHandAxeDescription,None,None,None,None,TraitWeapon,$34
 Hammer,TypeAxe,None,12,60,14,20,0,1,1,RankC,ItemEffectivenesses.aArmorEffectiveness,aNoItemBonuses,1200,<>menutextHammerDescription,None,None,None,None,TraitWeapon,$35
 KillerAxe,TypeAxe,None,12,65,10,25,30,1,1,RankC,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,2000,<>menutextKillerAxeDescription,None,None,None,None,TraitWeapon,$36
-Aenbharr,TypeAxe,None,9,85,18,40,30,2,3,WeaponLocks.aAenbharrWeaponLock,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextAenbharrDescription,None,None,None,None,TraitWeapon | TraitUnsellable,$37
+Aenbharr,TypeAxe,None,12,85,13,40,0,1,3,WeaponLocks.aAenbharrWeaponLock,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextAenbharrDescription,None,None,None,None,TraitWeapon | TraitUnsellable,$37
 BraveAxe,TypeAxe,None,16,75,15,60,0,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBraveAxeDescription,None,None,None,Skill3Brave,TraitWeapon ,$38
 DevilAxe,TypeAxe,None,20,80,20,30,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,1200,<>menutextDevilAxeDescription,None,WeaponEffects.DevilWeaponEffect,None,None,TraitWeapon,$39
-BattleAxe,TypeAxe,None,14,65,15,20,10,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,1000,<>menutextBattleAxeDescription,None,None,None,None,TraitWeapon,$3A
+Bardiche,TypeAxe,None,14,65,16,60,0,1,1,WeaponLocks.aBardicheWeaponLock,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextBattleAxeDescription,None,None,None,None,TraitWeapon | TraitUnsellable,$3A
 Poleax,TypeAxe,None,15,60,16,20,0,1,1,RankC,ItemEffectivenesses.aCavalryEffectiveness,aNoItemBonuses,2200,<>menutextPoleaxDescription,None,None,None,None,TraitWeapon,$3B
 MasterAxe,TypeAxe,None,16,60,14,20,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,3200,<>menutextMasterAxeDescription,None,None,None,Skill3Brave,TraitWeapon,$3C
 BrokenAxe,TypeAxe,None,0,30,15,-1,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,400,<>menutextBrokenAxeDescription,None,None,None,None,TraitWeapon | TraitUnbreakable | TraitBroken,$3D

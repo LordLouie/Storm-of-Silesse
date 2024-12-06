@@ -279,6 +279,8 @@ GUARD_FE5_CHAPTER01 :?= false
 
           CALL_ASM_LOOP rlASMCSaveChapterTurncount
 
+            macroASMCUnsetUnitState Barra, (UnitStateUnknown1 | UnitStateDead) ;RESURRECTION
+
 		  macroDialogueWithBG dialogueChapter01Ending, 1
 	  	  CALL_ASM_LOOP rlASMCDialogueWithBGEnd
 		  YIELD

@@ -84,7 +84,7 @@ Karin
 Dalsin
 Asbel
 +Nanna
-Killian
+Tavares
 Shiva
 Callion
 Selphina
@@ -522,7 +522,7 @@ Bragi's Blade
 Light Brand
 Brave S]word
 King[maker
-Lands S]word
+At[maisféar
 )Wind S]word
 Fla[me S]word
 Lightning S]word
@@ -563,10 +563,10 @@ Hand Axe
 //Hammer
   Haner
 Killer Axe
-//Aenbharr			Moved to the fuse box
+Aenbharr
 Brave Axe
 Devil Axe
-Battle Axe
+Bardiche
 Poleax
 (Master Axe
 
@@ -1003,10 +1003,10 @@ Edith
 Anti
 Fliers
 
-+Nanna
-Casts potent light
-[magic at range
-Drains target's
+Gerald, a blade
+that ]warps
+the air around it
+Casts aura magic
 
 (Mareeta, 
 Gives +Nihil
@@ -1045,8 +1045,12 @@ Gives (Miracle
 Potent light [magic
 Drains target's
 
+Duvall's Favorite
 Long range 
 throwing axe
+
+(Waulter
+Stained by [me[mory
 
 Long range [magic
 Applies Sleep on hit
@@ -1328,8 +1332,3 @@ areas under a roof
 
 (Master Cro]wn
 Does nothing
-
-
-//CONTROL GROUP-----------------
-
-Aenbharr

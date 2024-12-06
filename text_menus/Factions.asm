@@ -20,7 +20,7 @@
 		.word Dean
 		.word <>menutextTahraLeader		; formerly "Dean": unnamed
 		
-		.word Killian
+		.word Tavares
 		.word <>menutextSupplyCorpsLeader
 		
 		.word Eisenhau

@@ -19,7 +19,7 @@
 		.word	<>menutextLightBrandName
 		.word	<>menutextBraveSwordName
 		.word	<>menutextKingmakerName
-		.word	<>menutextEarthSwordName
+		.word	<>menutextAtmaisfearName
 		.word	<>menutextWindSwordName
 		.word	<>menutextFlameSwordName
 		.word	<>menutextLightningSwordName
@@ -235,8 +235,8 @@
 		menutextKingmakerName
 			.text "King[maker\n"
 		
-		menutextEarthSwordName
-			.text "Lands S]word\n"
+		menutextAtmaisfearName
+			.text "At[maisféar \n"
 		
 		menutextWindSwordName
 			.text ")Wind S]word\n"
@@ -364,7 +364,7 @@
 			.text "Devil Axe \n"
 		
 		menutextBattleAxeName
-			.text "Battle Axe\n"
+			.text "Bardiche\n"
 		
 		menutextPoleaxName
 			.text "Poleax\n"

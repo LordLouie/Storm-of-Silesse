@@ -459,8 +459,8 @@ GUARD_FE5_CHAPTER11x :?= false
 					UNIT SupplyCorpsMageKnight, Enemy, [12, 10], [12, 10], Oltoph, [VeninBow, Antitoxin], 10, False, [$00, $00, $00, $00]
 					UNIT SupplyCorpsMageKnight, Enemy, [14, 10], [14, 10], Oltoph, [VeninBow, Antitoxin], 10, False, [$00, $00, $00, $00]
 					UNIT Oltoph, Enemy, [12, 14], [12, 14], Oltoph, [Bolting, Meteor, Physic, DoorKey], 8, True, [$01, $03, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [12, 15], [12, 15], Oltoph, [BattleAxe], 8, False, [$00, $03, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [13, 15], [13, 15], Oltoph, [BattleAxe], 8, False, [$00, $03, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [12, 15], [12, 15], Oltoph, [Bardiche], 8, False, [$00, $03, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [13, 15], [13, 15], Oltoph, [Bardiche], 8, False, [$00, $03, $00, $00]
 					UNIT FriegeSoldier2, Enemy, [4, 5], [4, 5], Oltoph, [Javelin], 6, False, [$00, $00, $00, $00]
 					UNIT FriegeSoldier2, Enemy, [6, 5], [6, 5], Oltoph, [Javelin], 6, False, [$00, $00, $00, $00]
 					UNIT FriegeSoldier2, Enemy, [8, 5], [8, 5], Oltoph, [Javelin], 6, False, [$00, $00, $00, $00]
@@ -482,7 +482,7 @@ GUARD_FE5_CHAPTER11x :?= false
 					UNIT FriegeArmoredSword2, Enemy, [12, 18], [12, 18], Oltoph, [IronBlade], 6, False, [$00, $10, $00, $00]
 					UNIT MercenaryMage1, Enemy, [11, 14], [11, 14], Oltoph, [Wind], 8, False, [$00, $03, $00, $00]
 					UNIT MercenaryMage1, Enemy, [13, 14], [13, 14], Oltoph, [Wind], 8, False, [$00, $03, $00, $00]
-					UNIT SupplyCorpsArmoredAxe, Enemy, [11, 15], [11, 15], Oltoph, [BattleAxe], 8, False, [$00, $03, $00, $00]
+					UNIT SupplyCorpsArmoredAxe, Enemy, [11, 15], [11, 15], Oltoph, [Bardiche], 8, False, [$00, $03, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates1 ; B1/CD09

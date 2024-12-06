@@ -51,27 +51,25 @@ GUARD_FE5_CHAPTER03 :?= false
             CMP_WORD wCurrentPhase, Enemy
             TEST_FLAG_UNSET FlagBossDeath
           END_DEFINITION
-		  
+
           EVENT FlagAlwaysZero, _MageReinforcements
             CMP_WORD wCurrentTurn, 11
             CMP_WORD wCurrentPhase, Enemy
             TEST_FLAG_UNSET FlagBossDeath
           END_DEFINITION
-		  
+
           EVENT FlagAlwaysZero, _EmpireReinforcements
             CMP_WORD wCurrentTurn, 16
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
-		  
-        END_DEFINITION_ARRAY
-		  
-		_TalkEventDefinitions ; 8C/E4AE
+
+        _TalkEventDefinitions ; 8C/E4AE
           EVENT _FlagAgnesNeillTalk, _NeillAgnesTalk
             CHECK_CHARS2 Neill, Agnes
           END_DEFINITION
         END_DEFINITION_ARRAY
-		  
-	    _LocationEventDefinitions ; 8C/E4B0
+
+        _LocationEventDefinitions ; 8C/E4B0
           macroECDoor _FlagDoor1, [4, 9], _Door1
           macroECDoor _FlagDoor2, [13, 4], _Door2
           macroECDoor _FlagDoor3, [16, 11], _Door3
@@ -373,6 +371,8 @@ _EndingEvent
   PLAY_SOUND_FORCED $00E0
   PAUSE_SKIPPABLE 32
   YIELD
+
+            macroASMCUnsetUnitState Barra, (UnitStateUnknown1 | UnitStateDead) ;RESURRECTION
 
   macroASMCCountAllUnitsUncapturedAliveWithHidden Edith
   JUMP_FALSE _EndingEvent_EdithMissing

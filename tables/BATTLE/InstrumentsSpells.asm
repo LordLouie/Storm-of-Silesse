@@ -36,7 +36,7 @@ InstrumentsSilence		    = $25
 .byte InstrumentsLight			; LightBrand		STJormungandr
 .byte $00               		; BraveSword
 .byte $00               		; Kingmaker			STMeteor
-.byte InstrumentsNosferatu   	; EarthSword		STNosferatu
+.byte InstrumentsLight   	; Atmaisfear		STNosferatu
 .byte InstrumentsWindGraf    	; WindSword			STForseti
 .byte InstrumentsFires       	; FlameSword		STFire
 .byte InstrumentsThunders    	; LightningSword	STThunder
@@ -82,7 +82,7 @@ InstrumentsSilence		    = $25
 .byte $00               		; Aenbharr
 .byte $00               		; BraveAxe
 .byte $00               		; DevilAxe
-.byte $00               		; BattleAxe
+.byte $00               		; Bardiche
 .byte $00               		; Poleax
 .byte $00               		; MasterAxe
 .byte $00               		; BrokenAxe
@@ -236,7 +236,7 @@ InstrumentsSilence		    = $25
 .byte InstrumentsLight+1     	; LightBrand
 .byte $00               		; BraveSword
 .byte $00               		; Kingmaker
-.byte InstrumentsNosferatu+1 	; EarthSword
+.byte InstrumentsLight+1 		; Atmaisfear
 .byte InstrumentsWindGraf+1  	; WindSword
 .byte InstrumentsFires+1     	; FlameSword
 .byte InstrumentsThunders+1  	; LightningSword
@@ -282,7 +282,7 @@ InstrumentsSilence		    = $25
 .byte $00               		; Aenbharr
 .byte $00               		; BraveAxe
 .byte $00               		; DevilAxe
-.byte $00               		; BattleAxe
+.byte $00               		; Bardiche
 .byte $00               		; Poleax
 .byte $00               		; MasterAxe
 .byte $00               		; BrokenAxe

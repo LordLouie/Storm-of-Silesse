@@ -18,7 +18,7 @@
 	WinLossOffsets := Modify(Eda,		$0E, WinLossOffsets)
 	WinLossOffsets := Modify(Asbel,		$0F, WinLossOffsets)
 	WinLossOffsets := Modify(Maurice,		$10, WinLossOffsets)
-	WinLossOffsets := Modify(Killian,		$11, WinLossOffsets)
+	WinLossOffsets := Modify(Tavares,		$11, WinLossOffsets)
 	WinLossOffsets := Modify(Nanna,		$12, WinLossOffsets)
 	WinLossOffsets := Modify(Selphina,	$13, WinLossOffsets)
 	WinLossOffsets := Modify(Dalsin,	$14, WinLossOffsets)

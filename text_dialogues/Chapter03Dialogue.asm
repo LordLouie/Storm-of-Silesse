@@ -708,6 +708,7 @@ dialogueChapter03Ending1
 .byte $04
 
 .byte Left_slot
+.byte $04
 .text "Wages, bah! Who needs those?"
 .byte $02
 .text "With friends like you around, we'll"
