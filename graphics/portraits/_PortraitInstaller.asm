@@ -27,7 +27,7 @@
 	aPortraitPalette17 .binary "sprites/geraldformatted.pal"
 	aPortraitPalette18 .binary "sprites/PortraitPalette18.bin"
 	aPortraitPalette19 .binary "sprites/agnesformatted.pal"
-	aPortraitPalette1A .binary "sprites/PortraitPalette1A.bin"
+	aPortraitPalette1A .binary "sprites/soldierformatted.pal"
 	aPortraitPalette1B .binary "sprites/PortraitPalette1B.bin"
 	aPortraitPalette1C .binary "sprites/PortraitPalette1C.bin"
 	aPortraitPalette1D .binary "sprites/PortraitPalette1D.bin"
@@ -252,7 +252,7 @@
 	g4bppcPortraitEAEE23 .binary "sprites/PortraitEAEE23.4bpp.comp"
 	g4bppcPortraitEAF322 .binary "sprites/PortraitEAF322.4bpp.comp"
 	g4bppcPortraitEAF8A6 .binary "sprites/PortraitEAF8A6.4bpp.comp"
-	g4bppcPortraitEAFE34 .crossbank.start *, "sprites/PortraitEAFE34.4bpp.comp"
+	g4bppcPortraitEAFE34 .crossbank.start *, "sprites/trottierformatted.4bpp.comp"
 
 .here
 
@@ -287,7 +287,7 @@
 	g4bppcPortraitEBD3D2 .binary "sprites/geraldformatted.4bpp.comp"
 	g4bppcPortraitEBD981 .binary "sprites/PortraitEBD981.4bpp.comp"
 	g4bppcPortraitEBDE20 .binary "sprites/agnesformatted.4bpp.comp"
-	g4bppcPortraitEBE3F9 .binary "sprites/PortraitEBE3F9.4bpp.comp"
+	g4bppcPortraitEBE3F9 .binary "sprites/soldierformatted.4bpp.comp"
 	g4bppcPortraitEBE928 .binary "sprites/PortraitEBE928.4bpp.comp"
 	g4bppcPortraitEBEE1D .binary "sprites/PortraitEBEE1D.4bpp.comp"
 	g4bppcPortraitEBF2FF .binary "sprites/PortraitEBF2FF.4bpp.comp"

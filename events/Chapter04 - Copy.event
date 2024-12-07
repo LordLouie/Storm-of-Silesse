@@ -26,7 +26,12 @@ GUARD_FE5_CHAPTER04 :?= false
           _FlagGeraldWaulterTalk        = enum.enum($06)
           _FlagTrottierBattleQuote = enum.enum()
           _FlagSleepEdgeHouseVisit = enum.enum()
-
+;					_FlagVillager1Spawned 			= enum.enum()
+;					_FlagVillager2Spawned 			= enum.enum()
+;					_FlagVillager3Spawned 			= enum.enum()
+;					_FlagVillager4Spawned 			= enum.enum()
+;					_FlagVillager5Spawned 			= enum.enum()
+;					_FlagVillager6Spawned 			= enum.enum()
           _FlagEnding             = enum.enum()
 
         _OpeningEventDefinitions ; 99/8778
@@ -36,7 +41,30 @@ GUARD_FE5_CHAPTER04 :?= false
         END_DEFINITION_ARRAY
 
         _TurnEventDefinitions ; 99/8785
-
+;					EVENT FlagAlwaysZero, _VillagerSpawn
+						CMP_WORD wCurrentTurn, 1
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _VillagerSpawn
+						CMP_WORD wCurrentTurn, 3
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _VillagerSpawn
+						CMP_WORD wCurrentTurn, 6
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _VillagerSpawn
+						CMP_WORD wCurrentTurn, 8
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _VillagerSpawn
+						CMP_WORD wCurrentTurn, 10
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _VillagerSpawn
+						CMP_WORD wCurrentTurn, 12
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
         END_DEFINITION_ARRAY
 
         _TalkEventDefinitions ; 99/8848
@@ -52,7 +80,29 @@ GUARD_FE5_CHAPTER04 :?= false
           END_DEFINITION
 
         _BeforeActionEventDefinitions ; 99/891E
-
+;					EVENT FlagAlwaysZero, _Villager1Saved
+						CMP_WORD aSelectedCharacterBuffer.Character, Civilian2
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _Villager2Saved
+						CMP_WORD aSelectedCharacterBuffer.Character, Civilian3
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _Villager3Saved
+						CMP_WORD aSelectedCharacterBuffer.Character, Civilian4
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _Villager4Saved
+						CMP_WORD aSelectedCharacterBuffer.Character, Civilian5
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _Villager5Saved
+						CMP_WORD aSelectedCharacterBuffer.Character, Civilian6
+						CMP_WORD wCurrentPhase, NPC
+					END_DEFINITION
+;					EVENT FlagAlwaysZero, _Villager6Saved
+						CMP_WORD aSelectedCharacterBuffer.Character, Civilian7
+						CMP_WORD wCurrentPhase, NPC
         EVENT FlagAlwaysZero, _PlayerLoss1
           END_DEFINITION
         EVENT FlagAlwaysZero, _PlayerLoss2
@@ -86,7 +136,7 @@ GUARD_FE5_CHAPTER04 :?= false
           LOAD_GROUP eventChapter04Data._Turn2Group
           WAIT_MOVE
           YIELD
-        END2
+
         _Turn5Reinforcements
           SCROLL_CAMERA_ADDRESS eventChapter04Data._Turn5GroupCameraCoordinates
           YIELD
@@ -94,7 +144,115 @@ GUARD_FE5_CHAPTER04 :?= false
           LOAD_GROUP eventChapter04Data._Turn5Group
           WAIT_MOVE
           YIELD
-        END2
+
+;				_VillagerSpawn ; CAN YOU TELL WHERE THE COPY PASTE WAS
+;					EVENT_TEST_FLAG_SET _FlagVillager1Spawned
+;					JUMP_TRUE +
+;			
+
+;							LOAD_GROUP eventChapter04Data._NPC1Group
+;							WAIT_MOVE
+;							YIELD
+			
+;							SET_FLAG _FlagVillager1Spawned
+;						END2
+			
+;					+
+
+
+;						EVENT_TEST_FLAG_SET FlagChp14House2
+;						JUMP_FALSE +
+			
+;							LOAD_GROUP eventChapter04Data._NPC2Group
+;							WAIT_MOVE
+;							YIELD
+			
+;							SET_FLAG _FlagVillager2Spawned
+;						END2
+			
+					+
+;					EVENT_TEST_FLAG_SET _FlagVillager3Spawned
+;					JUMP_TRUE +
+			
+
+;							LOAD_GROUP eventChapter04Data._NPC3Group
+;							WAIT_MOVE
+;							YIELD
+			
+;							SET_FLAG _FlagVillager3Spawned
+;						END2
+			
+;					+
+;					EVENT_TEST_FLAG_SET _FlagVillager4Spawned
+;					JUMP_TRUE +
+			
+
+			
+;							LOAD_GROUP eventChapter04Data._NPC4Group
+;							WAIT_MOVE
+;							YIELD
+			
+;							SET_FLAG _FlagVillager4Spawned
+;						END2
+			
+;					+
+;					EVENT_TEST_FLAG_SET _FlagVillager5Spawned
+;					JUMP_TRUE +
+			
+
+			
+;							LOAD_GROUP eventChapter04Data._NPC5Group
+;							WAIT_MOVE
+;							YIELD
+			
+;							SET_FLAG _FlagVillager5Spawned
+;						END2
+			
+;					+
+;					EVENT_TEST_FLAG_SET _FlagVillager6Spawned
+;					JUMP_TRUE +
+			
+
+			
+;							LOAD_GROUP eventChapter04Data._NPC6Group
+;							WAIT_MOVE
+;							YIELD
+			
+;							SET_FLAG _FlagVillager6Spawned
+			
+;					+
+;				END2
+			
+;				_Villager1Saved ; FD/A5D8
+;					macroDialogue dialogueChapter14xVillager1
+			
+;				END2
+			
+;				_Villager2Saved ; FD/A5FA
+;					macroDialogue dialogueChapter14xVillager2
+			
+;				END2
+			
+;				_Villager3Saved ; FD/A61C
+;					macroDialogue dialogueChapter14xVillager3
+			
+;				END2
+			
+;				_Villager4Saved ; FD/A63E
+;					macroDialogue dialogueChapter14xVillager4
+			
+;				END2
+			
+;				_Villager5Saved ; FD/A660
+;					macroDialogue dialogueChapter14xVillager5
+			
+;				END2
+			
+;				_Villager6Saved ; FD/A682
+;					macroDialogue dialogueChapter14xVillager6
+			
+;				END2
+
         _PlayerRetreat ; 99/8F5B
           macroASMCSetFlagIfRetreatingUnitByTable _RetreatingNPCTable
           macroHaveActiveUnitRetreat _RetreatMovestring
@@ -124,9 +282,6 @@ GUARD_FE5_CHAPTER04 :?= false
         MS_END
 
         _GeraldWaulterTalk
-          PLAY_SOUND_FORCED $00E0
-          PAUSE_SKIPPABLE 32
-          YIELD
           SET_MUSIC $43
           YIELD
             macroDialogue geraldwalter

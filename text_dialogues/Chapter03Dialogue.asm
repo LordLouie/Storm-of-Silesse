@@ -683,7 +683,7 @@ dialogueChapter03Ending1
 .byte $04
 .text "I think I'll stick around."
 .byte $02
-.text "Its the least I can do to repay you."
+.text "It's the least I can do to repay you."
 .byte $08
 
 .byte Right_slot
@@ -819,6 +819,7 @@ dialogueChapter03ExceptEdithDied
 .byte $08
 
 .byte Left_slot
+.byte $04
 .text "It wasn't your fault, Neill."
 .byte $02
 .text "It wasn't anyone's fault."

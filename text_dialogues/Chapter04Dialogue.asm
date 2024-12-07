@@ -117,7 +117,7 @@ dialogueChapter04Opening1
 .text "I'm Waulter, a local woodcutter."
 .byte $08
 .byte $04
-.text "I thought Ilsa here could use a hand,"
+.text "I thought Ilse here could use a hand,"
 .byte $02
 .text "so I did a few lifting jobs here"
 .byte $02
@@ -163,6 +163,11 @@ dialogueChapter04Opening3
 .text "are all held up here."
 .byte WaitForA
 .byte $04
+.byte Left_slot
+.word LoadPortrait
+.word albaportrait
+.text "..."
+.byte Right_slot
 .text "Men! You have your orders, and I have mine."
 .byte $02
 .text "Raze this hovel and bring me their leader!"

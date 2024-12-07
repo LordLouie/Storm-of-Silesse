@@ -4,7 +4,7 @@ dialogueLeifDeathNannaReaction
 .word nanna_portrait
 .text "Aaah!"
 .byte NewLine
-.text "Lord Neill, no...!"
+.text "Neill, no...!"
 .byte NewLine
 .text "You mustn't die here!"
 .byte WaitForA
@@ -14,7 +14,7 @@ dialogueLeifDeathFinnReaction
 .byte Right_slot
 .word LoadPortrait
 .word finn_portrait
-.text "Lord Neill...!"
+.text "Neill...!"
 .byte NewLine
 .text "I... I've failed you..."
 .byte WaitForA
@@ -24,10 +24,6 @@ dialogueLeifDeathEyvelReaction
 .byte Right_slot
 .word LoadPortrait
 .word eyvel_portrait
-.text "No..."
-.byte NewLine
-.text "Little Lord...!"
-.byte NewLine
 .text "How could it end like this?!"
 .byte WaitForA
 .byte EndText
@@ -36,9 +32,9 @@ dialogueLeifDeathDoriasReaction
 .byte Right_slot
 .word LoadPortrait
 .word dorias_portrait
-.text "N-No..."
+.text "At long last... Hmm hmm hmm..."
 .byte NewLine
-.text "Our... Our dream of a reborn Leonster..."
+.text "AHAHAHAHAHAH!"
 .byte WaitForA
 .byte EndText
 

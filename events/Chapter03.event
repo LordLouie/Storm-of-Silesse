@@ -176,10 +176,6 @@ GUARD_FE5_CHAPTER03 :?= false
           DIALOGUE neillagnes2
           YIELD
 
-            MOVE_CHAR Agnes, [7, 25], 1
-            WAIT_MOVE
-            YIELD
-
           macroASMCRemoveUnit Agnes
           YIELD
 
@@ -228,7 +224,7 @@ GUARD_FE5_CHAPTER03 :?= false
             DIALOGUE dialogueChapter03OpeningA2
             YIELD
 
-            LOAD_GROUP eventChapter03Data._EnemyGroup1
+            LOAD_GROUP eventChapter03Data._EnemyGroup
             WAIT_MOVE
             YIELD
 
@@ -322,7 +318,7 @@ GUARD_FE5_CHAPTER03 :?= false
             SET_MUSIC $3C
             YIELD
 
-          LOAD_GROUP eventChapter03Data._FachtnaGroup
+          LOAD_GROUP eventChapter03Data._FachtnaAlternateGroup
           WAIT_MOVE
           YIELD
 
@@ -332,7 +328,16 @@ GUARD_FE5_CHAPTER03 :?= false
             SET_MUSIC $31
             YIELD
 
+          LOAD_GROUP eventChapter03Data._NeillGroup
+          WAIT_MOVE
+          YIELD
+
           DIALOGUE dialogueChapter03OpeningB4
+          YIELD
+
+          MOVE_CHAR MercenaryCavalier, [8, 15], 1
+          YIELD_UNK
+          WAIT_MOVE
           YIELD
 
           MOVE_CHAR Fachtna, [4, 10], 1
@@ -346,11 +351,12 @@ GUARD_FE5_CHAPTER03 :?= false
 
           MOVE_CHAR Fachtna, [19, 14], 1
 
-          LOAD_GROUP eventChapter03Data._EnemyGroup1
+          LOAD_GROUP eventChapter03Data._EnemyGroupAlternate
           WAIT_MOVE
           YIELD
 
           macroASMCRemoveUnit PirateEnemy
+          macroASMCRemoveUnit MercenaryCavalier
 
             macroASMCAllUnitsUnsetUnitState (UnitStateUnknown1 | UnitStateHidden)
 
@@ -457,28 +463,51 @@ END1
           UNIT Fachtna, Enemy, [6, 16], [6, 16], Fachtna, [AssassinKnife],7, true, [$01, $03, $00, $80]
           UNIT
 
+        _FachtnaAlternateGroup ; B1/F31A
+          UNIT Fachtna, Enemy, [6, 14], [6, 14], Fachtna, [AssassinKnife],7, true, [$01, $03, $00, $80]
+          UNIT
+
         _NeillGroup ; B1/F310
           UNIT MercenaryCavalier, Player, [12, 18], [12, 18], Fachtna, [],1, true, [$01, $03, $00, $80]
           UNIT
 
-        _EnemyGroup1 ; B1/F346
+        _EnemyGroup ; B1/F346
           UNIT MercenaryMyrmidon1, Enemy, [2, 15], [2, 15], Fachtna, [KillingEdge, Vulnerary], 6, false, [$00, $00, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [16, 13], [16, 13], Fachtna, [IronBlade, DoorKey, Vulnerary], 10, false, [$00, $03, $00, $00]
-          UNIT MercenaryMyrmidon1, Enemy, [7, 1], [7, 1], Fachtna, [SteelSword], 9, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [7, 1], [7, 1], Fachtna, [SteelSword], 6, false, [$00, $03, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [2, 18], [2, 18], Fachtna, [IronSword], 7, false, [$00, $00, $00, $00]
-          UNIT MercenaryMyrmidon1, Enemy, [22, 7], [22, 7], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
-          UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 8, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [23, 12], [23, 12], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 7, false, [$00, $03, $00, $00]
           UNIT MercenaryMage1, Enemy, [21, 1], [21, 1], Fachtna, [Wind], 2, false, [$00, $03, $00, $00]
 		  UNIT MercenaryMage1, Enemy, [12, 15], [12, 15], Fachtna, [Wind], 3, false, [$00, $00, $00, $00]
 		  UNIT MercenaryMage1, Enemy, [10, 5], [10, 5], Fachtna, [Wind], 2, false, [$00, $03, $00, $00]
 		  UNIT MercenaryMage2, Enemy, [13, 6], [13, 6], Fachtna, [Thunder, Vulnerary], 4, false, [$00, $03, $00, $00]
 		  UNIT MercenaryMage2, Enemy, [18, 5], [18, 5], Fachtna, [Thunder], 3, false, [$00, $03, $00, $00]
-		  UNIT MercenaryMage2, Enemy, [19, 18], [19, 18], Fachtna, [Thoron], 9, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [19, 18], [19, 18], Fachtna, [Thoron], 8, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [11, 3], [11, 3], Fachtna, [SteelBow, DoorKey], 6, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [21, 9], [21, 9], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [20, 16], [20, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [18, 16], [18, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
 		  UNIT BanditWarrior, Enemy, [25, 4], [25, 4], Fachtna, [Hammer, Vulnerary], 5, false, [$00, $03, $00, $00]
+		  UNIT ThiefEnemy1, Enemy, [23, 18], [23, 18], Fachtna, [SlimSword, ChestKey], 5, false, [$00, $00, $00, $00]
+		  UNIT ThiefEnemy1, Enemy, [16, 4], [16, 4], Fachtna, [SlimSword, Lockpick], 4, false, [$10, $0B, $00, $00]
+          UNIT
+
+        _EnemyGroupAlternate
+          UNIT MercenaryMyrmidon1, Enemy, [2, 15], [2, 15], Fachtna, [KillingEdge, Vulnerary], 6, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [7, 1], [7, 1], Fachtna, [IronSword], 6, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [2, 18], [2, 18], Fachtna, [SteelSword], 7, false, [$00, $00, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [23, 12], [23, 12], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 7, false, [$00, $03, $00, $00]
+          UNIT MercenaryMage1, Enemy, [21, 1], [21, 1], Fachtna, [Wind], 2, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [12, 15], [12, 15], Fachtna, [Wind], 3, false, [$00, $00, $00, $00]
+		  UNIT MercenaryMage1, Enemy, [10, 5], [10, 5], Fachtna, [Wind], 2, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [13, 6], [13, 6], Fachtna, [Thunder, Vulnerary], 4, false, [$00, $03, $00, $00]
+		  UNIT MercenaryMage2, Enemy, [19, 18], [19, 18], Fachtna, [Thoron], 8, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [11, 3], [11, 3], Fachtna, [SteelBow, DoorKey], 6, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [20, 16], [20, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
+		  UNIT ArcherEnemy2, Enemy, [18, 16], [18, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
+		  UNIT BanditWarrior, Enemy, [25, 4], [25, 4], Fachtna, [SteelBow, Hammer, Vulnerary], 5, false, [$00, $03, $00, $00]
 		  UNIT ThiefEnemy1, Enemy, [23, 18], [23, 18], Fachtna, [SlimSword, ChestKey], 5, false, [$00, $00, $00, $00]
 		  UNIT ThiefEnemy1, Enemy, [16, 4], [16, 4], Fachtna, [SlimSword, Lockpick], 4, false, [$10, $0B, $00, $00]
           UNIT
@@ -518,7 +547,7 @@ END1
         .char -1
 
         _Chest1 VANILLA_CHEST BerserkEdge, [12, 6], $0002 ; B1/F5D3
-        _Chest2 VANILLA_CHEST Longbow, [13, 7], $0002 ; B1/F5D3
+        _Chest2 VANILLA_CHEST BraveBow, [13, 7], $0002 ; B1/F5D3
         _Chest3 VANILLA_CHEST KillerAxe, [14, 6], $0002 ; B1/F5D3
 
         _Vendor SHOP [2, 1], [Vulnerary, DoorKey] ; B1/F65B

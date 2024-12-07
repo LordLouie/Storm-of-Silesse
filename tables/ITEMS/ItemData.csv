@@ -67,7 +67,7 @@ SteelBow,TypeBow,None,11,70,11,30,0,2,2,RankD,ItemEffectivenesses.aFlyingEffecti
 SilverBow,TypeBow,None,15,85,9,25,0,2,2,RankB,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,4000,<>menutextSilverBowDescription,None,None,None,None,TraitWeapon,$40
 VeninBow,TypeBow,None,4,80,7,40,0,2,2,RankE,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,1000,<>menutextVeninBowDescription,None,WeaponEffects.PoisonWeaponEffect,None,None,TraitWeapon,$41
 KillerBow,TypeBow,None,10,75,8,25,30,2,2,RankC,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,3200,<>menutextKillerBowDescription,None,None,None,None,TraitWeapon,$42
-BraveBow,TypeBow,None,13,100,8,60,20,2,2,RankB,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,4200,<>menutextBraveBowDescription,None,None,None,Skill3Brave,TraitWeapon ,$43
+BraveBow,TypeBow,None,13,90,8,60,0,2,2,RankB,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,4200,<>menutextBraveBowDescription,None,None,None,Skill3Brave,TraitWeapon ,$43
 Shortbow,TypeBow,None,5,85,4,20,0,2,2,RankE,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,800,<>menutextShortbowDescription,None,None,None,None,TraitWeapon,$44
 Longbow,TypeBow,None,11,75,11,20,0,2,2,RankD,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,1400,<>menutextLongbowDescription,None,None,None,None,TraitWeapon,$45
 Greatbow,TypeBow,None,17,70,15,20,0,2,2,RankC,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,2200,<>menutextGreatbowDescription,None,None,None,None,TraitWeapon,$46
