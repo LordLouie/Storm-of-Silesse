@@ -10,3 +10,4 @@
 .include "hacky/epiloguedeathfix.asm"
 .include "hacky/fixshop.asm"
 .include "hacky/loop_epilogue_song.asm"
+.include "hacky/HolyWeaponCheck.asm"

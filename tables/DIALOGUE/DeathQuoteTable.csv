@@ -27,7 +27,7 @@ GalzusChapter24DeathQuote,Galzus,Chapter24,None,dialogueChapter24GalzusDeathQuot
 LeifDeathQuote,Neill,AnyChapter,FlagPlayerDeath,dialogueLeifDeathQuote
 FinnDeathQuote,Seadna,AnyChapter,FlagPlayerDeath,dialogueFinnDeathQuote
 OsianDeathQuote,Otto,AnyChapter,None,dialogueOsianDeathQuote
-HalvanDeathQuote,Barra,AnyChapter,FlagBarraDead,dialogueHalvanDeathQuote
+HalvanDeathQuote,Barra,AnyChapter,None,dialogueHalvanDeathQuote
 EyvelDeathQuote,Gerald,AnyChapter,None,dialogueEyvelDeathQuote
 DagdarDeathQuote,Edith,AnyChapter,FlagEdithDead,dialogueDagdarDeathQuote
 RalphDeathQuote,Ilse,AnyChapter,None,dialogueRalphDeathQuote
@@ -66,7 +66,7 @@ SalemDeathQuote,Salem,AnyChapter,None,dialogueSalemDeathQuote
 SchroffDeathQuote,Schroff,AnyChapter,None,dialogueSchroffDeathQuote
 MareetaDeathQuote,Mareeta,AnyChapter,None,dialogueMareetaDeathQuote
 TinaDeathQuote,Tina,AnyChapter,None,dialogueTinaDeathQuote
-GunterDialogueDeathQuote,GunterDialogue,AnyChapter,None,dialogueGunterDeathQuote
+GunterDialogueDeathQuote,Dahud,AnyChapter,None,dialogueGunterDeathQuote
 AmaldaDeathQuote,Amalda,AnyChapter,None,dialogueAmaldaDeathQuote
 ConomorDeathQuote,Conomor,AnyChapter,None,dialogueChapter16AConomorDeathQuote
 HomerDeathQuote,Homer,AnyChapter,None,dialogueHomerDeath
@@ -99,7 +99,7 @@ BrookDeathQuote,Brook,AnyChapter,None,dialogueBrookDeathQuote
 TrottierDeathQuote,Trottier,AnyChapter,None,dialogueTrottierDeathQuote
 ReinkochDeathQuote,Reinkoch,AnyChapter,None,dialogueReinkochDeathQuote
 PalmanDeathQuote,Palman,AnyChapter,None,dialoguePalmanDeathQuote
-MannheimDeathQuote,Mannheim,AnyChapter,None,dialogueMannheimDeathQuote
+MannheimDeathQuote,Sluggo,AnyChapter,None,dialogueMannheimDeathQuote
 BharatDeathQuote,Bharat,AnyChapter,None,dialogueBharatDeathQuote
 GustavDeathQuote,Gustav,AnyChapter,None,dialogueGustavDeathQuote
 XavierDeathQuote,Xavier,AnyChapter,None,dialogueXavierDeathQuote
@@ -109,9 +109,9 @@ ZaunDeathQuote,Zaun,AnyChapter,None,dialogueZaunDeathQuote
 CohenDeathQuote,Cohen,AnyChapter,None,dialogueCohenDeathQuote
 ReinhardtDeathQuote,Reinhardt,AnyChapter,None,dialogueReinhardtDeathQuote
 CoulterDeathQuote,Coulter,AnyChapter,eventChapter23Events._FlagCoulterDead,dialogueCoulterDeathQuote
-AlphandDeathQuote,Alphand,AnyChapter,None,dialogueAlphandDeathQuote
+AlphandDeathQuote,Werner,AnyChapter,None,dialogueAlphandDeathQuote
 FadenDeathQuote,Faden,AnyChapter,None,dialogueFadenDeathQuote
-VeldDeathQuote,Veld,AnyChapter,None,dialogueVeldDeathQuote
+VeldDeathQuote,Durchval,AnyChapter,None,dialogueVeldDeathQuote
 RomeoChapter3DeathQuote,Romeo,Chapter03,FlagAlliedDeath,None
 LucciaChapter3DeathQuote,Luccia,Chapter03,FlagAlliedDeath,None
 JubelChapter3DeathQuote,Jubel,Chapter03,FlagAlliedDeath,None

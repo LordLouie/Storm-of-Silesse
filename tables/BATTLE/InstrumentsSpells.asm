@@ -91,7 +91,7 @@ InstrumentsSilence		    = $25
 .byte InstrumentsBows        	; IronBow
 .byte InstrumentsBows        	; SteelBow
 .byte InstrumentsBows        	; SilverBow
-.byte InstrumentsBows        	; VeninBow
+.byte InstrumentsBows        	; Golgotha
 .byte InstrumentsBows        	; KillerBow
 .byte InstrumentsBows        	; BraveBow
 .byte InstrumentsBows        	; Shortbow
@@ -291,7 +291,7 @@ InstrumentsSilence		    = $25
 .byte InstrumentsBows +1     	; IronBow
 .byte InstrumentsBows +1     	; SteelBow
 .byte InstrumentsBows +1     	; SilverBow
-.byte InstrumentsBows +1     	; VeninBow
+.byte InstrumentsBows +1     	; Golgotha
 .byte InstrumentsBows +1     	; KillerBow
 .byte InstrumentsBows +1     	; BraveBow
 .byte InstrumentsBows +1     	; Shortbow

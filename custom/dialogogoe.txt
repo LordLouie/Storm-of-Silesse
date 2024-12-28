@@ -1331,6 +1331,66 @@ go around the mountain... that'd take us a year or more.
 CHAPTER 5
 
 CHAPTER 6
+"Every imperial has turned tail and fled."
+"All except one..."
+
+"Agnes... you're Agnes, aren't you?"
+
+"The very same."
+
+"Dad spent years looking for you..."
+"In his final moments, all he wanted..."
+"was to know if you were safe."
+
+"It's a shame I never turned up."
+"But's there no use being sentimental"
+"About it."
+
+"You must be doing pretty well for"
+"yourself now, putting down rebels"
+"on the empire's dime."
+
+"I didn't choose this line of work"
+"hoping to put an arrow in my brother's head!"
+"Father meant everything to me!"
+
+"S-sorry..."
+
+"I'll send them a false report."
+"A Silesian Force routed us."
+"There were no signs that you were ever here."
+"But I can't be with you. I have new priorities."
+"If we cross paths again, one will have to dig"
+"a grave for the other."
+
+"Can I at least know why?"
+
+"There'd be no use telling you."
+"It's completely out of your control."
+"If you're dying to know, I'm sure you could"
+"press one of those Loptous-shrieking fusspots"
+"for more info..."
+
+"I don't get it... aren't you allied with them?"
+
+"Haha... as if."
+"I'm sick of seeing good-natured people"
+"willingly fight for causes they don't agreed with."
+"Stay true to yourself, Neill. Tell Barra I said hi."
+
+"Can do..."
+
+"Neill! Was that..."
+
+"Yes, and you just missed her."
+
+"Ah... I know it breaks your heart, but a lot can happen"
+in 15 years. She's leading her own life now."
+"Don't hold it against her."
+
+"Perhaps Dad saw this coming..."
+"I can't let it weigh on me too much."
+"We're just inches from Tofa! Come on, everyone!"
 
 PROMOTION CEREMONY
 
@@ -1408,6 +1468,73 @@ ENDING EVENT
 
 
 CHAPTER 8
+
+Agnes Recruitment
+
+"Agnes!"
+
+"Neill! Prepare yourself-!"
+
+"I've heard everything!"
+"I know about Bishop Maxima!"
+
+"That doesn't change anything!"
+"Draw your weapon before I-"
+
+"We have him. Fee sent a rescue party."
+"He'll reach Tofa in a matter of days!"
+"Safe and sound!"
+
+"Telling lies won't stay my hand!"
+"If I don't kill you, I'll lose the last"
+"person alive who matters to me!"
+
+"Agnes. I can see the tears in your eyes."
+"Trust me... please..."
+"Has your brother ever lied to you before?"
+
+"You... I barely know you... *sniff*"
+"Stop pretending like I'm..."
+"worth caring about..."
+"Why... why did you..."
+
+"I'm not going to lift a finger."
+"Everyone here has their reservations."
+"They think I'm far gone for trying to"
+"Reconnect with you..."
+"Draw your bowstring. I'll let you decide"
+"if I'm lying or not."
+
+"..."
+"...I hate you. I hate you for toying with"
+"my emotions like this."
+"...But I hate Durchval more. I hate these
+"robed skunks for using our suffering as a"
+"bargaining chip for their beliefs!"
+"I'm going to point my bow at them for a change."
+
+"You have my support every step of the way."
+"Welcome home, Agnes..."
+
+Durchval/Agnes
+"Maxima is not with you."
+
+"Oho, saw through my words, did you?"
+"..."
+"I should have had you executed the moment your heart wavered."
+"But the archbishop insisted you had a perfect service record..."
+"I will not pay for the mistakes of others!"
+
+"You will die for the mistake of having crossed me!"
+
+"-Ulp!"
+
+
+
+
+
+
+
 
 
 

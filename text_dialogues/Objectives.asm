@@ -14,12 +14,12 @@ dialogueChapterObjektiveChapter02x
 
 
 dialogueChapterObjektiveChapter03
-	.text "Seize Kerberos' throne."
+	.text "Seize the keep's throne."
 .byte EndTextNoPortraitFade
 
 
 dialogueChapterObjektivecChapter04
-	.text "Escape the dungeon."
+	.text "Cover the civilians' escape."
 .byte EndTextNoPortraitFade
 
 
@@ -29,22 +29,22 @@ dialogueChapterObjektiveChapter04x
 
 
 dialogueChapterObjektiveChapter05
-	.text "Escape the castle."
+	.text "Defeat Sluggo, then escape."
 .byte EndTextNoPortraitFade
 
 
 dialogueChapterObjektiveChapter06
-	.text "Escape the city."
+	.text "Seize the fort's throne."
 .byte EndTextNoPortraitFade
 
 
 dialogueChapterObjektiveChapter07
-	.text "Escape into Castle Meath."
+	.text "Seize the prison's throne."
 .byte EndTextNoPortraitFade
 
 
 dialogueChapterObjektiveChapter08
-	.text "Seize the manor's gate."
+	.text "Kill Durchval."
 .byte EndTextNoPortraitFade
 
 

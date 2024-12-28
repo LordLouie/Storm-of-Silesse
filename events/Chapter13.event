@@ -449,7 +449,7 @@ GUARD_FE5_CHAPTER13 :?= false
 					UNIT SupplyCorpsArmoredLance, Enemy, [16, 12], [16, 12], Liszt, [Javelin], 8, False, [$01, $03, $02, $00]
 					UNIT SupplyCorpsArmoredLance, Enemy, [17, 11], [17, 11], Liszt, [Javelin], 8, False, [$01, $03, $02, $00]
 					UNIT SupplyCorpsArmoredLance, Enemy, [20, 11], [20, 11], Liszt, [Javelin], 8, False, [$01, $03, $02, $00]
-					UNIT Liszt, Enemy, [9, 20], [9, 20], Liszt, [KillerLance, VeninBow, Vulnerary, Vulnerary], 12, True, [$00, $03, $00, $80]
+					UNIT Liszt, Enemy, [9, 20], [9, 20], Liszt, [KillerLance, Golgotha, Vulnerary, Vulnerary], 12, True, [$00, $03, $00, $80]
 					UNIT SupplyCorpsArmoredLance, Enemy, [21, 4], [21, 4], Liszt, [Javelin], 8, False, [$01, $03, $02, $00]
 					UNIT SupplyCorpsArmoredAxe, Enemy, [7, 17], [7, 17], Liszt, [Bardiche], 10, False, [$00, $0F, $01, $00]
 					UNIT SupplyCorpsArmoredAxe, Enemy, [8, 17], [8, 17], Liszt, [Bardiche], 10, False, [$00, $0F, $01, $00]

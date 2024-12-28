@@ -24,6 +24,7 @@ GUARD_FE5_CHAPTER01 :?= false
         ; Flag definitions
 
           _FlagGaZowmnTalk         = enum.enum($05)
+          _FlagNeillSeadna1         = enum.enum($05)
           _FlagWeissmannBattleQuote = enum.enum()
 
           ; TODO: map installer definitions
@@ -47,6 +48,9 @@ GUARD_FE5_CHAPTER01 :?= false
         END_DEFINITION_ARRAY
 
         _TalkEventDefinitions ; FD/8027
+          EVENT _FlagNeillSeadna1, _NeillSeadna1
+            CHECK_CHARS2 Neill, Seadna
+          END_DEFINITION
           EVENT _FlagGaZowmnTalk, _GaZowmnTalk
             macroECCheckCoordinates [24, 18]
             CHECK_CHARS2 Neill, Seadna
@@ -119,8 +123,8 @@ GUARD_FE5_CHAPTER01 :?= false
           macroItemHouse dialogueChapter01HammerHouse, Hammer, [21, 11], $0021
         END2
 
-        _Unused2 ; FD/8312
-          macroDialogue $95B216
+        _NeillSeadna1 ; FD/8324
+          macroDialogue neillseadna1
         END2
 
         _GaZowmnTalk ; FD/8324

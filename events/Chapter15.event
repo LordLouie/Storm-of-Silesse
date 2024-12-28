@@ -615,7 +615,7 @@ GUARD_FE5_CHAPTER15 :?= false
 			
 					UNIT MercenaryMyrmidon2, Enemy, [15, 2], [15, 2], Seil, [IronBlade], 7, False, [$00, $00, $00, $00]
 					UNIT MercenaryMyrmidon2, Enemy, [19, 2], [19, 2], Seil, [IronBlade], 7, False, [$00, $00, $00, $00]
-					UNIT Seil, Enemy, [17, 2], [17, 2], Seil, [SilverAxe, Poleax, VeninBow, Vulnerary], 18, True, [$00, $03, $00, $80]
+					UNIT Seil, Enemy, [17, 2], [17, 2], Seil, [SilverAxe, Poleax, Golgotha, Vulnerary], 18, True, [$00, $03, $00, $80]
 					UNIT BanditBrigand1, Enemy, [29, 8], [29, 8], Seil, [SteelAxe], 3, False, [$00, $01, $00, $00]
 					UNIT BanditHunter, Enemy, [29, 7], [29, 7], Seil, [SteelBow], 5, False, [$00, $00, $00, $00]
 					UNIT BanditBrigand1, Enemy, [29, 13], [29, 13], Seil, [SteelAxe], 3, False, [$00, $01, $00, $00]

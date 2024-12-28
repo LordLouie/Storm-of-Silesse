@@ -95,7 +95,7 @@
     
     menutextBattleAxeDescription
     .text "{Lock})Waulter  \n"
-    .text "Stained by [me[mory \n"
+    .text "Antiquated ]weapon\n"
     .text "Halves ene[my's \n"
     .text "attack po]wer \n"
     .text "\n"
@@ -299,11 +299,10 @@
     .text "]weapon if stolen \n"
     .text "\n"
     
-    menutextVeninBowDescription
+    menutextGolgothaDescription
     .text "Anti{dash}Fliers\n"
-    .text "Poisons on hit\n"
-    .text "Turns into an iron\n"
-    .text "]weapon if stolen \n"
+    .text "Tool of the trade \n"
+    .text "Long range\n"
     .text "\n"
     
     menutextVeninBallistaDescription
@@ -530,10 +529,9 @@
     .text "\n"
     
     menutextBlessedSwordDescription
-    .text "{Lock}Ol]wen, High crit \n"
-    .text "Anti{dash}Cavalry \n"
-    .text "{BRA1}{BRA2}, Gives (Miracle\n"
-    .text "and {+}{1}{0} (Mag \n"
+    .text "{(}{2}{1}{-}Luck{)}{%}\n"
+    .text "chance to da[mage \n"
+    .text "its user instead\n"
     .text "\n"
     
     menutextBragisBladeDescription

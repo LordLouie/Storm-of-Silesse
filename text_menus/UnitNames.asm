@@ -57,19 +57,19 @@
 		.word	<>menutextUnitJuliusName	; Unused
 		.word	<>menutextUnitVeldName
 		.word	<>menutextUnitWeissmannName
-		.word	<>menutextUnitMunsterName
+		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitBucksName
 		.word	<>menutextUnitJabalName		; Unused
 	
-		.word	<>menutextUnitLifisCrewName
-		.word	<>menutextUnitLifisCrewName
-		.word	<>menutextUnitLifisCrewName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
 	
 		.word	<>menutextUnitFachtnaName
 	
-		.word	<>menutextUnitMunsterName
-		.word	<>menutextUnitMunsterName
-		.word	<>menutextUnitMunsterName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
 	
 		.word	<>menutextUnitRomeoName
 		.word	<>menutextUnitLucciaName
@@ -79,7 +79,7 @@
 		.word	<>menutextUnitIshtarName	; Dialogue-only
 		.word	<>menutextUnitReinhardtName	; Unused
 	
-		.word	<>menutextUnitLifisCrewName
+		.word	<>menutextUnitGrannvaleName
 	
 		.word	<>menutextUnitEmilyName
 		.word	<>menutextUnitMurphyName
@@ -152,7 +152,7 @@
 		.word	<>menutextUnitHiredSwordName
 	
 		.word	<>menutextUnitFrieges21stName
-		.word	<>menutextUnitSchuperName	; Unused
+		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitBrookName
 		.word	<>menutextUnitSilesseName
 		.word	<>menutextUnitTrottierName
@@ -160,31 +160,31 @@
 		.word	<>menutextUnitMullerName
 		.word	<>menutextUnitReinkochName
 		.word	<>menutextUnitPalmanName
-		.word	<>menutextUnitKantName		; Unused
+		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitGustavName
 		.word	<>menutextUnitDancerName
-		.word	<>menutextUnitClericName	; Unused
-		.word	<>menutextUnitMannheimName	; Unused
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitFrausName
 		.word	<>menutextUnitSeimetzName
 		.word	<>menutextUnitZaunName
 		.word	<>menutextUnitCohenName
 		.word	<>menutextUnitAlphandName
-		.word	<>menutextUnitOrvisName		; Unused
+		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitFadenName
 	
 		.word	<>menutextUnitCoulterName
 	
 		.word	<>menutextUnitReinhardtName
 	
-		.word	<>menutextUnitNancyName		; Unused
+		.word	<>menutextUnitGrannvaleName
 	
-		.word	<>menutextUnitTahraName
-		.word	<>menutextUnitTahraName
-		.word	<>menutextUnitTahraName
-		.word	<>menutextUnitTahraName
-		.word	<>menutextUnitTahraName
-		.word	<>menutextUnitTahraName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
 	
 		.word	<>menutextUnitHiredSwordName
 	
@@ -488,7 +488,7 @@
 			.text "Ilse\n"
 		
 		menutextUnitMartyName
-			.text "(Waulter\n"
+			.text ")Waulter\n"
 		
 		menutextUnitRonanName
 			.text "Sionnach\n"
@@ -637,8 +637,8 @@
 		menutextUnitJabalName
 			.text "Jabal \n"
 		
-		menutextUnitLifisCrewName
-			.text "Lifis Pirates \n"
+		menutextUnitGrannvaleName
+			.text "Grannvale \n"
 		
 		menutextUnitFachtnaName
 			.text "Fachtna \n"

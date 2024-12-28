@@ -455,8 +455,8 @@ GUARD_ZQOL_TALK_DISPLAY :?= false
 
         aChapterTalkTargetTablePointers
           .long aChapter1TalkTargetTable
+          .long aChapter2TalkTargetTable
           .long None
-          .long aChapter2xTalkTargetTable
           .long None
           .long aChapter4TalkTargetTable
           .long aChapter4xTalkTargetTable
@@ -501,12 +501,13 @@ GUARD_ZQOL_TALK_DISPLAY :?= false
           ZQOL_TALK_ENTRY Otto, [Tanya]
         ZQOL_END_TALK_CHAPTER
 
-        aChapter2xTalkTargetTable
+        aChapter2TalkTargetTable
           ZQOL_TALK_ENTRY Neill, [Gerald]
+          ZQOL_TALK_ENTRY Barra, [Edith]
         ZQOL_END_TALK_CHAPTER
 
         aChapter4TalkTargetTable
-          ZQOL_TALK_ENTRY Neill, [Dalsin]
+          ZQOL_TALK_ENTRY Waulter, [Gerald]
           ZQOL_TALK_ENTRY Lifis, [Dalsin]
         ZQOL_END_TALK_CHAPTER
 

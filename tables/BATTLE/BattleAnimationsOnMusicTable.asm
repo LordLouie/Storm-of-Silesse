@@ -21,6 +21,7 @@ aBattleAnimationsOnMusicTable .block	; 96/846C
 .word	Weissmann
 .word	Bucks
 .word	Fachtna
+.word	Sluggo
 .word	Lemay	;used to be Ishtar
 .word	Eisenhau
 .word	Gomez
@@ -40,9 +41,8 @@ aBattleAnimationsOnMusicTable .block	; 96/846C
 .word	Muller
 .word	Reinkoch
 .word	Palman
-.word	Kant
+.word	Dahud
 .word	Gustav
-.word	Mannheim
 .word	Fraus
 .word	Seimetz
 .word	Zaun

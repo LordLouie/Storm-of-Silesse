@@ -53,7 +53,7 @@
 	aMapAnim_Killer_MasterAxe			= $A0D4E0
 	aMapAnim_Bows						= $A0D5E0
 	aMapAnim_UnusedBow					= $A0D6E0
-	aMapAnim_VeninBow_Shortbow			= $A0D7E0
+	aMapAnim_Golgotha_Shortbow			= $A0D7E0
 	aMapAnim_Longbow					= $A0D8E0
 	aMapAnim_Greatbow					= $A0D9E0
 	aMapAnim_Masterbow					= $A0DAE0

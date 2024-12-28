@@ -10,13 +10,13 @@ VeninEdge,TypeSword,None,3,85,6,40,0,1,1,RankE,ItemEffectivenesses.aNoEffectiven
 BerserkEdge,TypeSword,None,5,75,18,10,0,1,1,RankA,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,3000,<>menutextBerserkEdgeDescription,None,WeaponEffects.BerserkWeaponEffect,None,None,TraitWeapon,$7
 SleepEdge,TypeSword,None,3,60,16,10,0,1,1,RankA,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,2000,<>menutextSleepEdgeDescription,None,WeaponEffects.SleepWeaponEffect,None,None,TraitWeapon,$8
 AssassinKnife,TypeSword,None,3,90,1,15,80,1,1,WeaponLocks.aAssassinKnifeWeaponLock,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBeoBladeDescription,None,None,None,None,TraitWeapon ,$9
-BlessedSword,TypeSword,None,15,75,9,60,20,1,1,WeaponLocks.aOlwenReinhardtWeaponLock,ItemEffectivenesses.aCavalryEffectiveness,aBlessedSwordItemBonuses,0,<>menutextBlessedSwordDescription,None,None,Skill2Miracle,Skill3Brave,TraitWeapon ,$A
+BlessedSword,TypeSword,None,16,90,16,30,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,1800,<>menutextBlessedSwordDescription,None,WeaponEffects.DevilWeaponEffect,None,None,TraitWeapon ,$A
 LoptrianFang,TypeSword,None,20,80,20,-1,0,1,1,WeaponLocks.aLoptrianFangWeaponLock,ItemEffectivenesses.aNoEffectiveness,aLoptrianFangItemBonuses,0,<>menutextLoptrianFangDescription,None,None,None,None,TraitWeapon | TraitUnsellable,$B
 BragisBlade,TypeSword,None,10,100,10,-1,5,1,1,WeaponLocks.aBragisBladeWeaponLock,ItemEffectivenesses.aArmorEffectiveness,aNoItemBonuses,0,<>menutextBragisBladeDescription,None,None,Skill2Miracle,None,TraitWeapon | TraitUnsellable,$C
 LightBrand,TypeSword,TypeLight,12,90,9,60,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aLightBrandItemBonuses,0,<>menutextLightBrandDescription,VulneraryUse,None,None,None,TraitMagicRanged | TraitWeapon | TraitUnsellable,$D
-BraveSword,TypeSword,None,15,85,12,60,0,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBraveSwordDescription,None,None,None,Skill3Brave,TraitWeapon ,$E
+BraveSword,TypeSword,None,14,85,12,60,0,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBraveSwordDescription,None,None,None,Skill3Brave,TraitWeapon ,$E
 Kingmaker,TypeSword,None,13,70,10,60,20,1,1,RankC,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextKingmakerDescription,None,None,Skill2Charm,Skill3Brave,TraitWeapon | TraitUnsellable,$F
-Atmaisfear,TypeSword,TypeLight,18,120,11,60,0,1,2,WeaponLocks.aAtmaisfearWeaponLock,ItemEffectivenesses.aNoEffectiveness,aBlessedSwordItemBonuses,0,<>menutextAtmaisfearDescription,None,None,None,None,TraitMagicRanged | TraitWeapon | TraitUnsellable,$10
+Atmaisfear,TypeSword,TypeLight,18,120,11,60,10,1,2,WeaponLocks.aAtmaisfearWeaponLock,ItemEffectivenesses.aNoEffectiveness,aBlessedSwordItemBonuses,0,<>menutextAtmaisfearDescription,VulneraryUse,None,Skill2Nihil,None,TraitMagicRanged | TraitWeapon | TraitUnsellable,$10
 WindSword,TypeSword,TypeWind,10,75,9,40,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aWindSwordItemBonuses,8200,<>menutextWindSwordDescription,None,None,None,None,TraitMagicRanged | TraitWeapon,$11
 FlameSword,TypeSword,TypeFire,10,75,9,40,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aFlameSwordItemBonuses,8200,<>menutextFlameSwordDescription,None,None,None,None,TraitMagicRanged | TraitWeapon,$12
 LightningSword,TypeSword,TypeThunder,10,75,9,40,0,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aLightningSwordItemBonuses,8200,<>menutextLightningSwordDescription,None,None,None,None,TraitMagicRanged | TraitWeapon,$13
@@ -37,7 +37,7 @@ SlimLance,TypeLance,None,6,95,5,30,5,1,1,RankE,ItemEffectivenesses.aNoEffectiven
 VeninLance,TypeLance,None,5,75,8,40,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextVeninLanceDescription,None,WeaponEffects.PoisonWeaponEffect,None,None,TraitWeapon,$22
 Dragonpike,TypeLance,None,16,70,12,60,0,1,1,WeaponLocks.aDragonpikeWeaponLock,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextDragonpikeDescription,None,None,Skill2Vantage,Skill3Brave,TraitWeapon | TraitUnsellable,$23
 ShadowSpear,TypeLance,None,20,60,20,60,0,1,2,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextShadowSpearDescription,None,None,Skill2Nihil,None,TraitWeapon,$24
-BraveLance,TypeLance,None,14,80,9,60,10,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBraveLanceDescription,None,None,None,Skill3Brave,TraitWeapon ,$25
+BraveLance,TypeLance,None,15,80,9,60,0,1,1,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,4200,<>menutextBraveLanceDescription,None,None,None,Skill3Brave,TraitWeapon ,$25
 ShortLance,TypeLance,None,7,75,6,20,0,1,1,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,800,<>menutextShortLanceDescription,None,None,None,None,TraitWeapon,$26
 LongLance,TypeLance,None,13,65,14,20,0,1,1,RankD,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,1400,<>menutextLongLanceDescription,None,None,None,None,TraitWeapon,$27
 Greatlance,TypeLance,None,19,60,17,20,0,1,1,RankC,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,2200,<>menutextGreatlanceDescription,None,None,None,None,TraitWeapon,$28
@@ -65,7 +65,7 @@ BrokenAxe,TypeAxe,None,0,30,15,-1,0,1,1,RankE,ItemEffectivenesses.aNoEffectivene
 IronBow,TypeBow,None,7,80,7,40,0,2,2,RankE,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,2200,<>menutextIronBowDescription,None,None,None,None,TraitWeapon,$3E
 SteelBow,TypeBow,None,11,70,11,30,0,2,2,RankD,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,3200,<>menutextSteelBowDescription,None,None,None,None,TraitWeapon,$3F
 SilverBow,TypeBow,None,15,85,9,25,0,2,2,RankB,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,4000,<>menutextSilverBowDescription,None,None,None,None,TraitWeapon,$40
-VeninBow,TypeBow,None,4,80,7,40,0,2,2,RankE,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,1000,<>menutextVeninBowDescription,None,WeaponEffects.PoisonWeaponEffect,None,None,TraitWeapon,$41
+Golgotha,TypeBow,None,10,95,8,40,0,2,3,RankA,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,1000,<>menutextGolgothaDescription,None,None,None,None,TraitWeapon,$41
 KillerBow,TypeBow,None,10,75,8,25,30,2,2,RankC,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,3200,<>menutextKillerBowDescription,None,None,None,None,TraitWeapon,$42
 BraveBow,TypeBow,None,13,90,8,60,0,2,2,RankB,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,4200,<>menutextBraveBowDescription,None,None,None,Skill3Brave,TraitWeapon ,$43
 Shortbow,TypeBow,None,5,85,4,20,0,2,2,RankE,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,800,<>menutextShortbowDescription,None,None,None,None,TraitWeapon,$44

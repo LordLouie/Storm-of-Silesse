@@ -30,7 +30,7 @@ dialogueFinnRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word finn_portrait
-.text "As you wish, milord. I'll secure the way ahead!"
+.text "You better not be far behind, Neill!"
 .byte WaitForA
 .byte EndText
 
@@ -38,7 +38,7 @@ dialogueOsianRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word osian_portrait
-.text "Haha! Nothing to it!"
+.text "The path ahead is clear."
 .byte WaitForA
 .byte EndText
 
@@ -46,7 +46,9 @@ dialogueHalvanRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word halvan_portrait
-.text "Now comes the real battle..."
+.text "Tadhg... I hope I'm doin'"
+.byte NewLine
+.text "your memory proud..."
 .byte WaitForA
 .byte EndText
 
@@ -54,9 +56,9 @@ dialogueEyvelRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word eyvel_portrait
-.text "Mind your limits, Little Neill."
+.text "I live to see another day."
 .byte NewLine
-.text "Don't do anything stupid!"
+.text "...but how many more remain?"
 .byte WaitForA
 .byte EndText
 
@@ -64,9 +66,9 @@ dialogueDagdarRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word dagdar_portrait
-.text "Prince Neill, there's nuthin' more you can do!"
+.text "And thus, The Great Magician Edith"
 .byte NewLine
-.text "Hightail it outta there!"
+.text "makes her escape!"
 .byte WaitForA
 .byte EndText
 
@@ -74,9 +76,9 @@ dialogueRalphRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word ralph_portrait
-.text "Tch..."
+.text "I can't leave in good conscience,"
 .byte NewLine
-.text "We've still got a ways to go, huh?"
+.text "knowing others are being hurt..."
 .byte WaitForA
 .byte EndText
 
@@ -84,9 +86,9 @@ dialogueMartyRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word marty_portrait
-.text "*Pant, pant, wheeze*"
+.text "If there's nothing more to do..."
 .byte NewLine
-.text "G-Good grief..."
+.text "I'll be leaving, then."
 .byte WaitForA
 .byte EndText
 
@@ -94,7 +96,9 @@ dialogueRonanRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word ronan_portrait
-.text "Wh-What a rush... Everybody all right?"
+.text "Tarry forth, Storm Cabal!"
+.byte NewLine
+.text "Don't keep me waiting!"
 .byte WaitForA
 .byte EndText
 
@@ -102,9 +106,9 @@ dialogueSafyRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word safie_portrait
-.text "Gods above, keep and protect Prince Neill."
+.text "For Silesse's sake."
 .byte NewLine
-.text "Please..."
+.text "Brother... come home soon..."
 .byte WaitForA
 .byte EndText
 
@@ -496,7 +500,9 @@ dialogueGalzusRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word galzus_portrait
-.text "......"
+.text "We're leaving?"
+.byte NewLine
+.text "But we had them on the ropes!"
 .byte WaitForA
 .byte EndText
 

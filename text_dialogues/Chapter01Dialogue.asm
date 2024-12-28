@@ -395,9 +395,11 @@ dialogueChapter01Ending
 	
 	.byte Right_Slot
 	.byte ScrollText
-	.text "Thanks! We've nearly exhausted our"
+	.text "Thanks! Could do with a bite to eat."
 	.byte NewLine
-	.text "supply from the past few missions."
+    .text "We've nearly exhausted our supply of"
+	.byte NewLine
+	.text "rations from the past few missions..."
 	.byte WaitForA
 	
 	.byte Left_slot
@@ -762,6 +764,72 @@ dialogueChapter01WorldMap1
 	.text "the son of a Belhalla survivor, Neill..."
 	.byte WaitForA
 	
+	.byte EndText
+
+neillseadna1
+	.byte Right_slot
+    .word LoadPortrait
+    .word leif_portrait
+.text "Seadna! What's cookin'?"
+.byte $08
+	.byte Left_slot
+    .word LoadPortrait
+    .word finn_portrait
+.text "Not much. No food, remember?"
+.byte $08
+.byte $04
+.text "But I'm sure we'll be treated to a meal"
+.byte $02
+.text "if we rid these folks of their"
+.byte $02
+.text "bandit problem!"
+.byte $08
+.byte $04
+.text "...That's what I'm hoping, at least."
+.byte $08
+.byte Right_slot
+.byte $04
+.text "Don't go too far out there, you still"
+.byte $02
+.text "have that scar from when you fell off Pan!"
+.byte Left_slot
+.byte $04
+.text "Hey, that's not my fault!"
+.byte $02
+.text "He got startled! Happens all the time!"
+.byte $08
+.byte Right_slot
+.byte $04
+.text "Haha... I'm just teasing."
+.byte $08
+.byte $04
+.text "Go tear them a new one."
+.byte $02
+.text "Just don't sacrifice yourself"
+.byte $02
+.text "for the rest of us."
+.byte $08
+.byte Left_slot
+.byte $04
+.text "I'll stick by you,"
+.byte $02
+.text "if that's what you want..."
+.byte $08
+.byte Right_slot
+.byte $04
+.text "Pardon?"
+.byte $08
+.byte Left_slot
+.byte $04
+.text "Uhh... see you later! Or sooner!"
+.byte $02
+.text "I don't know!"
+.byte $08
+.byte $04
+.word ClearPortrait
+.byte Right_slot
+.text "Man, she's so cool..."
+.byte $08
 	.byte EndText
 
 dialogueChapter01gazowmnfromhittvanimemobilesuitgundamdoublezeta

@@ -332,13 +332,15 @@ GUARD_FE5_CHAPTER03 :?= false
           WAIT_MOVE
           YIELD
 
-          DIALOGUE dialogueChapter03OpeningB4
-          YIELD
-
-          MOVE_CHAR MercenaryCavalier, [8, 15], 1
+          MOVE_CHAR MercenaryCavalier, [7, 15], 1
           YIELD_UNK
           WAIT_MOVE
           YIELD
+
+          DIALOGUE dialogueChapter03OpeningB4
+          YIELD
+
+
 
           MOVE_CHAR Fachtna, [4, 10], 1
           YIELD_UNK
@@ -416,6 +418,7 @@ _EndingEvent
       YIELD
 
       DIALOGUE dialogueChapter03Ending2A
+      YIELD
 
       macroDialogueWithBG dialogueChapter03Ending2B, 1
       CALL_ASM_LOOP rlASMCDialogueWithBGEnd
@@ -548,7 +551,7 @@ END1
 
         _Chest1 VANILLA_CHEST BerserkEdge, [12, 6], $0002 ; B1/F5D3
         _Chest2 VANILLA_CHEST BraveBow, [13, 7], $0002 ; B1/F5D3
-        _Chest3 VANILLA_CHEST KillerAxe, [14, 6], $0002 ; B1/F5D3
+        _Chest3 VANILLA_CHEST Poleax, [14, 6], $0002 ; B1/F5D3
 
         _Vendor SHOP [2, 1], [Vulnerary, DoorKey] ; B1/F65B
 

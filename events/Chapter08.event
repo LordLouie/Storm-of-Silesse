@@ -443,7 +443,7 @@ GUARD_FE5_CHAPTER08 :?= false
         _PrepGroup1 ; B1/DD06
           .byte [8, 7]
 
-          UNIT BanditWarrior, Enemy, [6, 11], [6, 11], Gomez, [VeninAxe, VeninBow, Vulnerary], 8, false, [$00, $03, $00, $00]
+          UNIT BanditWarrior, Enemy, [6, 11], [6, 11], Gomez, [VeninAxe, Golgotha, Vulnerary], 8, false, [$00, $03, $00, $00]
         UNIT
 
         _RightReinforcementsCameraCoordinates1 ; B1/DD1E
@@ -457,7 +457,7 @@ GUARD_FE5_CHAPTER08 :?= false
           .byte [14, 8]
 
         _RightReinforcementsGroup2 ; B1/DD38
-          UNIT BanditHunter, Enemy, [14, 0], [14, 1], Gomez, [VeninBow], 3, false, [$00, $00, $00, $00]
+          UNIT BanditHunter, Enemy, [14, 0], [14, 1], Gomez, [Golgotha], 3, false, [$00, $00, $00, $00]
         UNIT
 
         _LeftReinforcementsCameraCoordinates ; B1/DD4E
@@ -473,8 +473,8 @@ GUARD_FE5_CHAPTER08 :?= false
           UNIT BanditBrigand1, Enemy, [14, 10], [14, 10], Gomez, [VeninAxe], 5, false, [$00, $03, $00, $00]
           UNIT BanditBrigand1, Enemy, [17, 12], [17, 12], Gomez, [VeninAxe], 8, false, [$00, $03, $00, $00]
           UNIT BanditBrigand1, Enemy, [18, 13], [18, 13], Gomez, [VeninAxe, Vulnerary], 7, false, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [15, 13], [15, 13], Gomez, [VeninBow], 3, false, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [16, 14], [16, 14], Gomez, [VeninBow], 3, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [15, 13], [15, 13], Gomez, [Golgotha], 3, false, [$00, $03, $00, $00]
+          UNIT BanditHunter, Enemy, [16, 14], [16, 14], Gomez, [Golgotha], 3, false, [$00, $03, $00, $00]
           UNIT BanditBrigand1, Enemy, [12, 9], [12, 9], Gomez, [VeninAxe], 5, false, [$01, $03, $00, $00]
           UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Gomez, [VeninAxe], 7, false, [$01, $03, $00, $00]
           UNIT BanditBrigand1, Enemy, [13, 14], [13, 14], Gomez, [VeninAxe], 10, false, [$01, $03, $00, $00]

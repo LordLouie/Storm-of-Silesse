@@ -72,7 +72,7 @@ Barra
 Gerald
 Edith
 Tanya
-(Waulter
+)Waulter
 Sionnach
 Fee
 Lifis
@@ -202,7 +202,7 @@ Andre]w
 +Nicholas
 
 Ulster
-Lifis Pirates
+Grannvale
 Friege
 Gelbenritter
 Pitfighter
@@ -516,7 +516,7 @@ Venin Edge
 Berserk Edge
 Sleep Edge
 Assassin's Knife
-Blessed S]word
+Devil S]word
 Loptrian Fang
 Bragi's Blade
 Light Brand
@@ -1050,7 +1050,7 @@ Long range
 throwing axe
 
 (Waulter
-Stained by [me[mory
+Antiquated ]weapon
 
 Long range [magic
 Applies Sleep on hit
@@ -1076,6 +1076,8 @@ Loptrians
 Reduces target's
  to
 Cannot kill
+
+Tool of the trade
 
 Pro[motes [most
 base class units

@@ -1,5 +1,15 @@
 - boss music doesn't play a lot of the time.
-- edith events for her dying or not being recruited refuse to work.
-- after the opening event, neill and barra are placed in the upper left corner where they cannot be moved.
 - scripted battle with agnes isn't in.
-- some portraits aren't in, but complete and compressed and whatnot.
+- demo battles at the title screen freeze the game
+- child portrait in chapter 2 end cutscene is glitchy
+- palette on the enemy myrmidons in chapter 3 is messed up
+- agnes tends to freeze the game with animations on
+- no talk popups for any events
+- camera snaps during the chapter 2 opening
+- gerald doesn't recruit himself
+
+- neill/seadna 3 not in yet
+- death reactions for ilse/civilians not in yet
+- event after civilians escape not in yet
+- map 5 map finished but not compressed or inserted
+- map 8 needs work

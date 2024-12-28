@@ -128,7 +128,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Tina
 
 	.word GunterPortrait		;<<
-	.word GunterDialogue		;<<
+	.word Dahud		;<<
 
 	.word AmaldaPortrait
 	.word Amalda
@@ -239,7 +239,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Seil
 
 	.word SchuperMarlonPortrait		;<<
-	.word Schuper
+    .word Cohen
 
 	.word BrookPortrait
 	.word Brook
@@ -260,13 +260,13 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Palman
 
 	.word KantPortrait			;<<
-	.word Kant
+	.word Cohen
 
 	.word GustavPortrait
 	.word Gustav
 
 	.word MannheimPortrait		;<<
-	.word Mannheim
+	.word Cohen
 
 	.word FrausPortrait
 	.word Fraus
@@ -284,7 +284,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Alphand
 
 	.word ColhoPortrait
-	.word Orvis
+	.word Cohen
 
 	.word FadenPortrait
 	.word Faden

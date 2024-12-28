@@ -71,7 +71,7 @@
 		.word	<>menutextIronBowName
 		.word	<>menutextSteelBowName
 		.word	<>menutextSilverBowName
-		.word	<>menutextVeninBowName
+		.word	<>menutextGolgothaName
 		.word	<>menutextKillerBowName
 		.word	<>menutextBraveBowName
 		.word	<>menutextShortbowName
@@ -218,7 +218,7 @@
 			.text "Assassin's Knife\n"
 		
 		menutextBlessedSwordName
-			.text "Blessed S]word\n"
+			.text "Devil S]word\n"
 		
 		menutextLoptrianFangName
 			.text "Loptrian Fang \n"
@@ -385,8 +385,8 @@
 		menutextSilverBowName
 			.text "Silver Bo12 \n"
 		
-		menutextVeninBowName
-			.text "Venin Bo12\n"
+		menutextGolgothaName
+			.text "Golgotha\n"
 		
 		menutextKillerBowName
 			.text "Killer Bo12 \n"

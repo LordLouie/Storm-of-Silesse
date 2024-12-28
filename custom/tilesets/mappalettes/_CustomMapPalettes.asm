@@ -3,7 +3,7 @@
 * = $3E7758
 .logical lorom($3E7758, 1)
 
-sppalettedark 	.binary "snowfadepalette.bin"
+sppalettedark   .binary "snowfadepalette.bin"
 csnpalette      .binary "CastleSnowNight.bin"
 csnpalettedark  .binary "CastleSnowNightFaded.bin"
 csdpalette      .binary "CastleSnowDay.bin"

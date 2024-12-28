@@ -183,52 +183,52 @@ GUARD_FE5_CHAPTER14x :?= false
 			
 				_BeforeActionEventDefinitions ; FD/A410
 					EVENT FlagAlwaysZero, _Villager1Saved
-						CMP_WORD aSelectedCharacterBuffer.Character, TahraCivilian1
+						CMP_WORD aSelectedCharacterBuffer.Character, Ishtar
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager2Saved
-						CMP_WORD aSelectedCharacterBuffer.Character, TahraCivilian2
+						CMP_WORD aSelectedCharacterBuffer.Character, Ishtar
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager3Saved
-						CMP_WORD aSelectedCharacterBuffer.Character, TahraCivilian3
+						CMP_WORD aSelectedCharacterBuffer.Character, Ishtar
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager4Saved
-						CMP_WORD aSelectedCharacterBuffer.Character, TahraCivilian4
+						CMP_WORD aSelectedCharacterBuffer.Character, Ishtar
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager5Saved
-						CMP_WORD aSelectedCharacterBuffer.Character, TahraCivilian5
+						CMP_WORD aSelectedCharacterBuffer.Character, Ishtar
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager6Saved
-						CMP_WORD aSelectedCharacterBuffer.Character, TahraCivilian6
+						CMP_WORD aSelectedCharacterBuffer.Character, Ishtar
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager1Saved
 						CMP_BITS $7E4F98, $0008
-						CHECK_ACTIVE_CARRYING TahraCivilian1
+						CHECK_ACTIVE_CARRYING Ishtar
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager2Saved
 						CMP_BITS $7E4F98, $0008
-						CHECK_ACTIVE_CARRYING TahraCivilian2
+						CHECK_ACTIVE_CARRYING Ishtar
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager3Saved
 						CMP_BITS $7E4F98, $0008
-						CHECK_ACTIVE_CARRYING TahraCivilian3
+						CHECK_ACTIVE_CARRYING Ishtar
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager4Saved
 						CMP_BITS $7E4F98, $0008
-						CHECK_ACTIVE_CARRYING TahraCivilian4
+						CHECK_ACTIVE_CARRYING Ishtar
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager5Saved
 						CMP_BITS $7E4F98, $0008
-						CHECK_ACTIVE_CARRYING TahraCivilian5
+						CHECK_ACTIVE_CARRYING Ishtar
 					END_DEFINITION
 					EVENT FlagAlwaysZero, _Villager6Saved
 						CMP_BITS $7E4F98, $0008
-						CHECK_ACTIVE_CARRYING TahraCivilian6
+						CHECK_ACTIVE_CARRYING Ishtar
 					END_DEFINITION
 				END_DEFINITION_ARRAY
 			
@@ -787,42 +787,42 @@ GUARD_FE5_CHAPTER14x :?= false
 					.byte 8, 7
 			
 				_NPC1Group ; B1/B95C
-					UNIT TahraCivilian1, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
+					UNIT Ishtar, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates21 ; B1/B972
 					.byte 8, 7
 			
 				_NPC2Group ; B1/B974
-					UNIT TahraCivilian2, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
+					UNIT Ishtar, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates22 ; B1/B98A
 					.byte 8, 7
 			
 				_NPC3Group ; B1/B98C
-					UNIT TahraCivilian3, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
+					UNIT Ishtar, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates23 ; B1/B9A2
 					.byte 8, 7
 			
 				_NPC4Group ; B1/B9A4
-					UNIT TahraCivilian4, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
+					UNIT Ishtar, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates24 ; B1/B9BA
 					.byte 8, 7
 			
 				_NPC5Group ; B1/B9BC
-					UNIT TahraCivilian5, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
+					UNIT Ishtar, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
 				UNIT
 			
 				_UnusedCoordinates25 ; B1/B9D2
 					.byte 8, 7
 			
 				_NPC6Group ; B1/B9D4
-					UNIT TahraCivilian6, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
+					UNIT Ishtar, NPC, [7, 30], [7, 30], Ishtar, [], 1, False, [$02, $0B, $00, $00]
 				UNIT
 			
 				_StartingPositions ; B1/B9EA

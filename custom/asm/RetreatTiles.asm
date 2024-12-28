@@ -132,10 +132,10 @@
 
       aEnemyRetreatTilesCh4 ; 8F87C1
 
-        .byte 22, 17, 4
-        .byte  1, 18, 2
-        .byte 11, 28, 1
-        .byte 12, 28, 1
+        .byte  1,  8, 2
+        .byte  1,  9, 2
+        .byte  6, 24, 4
+        .byte  7, 24, 4
         .byte 0
 
       aEnemyRetreatTilesCh4x ; 8F87CE

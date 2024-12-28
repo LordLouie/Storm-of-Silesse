@@ -132,9 +132,11 @@ dialogueDagdarDeathQuote
 .byte EndText
 
 dialogueMartyDeathQuote
-.text "No-! I'm not finished yet!"
+.text "Hrk..."
 .byte NewLine
-.text "I can still... fight..."
+.text "My regrets die just as I do..."
+.byte NewLine
+.text "poetic..."
 .byte WaitForA
 .byte EndText
 
@@ -153,9 +155,9 @@ dialogueMirandaDeathQuote
 .byte EndText
 
 dialogueSafyDeathQuote
-.text "...Gods above, return your light..."
+.text "Ced..."
 .byte NewLine
-.text "to this world..."
+.text "Why... why did you leave...?"
 .byte WaitForA
 .byte EndText
 
@@ -484,11 +486,9 @@ dialogueLinoanDeathQuote
 .byte EndText
 
 dialogueRalphDeathQuote
-.text "Hrk..."
+.text "Princess Fee... Prince Ced..."
 .byte NewLine
-.text "Looks like this is it...for me..."
-.byte NewLine
-.text "I'll leave the rest...to you folks..."
+.text "Keep Silesse... strong..."
 .byte WaitForA
 .byte EndText
 

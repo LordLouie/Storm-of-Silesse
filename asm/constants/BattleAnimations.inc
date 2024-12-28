@@ -401,7 +401,7 @@
 	BA_Unused44_PaletteIndex                     = 68
 	BA_Greatbow_PaletteIndex                     = 69
 	BA_MasterBow_PaletteIndex                    = 70
-	BA_VeninBow_PaletteIndex                     = 71
+	BA_Golgotha_PaletteIndex                     = 71
 	BA_BrokenBow_PaletteIndex                    = 72
 	BA_Ballista_VeninBallista_PaletteIndex       = 73
 	BA_IronBallista_PaletteIndex                 = 74

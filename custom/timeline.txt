@@ -135,13 +135,15 @@ In-game Timeline
 
 757 - Tadhg (pronounced tai-gh), joins Sigurd's army as a new recruit. He juggles his duty as a knight with being a single father to his daughter of 3 years, Agnes. Her mother, a Grannvalian writer, was taken to the war up north to serve as an accountant for Prince Kurth. She would never return.
 
+759 - Tadhg fends off a skeleton crew of Orgahil Pirates ransacking villages south of Sailane. He spares and befriends one of the pirates, a man named Barra.
+
 760 - Neill is born to Tadhg and Moninna in Silesse. Fearing for the boy's safety, Tadhg leaves him behind. Agnes refuses to stay, and goes with her dad into a warzone. Tadhg also meets Barra during his time here, who would become a lifelong friend.
 
 761 - Battle of Belhalla. Despite surviving and escaping, Tadhg winds up losing his daughter somewhere in Grannvale.
 
 762 - Tadhg returns to Silesse to raise his son, together with Moninna and Barra.
 
-768 - Neill's mom falls ill. Tadhg and Barra sneak into Grannvale in order to find a cure, and also find Agnes.
+768 - Neill's mother falls ill. Tadhg and Barra sneak into Grannvale in order to find a cure, and also find Agnes.
 
 770 - After numerous fruitless ventures, Tadhg and Barra return home. She dies shortly after. Struck with grief, Tadhg forms Storm Cabal, determined to save Silesse's people from similar misfortune.
 
@@ -149,9 +151,9 @@ In-game Timeline
 
 774 - A pegasus rider named Seadna joins Storm Cabal to earn coin for her family. She takes a liking to Neill.
 
-775 - Tadhg dies, passing leadership of Storm Cabal to his son and best friend. Neill's lack of confidence leads to a botched raid on Zaxon castle, losing them food, weapons, and every other mercenary in the group save for Otto and Seadna.
+775 - Tadhg dies, passing leadership of Storm Cabal to his son and best friend. Neill's lack of confidence leads to a botched raid on Zaxon castle, losing them food, weapons, and every other mercenary in the group save for Barra, Otto and Seadna.
 
-776 - Months after Leif set out on his own journey, Storm of Silesse takes place.
+776 - Storm of Silesse takes place.
 
 777 - After some preparation, Princess Fee of Silesse sets off for Isaach, reconvening with Seliph. This is where FE4 happens!
 

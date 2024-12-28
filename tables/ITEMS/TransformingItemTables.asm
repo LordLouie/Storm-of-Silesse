@@ -3,7 +3,7 @@ aTransformingItemTable ; 88/8223
 	.byte VeninEdge
 	.byte VeninLance
 	.byte VeninAxe
-	.byte VeninBow
+	.byte Golgotha
 	.byte VeninBallista
 	.byte Venin
 	.byte Petrify
