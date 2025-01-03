@@ -766,7 +766,7 @@ dialogueChapter01WorldMap1
 	
 	.byte EndText
 
-neillseadna1
+dialogueChapter01neillseadna
 	.byte Right_slot
     .word LoadPortrait
     .word leif_portrait

@@ -1169,13 +1169,18 @@ DSizeEnds		     := []
       .dsection Chapter03DataSection
       .dsection Chapter02xDataSection
       .dsection Chapter02DataSection
-      .dsection Chapter01DataSection
-
     endEventData
+  .here
+  
+  * = $500000
+  .logical $208000
+    .dsection Chapter01DataSection
+  .here
+
 
     ; B1FD6D
 
-  .endlogical
+
 
   * = $1CB000
   .logical mapped($1CB000)

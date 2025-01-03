@@ -23,17 +23,17 @@ GUARD_FE5_CHAPTER01 :?= false
 
         ; Flag definitions
 
-          _FlagGaZowmnTalk         = enum.enum($05)
-          _FlagNeillSeadna1         = enum.enum($05)
+          _FlagGaZowmnTalk         = enum.enum()
+          _FlagNeillSeadna1         = enum.enum()
           _FlagWeissmannBattleQuote = enum.enum()
 
           ; TODO: map installer definitions
 
-          _FlagKillerBowHouse         = enum.enum()
-          _FlagHammerHouse        = enum.enum()
-          _FlagVulneraryHouse     = enum.enum()
-          _FlagIronSwordHouse     = enum.enum()
-          _FlagMagicRingHouse      = enum.enum()
+          _FlagKillerBowHouse         = enum.enum($21)
+          _FlagHammerHouse        = enum.enum($21)
+          _FlagVulneraryHouse     = enum.enum($21)
+          _FlagIronSwordHouse     = enum.enum($21)
+          _FlagMagicRingHouse      = enum.enum($21)
 
         _OpeningEventDefinitions ; FD/8000
           EVENT FlagAlwaysZero, _OpeningEvent
@@ -81,7 +81,6 @@ GUARD_FE5_CHAPTER01 :?= false
           EVENT FlagAlwaysZero, _EndingEvent
             macroECCheckCoordinates [17, 4]
             CMP_WORD wCurrentPhase, Player
-            CMP_WORD aSelectedCharacterBuffer.Character, Neill, Barra
           END_DEFINITION
         END_DEFINITION_ARRAY
 
@@ -124,7 +123,7 @@ GUARD_FE5_CHAPTER01 :?= false
         END2
 
         _NeillSeadna1 ; FD/8324
-          macroDialogue neillseadna1
+          macroDialogue dialogueChapter01neillseadna
         END2
 
         _GaZowmnTalk ; FD/8324

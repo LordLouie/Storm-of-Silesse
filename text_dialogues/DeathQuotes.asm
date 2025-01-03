@@ -562,11 +562,11 @@ dialogueMullerDeathQuote
 .byte EndText
 
 dialogueTrottierDeathQuote
-.text "Ugh..."
+.text "Hnnnghh..."
 .byte NewLine
-.text "Not bad..."
+.text "You'll pay for crossing us..."
 .byte NewLine
-.text "Guess I couldn't do it...after all..."
+.text "Mark my... d-damn words..."
 .byte WaitForA
 .byte EndText
 

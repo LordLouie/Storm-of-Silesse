@@ -1,4 +1,4 @@
-structBattleAnimationCharacterPalettes 0,Character,Class,BA_Palette
+g,Character,Class,BA_Palette
 BattlePalette0,Seadna,LanceKnightDismounted,BA_Finn_Dismounted_Palette
 BattlePalette1,Seadna,DukeKnightDismounted,BA_Finn_Dismounted_Palette
 BattlePalette2,Seadna,MasterKnight,BA_Finn_MasterKnight_Palette

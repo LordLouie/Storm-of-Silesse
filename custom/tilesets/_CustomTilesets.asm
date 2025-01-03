@@ -30,9 +30,36 @@ ctileset    .binary "CastleTileset.bin"
 
 .here
 
-* = $4B1BA2  ; NOTE: overrides vanilla Village animations
-.logical lorom($4B1BA2 , 1)
+* = $3F8000  ; NOTE: overrides vanilla Village animations
+.logical lorom($3F8000 , 1)
 
 canimated   .binary "CastleTileAnimations.bin"
-
 .here
+
+* = $4B1BB0
+.logical lorom($4B1BB0 , 1)
+sctiles   .binary "snowcastletilegraphics.bin"
+.here
+
+* = $4B63D0
+.logical lorom($4B63D0 , 1)
+sctileset   .binary "snowcastletileset.bin"
+.here
+
+* = $4B78D0
+.logical lorom($4B78D0,1)
+chapter5tiles   .binary "chapter5tilegraphics.bin"
+.here
+
+* = $4BC3F0
+.logical lorom($4BC3F0,1)
+chapter5tileset   .binary "chapter5tileset.bin"
+.here
+
+
+
+
+
+
+
+

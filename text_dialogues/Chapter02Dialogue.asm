@@ -22,7 +22,9 @@ dialogueChapter02Opening1
 .byte $04
 .text "but I would be remiss were I not to"
 .byte $02
-.text "mention the mounting pressure my team feels."
+.text "mention the mounting pressure"
+.byte $02
+.text "the soldiers are suffering from."
 .byte $08
 .byte $04
 .text "The citizenry scowl at us on the regular."
@@ -32,17 +34,17 @@ dialogueChapter02Opening1
 .byte $02
 .text "don't exactly have amicable relations with"
 .byte $02
-.text "my crew, either."
+.text "my regiment, either."
 .byte $08
 .byte $04
 .text "In order to avoid suspicion, an imperial"
 .byte $02
 .text "supply train leaving Silesse has transfered"
 .byte $02
-.text "their supply of children to us."
+.text "their supplies to us."
 .byte $08
 .byte $04
-.text "Our destination is somewhere in the Tofa"
+.text "Our destination is somewhere in the Tófa"
 .byte $02
 .text "mountain range. This map shows the route,"
 .byte $02
@@ -250,7 +252,7 @@ dialogueChapter02WorldMap1
 .byte ScrollText
 
 .byte EndText
-	
+
 dialogueChapter02Ending1Gaiden
 
 .byte Right_slot
@@ -529,7 +531,7 @@ dialogueChapter02Ending1Regular
 
 .byte EndText
 
-supplyescapes
+dialogueChapter02supplyescapes
 .byte Right_slot
 .word LoadPortrait
 .word leif_portrait
@@ -539,7 +541,7 @@ supplyescapes
 
 .byte EndText
 
-edithwhines
+dialogueChapter02edithwhines
 .byte Right_slot
 .word LoadPortrait
 .word dagdar_portrait
@@ -597,7 +599,7 @@ edithwhines
 
 .byte EndText
 
-geraldappears
+dialogueChapter02geraldappears
 .byte Right_slot
 .word LoadPortrait
 .word eyvel_portrait
@@ -649,7 +651,7 @@ geraldappears
 
 .byte EndText
 
-geraldrecruitment
+dialogueChapter02geraldrecruitment
 .byte Right_slot
 .word LoadPortrait
 .word eyvel_portrait
@@ -733,7 +735,7 @@ geraldrecruitment
 
 .byte EndText
 
-edithrecruitment
+dialogueChapter02edithrecruitment
 
 .byte Right_slot
 .word LoadPortrait
@@ -838,7 +840,7 @@ edithrecruitment
 
 .byte EndText
 
-braveswordhouse
+dialogueChapter02braveswordhouse
 
 .byte Right_slot
 .word LoadPortrait
@@ -900,7 +902,7 @@ braveswordhouse
 .byte EndText
 
 
-sailanescrollhouse
+dialogueChapter02sailanescrollhouse
 .byte Right_slot
 .word LoadPortrait
 .word beardedman_portrait
@@ -953,7 +955,7 @@ sailanescrollhouse
 
 .byte EndText
 
-silverlancehouse
+dialogueChapter02silverlancehouse
 
 .byte Right_slot
 .word LoadPortrait
@@ -1000,7 +1002,7 @@ silverlancehouse
 
 .byte EndText
 
-javelinhouse
+dialogueChapter02javelinhouse
 
 .byte Right_slot
 .word LoadPortrait
@@ -1014,14 +1016,14 @@ javelinhouse
 
 .byte EndText
 
-purewaterhousenormal
+dialogueChapter02purewaterhousenormal
 .byte Right_slot
 .text "...Who lives like this?"
 .byte $08
 
 .byte EndText
 
-purewaterhousegerald
+dialogueChapter02purewaterhousegerald
 
 .byte Right_slot
 .word LoadPortrait
@@ -1040,7 +1042,7 @@ purewaterhousegerald
 
 .byte EndText
 
-wreckageexamination
+dialogueChapter02wreckageexamination
 .byte Right_slot
 .text "Was something supposed to be here?"
 .byte $08

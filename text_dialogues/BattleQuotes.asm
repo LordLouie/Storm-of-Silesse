@@ -285,9 +285,11 @@ dialogueIliosBattleQuote
 .byte EndText
 
 dialogueTrottierBattleQuote
-.text "As if you could defeat me!"
+.text "I'm told you lot are due"
 .byte NewLine
-.text "Tch... Have at you!"
+.text "for an execution..."
+.byte NewLine
+.text "Now line up!!"
 .byte WaitForA
 .byte EndText
 

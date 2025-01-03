@@ -99,6 +99,13 @@ GUARD_FE5_CHAPTER03 :?= false
           macroECShop eventChapter03Data._Vendor
         END_DEFINITION_ARRAY
 
+        _NPCScriptedBattle
+            .byte $82, $02, $00, $0C	;First80+Left2;Miss2;0;
+            .byte $00, $02, $00, $0C	;Right0;Miss2;0;
+            .byte $02, $02, $00, $02	;Left2;Miss2;0;
+            .byte $00, $02, $00, $0C	;Right0;Miss2;0;
+          .word $FFFF, $FFFF  
+
         _Door1 ; 8C/E883
           macroOpenDoorByTileChangeID 0 
         END1
@@ -141,14 +148,14 @@ GUARD_FE5_CHAPTER03 :?= false
           WAIT_MOVE
           YIELD
 
-          DIALOGUE empirestrikesback1
+          DIALOGUE dialogueChapter03empirestrikesback1
           YIELD
 
           SCROLL_CAMERA_COORDS [12, 12], 4
           YIELD
           SCROLL_CAMERA_COORDS [1, 24], 4
           YIELD
-          DIALOGUE empirestrikesback2
+          DIALOGUE dialogueChapter03empirestrikesback2
           YIELD
 
           macroScriptedRewarpStaff Werner, [-1, -1]
@@ -165,7 +172,7 @@ GUARD_FE5_CHAPTER03 :?= false
           SET_MUSIC $43
           YIELD
 
-          DIALOGUE neillagnes1
+          DIALOGUE dialogueChapter03neillagnes1
           YIELD
 
           ;cmacroCustomBattleAnimON 2
@@ -173,7 +180,7 @@ GUARD_FE5_CHAPTER03 :?= false
           PAUSE_SKIPPABLE 32
           YIELD
 
-          DIALOGUE neillagnes2
+          DIALOGUE dialogueChapter03neillagnes2
           YIELD
 
           macroASMCRemoveUnit Agnes
@@ -320,6 +327,31 @@ GUARD_FE5_CHAPTER03 :?= false
 
           LOAD_GROUP eventChapter03Data._FachtnaAlternateGroup
           WAIT_MOVE
+          YIELD
+
+          CALL_ASM_SKIPPABLE rlUnknown8C9E22
+        
+          CALL_ASM_SKIPPABLE rlClearHDMAArray
+        
+          STORE_LONG lEventEngineLongParameter, _NPCScriptedBattle
+          CALL_ASM_SKIPPABLE $9A8D0F
+        
+          STORE_WORD wEventEngineParameter1, IronSword
+          STORE_WORD wEventEngineParameter2, IronAxe
+          STORE_WORD wEventEngineXCoordinate, 6
+          STORE_WORD wEventEngineYCoordinate, 14
+          STORE_WORD wEventEngineXCoordinateAlt, 6
+          STORE_WORD wEventEngineYCoordinateAlt, 15
+          CALL_ASM_SKIPPABLE $9A8E50
+        
+          CALL_ASM_SKIPPABLE $84B719
+        
+          HALT_UNTIL_WORD_SKIPPABLE wMapBattleFlag, $0000
+        
+          CALL_ASM_SKIPPABLE rlUpdateUnitMaps
+          CALL_ASM_SKIPPABLE rlUpdateVisibilityMap
+        
+          PAUSE_SKIPPABLE 2
           YIELD
 
           DIALOGUE dialogueChapter03OpeningB3
@@ -536,7 +568,7 @@ END1
           .byte [1, 15]
 		  
         _EmpireGroup ; B1/F31A
-          UNIT Agnes, Enemy, [7, 20], [7, 15], Durchval, [SilverSword, SilverBow], 10, true, [$00, $00, $00, $00]
+          UNIT Agnes, Enemy, [7, 20], [7, 15], Durchval, [SilverSword, SilverBow], 17, true, [$00, $00, $00, $00]
           UNIT Werner, Enemy, [7, 20], [8, 15], Durchval, [Jormungand], 7, true, [$00, $00, $00, $00]
           UNIT
 

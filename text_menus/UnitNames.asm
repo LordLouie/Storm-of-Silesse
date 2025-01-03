@@ -109,8 +109,8 @@
 		.word	<>menutextUnitMerlochName
 	
 		.word	<>menutextUnitThraciaName
-		.word	<>menutextUnitThraciaName	; Unused
-		.word	<>menutextUnitThraciaName	; Unused
+		.word	<>menutextUnitGrannvaleName
+		.word	<>menutextUnitGrannvaleName
 	
 		.word	<>menutextUnitAltenaName
 		.word	<>menutextUnitTravantName

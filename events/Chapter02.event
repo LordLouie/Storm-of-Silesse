@@ -147,7 +147,7 @@ GUARD_FE5_CHAPTER02 :?= false
           SET_MUSIC $4A
           YIELD
 
-          DIALOGUE geraldrecruitment
+          DIALOGUE dialogueChapter02geraldrecruitment
           YIELD
 
           macroASMCChangeAllegianceToPlayer Gerald
@@ -162,7 +162,7 @@ GUARD_FE5_CHAPTER02 :?= false
           SET_MUSIC $4A
           YIELD
 
-          DIALOGUE geraldrecruitment
+          DIALOGUE dialogueChapter02geraldrecruitment
           YIELD
 
           macroASMCChangeAllegianceToPlayer Gerald
@@ -177,7 +177,7 @@ GUARD_FE5_CHAPTER02 :?= false
 		  RESET_PHASE_MUSIC
 		  YIELD
 
-		  macroDialogue edithwhines
+		  macroDialogue dialogueChapter02edithwhines
     	END2
 
         _BarraEdithTalk ; FD/8E18
@@ -188,7 +188,7 @@ GUARD_FE5_CHAPTER02 :?= false
           SET_MUSIC $4B
           YIELD
 
-          DIALOGUE edithrecruitment
+          DIALOGUE dialogueChapter02edithrecruitment
           YIELD
 
           macroASMCChangeAllegianceToPlayer Edith
@@ -196,31 +196,31 @@ GUARD_FE5_CHAPTER02 :?= false
         END2
 
         _JavelinHouseVisit ; 99/835B
-          macroItemHouse javelinhouse, Javelin, [2, 19], $0021
+          macroItemHouse dialogueChapter02javelinhouse, Javelin, [2, 19], $0021
         END2
 
         _SailaneScrollHouseVisit ; 99/8364
-          macroItemHouse sailanescrollhouse, SailaneScroll, [4, 16], $0021
+          macroItemHouse dialogueChapter02sailanescrollhouse, SailaneScroll, [4, 16], $0021
         END2
 
         _SilverLanceHouseVisit ; 99/83C7
-          macroItemHouse silverlancehouse, SilverLance, [18, 6], $0021
+          macroItemHouse dialogueChapter02silverlancehouse, SilverLance, [18, 6], $0021
         END2
 
         _BraveSwordHouseVisit ; 99/83D0
-          macroItemHouse braveswordhouse, BraveSword, [15, 36], $0021
+          macroItemHouse dialogueChapter02braveswordhouse, BraveSword, [15, 36], $0021
         END2
 
         _WreckageExamination
-        macrodialogue wreckageexamination
+        macrodialogue dialogueChapter02wreckageexamination
         END2
 
         _GeraldHouseOther ; 99/8433
-          macroDialogue purewaterhousenormal
+          macroDialogue dialogueChapter02purewaterhousenormal
         END2
 
         _GeraldHouseGerald ; 99/843C
-		  macroItemHouse purewaterhousegerald, PureWater, [16, 4], $0021
+		  macroItemHouse dialogueChapter02purewaterhousegerald, PureWater, [16, 4], $0021
         END2
 
         _1stSupplyCorpsReinforcements ; 99/85A3
@@ -319,7 +319,7 @@ GUARD_FE5_CHAPTER02 :?= false
 		  WAIT_MOVE
           YIELD
 		  
-		  DIALOGUE geraldappears
+		  DIALOGUE dialogueChapter02geraldappears
 		  YIELD
 
             JUMP _OpeningEvent_End
@@ -335,7 +335,7 @@ GUARD_FE5_CHAPTER02 :?= false
 		  WAIT_MOVE
           YIELD
 		  
-		  DIALOGUE geraldappears
+		  DIALOGUE dialogueChapter02geraldappears
 		  YIELD
 
             JUMP _OpeningEvent_End
@@ -348,7 +348,7 @@ GUARD_FE5_CHAPTER02 :?= false
 		  WAIT_MOVE
           YIELD
 		  
-		  DIALOGUE geraldappears
+		  DIALOGUE dialogueChapter02geraldappears
 		  YIELD
 
           _OpeningEvent_End
@@ -406,7 +406,7 @@ GUARD_FE5_CHAPTER02 :?= false
         SET_MUSIC $28 ; TODO: music definitions
         YIELD
 
-        DIALOGUE supplyescapes
+        DIALOGUE dialogueChapter02supplyescapes
         YIELD
 
         macroASMCGameOver

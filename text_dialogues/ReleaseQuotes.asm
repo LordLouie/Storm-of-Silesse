@@ -349,7 +349,16 @@ dialogueSaiasReleaseQuote
 .byte EndText
 
 dialogueTrottierReleaseQuote
-.text "Why...? Why would you let me go...?"
+.text "I don't suppose you have"
+.byte NewLine
+.text "room for another refugee,"
+.byte NewLine
+.text "do you?"
+.byte WaitForA
+.byte ScrollText
+.text "...It appears I'll be tried"
+.byte NewLine
+.text "for treason, then."
 .byte WaitForA
 .byte EndText
 

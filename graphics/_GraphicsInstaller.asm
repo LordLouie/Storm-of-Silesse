@@ -517,9 +517,33 @@ nintendo_logo
 
 .here
 
+* = $274081
+.logical lorom($274081, 1)
 
+.binary "female_sniper_dynamicFC2.4bpp.fe4"
 
+.here
 
+* = $2CB31D
+.logical lorom($2CB31D, 1)
+
+.binary "FArchKnight.4bpp.fe4"
+
+.here
+
+* = $25E8C4
+.logical lorom($25E8C4, 1)
+
+.binary "brunter.4bpp.fe4"
+
+.here
+
+* = $49D000
+.logical lorom($49D000, 1)
+
+.binary "BarbarianNew.bin.fe4"
+
+.here
 
 
 

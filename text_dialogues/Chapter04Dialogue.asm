@@ -230,7 +230,7 @@ dialogueChapter04Opening2
 .text "Princess Fee herself."
 .byte $08
 .byte $04
-.text "She's currently positioned in Tofa"
+.text "She's currently positioned in Tófa"
 .byte $02
 .text "with a regiment of the most skilled"
 .byte $02
@@ -249,7 +249,7 @@ dialogueChapter04Opening2
 .byte $04
 .text "First of all- how would we even"
 .byte $02
-.text "reach Tofa in time? It's on the"
+.text "reach Tófa in time? It's on the"
 .byte $02
 .text "opposite side of the country!"
 .byte $08
@@ -419,7 +419,7 @@ dialogueChapter04Opening4
 .byte $04
 .byte EndText
 
-civviesallescaped
+dialogueChapter04civviesallescaped
 .byte Right_slot
 .word LoadPortrait
 .word amalda_portrait
@@ -431,7 +431,7 @@ civviesallescaped
 .byte $08
 .byte EndText
 
-geraldwalter
+dialogueChapter04geraldwalter
 .byte Right_slot
 .word LoadPortrait
 .word ralph_portrait
@@ -542,7 +542,7 @@ geraldwalter
 .byte $04
 .byte EndText
 
-civvydies
+dialogueChapter04civvydies
 .byte Right_slot
 .word LoadPortrait
 .word leif_portrait
@@ -550,7 +550,7 @@ civvydies
 .text "We lost someone?!"
 .byte $08
 
-ilsedies
+dialogueChapter04ilsedies
 .byte Right_slot
 .word LoadPortrait
 .word leif_portrait
@@ -560,90 +560,201 @@ ilsedies
 
 .byte EndText
 
+dialogueChapter04civvieshaventescaped
+.byte Right_slot
+.word LoadPortrait
+.word leif_portrait
+.byte $09 ; font 9(always use font 9)
+.text "Hey! We can't leave until"
+.byte $02
+.text "everyone's accounted for!"
+.byte $08
+.byte $04
+.text "Storm Cabal puts others needs"
+.byte $02
+.text "before its own!"
+.byte $08
+
 .byte EndText
 
-neillseadna2
+dialogueChapter04neillseadna
 .byte Left_slot
 .word LoadPortrait
 .word finn_portrait
 .text "Still thinking about your dad?"
+.byte $08
 .byte right_slot
 .word LoadPortrait
 .word leif_portrait
 .text "It's hard not to. He had a firm vision."
+.byte $02
 .text "It's like he always knew what to do."
+.byte $08
+.byte $04
 .text "I feel like my leadership backfires"
+.byte $02
 .text "on all of us half of the time."
-
+.byte $08
+.byte Left_slot
+.byte $04
 .text "You've got your head all wrapped up"
+.byte $02
 .text "in that leadership business."
+.byte $08
+.byte $04
 .text "There's no chain of command between us"
+.byte $02
 .text "or anything. We listen to you because"
+.byte $02
 .text "we're your friends."
+.byte $08
+.byte $04
 .text "If we pick up more recruits,"
+.byte $02
 .text "that could change..."
+.byte $08
+.byte $04
 .text "But even then, we're with you,"
+.byte $02
 .text "every step of the way."
+.byte $02
 .text "At least... I'll be."
-
+.byte $08
+.byte $04
+.byte right_slot
+.byte $04
 .text "Daw, thanks."
+.byte $02
 .text "I gotta stop being a glum bumpkin."
-.text "Clearly, you don't find that attractive."
-
+.byte $02
+.text "Clearly, you don't find it attractive."
+.byte $08
+.byte Left_slot
+.byte $04
 .text "And just WHAT are you insinuating there?"
-
+.byte $08
+.byte right_slot
+.byte $04
 .text "Uhh... Nothing at all!"
-
+.byte $08
+.byte Left_slot
+.byte $04
 .text "Heheheh..."
-
+.byte $08
+.byte right_slot
+.byte $04
 .text "Ha... aha ha ha ha!"
+.byte $08
+.byte $04
 .text "Ahh... but being serious for a second..."
+.byte $02
 .text "What do you think of Ilse, and this"
+.byte $02
 .text "whole visiting the royalty plot?"
-
+.byte $08
+.byte Left_slot
+.byte $04
 .text "Ridiculous would be a good place to start."
+.byte $08
+.byte $04
 .text "She talks about walking across the"
+.byte $02
 .text "entire continent like that wouldn't"
+.byte $02
 .text "take us a year or more."
+.byte $08
+.byte $04
 .text "The idea of us joining their ranks"
+.byte $02
 .text "is equally preposterous."
-.text "These are the same people who"
-.text "rejected my application for"
-.text "Silesse's Pegasus Corps."
-.text "They called my behavior insubordinate."
+.byte $08
+.byte $04
+.text "And may I remind you, these are the"
+.byte $02
+.text "same people who rejected my application"
+.byte $02
+.text "for Silesse's Pegasus Corps."
+.byte $08
+.byte $04
+.text "They called my behavior insubordinate!"
+.byte $08
+.byte $04
 .text "That lady acts like a fictional"
+.byte $02
 .text "character! As if we'll suddenly"
-.text "become heroes for doing this."
+.byte $02
+.text "become heroes for doing her errands!"
+.byte $08
+.byte $04
 .text "Then again... real heroes are born of"
+.byte $02
 .text "that sort of make believe-sounding"
+.byte $02
 .text "nonsense too."
+.byte $08
+.byte $04
 .text "Sigurd was just protecting his"
+.byte $02
 .text "nation's borders, and he wound up"
+.byte $02
 .text "conquering two whole nations!"
-
+.byte $08
+.byte right_slot
+.byte $04
 .text "Crazy. And to think when I first told"
+.byte $02
 .text "you Sigurd was a martyr, you thought"
+.byte $02
 .text "I was an extremist."
-
-.text "Misinformation is a powerful thing!"
-.text "I almost signed a deal for the empire!"
-.text "Your dad's story probably saved my life."
-
+.byte $08
+.byte left_slot
+.byte $04
+.text "Misinformation is a powerful thing."
+.byte $02
+.text "I almost signed a deal working for"
+.byte $02
+.text "the empire, because of it."
+.byte $08
+.byte $04
+.text "Remembering your dad's story"
+.byte $02
+.text "probably saved my life."
+.byte $08
+.byte $04
+.byte right_slot
+.byte $04
+.text "Funny, how things work out."
+.byte $02
 .text "I've kept you long enough."
+.byte $02
 .text "Tear em up, Seadna!"
-
+.byte left_slot
+.byte $04
 .text "Roger that, Captain Neill!"
+.byte $02
 .text "Hehe..."
-
+.byte $08
+.byte $04
 .byte EndText
 
-cavernexamination
+dialogueChapter04trottierlosesit
+.byte Right_slot
+.word LoadPortrait
+.word olwen_portrait
+.text "You ingrates! Must I break formation,"
+.byte $02
+.text "and rout the enemy myself?!"
+.byte $08
+.byte $04
+.byte EndText
+
+dialogueChapter04cavernexamination
 .byte Right_slot
 .text "Echo!"
 .byte $08
 .byte EndText
 
-storehouseexamination
+dialogueChapter04storehouseexamination
 .byte Right_slot
 .word LoadPortrait
 .word ralph_portrait
@@ -669,6 +780,143 @@ storehouseexamination
 .text "dispose of it..."
 .byte $08
 .byte $04
+.byte EndText
+
+dialogueChapter04Ending
+
+.byte right_slot
+.word LoadPortrait
+.word leif_portrait
+
+.text "We're free..."
+.byte $02
+.text "Looks like the empire has"
+.byte $02
+.text "lost our scent."
+.byte $08
+.byte left_slot
+.word LoadPortrait
+.word halvan_portrait
+.text "Don't let your guard down"
+.byte $02
+.text "just yet. We still need to"
+.byte $02
+.text "do a head count."
+.byte $08
+.byte $04
+.text "...Looks like everyone's"
+.byte $02
+.text "accounted for."
+.byte $08
+.byte $04
+.text "Neill, I want you"
+.byte $02
+.text "to grab extra blankets"
+.byte $02
+.text "for the families."
+.byte $08
+.byte $04
+.text "I have a feeling they'll"
+.byte $02
+.text "be travelling with us"
+.byte $02
+.text "for a while."
+.byte $08
+.byte $04
+
+.byte right_slot
+.byte $04
+.text "Gotcha..."
+.byte $08
+
+.byte left_slot
+.byte $04
+.word LoadPortrait
+.word amalda_portrait
+.text "Oh, brave warriors..."
+.byte $02
+.text "The humble folk of Skanor"
+.byte $02
+.text "and I owe their lives to you."
+
+.byte left_slot
+.byte $04
+.word LoadPortrait
+.word finn_portrait
+.text "You have to wonder though..."
+.text "why's the empire comin'"
+.text "at us with full force?"
+
+.text "At first, I thought it was"
+.text "to recapture the kids..."
+
+.byte right_slot
+.byte $04
+.word LoadPortrait
+.word osian_portrait
+.text "I believe I have found"
+.text "a rationale to their"
+.text "motives."
+
+.byte left_slot
+.byte $04
+.text "Otto!"
+
+.byte right_slot
+.byte $04
+.text "Further analysis of the cargo"
+.text "has revealed items that have"
+.text "gone previously undocumented."
+
+.text "Among these items were staves,"
+.text "tomes with black covers,"
+.text "and most notably, a map."
+
+.text "The map points to an area in"
+.text "the Tófa mountain range."
+
+.text "It's likely the supply we"
+.text "raided was heading there."
+
+.byte left_slot
+.byte $04
+.word LoadPortrait
+.word leif_portrait
+.text "That's where they indoctrinate"
+.text "kids into their cult, I'll bet."
+
+.text "Now, how do we get through the mountains?"
+
+.byte right_slot
+.byte $04
+.word LoadPortrait
+.word amalda_portrait
+.text "There is a fort north of here with a tunnel beneath it."
+.text "However... it is in the possesion of a very unscrupulous man."
+
+.byte left_slot
+.byte $04
+.text "and that would be...?"
+
+.byte right_slot
+.byte $04
+.text "His name is Sionnach. He claims to be from the"
+.text "Zaxonian royal family, and is trying to garner"
+.text "favor from the monarchy."
+
+.text "Presumably in a bid to be recognized as a"
+.text "legitimate heir to the throne."
+.text "Though well mannered, Sionnach can be... talkative."
+
+.text "Convince him to let us through, and we'll be"
+.text "able to reach Tófa in a handful of weeks."
+
+.byte left_slot
+.byte $04
+.text "Wow, that's... really convienient."
+.text "I almost thought we would have to"
+.text "go around the mountain... that'd take us a year or more."
+
 .byte EndText
 
 dialogueChapter04WorldMap1

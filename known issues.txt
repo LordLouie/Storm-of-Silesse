@@ -8,7 +8,6 @@
 - camera snaps during the chapter 2 opening
 - gerald doesn't recruit himself
 
-- neill/seadna 3 not in yet
 - death reactions for ilse/civilians not in yet
 - event after civilians escape not in yet
 - map 5 map finished but not compressed or inserted

@@ -450,7 +450,7 @@ GUARD_FE5_CHAPTER08 :?= false
           .byte [14, 8]
 
         _RightReinforcementsGroup1 ; B1/DD20
-          UNIT BanditBrigand1, Enemy, [13, 0], [13, 1], Gomez, [VeninAxe], 8, false, [$00, $00, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [13, 0], [13, 1], Gomez, [VeninAxe], 8, false, [$00, $00, $00, $00]
         UNIT
 
         _RightReinforcementsCameraCoordinates2 ; B1/DD36
@@ -464,28 +464,28 @@ GUARD_FE5_CHAPTER08 :?= false
           .byte [9, 8]
 
         _LeftReinforcementsGroup ; B1/DD50
-          UNIT BanditBrigand1, Enemy, [4, 0], [4, 1], Gomez, [IronAxe], 7, false, [$00, $01, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [4, 0], [4, 1], Gomez, [IronAxe], 7, false, [$00, $01, $00, $00]
         UNIT
 
         _PrepGroup2 ; B1/DD66
           .byte [8, 7]
 
-          UNIT BanditBrigand1, Enemy, [14, 10], [14, 10], Gomez, [VeninAxe], 5, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [17, 12], [17, 12], Gomez, [VeninAxe], 8, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [18, 13], [18, 13], Gomez, [VeninAxe, Vulnerary], 7, false, [$00, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [14, 10], [14, 10], Gomez, [VeninAxe], 5, false, [$00, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [17, 12], [17, 12], Gomez, [VeninAxe], 8, false, [$00, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [18, 13], [18, 13], Gomez, [VeninAxe, Vulnerary], 7, false, [$00, $03, $00, $00]
           UNIT BanditHunter, Enemy, [15, 13], [15, 13], Gomez, [Golgotha], 3, false, [$00, $03, $00, $00]
           UNIT BanditHunter, Enemy, [16, 14], [16, 14], Gomez, [Golgotha], 3, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [12, 9], [12, 9], Gomez, [VeninAxe], 5, false, [$01, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [18, 16], [18, 16], Gomez, [VeninAxe], 7, false, [$01, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [13, 14], [13, 14], Gomez, [VeninAxe], 10, false, [$01, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [16, 8], [16, 8], Gomez, [VeninAxe], 10, false, [$01, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [12, 9], [12, 9], Gomez, [VeninAxe], 5, false, [$01, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [18, 16], [18, 16], Gomez, [VeninAxe], 7, false, [$01, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [13, 14], [13, 14], Gomez, [VeninAxe], 10, false, [$01, $03, $00, $00]
+          UNIT GrannvaleGeneral, Enemy, [16, 8], [16, 8], Gomez, [VeninAxe], 10, false, [$01, $03, $00, $00]
         UNIT
 
         _UnusedCoordinates1 ; B1/DE1E
           .byte [8, 7]
 
         _LemayGroup ; B1/DE20
-          UNIT Lemay, Enemy, [2, 10], [2, 10], Lemay, [Ridersbane, SteelLance, IronSword, Vulnerary, MasterSeal], 5, true, [$01, $03, $02, $80]
+          UNIT Durchval, Enemy, [19, 33], [19, 33], Durchval, [Jormungand], 20, true, [$01, $03, $02, $80]
         UNIT
 
         _UnusedCoordinates2 ; B1/DE36

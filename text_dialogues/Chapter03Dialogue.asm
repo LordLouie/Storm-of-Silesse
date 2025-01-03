@@ -489,7 +489,7 @@ dialogueChapter03OpeningB4
 .byte $08
 .byte EndText
 
-empirestrikesback1
+dialogueChapter03empirestrikesback1
 
 .byte Left_slot
 .word LoadPortrait
@@ -523,7 +523,7 @@ empirestrikesback1
 .byte $08
 .byte EndText
 
-empirestrikesback2
+dialogueChapter03empirestrikesback2
 
 .byte Left_slot
 .word LoadPortrait
@@ -563,7 +563,7 @@ empirestrikesback2
 .byte $08
 .byte EndText
 
-neillagnes1
+dialogueChapter03neillagnes1
 
 .byte Right_slot
 .word LoadPortrait
@@ -593,7 +593,7 @@ neillagnes1
 
 .byte EndText
 
-neillagnes2
+dialogueChapter03neillagnes2
 
 .byte Right_slot
 .word LoadPortrait
