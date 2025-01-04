@@ -87,7 +87,7 @@ aHammerneWeaponLock ; B0/9A36
 
 aAssassinKnifeWeaponLock ; B0/9A3A
 	.word Fachtna
-	.word Ghu
+	.word Geb
 	.word 0
 
 aBraveLanceWeaponLock ; B0/9A40

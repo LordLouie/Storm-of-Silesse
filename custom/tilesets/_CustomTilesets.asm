@@ -30,12 +30,6 @@ ctileset    .binary "CastleTileset.bin"
 
 .here
 
-* = $3F8000  ; NOTE: overrides vanilla Village animations
-.logical lorom($3F8000 , 1)
-
-canimated   .binary "CastleTileAnimations.bin"
-.here
-
 * = $4B1BB0
 .logical lorom($4B1BB0 , 1)
 sctiles   .binary "snowcastletilegraphics.bin"
@@ -56,7 +50,26 @@ chapter5tiles   .binary "chapter5tilegraphics.bin"
 chapter5tileset   .binary "chapter5tileset.bin"
 .here
 
+;temple tileset related info
+* = $4BDAD0 
+.logical lorom($4BDAD0, 1)
+ttiles   .binary "templeTiles.dat.fe4"
+.here
+* = $4C22F0
+.logical lorom($4C22F0, 1)
+ttileset   .binary "templeTileset.dat.fe4"
+.here
 
+* = $3F8000  ; NOTE: overrides vanilla Village animations
+.logical lorom($3F8000 , 1)
+
+canimated   .binary "CastleTileAnimations.bin"
+.here
+
+* = $3A8000 ; Undocumented reason as to why this specific address, but guessing similar to former instance
+.logical lorom($3A8000, 1)
+tanimated   .binary "templeanimations.bin"
+.here
 
 
 

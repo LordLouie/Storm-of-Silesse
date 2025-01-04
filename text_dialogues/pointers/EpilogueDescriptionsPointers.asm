@@ -11,7 +11,7 @@ aEpilogueEndingTable ; 8F/E28C
 	.long ralphepi ; Ilse
 	.long martyepi ; Waulter
 	.long ronanepi ; Sionnach
-	.long mirandaepi ; Ghu
+	.long mirandaepi ; Geb
 	.long safiyaepi ; Sapphie
 	.long laraepi ; Lara
 	.long brightonepi ; Brighton

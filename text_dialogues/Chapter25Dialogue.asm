@@ -752,7 +752,7 @@ dialogueChapterFinalEnding4Miranda
 .byte WaitForA
 
 .byte Left_slot
-.text "Princess Ghu?"
+.text "Princess Geb?"
 .byte NewLine
 .text "What's wrong?"
 .byte WaitForA
@@ -768,7 +768,7 @@ dialogueChapterFinalEnding4Miranda
 .byte NewLine
 .text "was my fault. You're not to blame for it,"
 .byte NewLine
-.text "Princess Ghu."
+.text "Princess Geb."
 .byte WaitForA
 .byte ScrollText
 .text "And if you haven't heard, Ulster was liberated"

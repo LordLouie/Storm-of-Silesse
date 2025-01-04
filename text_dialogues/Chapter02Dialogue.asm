@@ -1049,8 +1049,12 @@ dialogueChapter02wreckageexamination
 
 .byte EndText
 
+dialogueChapter02secondsighting
+.byte Right_slot
+.text "What was that for?!"
+.byte $08
 
-
+.byte EndText
 
 
 

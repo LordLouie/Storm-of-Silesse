@@ -99,7 +99,7 @@ GUARD_FE5_CHAPTER03 :?= false
           macroECShop eventChapter03Data._Vendor
         END_DEFINITION_ARRAY
 
-        _NPCScriptedBattle
+        _NPCScriptedBattle1
             .byte $82, $02, $00, $0C	;First80+Left2;Miss2;0;
             .byte $00, $02, $00, $0C	;Right0;Miss2;0;
             .byte $02, $02, $00, $02	;Left2;Miss2;0;
@@ -333,7 +333,7 @@ GUARD_FE5_CHAPTER03 :?= false
         
           CALL_ASM_SKIPPABLE rlClearHDMAArray
         
-          STORE_LONG lEventEngineLongParameter, _NPCScriptedBattle
+          STORE_LONG lEventEngineLongParameter, _NPCScriptedBattle1
           CALL_ASM_SKIPPABLE $9A8D0F
         
           STORE_WORD wEventEngineParameter1, IronSword

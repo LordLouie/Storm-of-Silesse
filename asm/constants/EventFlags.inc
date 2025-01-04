@@ -108,9 +108,9 @@
 	FlagJubelSaved			= $83
 	FlagEdithDead			= $84 ; $84 - $88 unused in vanilla
 	FlagAgnesRecruitable	= $85
-;							= $86
-;							= $87
-;							= $88
+	FlagFirstSighting		= $86
+	FlagSecondSighting		= $87
+	FlagThirdSighting		= $88
 	FlagEmilySaved			= $89
 	FlagMurphySaved			= $8A
 	FlagBellaSaved			= $8B

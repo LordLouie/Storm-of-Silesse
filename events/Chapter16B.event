@@ -425,7 +425,7 @@ GUARD_FE5_CHAPTER16B :?= false
 					.byte 11, 9
 			
 				_MirandaSpawnGroup ; B1/A890
-					UNIT Ghu, Player, [9, 9], [9, 9], Neill, [], 5, False, [$00, $00, $00, $00]
+					UNIT Geb, Player, [9, 9], [9, 9], Neill, [], 5, False, [$00, $00, $00, $00]
 				UNIT
 			
 				_SorcererReinforcementsCameraCoordinates ; B1/A8A6

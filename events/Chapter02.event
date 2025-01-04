@@ -212,7 +212,19 @@ GUARD_FE5_CHAPTER02 :?= false
         END2
 
         _WreckageExamination
-        macrodialogue dialogueChapter02wreckageexamination
+          EVENT_TEST_FLAG_SET FlagFirstSighting
+          JUMP_TRUE +
+          dialogueChapter02wreckageexamination
+        END2
+          +
+          LOAD_GROUP eventChapter02Data._GebGroup
+          YIELD
+          macroScriptedRewarpStaff Geb, [-1, -1]
+          macroASMCRemoveUnit Geb
+          YIELD
+          macroDialogue dialogueChapter02secondsighting
+          YIELD
+          SET_FLAG FlagSecondSighting
         END2
 
         _GeraldHouseOther ; 99/8433
@@ -388,7 +400,12 @@ GUARD_FE5_CHAPTER02 :?= false
 
           STORE_BYTE bBufferINIDISP, INIDISP_Setting(false, 0)
 
+;unit capture prevention measure
+          macroASMCUnsetUnitState Seadna, UnitStateCaptured
+          macroASMCUnsetUnitState Otto, UnitStateCaptured
+          macroASMCUnsetUnitState Barra, UnitStateCaptured
           macroASMCUnsetUnitState Gerald, UnitStateCaptured
+          macroASMCUnsetUnitState Edith, UnitStateCaptured
 
           PLAY_SOUND_FORCED $00E7
           FADE_OUT $01
@@ -423,7 +440,7 @@ GUARD_FE5_CHAPTER02 :?= false
           .byte [12, 33]
 
         _TavaresGroup ; B1/F91E
-          UNIT Tavares, Enemy, [10, 38], [12, 33], Tavares, [Longsword, Javelin], 10, true, [$00, $0B, $00, $00]
+          UNIT Tavares, Enemy, [10, 38], [12, 33], Tavares, [Longsword, Javelin], 10, true, [$13, $0B, $00, $00]
 		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 33], Tavares, [Longlance], 7, false, [$00, $00, $00, $00]
           UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [13, 33], Tavares, [Longlance], 7, false, [$00, $00, $00, $00]
 		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 34], Tavares, [Javelin], 5, false, [$00, $00, $00, $00]
@@ -431,7 +448,7 @@ GUARD_FE5_CHAPTER02 :?= false
 		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [11, 35], Tavares, [SteelSword], 5, false, [$00, $00, $00, $00]
 		  UNIT MercenaryMyrmidon1, Enemy, [10, 38], [13, 35], Tavares, [SteelSword], 5, false, [$00, $00, $00, $00]
 		  UNIT MercenaryMage1, Enemy, [10, 38], [12, 34], Tavares, [Wind], 5, false, [$00, $00, $00, $00]
-		  UNIT Edith, Enemy, [10, 38], [12, 35], Tavares, [Grafcalibur, Fire], 5, false, [$03, $00, $00, $00]
+		  UNIT Edith, Enemy, [10, 38], [12, 35], Tavares, [Grafcalibur, Fire, Vulnerary], 5, false, [$04, $00, $00, $00]
         UNIT
 
         _3rdSupplyCorpsReinforcementsCameraCoordinates ; B1/F934
@@ -500,6 +517,10 @@ GUARD_FE5_CHAPTER02 :?= false
           UNIT BanditBrigand1, Enemy, [16, 22], [16, 22], Maurice, [IronAxe], 2, false, [$00, $03, $00, $00]
         UNIT
 
+        _GebGroup
+          UNIT Geb, Enemy, [6, 19], [6, 18], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
+        UNIT
+        
         _PirateGroup2CameraCoordinates ; B1/FA64
           .byte [11, 18]
 

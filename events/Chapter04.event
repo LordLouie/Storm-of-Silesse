@@ -154,7 +154,7 @@ GUARD_FE5_CHAPTER04 :?= false
 						CMP_WORD aSelectedCharacterBuffer.Character, Civilian7
 						CMP_WORD wCurrentPhase, NPC
 					END_DEFINITION
-            EVENT FlagAlwaysZero, _PlayerLoss1
+            EVENT _FlagVillager1Dead, _PlayerLoss1
             TEST_FLAG_SET _FlagVillager1Dead
             TEST_FLAG_SET _FlagVillager2Dead
             TEST_FLAG_SET _FlagVillager3Dead
@@ -163,7 +163,7 @@ GUARD_FE5_CHAPTER04 :?= false
             TEST_FLAG_SET _FlagVillager6Dead
             CMP_WORD wCurrentPhase, Player
           END_DEFINITION
-            EVENT FlagAlwaysZero, _PlayerLoss2
+            EVENT _FlagIlseDead, _PlayerLoss2
             TEST_FLAG_SET _FlagIlseDead
             CMP_WORD wCurrentPhase, Player
           END_DEFINITION
@@ -621,7 +621,7 @@ GUARD_FE5_CHAPTER04 :?= false
           UNIT GrannvaleBowKnight, Enemy, [7, 24], [7, 24], Trottier, [Longbow], 9, false, [$00, $00, $00, $80]
           UNIT GrannvaleAxeKnight, Enemy, [8, 24], [8, 24], Trottier, [Poleax], 10, false, [$00, $00, $00, $80]
           UNIT GrannvaleAxeKnight, Enemy, [9, 24], [9, 24], Trottier, [Hammer], 8, false, [$00, $00, $00, $80]
-          UNIT GrannvaleGreatKnight, Enemy, [10, 24], [10, 24], Trottier, [SteelAxe], 6, false, [$00, $00, $00, $80]
+          UNIT GrannvaleGreatKnight, Enemy, [10, 24], [10, 24], Trottier, [SteelAxe], 9, false, [$00, $00, $00, $80]
         UNIT
 
         _Turn5GroupCameraCoordinates

@@ -29,7 +29,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Sionnach
 
 	.word MirandaPortrait
-	.word Ghu
+	.word Geb
 
 	.word SafyPortrait
 	.word Fee

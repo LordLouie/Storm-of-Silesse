@@ -10,7 +10,7 @@
 	WinLossOffsets := Modify(Ilse,		$06, WinLossOffsets)
 	WinLossOffsets := Modify(Waulter,		$07, WinLossOffsets)
 	WinLossOffsets := Modify(Sionnach,		$08, WinLossOffsets)
-	WinLossOffsets := Modify(Ghu,	$09, WinLossOffsets)
+	WinLossOffsets := Modify(Geb,	$09, WinLossOffsets)
 	WinLossOffsets := Modify(Fee, 	$0A, WinLossOffsets)
 	WinLossOffsets := Modify(Lara,		$0B, WinLossOffsets)
 	WinLossOffsets := Modify(Brighton,	$0C, WinLossOffsets)

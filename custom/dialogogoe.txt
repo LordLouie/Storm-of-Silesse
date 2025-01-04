@@ -854,13 +854,84 @@ May Naga rest your soul...
 
 neill/otto
 
-"We've known each other for years,"
-"yet I can hardly say a single thing"
-"to describe you."
+.text "Otto!"
 
-"Thinking emotionally is laborious."
+.text "Orders?"
 
+.text "No orders, I'm just here to"
+.text "make sure you're in good spirits."
 
+.text "Though it is strange that the first"
+.text "thing you ask for when I see you"
+.text "is orders."
+
+.text "This is a battlefield."
+.text "Speaking at this time leaves"
+.text "us vulnerable to oncoming attacks."
+
+.text "I get that! I just..."
+.text "Why do you always talk like this?"
+
+.text "You only ever speak in terms of"
+.text "the present situation."
+
+.text "Anytime I ask you about other"
+.text "things, you redirect the topic"
+.text "or ignore me."
+
+.text "We've known each other for years,"
+.text "yet I can hardly say a single thing"
+.text "to describe you."
+
+.text "Thinking emotionally is laborious."
+.text "I do not wish to be controlled by"
+.text "rage and sorrow."
+.text "Therefore, I act upon only what"
+.text "I believe serves us best."
+
+.text "If that works for you and it's"
+.text "what you like... more power to"
+.text "you, I guess."
+
+.text "...But I get the feeling that"
+.text "you were a lot more open"
+.text "before we met."
+
+.text "Consider the circumstances"
+.text "in which we first met."
+.text "What do you think had to happen"
+.text "for you to find someone facedown"
+.text "in the snow during a blizzard?"
+
+.text "When I pulled you out of there,"
+.text "the only thing on my mind was"
+.text "making sure you were alive."
+.text "Whatever lead up to it didn't matter."
+.text "You needed help."
+.text "I never asked because I felt"
+.text "like it was a sensitive matter."
+.text "I don't want to make people"
+.text "relive their trauma."
+
+.text "While I understand your desire"
+.text "to remain kind,"
+.text "acting that way has left you"
+.text "without the perspective to"
+.text "understand my internal process."
+.text "Once we win this battle, I will"
+.text "tell you what happened."
+
+.text "That's... very forthcoming."
+.text "Give it to me straight, Otto-"
+.text "have I been a bad friend?"
+
+.text "No. Your concerns were"
+.text "reasonable."
+I am saying this now to
+avoid anything interupting
+our battle proficiency in the future.
+
+"Thanks for your time, man."
 
 
 

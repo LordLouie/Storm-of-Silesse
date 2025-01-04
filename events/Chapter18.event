@@ -495,7 +495,7 @@ GUARD_FE5_CHAPTER18 :?= false
 						CALL_ASM_LOOP rlASMCDialogueContinue
 			
 					+
-					macroASMCCountAllUnitsAlive Ghu
+					macroASMCCountAllUnitsAlive Geb
 					JUMP_FALSE +
 			
 						STORE_LONG lEventEngineLongParameter, dialogueChapter18Closing3Miranda

@@ -494,7 +494,7 @@
 			.text "Sionnach\n"
 		
 		menutextUnitMirandaName
-			.text "(Ghu\n"
+			.text "(Geb\n"
 		
 		menutextUnitSafyName
 			.text "Fee \n"

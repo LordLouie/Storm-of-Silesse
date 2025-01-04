@@ -13,7 +13,7 @@ dialogueChapter19ConomorRecruit
 .byte WaitForA
 
 .byte Right_slot
-.text "Princess Ghu?!"
+.text "Princess Geb?!"
 .byte NewLine
 .text "What are you doing here?!"
 .byte WaitForA
@@ -96,7 +96,7 @@ dialogueChapter19ConomorRecruit
 .text "from there!"
 .byte WaitForA
 .byte ScrollText
-.text "So orders Her Highness Princess Ghu,"
+.text "So orders Her Highness Princess Geb,"
 .byte NewLine
 .text "by royal decree!"
 .byte WaitForA

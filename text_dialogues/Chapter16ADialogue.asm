@@ -27,7 +27,7 @@ dialogueChapter16AConomorArrive
 .byte NewLine
 .text "I shudder to think what fate would befall"
 .byte NewLine
-.text "Princess Ghu..."
+.text "Princess Geb..."
 .byte WaitForA
 .byte ScrollText
 .text "The girl is just a lass of 15 years..."

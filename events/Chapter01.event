@@ -45,6 +45,11 @@ GUARD_FE5_CHAPTER01 :?= false
           EVENT FlagAlliedDeath, eventMapDeathQuoteDummyEvent
             TEST_FLAG_SET FlagPlayerDeath
           END_DEFINITION
+          EVENT FlagAlwaysZero, _EnemyGroup1Reinforcements
+            CMP_WORD wCurrentPhase, Enemy
+            CMP_WORD_RANGE wCurrentTurn, 8, 17
+            ROLL_RNG 20
+          END_DEFINITION
         END_DEFINITION_ARRAY
 
         _TalkEventDefinitions ; FD/8027
@@ -98,12 +103,22 @@ GUARD_FE5_CHAPTER01 :?= false
           macroECShop eventChapter01Data._Vendor
         END_DEFINITION_ARRAY
 
+        _EnemyGroup1Reinforcements
+          SCROLL_CAMERA_ADDRESS eventChapter01Data._EnemyGroup1ReinforcementsCameraCoordinates
+          YIELD
+
+          LOAD_GROUP eventChapter01Data._EnemyGroup1
+          WAIT_MOVE
+          YIELD
+        END2
+
         _KillerBowHouse ; FD/8108
           macroItemHouse dialogueChapter01KillerBowHouse, KillerBow, [16, 6], $0021
         END2
 
         _MagicRingHouse ; FD/8174
           macroItemHouse dialogueChapter01MagicRingHouse, MagicRing, [4, 2], $0021
+          ;SET_FLAG FlagFirstSighting
         END2
 
         _VulneraryHouse ; FD/81D7
@@ -332,9 +347,6 @@ GUARD_FE5_CHAPTER01 :?= false
           UNIT Maurice, Enemy, [17, 4], [17, 4], Maurice, [SteelAxe, IronBow], 5, true, [$01, $03, $00, $80]
         UNIT
 
-        _UnusedCoordinates1 ; B1/FC0B
-          .byte [15, 14]
-
         _CivilianGroup ; B1/FC0D
           UNIT Civilian8, NPC, [17, 4], [17, 5], Civilian8, [], 1, false, [$02, $08, $00, $00]
         UNIT
@@ -342,17 +354,24 @@ GUARD_FE5_CHAPTER01 :?= false
         _Opening3CameraCoordinates ; B1/FC23
           .byte [17, 1]
 
-        _EnemyGroup2 ; B1/FC25
-		  UNIT BanditBrigand1, Enemy, [5, 5], [5, 5], Maurice, [SteelAxe], 1, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [11, 1], [11, 1], Maurice, [HandAxe], 1, false, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [15, 1], [15, 1], Maurice, [IronBow, Vulnerary], 3 , false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [21, 7], [21, 7], Maurice, [HandAxe], 5, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [10, 8], [10, 8], Maurice, [IronAxe], 5, false, [$00, $03, $00, $00]
-		  UNIT BanditBrigand1, Enemy, [8, 14], [8, 14], Maurice, [IronAxe], 1, false, [$00, $03, $03, $00]
-          UNIT BanditBrigand1, Enemy, [17, 13], [17, 13], Maurice, [SteelAxe], 5, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [20, 3], [20, 3], Maurice, [HandAxe, Vulnerary], 5, false, [$00, $03, $00, $00]
-          UNIT BanditHunter, Enemy, [17, 8], [17, 8], Maurice, [IronBow], 1, false, [$00, $03, $00, $00]
-          UNIT BanditBrigand1, Enemy, [12, 5], [12, 5], Maurice, [IronAxe], 3, false, [$00, $03, $00, $00]
+        _EnemyGroup1
+          BanditBrigand2, Enemy, [29, 1], [28, 3], Maurice, [IronAxe], 5, false, [$00, $00, $00, $80]
+        UNIT
+
+        _EnemyGroup1ReinforcementsCameraCoordinates
+          .byte [28, 1]
+
+        _EnemyGroup2
+		  UNIT BanditBrigand1, Enemy, [5, 5], [5, 5], Maurice, [SteelAxe], 1, false, [$00, $03, $00, $80]
+          UNIT BanditBrigand1, Enemy, [11, 1], [11, 1], Maurice, [HandAxe], 1, false, [$00, $03, $00, $80]
+          UNIT BanditHunter, Enemy, [15, 1], [15, 1], Maurice, [IronBow, Vulnerary], 3 , false, [$00, $03, $00, $80]
+          UNIT BanditBrigand1, Enemy, [21, 7], [21, 7], Maurice, [HandAxe], 5, false, [$00, $03, $00, $80]
+          UNIT BanditBrigand1, Enemy, [10, 8], [10, 8], Maurice, [IronAxe], 5, false, [$00, $03, $00, $80]
+		  UNIT BanditBrigand1, Enemy, [8, 14], [8, 14], Maurice, [IronAxe], 1, false, [$00, $03, $03, $80]
+          UNIT BanditBrigand1, Enemy, [17, 13], [17, 13], Maurice, [SteelAxe], 5, false, [$00, $03, $00, $80]
+          UNIT BanditBrigand1, Enemy, [20, 3], [20, 3], Maurice, [HandAxe, Vulnerary], 5, false, [$00, $03, $00, $80]
+          UNIT BanditHunter, Enemy, [17, 8], [17, 8], Maurice, [IronBow], 1, false, [$00, $03, $00, $80]
+          UNIT BanditBrigand1, Enemy, [12, 5], [12, 5], Maurice, [IronAxe], 3, false, [$00, $03, $00, $80]
         UNIT
 
         _Opening2CameraCoordinates ; B1/FD03

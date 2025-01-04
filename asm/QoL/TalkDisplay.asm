@@ -592,7 +592,7 @@ GUARD_ZQOL_TALK_DISPLAY :?= false
         ZQOL_END_TALK_CHAPTER
 
         aChapter19TalkTargetTable
-          ZQOL_TALK_ENTRY Ghu, [Conomor]
+          ZQOL_TALK_ENTRY Geb, [Conomor]
           ZQOL_TALK_ENTRY Schroff, [Amalda]
         ZQOL_END_TALK_CHAPTER
 

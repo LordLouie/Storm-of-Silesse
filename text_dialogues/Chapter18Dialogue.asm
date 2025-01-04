@@ -660,7 +660,7 @@ dialogueChapter18Closing3Miranda
 .byte WaitForA
 
 .byte Right_slot
-.text "Princess Ghu? Ah, I haven't"
+.text "Princess Geb? Ah, I haven't"
 .byte NewLine
 .text "forgotten—the liberation of Ulster."
 .byte WaitForA
