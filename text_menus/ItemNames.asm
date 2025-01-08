@@ -624,22 +624,22 @@
 			.text "(Me[mber Card \n"
 		
 		menutextSailaneScrollName
-			.text "Sailane Scroll\n"
+			.text "Sailane )Writ \n"
 		
 		menutextTofaScrollName
-			.text "Tófa Scroll \n"
+			.text "Tófa )Writ\n"
 		
 		menutextZaxonScrollName
-			.text "Zaxon Scroll\n"
+			.text "Zaxon )Writ \n"
 		
 		menutextSilesseScrollName
-			.text "Silesse Scroll\n"
+			.text "Silesse )Writ \n"
 		
 		menutextNjorunsScrollName
-			.text "+Njörun's Scroll\n"
+			.text "Lübeck )Writ  \n"
 		
 		menutextNalsScrollName
-			.text "+Nál's Scroll \n"
+			.text "Ced's Manuscript\n"
 		
 		menutextUllrsScrollName
 			.text "Ullr's Scroll \n"

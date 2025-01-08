@@ -429,6 +429,11 @@ dialogueChapter04civviesallescaped
 .byte $02
 .text "Staying behind is death!"
 .byte $08
+.byte $04
+.text "You don't know what the"
+.byte $02
+.text "empire will do to you!"
+.byte $08
 .byte EndText
 
 dialogueChapter04geraldwalter
@@ -549,6 +554,8 @@ dialogueChapter04civvydies
 .byte $09 ; font 9(always use font 9)
 .text "We lost someone?!"
 .byte $08
+
+.byte EndText
 
 dialogueChapter04ilsedies
 .byte Right_slot
@@ -695,7 +702,7 @@ dialogueChapter04neillseadna
 .byte $04
 .text "Sigurd was just protecting his"
 .byte $02
-.text "nation's borders, and he wound up"
+.text "home's borders, and he wound up"
 .byte $02
 .text "conquering two whole nations!"
 .byte $08
@@ -728,6 +735,7 @@ dialogueChapter04neillseadna
 .text "I've kept you long enough."
 .byte $02
 .text "Tear em up, Seadna!"
+.byte $08
 .byte left_slot
 .byte $04
 .text "Roger that, Captain Neill!"
@@ -752,6 +760,212 @@ dialogueChapter04cavernexamination
 .byte Right_slot
 .text "Echo!"
 .byte $08
+.byte EndText
+
+dialogueChapter04thirdsighting
+.byte Right_slot
+.word LoadPortrait
+.word finn_portrait
+.text "Wait! Stop!"
+.byte $08
+.byte EndText
+
+dialogueChapter04lightningswordhouse
+.byte Right_slot
+.word LoadPortrait
+.word younglady_portrait
+.text "What? We're under attack"
+.byte $02
+.text "from the empire?!"
+.byte $08
+.byte $04
+.text "I've been waiting for this"
+.byte $02
+.text "day longer than I can remember!"
+.byte $08
+.byte $04
+.text "Now those blackhearts can learn"
+.byte $02
+.text "to dread the name of"
+.byte $02
+.text "Madeline the Merci-"
+.byte $08
+.byte $04
+.text "...You want me to evacuate?!"
+.byte $02
+.text "B-but this is my one chance!"
+.byte $08
+.byte $04
+.text "I poured my savings into getting"
+.byte $02
+.text "this magical sword, had to pay"
+.byte $02
+.text "for lessons and everything!"
+.byte $08
+.byte $04
+.text "If it's what Lady Ilse wants..."
+.byte $02
+.text "I'll ablige..."
+.byte $08
+.byte $04
+.text "On one condition!"
+.byte $02
+.text "Have one of yours wield"
+.byte $02
+.text "this sword in my sted."
+.byte $08
+.byte $04
+.text "Be warned- it is only for"
+.byte $02
+.text "warriors with a steeled mind."
+.byte $08
+.byte EndText
+
+dialogueChapter04tofascrollhouse
+.byte Right_slot
+.word LoadPortrait
+.word oldman_orange_portrait
+.text "This thing I'm holdin 'ere?"
+.byte $02
+.text "It's an heirloom from my"
+.byte $02
+.text "great uncle."
+.byte $08
+.byte $04
+.text "He didn't say what it was,"
+.byte $02
+.text "so I just use it as a washcloth."
+.byte $08
+.byte $04
+.text "It's thick n' glossy, perfect"
+.byte $02
+.text "for tough stains."
+.byte $08
+.byte $04
+.text "Huh? Ya think it seems odd?"
+.byte $02
+.text "I've never looked at it"
+.byte $02
+.text "very closely until now..."
+.byte $08
+.byte $04
+.text "..."
+.byte $08
+.byte $04
+.text "Are there words on this?!"
+.byte $08
+.byte $04
+.text "I sure hope I didn't tarnish"
+.byte $02
+.text "a historical artifact with my"
+.byte $02
+.text "silverware, or somethin'..."
+.byte $08
+.byte $04
+.text "Here, I reckon it'd be better off"
+.byte $02
+.text "in your hands. Maybe ya can"
+.byte $02
+.text "refurbish it."
+.byte $08
+.byte $04
+.text "The empire's on our doorstep, too."
+.byte $02
+.text "I couldn't hold onto it fer"
+.byte $02
+.text "much longer, anyway."
+.byte $08
+.byte $04
+.text "I'll make a break for it while"
+.byte $02
+.text "ya hold 'em off."
+.byte $02
+.text "Godspeed, Storm Cabal."
+.byte $08
+.byte EndText
+
+dialogueChapter04bodyringhouse
+.byte Right_slot
+.word LoadPortrait
+.word oldlady3_portrait
+.text "May the blessings of Forseti"
+.byte $02
+.text "be upon you, risking"
+.byte $02
+.text "life 'n limb for us."
+.byte $08
+.byte $04
+.text "...But I do worry for Ilse."
+.byte $02
+.text "She's already so exhausted"
+.byte $02
+.text "from taking care of us daily..."
+.byte $08
+.byte $04
+.text "Next time you see her,"
+.byte $02
+.text "give her this ring."
+.byte $08
+.byte $04
+.text "If only I could have done"
+.byte $02
+.text "done so myself..."
+.byte $08
+.byte EndText
+
+dialogueChapter04bodyringhouseilse
+.byte Right_slot
+.word LoadPortrait
+.word oldlady3_portrait
+.text "Ilse! Oh, dear Ilse..."
+.byte $08
+.byte left_slot
+.word LoadPortrait
+.word amalda_portrait
+.text "Granny Fitzgerald!"
+.text "Why haven't you evacuated yet?"
+.byte $08
+.byte Right_slot
+.byte $04
+.text "I couldn't leave in good conscience"
+.text "without giving you something"
+.text "to thank you for all you've done."
+.byte $08
+.byte $04
+.text "Like when you treated my infant"
+.text "grandson's illness..."
+.byte $08
+.byte $04
+.text "Or fixed my loom..."
+.byte $08
+.byte $04
+.text "And that time you and Waulter"
+.text "cleared the thickets around"
+.text "the family farm..."
+.byte $08
+.byte left_slot
+.byte $04
+.text "Those were the days..."
+.text "I bet I still have one of those"
+.text "thorns stuck in my boot somewhere."
+.byte $08
+.byte Right_slot
+.byte $04
+.text "Please. Take this ring as"
+.text "a token of Skanor's gratitude."
+.byte $08
+.byte left_slot
+.byte $04
+.text "I... you're the best, Granny."
+.text "...like the grandmother I never had."
+.byte $08
+.byte Right_slot
+.byte $04
+.text "I'll get a move-on now."
+.text "Don'chu worry- I've lived 74 years,"
+.text "on this barren rock, and no soldier"
+.text "has ever caught Granny before!"
+
 .byte EndText
 
 dialogueChapter04storehouseexamination
@@ -838,85 +1052,195 @@ dialogueChapter04Ending
 .text "The humble folk of Skanor"
 .byte $02
 .text "and I owe their lives to you."
-
+.byte $08
 .byte left_slot
 .byte $04
 .word LoadPortrait
 .word finn_portrait
 .text "You have to wonder though..."
+.byte $02
 .text "why's the empire comin'"
+.byte $02
 .text "at us with full force?"
-
+.byte $08
+.byte $04
 .text "At first, I thought it was"
+.byte $02
 .text "to recapture the kids..."
-
+.byte $08
 .byte right_slot
 .byte $04
 .word LoadPortrait
 .word osian_portrait
 .text "I believe I have found"
+.byte $02
 .text "a rationale to their"
+.byte $02
 .text "motives."
-
+.byte $08
+.byte $04
 .byte left_slot
 .byte $04
 .text "Otto!"
-
+.byte $08
 .byte right_slot
 .byte $04
 .text "Further analysis of the cargo"
+.byte $02
 .text "has revealed items that have"
+.byte $02
 .text "gone previously undocumented."
-
+.byte $08
+.byte $04
 .text "Among these items were staves,"
+.byte $02
 .text "tomes with black covers,"
+.byte $02
 .text "and most notably, a map."
-
+.byte $08
+.byte $04
 .text "The map points to an area in"
+.byte $02
 .text "the Tófa mountain range."
-
+.byte $08
+.byte $04
 .text "It's likely the supply we"
+.byte $02
 .text "raided was heading there."
-
+.byte $08
 .byte left_slot
 .byte $04
 .word LoadPortrait
 .word leif_portrait
 .text "That's where they indoctrinate"
+.byte $02
 .text "kids into their cult, I'll bet."
-
+.byte $02
 .text "Now, how do we get through the mountains?"
-
+.byte $08
+.byte $04
 .byte right_slot
 .byte $04
 .word LoadPortrait
 .word amalda_portrait
-.text "There is a fort north of here with a tunnel beneath it."
-.text "However... it is in the possesion of a very unscrupulous man."
-
+.text "There is a fort north of Skanor"
+.byte $02
+.text "with a tunnel beneath it,"
+.byte $02
+.text "Fort Kiruna."
+.byte $08
+.byte $04
+.text "However... it is in the possesion"
+.byte $02
+.text "of a very eccentric man."
+.byte $08
 .byte left_slot
 .byte $04
-.text "and that would be...?"
-
+.text "And that would be...?"
+.byte $08
 .byte right_slot
 .byte $04
-.text "His name is Sionnach. He claims to be from the"
-.text "Zaxonian royal family, and is trying to garner"
-.text "favor from the monarchy."
-
-.text "Presumably in a bid to be recognized as a"
-.text "legitimate heir to the throne."
-.text "Though well mannered, Sionnach can be... talkative."
-
-.text "Convince him to let us through, and we'll be"
-.text "able to reach Tófa in a handful of weeks."
-
+.text "His name is Sionnach."
+.byte $08
+.byte $04
+.text "He claims to be from the Zaxonian"
+.byte $02
+.text "royal family, and is trying to"
+.byte $02
+.text "garner favor from the monarchy."
+.byte $08
+.byte $04
+.text "He holds charities in this area, presumably"
+.byte $02
+.text "in a bid to be recognized as an"
+.byte $02
+.text "heir to the duchy by Zaxon's people."
+.byte $08
+.byte $04
+.text "Though well mannered,"
+.byte $02
+.text "Sionnach can be... loquacious."
+.byte $08
+.byte left_slot
+.byte $04
+.text "Loquacious...?"
+.byte $08
+.byte right_slot
+.byte $04
+.text "He talks a lot."
+.byte $08
+.byte left_slot
+.byte $04
+.text "Oh."
+.byte $08
+.byte right_slot
+.byte $04
+.text "If he gives us access to his"
+.byte $02
+.text "tunnel, we'll be able to reach"
+.byte $02
+.text "Tófa in a handful of weeks."
+.byte $08
 .byte left_slot
 .byte $04
 .text "Wow, that's... really convienient."
-.text "I almost thought we would have to"
-.text "go around the mountain... that'd take us a year or more."
-
+.byte $02
+.text "I almost thought we would have"
+.byte $02
+.text "to go around the mountain..."
+.byte $08
+.byte $04
+.text "That'd take us a year or more."
+.byte $08
+.byte $04
+.text "What say you, Barra? do you"
+.byte $02
+.text "think this is plausible?"
+.byte $08
+.byte left_slot
+.byte $04
+.word LoadPortrait
+.word halvan_portrait
+.text "Plausible? Neill, it's our only"
+.byte $02
+.text "shot at escaping the empire."
+.byte $08
+.byte $04
+.text "We can't afford to be tailed"
+.byte $02
+.text "with women and children"
+.byte $02
+.text "traveling with us."
+.byte $08
+.byte $04
+.text "I've spoken to Sionnach"
+.byte $02
+.text "once before."
+.byte $08
+.byte $04
+.text "Last I recall, he was a"
+.byte $02
+.text "mercenary, not a politician!"
+.byte $08
+.byte $04
+.text "I'm sure we'll convince him."
+.byte $08
+.byte $04
+.text "No man's whims are worth more"
+.byte $02
+.text "than the entire population"
+.byte $02
+.text "of Skanor, he'd understand that."
+.byte $08
+.byte right_slot
+.byte $04
+.word LoadPortrait
+.word leif_portrait
+.text "It's settled, then."
+.byte $02
+.text "Onward, to Fort Kiruna!"
+.byte $08
+.byte $04
 .byte EndText
 
 dialogueChapter04WorldMap1

@@ -96,22 +96,22 @@ dialogueChapter03OpeningA3
 
 dialogueChapter03OpeningA4
 
-.byte Left_slot
+.byte Right_slot
 .word LoadPortrait
 .word dagdar_portrait
 
-.byte Right_slot
+.byte Left_slot
 .word LoadPortrait
 .word bandit_portrait
 
 .text "Ksshhaaahh..."
 .byte $08
 
-.byte Left_slot
+.byte Right_slot
 .text "Eek!"
 .byte $08
 
-.byte Right_slot
+.byte Left_slot
 .byte $04
 .text "Foolish child..."
 .byte $02
@@ -123,14 +123,14 @@ dialogueChapter03OpeningA4
 .text "to be cut to ribbons..."
 .byte $08
 
-.byte Left_slot
+.byte right_slot
 .byte $04
 .text "Augh! Your breath smells like"
 .byte $02
 .text "horse shit!"
 .byte $08
 
-.byte Right_slot
+.byte left_slot
 .byte $04
 .text "You've failed your duty," 
 .byte $02
@@ -144,10 +144,10 @@ dialogueChapter03OpeningA4
 .byte $04
 .text "You shall be the bait which" 
 .byte $02
-.text "draws the others to me."
+.text "draws the others to me..."
 .byte $08
 
-.byte Left_slot
+.byte right_slot
 .byte $04
 .text "Hey-! Let go of me-!"
 .byte $08

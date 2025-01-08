@@ -1412,8 +1412,308 @@ go around the mountain... that'd take us a year or more.
 
 
 CHAPTER 5
+MAP
+.text "Using their wit, Storm Cabal"
+.text "evaded the Empire's forces."
+.byte $08
+.byte $04
+.text "Determined to lose their pursuers"
+.text "secure the safety of the villagers,"
+.byte $08
+.byte $04
+.text "They act on Priestess Ilse's"
+.text "advice, heading for Fort Kiruna."
+.byte $08
+.byte $04
+.text "Fort Kiruna is the base of operations"
+.text "for Sionnach and his sellswords."
+.byte $08
+.byte $04
+.text "Beneath this fort is an underground"
+.text "passage leading to Tófa,"
+.byte $08
+.byte $04
+.text "the duchy where Princess Fee has
+.text "taken up residence."
+.byte $08
+.byte $04
+.text "Before they know it, Storm Cabal"
+.text "finds itself Sionnach's doorstep."
+.byte $08
+.byte $04
+.text "...But just who is Sionnach?"
+.byte $08
+.byte $04
+
+OPENING
+
+"So there was this guy, Duccar right? Fella was real chummy with my ma, but she neglected tell 'em that she was already seein' four other noble types. Why should she? Rejecting an advance from someone as high 'n mighty as the uncle of Silesse's heir? That's tantamount to soicial suicide!
+So you mus' be thinkin, "This has got to be how I was conceived, ye?" well, guess again! Duccar's got a real monkey's uncle of a disappointment of a sorry excuse for a manhood, so he couldn't do procreate if he was wantin' to! But that don't matter, point is, he gave my ma the special sauce, and that shit's da key to higher power, but before I can tell you about the story of my birth, I need to tell you about the economic climate of this country at the time, the seasonal rainfall that comes once every 17 months down at Lubeck, the process of extracting juice from a particular part o' the pegasi, and what I had for breakfast yesteday mornin'!
+
+"Oh, what's this?"
+.byte $02
+"Visitors! And lots of them!"
+
+"Some knights..."
+.byte $02
+"Some villagers..."
+.byte $02
+"Children too? Odd."
+
+"Reginald, open the door."
+.byte $02
+"I want to greet our guests"
+.byte $02
+"myself."
+
+"Salutations, my good people!"
+.byte $08
+.byte $04
+"You've reached the estate of"
+.byte $02
+"The Great Sionnach of Silesse!"
+.byte $02
+"How can I help you?"
+
+"I'm Barra, lieutenant commander of Storm Cabal"
+
+Years ago, I took part in 
+The Verdane Rebellion of 771.
+
+I sold myself on my proud lineage,
+courtesy of the Crusader Ced...
+and they made me guard safehouses!
+It was a decisive waste of my talent!
+When Barlow came and offered me
+the chance to join a real cause...
+...May Naga rest his soul...
+...I was thrilled!
+Once the rebellion was over,
+I returned to my homeland, seeking
+to become a better man.
+I heard of how the anguish of
+the common folk grew under
+the empire's tyrannical yoke,
+and dedicated my substantial
+savings to bettering their lives,
+by whatever means I could.
+
+dialoguechapter05seadnailse
+.text "Why are you so obsessed"
+.text "with safety and survival"
+.text "and all that?"
+.text "What is it you despise"
+.text "about the heroic sacrifice?"
+
+.text "My husband."
+.text "Bandits closed in on our"
+.text "town, and he gave himself"
+.text "to them while we escaped."
+.text "He was good with a sword, but"
+.text "certainly not skilled enough"
+.text "to fight off a dozen men."
+.text "I pleaded with him."
+.text "But he wouldn't budge."
+
+.text "As I packed my belongings"
+.text "and he ran off into the fold,"
+.text "I realized something."
+
+.text "This was about more than"
+.text "just protecting us. It was"
+.text "about his own stupid pride..."
+.text "I returned to our village"
+.text "the next day, hoping perhaps"
+.text "he had survived, by some miracle."
+.text "...He was lying in a ditch, naked."
+.text "Seeing that awoke something in me."
+.text "I was never a fighter."
+.text "Just a noble from a well-off family."
+
+.text "I became a paladin."
+
+.text "I'm sick of watching people throw"
+.text "away their lives at the prospect"
+.text "of being immortalized in folktales."
+
+.text "Well, when you put it like that..."
+.text "But I promise you Ilse, I'll"
+.text "never sacrifice myself for anything."
+
+.text "...Thank you, Seadna."
+
+.text "...Except... maybe Neill..."
+
+dialoguechapter05waultersword
+
+dialoguechapter05sionnachschest
+.text "Looks like it's time to"
+.text "reveal my trump card..."
+.text "This chest is locked with"
+.text "a special key..."
+.text "Lock's a pain to undo..."
+.text "Here we go!"
+.text "Someone once told me I was"
+.text "only good for my magic..."
+.text "Well, how's this?!"
+
+dialoguechapter05ottolockpick
+
+"Here."
+"I was saving it for when it would be needed."
+
+BATTLE QUOTES
+
+
+
+dialoguechapter05gebrecruitment
+.text "Hello there, my good boy Neill..."
+
+.text "Ergh! An evil priest!"
+.byte $02
+.text "Why don't you creeps find a"
+.byte $02
+.text "hobby without a mortality rate?!"
+
+.text "Hasty, hasty..."
+.byte $02
+.text "There is no need to come to blows..."
+.byte $02
+.text "Strangers are but friends you've"
+.byte $02
+.text "yet to make."
+.byte $02
+.text "One could say..."
+.byte $02
+.text "we are already colleagues!"
+
+.text "Huh? Wait..."
+.text "You must be the one stalking us!"
+.text "What's your problem, man?!"
+
+.text "In my view, it was not stalking."
+.text "Merely, observation."
+.text "It was by fleeting chance that I"
+.text "first saw your Storm Cabal in action."
+
+.text "Seeing your resilience up close..."
+.text "Gave me a stiring feeling.
+.text "I watched your future battles intently."
+
+.text "What I could not expect, however,"
+.text "was the lengths you'd go with which"
+.text "to find me, time and time again."
+
+.text "And so your muse appears before you."
+.text "It has but one wish..."
+.text "Let it join your ranks!"
+
+.text "I will do no such thing!"
+.text "I'm all for new recruits,"
+.text "but everything about the way"
+.text "you so gleefully talk about spying"
+.text "on us reeks of untrustworthiness!"
+
+.text "Aww, Really? But, please..."
+.text "I've never so much as raised"
+.text "a finger against you."
+.text "I am alone, an outcast."
+.text "The church would not have me."
+.text "All I desire are friends..."
+.text "Plus, I figured you would have"
+.text "use for someone who can channel"
+.text "the lord's powers..."
+
+.text "...Fine. You can be a part of"
+.text "Storm Cabal."
+.text "But if I see you do anything even"
+.text "remotely suspicious, I'll have"
+.text "Barra tan your goddamn hide!"
+.text "Do you hear me, you gnarled freak?!"
+
+.text "Such stinging vitriol..."
+.text "Others would not stand for this..."
+.text "but I accept your terms."
+.text "Lead the way, Commander..."
+
+.text "(I would never do this, ordinarily..."
+.text "but if we held him hostage, he might"
+.text "give us info on the Loptrians...)"
+
 
 CHAPTER 6
+
+
+Otto/Geb
+
+
+.text "What is your connection to"
+.byte $02
+.text "the activities of the"
+.byte $02
+.text "Loptyr Church?"
+
+
+.text "Oh Otto, you stoic logician. Are you"
+.text "here to ascertain the sincerity"
+.text "of my pledge to Storm Cabal?"
+.text "I've spoke on this before,"
+.text "but I have no ties to the church."
+.text "I am a devout Maerist."
+.text "What is a Maerist?"
+.text "One who believes Loptous'"
+.text "powers could be used to"
+.text "mankind's benefit."
+.text "We believe all deserve"
+.text "kindness, regardless of"
+.text "their beliefs."
+.text "We do not have a caste"
+.text "system. All members"
+.text "receive equal treatment."
+.text "Truly, it is harmonious.
+.text "Duly noted."
+.text "Do you have any extant"
+.text "family or relatives?"
+.text "Not anymore..."
+.text "Maerists are loathed"
+.text "by the main sect, you see."
+.text "While I was fetching water"
+.text "for my parents, robed men"
+.text "appeared and..."
+.text "I need not say the rest."
+.text "My faith in Loptous was the"
+.text "only thing in this world"
+.text "kept my spark alight."
+.text "I studied his powers in"
+.text "order to exact my revenge."
+.text "But the opportunity to"
+.text "strike against those"
+.text "wronged me never arose."
+.text "I became a drifter, and as"
+.text "a result of that, I now fight"
+.text "for a cause. Your cause."
+.text "..."
+.text "Your statements appear to"
+.text "to be true."
+.text "Please accept my apologies for"
+.text "wrongfully interrogating you."
+.text "You are not at fault, my"
+.text "dear friend."
+.text "The nature of my being here"
+.text "is as valid a concern as any."
+.text "Here, a token of our"
+.text "vanquished hostilities..."
+.text "A Life Ring..."
+.text "Go on, use it! Don't be shy!"
+.text "It's my last one left."
+.text "Very special!"
+.text "...As you wish."
+.text "Is our meeting ajourned?"
+.text "Correct. Do your best out there."
+.text "You'll see nothing less!"
+
+ENDING
+
 "Every imperial has turned tail and fled."
 "All except one..."
 
@@ -1612,6 +1912,40 @@ Durchval/Agnes
 
 "-Ulp!"
 
+Durchval/Geb
+.text "Is that..."
+.text "Geb! You worthless reprobate!"
+.text "Have you turned on your own faith?!"
+
+.text "I pray to Loptous with all my heart..."
+.text "Sad though it is, it seems you've"
+.text "become an obstacle to him."
+
+.text "And you wish to kill me?"
+.text "I am your superior! You may have"
+.text "been assigned to reconnaissance by"
+.text "another, but you still defer to me!"
+
+.text "Tch Tch Tch..."
+.text "I'm afraid that isn't the case."
+.text "I answer only to His Emminence,"
+.text "and to the lord himself."
+.text "I will not be charged for your"
+.text "apparent inability to secure your"
+.text "own survival."
+
+.text "(Then I was set up!"
+.text "Damn you, Manfroy!)"
+
+.text "I don't take attempts on my"
+.text "life sitting down!"
+
+.text "You can kiss hell's pavement"
+.text "for the rest of your days, Geb!"
+
+.text "I weep for you, knowing the"
+.text "pain Loptous will wreak upon"
+.text "your soul."
 
 
 

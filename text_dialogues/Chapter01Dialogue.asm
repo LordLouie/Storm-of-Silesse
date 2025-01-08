@@ -378,7 +378,7 @@ dialogueChapter01Ending
 	.text "and I weary. You wouldn't mind if we"
 	.byte NewLine
 	.text "rested the night in town here, would you?"
-
+	.byte WaitForA
 	.byte Left_slot
 	.byte ScrollText
 	.text "Oh, not at all! Help yourselves to"
@@ -432,6 +432,7 @@ dialogueChapter01Ending
 	.text "Alright, I've held you up long enough."
 	.byte NewLine
 	.text "Go, enjoy yourselves!"
+	.byte WaitForA
 	.byte ScrollText
 	.text "Just don't be here too long!"
 	.byte WaitForA
@@ -494,11 +495,12 @@ dialogueChapter01Ending2
 	.byte Left_Slot
 	.byte $04
 	.text "Thanks... that really means a lot to me."
-	.byte $02
+	.byte $08
+	.byte $04
 	.text "Regarding our future plans, Seadna and"
 	.byte $02
 	.text "Otto got some interesting news from one" 
-	.byte $04
+	.byte $02
 	.text "of the villagers here."
 	.byte $08
 	.word ClearPortrait
@@ -828,6 +830,7 @@ dialogueChapter01neillseadna
 .byte $04
 .word ClearPortrait
 .byte Right_slot
+.byte $04
 .text "Man, she's so cool..."
 .byte $08
 	.byte EndText

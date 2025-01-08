@@ -645,12 +645,12 @@ Pure )Water
 Antitoxin
 (Me[mber Card
 
-Sailane Scroll
-Tófa Scroll
-Zaxon Scroll
-Silesse Scroll
-+Njörun's Scroll
-+Nál's Scroll
+Sailane Writ
+Tófa Writ
+Zaxon Writ
+Silesse Writ
+Lübeck Writ
+Ced's Manuscript
 Ullr's Scroll
 Thrud's Scroll
 Fjalar's Scroll
@@ -907,6 +907,8 @@ Vanishes after use
 Blocks criticals
 (Modifies gro]wths
 
+All Stats
+
  & Str
 Skl & Spd
 Lck & Def
@@ -1141,7 +1143,7 @@ Units )Windo12
 Set the unit ]windo]w's level of detail
 
 Autocursor
-Set cursor to start on Leif
+Set cursor to start on Neill
 
 (Message Speed
 Adjust ho]w fast text [messages display

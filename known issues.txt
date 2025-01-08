@@ -1,14 +1,11 @@
 - boss music doesn't play a lot of the time.
-- scripted battle with agnes isn't in.
+- scripted battle with agnes isn't in due to errors.
 - demo battles at the title screen freeze the game
-- child portrait in chapter 2 end cutscene is glitchy
 - palette on the enemy myrmidons in chapter 3 is messed up
-- agnes tends to freeze the game with animations on
+
 - no talk popups for any events
 - camera snaps during the chapter 2 opening
 - gerald doesn't recruit himself
 
-- death reactions for ilse/civilians not in yet
+- civvies trigger game over but ilse doesnt
 - event after civilians escape not in yet
-- map 5 map finished but not compressed or inserted
-- map 8 needs work

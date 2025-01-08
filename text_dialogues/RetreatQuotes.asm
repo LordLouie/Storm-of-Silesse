@@ -66,16 +66,16 @@ dialogueDagdarRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word dagdar_portrait
-.text "And thus, The Great Magician Edith"
+.text "And thus, The Great Magician,"
 .byte NewLine
-.text "makes her escape!"
+.text "Edith Othello, makes her escape!"
 .byte WaitForA
 .byte EndText
 
 dialogueRalphRetreatQuote
 .byte Right_slot
 .word LoadPortrait
-.word ralph_portrait
+.word amalda_portrait
 .text "I can't leave in good conscience,"
 .byte NewLine
 .text "knowing others are being hurt..."
@@ -85,7 +85,7 @@ dialogueRalphRetreatQuote
 dialogueMartyRetreatQuote
 .byte Right_slot
 .word LoadPortrait
-.word marty_portrait
+.word ralph_portrait
 .text "If there's nothing more to do..."
 .byte NewLine
 .text "I'll be leaving, then."

@@ -1,9 +1,9 @@
 structAutolevelScheme 1,HP,STR,MAG,SKL,SPD,DEF,CON,LUK,MOV
 AutolevelScheme1,80,20,3,16,10,16,16,10,0
 AutolevelScheme2,50,3,20,12,10,5,5,10,0
-AutolevelScheme3,110,26,5,22,17,22,22,15,0
+AutolevelScheme3,100,26,5,22,17,22,22,15,0
 AutolevelScheme4,80,6,26,18,18,10,10,15,0
-AutolevelScheme5,140,32,7,28,24,28,28,20,0
+AutolevelScheme5,130,32,7,28,24,28,28,20,0
 AutolevelScheme6,110,9,32,24,26,15,15,20,0
 AutolevelScheme7,75,50,30,50,35,35,40,20,0
 AutolevelScheme8,50,30,50,70,70,30,20,50,0

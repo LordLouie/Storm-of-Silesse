@@ -1,13 +1,13 @@
 structScrollGrowthModifiers 0,Item,HP,Strength,Magic,Skill,Speed,Defense,Constitution,Luck,Movement
 ScrollBonus00,SailaneScroll,0,40,0,0,-20,-20,0,0,0
-ScrollBonus01,TofaScroll,0,0,0,25,0,0,0,25,0
+ScrollBonus01,TofaScroll,0,0,0,20,0,0,0,20,0
 ScrollBonus02,ZaxonScroll,0,-20,-20,0,40,0,0,0,0
-ScrollBonus03,SilesseScroll,20,0,10,0,0,0,15,0,5
-ScrollBonus04,NjorunsScroll,0,30,-10,0,10,5,0,-5,0
-ScrollBonus05,NalsScroll,10,10,0,-10,0,10,10,0,0
-ScrollBonus06,UllrsScroll,0,0,0,10,10,0,0,10,0
-ScrollBonus07,ThrudsScroll,5,5,5,10,0,0,0,5,0
-ScrollBonus08,FjalarsScroll,0,5,5,10,10,0,0,0,0
-ScrollBonus09,CedsScroll,-10,0,10,0,30,0,0,0,0
-ScrollBonus0A,BragisScroll,0,-10,10,0,0,0,0,30,0
-ScrollBonus0B,HeimsScroll,0,0,30,0,0,-10,0,10,0
+ScrollBonus03,SilesseScroll,-40,0,20,0,0,0,10,0,10
+ScrollBonus04,NjorunsScroll,20,0,0,0,0,20,0,0,0
+ScrollBonus05,NalsScroll,40,40,40,40,40,40,40,40,40
+ScrollBonus06,UllrsScroll,0,0,0,0,0,0,0,0,0
+ScrollBonus07,ThrudsScroll,0,0,0,0,0,0,0,0,0
+ScrollBonus08,FjalarsScroll,0,0,0,0,0,0,0,0,0
+ScrollBonus09,CedsScroll,0,0,0,0,0,0,0,0,0
+ScrollBonus0A,BragisScroll,0,0,0,0,0,0,0,0,0
+ScrollBonus0B,HeimsScroll,0,0,0,0,0,0,0,0,0

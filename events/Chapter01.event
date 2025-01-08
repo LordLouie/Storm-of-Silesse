@@ -23,17 +23,17 @@ GUARD_FE5_CHAPTER01 :?= false
 
         ; Flag definitions
 
-          _FlagGaZowmnTalk         = enum.enum()
+          _FlagGaZowmnTalk         = enum.enum($05)
           _FlagNeillSeadna1         = enum.enum()
           _FlagWeissmannBattleQuote = enum.enum()
 
           ; TODO: map installer definitions
 
           _FlagKillerBowHouse         = enum.enum($21)
-          _FlagHammerHouse        = enum.enum($21)
-          _FlagVulneraryHouse     = enum.enum($21)
-          _FlagIronSwordHouse     = enum.enum($21)
-          _FlagMagicRingHouse      = enum.enum($21)
+          _FlagHammerHouse        = enum.enum()
+          _FlagVulneraryHouse     = enum.enum()
+          _FlagIronSwordHouse     = enum.enum()
+          _FlagMagicRingHouse      = enum.enum()
 
         _OpeningEventDefinitions ; FD/8000
           EVENT FlagAlwaysZero, _OpeningEvent
@@ -48,7 +48,7 @@ GUARD_FE5_CHAPTER01 :?= false
           EVENT FlagAlwaysZero, _EnemyGroup1Reinforcements
             CMP_WORD wCurrentPhase, Enemy
             CMP_WORD_RANGE wCurrentTurn, 8, 17
-            ROLL_RNG 20
+            ROLL_RNG 40
           END_DEFINITION
         END_DEFINITION_ARRAY
 
@@ -118,7 +118,7 @@ GUARD_FE5_CHAPTER01 :?= false
 
         _MagicRingHouse ; FD/8174
           macroItemHouse dialogueChapter01MagicRingHouse, MagicRing, [4, 2], $0021
-          ;SET_FLAG FlagFirstSighting
+          SET_FLAG FlagFirstSighting
         END2
 
         _VulneraryHouse ; FD/81D7
@@ -355,7 +355,7 @@ GUARD_FE5_CHAPTER01 :?= false
           .byte [17, 1]
 
         _EnemyGroup1
-          BanditBrigand2, Enemy, [29, 1], [28, 3], Maurice, [IronAxe], 5, false, [$00, $00, $00, $80]
+          UNIT BanditBrigand2, Enemy, [29, 1], [28, 3], Maurice, [IronAxe], 5, false, [$00, $00, $00, $80]
         UNIT
 
         _EnemyGroup1ReinforcementsCameraCoordinates

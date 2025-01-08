@@ -24,19 +24,17 @@ GUARD_FE5_CHAPTER02 :?= false
           ; TODO: map installer definitions
 
           _FlagBucksBattleQuote = enum.enum($05)
-		   _FlagEdithBattleQuote = enum.enum()
-
-          _FlagVillageAttacked = enum.enum($0A)
-		  
+          _FlagEdithBattleQuote = enum.enum()
           _FlagGeraldNeillTalk = enum.enum()
           _FlagBarraEdithTalk  = enum.enum()
-		  _FlagTavaresDead     = enum.enum()
-          _FlagGeraldHouse       = enum.enum()
+          _FlagTavaresDead     = enum.enum()
+          _FlagGeraldHouse       = enum.enum($21)
           _FlagSailaneScrollHouseVisit   = enum.enum()
           _FlagJavelinHouseVisit   = enum.enum()
           _FlagBraveSwordHouseVisit   = enum.enum()
           _FlagSilverLanceHouseVisit   = enum.enum()
           _FlagWreckageExamination   = enum.enum()
+          _FlagVillageAttacked = enum.enum($0A)
 
         _OpeningEventDefinitions ; 99/81B4
           EVENT FlagAlwaysZero, _OpeningEvent
@@ -49,12 +47,12 @@ GUARD_FE5_CHAPTER02 :?= false
             CHECK_IF_BOSS_DEAD Tavares
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
-		 EVENT FlagAlwaysZero, _EdithWhines
-		  CHECK_NUM_UNITS_GTE Edith, 1
-		  TEST_FLAG_UNSET _FlagBarraEdithTalk
-			CMP_WORD wCurrentPhase, Enemy
-    	    CMP_WORD wCurrentTurn, 2
-			END_DEFINITION
+          EVENT FlagAlwaysZero, _EdithWhines
+          CHECK_NUM_UNITS_GTE Edith, 1
+          TEST_FLAG_UNSET _FlagBarraEdithTalk
+          CMP_WORD wCurrentPhase, Enemy
+            CMP_WORD wCurrentTurn, 2
+          END_DEFINITION
           EVENT FlagAlwaysZero, _1stSupplyCorpsReinforcements
             CMP_WORD wCurrentTurn, 6
             CMP_WORD wCurrentPhase, Enemy
@@ -185,7 +183,7 @@ GUARD_FE5_CHAPTER02 :?= false
           PAUSE_SKIPPABLE 32
           YIELD
 
-          SET_MUSIC $4B
+          SET_MUSIC $4A
           YIELD
 
           DIALOGUE dialogueChapter02edithrecruitment
@@ -193,6 +191,7 @@ GUARD_FE5_CHAPTER02 :?= false
 
           macroASMCChangeAllegianceToPlayer Edith
           macroASMCSetCharacterDataWord Edith, Leader, Neill
+          SET_FLAG _FlagEdithBattleQuote
         END2
 
         _JavelinHouseVisit ; 99/835B
@@ -214,7 +213,7 @@ GUARD_FE5_CHAPTER02 :?= false
         _WreckageExamination
           EVENT_TEST_FLAG_SET FlagFirstSighting
           JUMP_TRUE +
-          dialogueChapter02wreckageexamination
+          macroDialogue dialogueChapter02wreckageexamination
         END2
           +
           LOAD_GROUP eventChapter02Data._GebGroup
@@ -440,7 +439,7 @@ GUARD_FE5_CHAPTER02 :?= false
           .byte [12, 33]
 
         _TavaresGroup ; B1/F91E
-          UNIT Tavares, Enemy, [10, 38], [12, 33], Tavares, [Longsword, Javelin], 10, true, [$13, $0B, $00, $00]
+          UNIT Tavares, Enemy, [10, 38], [12, 33], Tavares, [Longsword, Javelin], 10, true, [$0A, $0B, $00, $00]
 		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 33], Tavares, [Longlance], 7, false, [$00, $00, $00, $00]
           UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [13, 33], Tavares, [Longlance], 7, false, [$00, $00, $00, $00]
 		  UNIT SupplyCorpsArmoredLance, Enemy, [10, 38], [11, 34], Tavares, [Javelin], 5, false, [$00, $00, $00, $00]
@@ -472,9 +471,9 @@ GUARD_FE5_CHAPTER02 :?= false
         _2ndSupplyCorpsReinforcementsGroup ; B1/F9A2
 		  UNIT MercenaryMage1, Enemy, [10, 38], [11, 33], Tavares, [Wind], 7, false, [$00, $00, $00, $00]
 		  UNIT MercenaryMage1, Enemy, [10, 38], [13, 33], Tavares, [Fire], 5, false, [$00, $00, $00, $00]
-		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [12, 33], Tavares, [Bardiche], 7, false, [$00, $00, $00, $00]
-		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [11, 34], Tavares, [Bardiche], 5, false, [$00, $00, $00, $00]
-		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [13, 34], Tavares, [Bardiche], 5, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [12, 33], Tavares, [SteelAxe], 7, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [11, 34], Tavares, [SteelAxe], 5, false, [$00, $00, $00, $00]
+		  UNIT SupplyCorpsArmoredAxe, Enemy, [10, 38], [13, 34], Tavares, [SteelAxe], 5, false, [$00, $00, $00, $00]
 		  UNIT SniperEnemy, Enemy, [10, 38], [11, 35], Tavares, [SilverBow], 10, false, [$00, $00, $00, $00]
 		  UNIT SniperEnemy, Enemy, [10, 38], [13, 35], Tavares, [SilverBow], 10, false, [$00, $00, $00, $00]
 		  UNIT PriestEnemy, Enemy, [10, 38], [12, 34], Tavares, [Physic], 5, false, [$00, $00, $00, $00]
@@ -518,7 +517,7 @@ GUARD_FE5_CHAPTER02 :?= false
         UNIT
 
         _GebGroup
-          UNIT Geb, Enemy, [6, 19], [6, 18], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
+          UNIT Geb, Enemy, [6, 19], [6, 19], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
         UNIT
         
         _PirateGroup2CameraCoordinates ; B1/FA64
@@ -537,7 +536,7 @@ GUARD_FE5_CHAPTER02 :?= false
           .byte [8, 7]
 
         _GeraldGroup ; B1/FAE6
-          UNIT Gerald, NPC, [16, 4], [16, 5], Lemay, [FlameSword, Vulnerary], 7, false, [$0E, $11, $00, $00]
+          UNIT Gerald, NPC, [16, 4], [16, 5], Lemay, [FlameSword, Vulnerary], 7, false, [$0E, $11, $02, $80]
         UNIT
 
         _GeraldCameraCoordinates ; B1/FAFC

@@ -390,7 +390,7 @@ rsCopyOptionsPointerData
 		.text "Autocursor\n"
 		
 		aOptionMenuAutocursorSubtext
-		.text "Set cursor to start on Leif \n"
+		.text "Set cursor to start on Neill\n"
 		
 		aOptionMenuAutocursorChoices
 		aOptionMenuBGMChoices

@@ -99,7 +99,7 @@ dialogueChapter02Opening2A
 .byte $04
 
 .byte Right_slot
-.byte $02
+.byte $04
 .text "Heard you loud and clear."
 .byte $08
 .byte $04
@@ -233,7 +233,7 @@ dialogueChapter02WorldMap1
 .byte ScrollText
 .text "Fortunately for Storm Cabal,"
 .byte NewLine
-.text "a caravan of imperial troops arrives,"
+.text "a caravan of imperial troops arrive,"
 .byte WaitForA
 .byte ScrollText
 .text "right on cue..."
@@ -668,8 +668,6 @@ dialogueChapter02geraldrecruitment
 .text "Whoa! What the hell are you thinking,"
 .byte $02
 .text "sneaking up on us like that?"
-.byte $02
-.text "You coulda blown our cover!"
 .byte $08
 .byte $04
 
@@ -704,9 +702,9 @@ dialogueChapter02geraldrecruitment
 
 .byte Left_slot
 .byte $04
-.text "Is that so? I think we have a deal,"
+.text "Is that so? I think we have"
 .byte $02
-.text "then."
+.text "a deal, then."
 .byte $08
 .byte $04
 
@@ -728,9 +726,11 @@ dialogueChapter02geraldrecruitment
 
 .byte Left_slot
 .byte $04
+.text "Oh, my name? I'm Neill."
+.byte $02
 .text "I look forward to your performance, Gerald."
 .byte $02
-.text "The name's Neill, by the way..."
+.text "Do us proud out there!"
 .byte $08
 
 .byte EndText
@@ -759,6 +759,7 @@ dialogueChapter02edithrecruitment
 .byte Left_slot
 .byte $04
 .text "Who you callin' a bandit?"
+.byte $08
 
 .byte Right_slot
 .byte $04
@@ -778,7 +779,8 @@ dialogueChapter02edithrecruitment
 
 .byte Right_slot
 .byte $04
-.text "You talk way too witty to be a bandit though..."
+.text "You speech is far too witty"
+.text "to be a bandit's, though..."
 .byte $08
 
 .byte Left_slot
@@ -819,7 +821,7 @@ dialogueChapter02edithrecruitment
 .byte $02
 .text "to buy some food, maybe crash at"
 .byte $02
-.text "someone's place in Silesse..."
+.text "a friend's place in Silesse..."
 .byte $08
 
 .byte Left_slot
@@ -833,9 +835,11 @@ dialogueChapter02edithrecruitment
 
 .byte Right_slot
 .byte $04
-.text "I don't see harm in getting a little bit of"
+.text "Sounds like more trouble than"
 .byte $02
-.text "payback... hehe..."
+.text "it's worth... But I don't see harm"
+.byte $02
+.text "in getting a little bit of payback..."
 .byte $08
 
 .byte EndText

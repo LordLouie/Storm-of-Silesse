@@ -22,7 +22,7 @@ GUARD_FE5_CHAPTER03 :?= false
 
         ; Flag definitions
 
-          _FlagFachtnaBattleQuote     = enum.enum($06)
+          _FlagFachtnaBattleQuote     = enum.enum($05)
           _FlagAgnesBattleQuote       = enum.enum()
           _FlagAgnesNeillTalk         = enum.enum()
 
@@ -59,7 +59,7 @@ GUARD_FE5_CHAPTER03 :?= false
           END_DEFINITION
 
           EVENT FlagAlwaysZero, _EmpireReinforcements
-            CMP_WORD wCurrentTurn, 16
+            CMP_WORD wCurrentTurn, 14
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
 
@@ -258,6 +258,7 @@ GUARD_FE5_CHAPTER03 :?= false
             YIELD
 
             macroOpenDoorByTileChangeID 0
+            SET_FLAG _FlagDoor1
 
             macroOpenDoorByTileChangeID 2
 
@@ -372,14 +373,13 @@ GUARD_FE5_CHAPTER03 :?= false
           DIALOGUE dialogueChapter03OpeningB4
           YIELD
 
-
-
           MOVE_CHAR Fachtna, [4, 10], 1
           YIELD_UNK
           WAIT_MOVE
           YIELD
 
           macroOpenDoorByTileChangeID 0
+          SET_FLAG _FlagDoor1
 
           SCROLL_CAMERA_COORDS [15, 8], 4
 
@@ -509,7 +509,7 @@ END1
         _EnemyGroup ; B1/F346
           UNIT MercenaryMyrmidon1, Enemy, [2, 15], [2, 15], Fachtna, [KillingEdge, Vulnerary], 6, false, [$00, $00, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [16, 13], [16, 13], Fachtna, [IronBlade, DoorKey, Vulnerary], 10, false, [$00, $03, $00, $00]
-          UNIT MercenaryMyrmidon1, Enemy, [7, 1], [7, 1], Fachtna, [SteelSword], 6, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [6, 1], [6, 1], Fachtna, [SteelSword], 6, false, [$00, $03, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [2, 18], [2, 18], Fachtna, [IronSword], 7, false, [$00, $00, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [23, 12], [23, 12], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 7, false, [$00, $03, $00, $00]
@@ -530,7 +530,7 @@ END1
 
         _EnemyGroupAlternate
           UNIT MercenaryMyrmidon1, Enemy, [2, 15], [2, 15], Fachtna, [KillingEdge, Vulnerary], 6, false, [$00, $00, $00, $00]
-          UNIT MercenaryMyrmidon1, Enemy, [7, 1], [7, 1], Fachtna, [IronSword], 6, false, [$00, $03, $00, $00]
+          UNIT MercenaryMyrmidon1, Enemy, [6, 1], [6, 1], Fachtna, [IronSword], 6, false, [$00, $03, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [2, 18], [2, 18], Fachtna, [SteelSword], 7, false, [$00, $00, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [23, 12], [23, 12], Fachtna, [Armorslayer], 8, false, [$00, $03, $00, $00]
           UNIT MercenaryMyrmidon1, Enemy, [1, 6], [3, 6], Fachtna, [Rapier], 7, false, [$00, $03, $00, $00]
@@ -542,7 +542,7 @@ END1
 		  UNIT ArcherEnemy2, Enemy, [11, 3], [11, 3], Fachtna, [SteelBow, DoorKey], 6, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [20, 16], [20, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
 		  UNIT ArcherEnemy2, Enemy, [18, 16], [18, 16], Fachtna, [IronBow], 5, false, [$00, $03, $00, $00]
-		  UNIT BanditWarrior, Enemy, [25, 4], [25, 4], Fachtna, [SteelBow, Hammer, Vulnerary], 5, false, [$00, $03, $00, $00]
+		  UNIT SniperEnemy, Enemy, [25, 4], [25, 4], Fachtna, [SteelBow, Vulnerary], 5, false, [$00, $03, $00, $00]
 		  UNIT ThiefEnemy1, Enemy, [23, 18], [23, 18], Fachtna, [SlimSword, ChestKey], 5, false, [$00, $00, $00, $00]
 		  UNIT ThiefEnemy1, Enemy, [16, 4], [16, 4], Fachtna, [SlimSword, Lockpick], 4, false, [$10, $0B, $00, $00]
           UNIT

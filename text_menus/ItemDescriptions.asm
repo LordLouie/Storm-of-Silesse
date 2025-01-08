@@ -758,54 +758,46 @@
     menutextTofaScrollDescription
     .text "Blocks criticals\n"
     .text "(Modifies gro]wths\n"
-    .text "{H}{P} & Str  {+}{5}{%}\n"
-    .text "Skl & Spd   {+}{5}{%}\n"
-    .text "Lck & Def   {+}{5}{%}\n"
+    .text "Skill     {+}{2}{0}{%}\n"
+    .text "Luck      {+}{2}{0}{%}\n"
     .text "\n"
     
     menutextSailaneScrollDescription
     .text "Blocks criticals\n"
     .text "(Modifies gro]wths\n"
-	.text "Strength  {+}{4}{0}{%}\n"
+    .text "Strength  {+}{4}{0}{%}\n"
     .text "Speed     {-}{2}{0}{%}\n"
-	.text "Defense   {-}{2}{0}{%}\n"
+    .text "Defense   {-}{2}{0}{%}\n"
     .text "\n"
     
     menutextZaxonScrollDescription
     .text "Blocks criticals\n"
     .text "(Modifies gro]wths\n"
-    .text "{H}{P}      {+}{3}{0}{%}\n"
-    .text "Strength  {+}{1}{0}{%}\n"
-    .text "Luck      {-}{1}{0}{%}\n"
+    .text "Speed     {+}{4}{0}{%}\n"
+    .text "Strength  {-}{2}{0}{%}\n"
+    .text "(Magic    {-}{2}{0}{%}\n"
     .text "\n"
     
     menutextNjorunsScrollDescription
     .text "Blocks criticals\n"
     .text "(Modifies gro]wths\n"
-    .text "Strength  {+}{3}{0}{%}\n"
-    .text "(Magic    {-}{1}{0}{%}\n"
-    .text "Speed     {+}{1}{0}{%}\n"
-    .text "Luck        {-}{5}{%}\n"
-    .text "Defense     {+}{5}{%}\n"
+    .text "{H}{P}    {+}{2}{0}{%}\n"
+    .text "Defense   {+}{2}{0}{%}\n"
     .text "\n"
     
     menutextSilesseScrollDescription
     .text "Blocks criticals\n"
     .text "(Modifies gro]wths\n"
-    .text "Strength    {+}{5}{%}\n"
-    .text "Speed     {-}{1}{0}{%}\n"
-    .text "Defense   {+}{3}{0}{%}\n"
-    .text "(Mov        {+}{5}{%}\n"
+    .text "(Magic      {+}{2}{0}{%}\n"
+    .text "Con         {+}{1}{0}{%}\n"
+    .text "(Mov        {+}{1}{0}{%}\n"
+    .text "{H}{P}      {-}{4}{0}{%}\n"
     .text "\n"
     
     menutextNalsScrollDescription
     .text "Blocks criticals\n"
     .text "(Modifies gro]wths\n"
-    .text "{H}{P}      {+}{1}{0}{%}\n"
-    .text "Strength  {+}{1}{0}{%}\n"
-    .text "Skill     {-}{1}{0}{%}\n"
-    .text "Defense   {+}{1}{0}{%}\n"
-    .text "Con       {+}{1}{0}{%}\n"
+    .text "All Stats   {+}{4}{0}{%}\n"
     .text "\n"
     
     menutextUllrsScrollDescription

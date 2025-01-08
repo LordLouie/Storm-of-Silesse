@@ -1,14 +1,14 @@
 structChapterDataTableEntry 0,TilesetGraphics,TilesetConfig,TilesetPalette,Map,MapChanges,StartingPositions,ObjectiveMarkers,VisionRange,PrepScreen,MinUnits,MaxUnits,PlayerAllegiance,EnemyAllegiance,NPCAllegiance,Unknown,PlayerPhaseMusic,EnemyPhaseMusic,NPCPhaseMusic,AlternateGraphics,TilesetAnimations
 Chapter01ChapterData,sptiles,sptileset,sppalette,mapone,$FCEBF5,None,None,None,None,10,20,$2,$4,$0,$1,$1,$9,$1,None,aTilesetAnimation8487CE
-Chapter02ChapterData,$F6E885,$FAEB21,$F69C00,maptwo,$FCEC1B,eventChapter02Data._StartingPositions,None,None,None,10,20,$2,$4,$4,$3,$1,$9,$1,None,aTilesetAnimation8487CE
+Chapter02ChapterData,$F6E885,$FAEB21,$F69C00,maptwo,$FCEC1B,eventChapter02Data._StartingPositions,None,None,None,10,20,$2,$4,$4,$3,$1,$A,$1,None,aTilesetAnimation8487CE
 Chapter02xChapterData,$F6E885,$FAEB21,$F68200,$FBE0DC,None,eventChapter02xData._StartingPositions,None,3,None,10,20,$2,$4,$0,$5,$7,$D,$7,$FAA256,aTilesetAnimation8487CE
 Chapter03ChapterData,ctiles,ctileset,csnpalette,mapthree,ch3mapchanges,eventChapter03Data._StartingPositions,None,None,None,10,20,$2,$4,$0,$3,$4,$9,$1,None,aTilesetAnimation848831 
-Chapter04ChapterData,sptiles,sptileset,sppalette,mapfour,$FCED1F,eventChapter04Data._StartingPositions,$978000,None,None,10,20,$2,$4,$4,$3,$2,$A,$7,None,aTilesetAnimation8487CE
-Chapter04xChapterData,chapter5tiles,chapter5tileset,ch5palette,mapfive,ch5mapchanges,eventChapter04xData._StartingPositions,None,3,None,10,20,$2,$4,$4,$3,$7,$A,$7,None,None
+Chapter04ChapterData,sptiles,sptileset,sppalette,mapfour,$FCED1F,eventChapter04Data._StartingPositions,$978000,None,$2,6,6,$2,$4,$4,$3,$2,$A,$2,None,aTilesetAnimation8487CE
+Chapter04xChapterData,chapter5tiles,chapter5tileset,ch5palette,mapfive,ch5mapchanges,eventChapter04xData._StartingPositions,None,None,None,8,8,$2,$4,$4,$3,$7,$D,$7,None,None
 Chapter05ChapterData,chapter5tiles,chapter5tileset,ch5palette,mapfive,ch5mapchanges,eventChapter05Data._StartingPositions,$97800D,None,None,10,20,$2,$4,$0,$1,$4,$A,$4,None,None
-Chapter06ChapterData,$F8A3D6,$FB9ABD,$F68700,$FBF0A8,$FCEF06,eventChapter06Data._StartingPositions,$978012,None,None,10,20,$2,$4,$4,$3,$4,$A,$4,None,None
-Chapter07ChapterData,$F6E885,$FAEB21,$F68800,$FBF54F,None,eventChapter07Data._StartingPositions,$97801D,None,None,12,16,$2,$4,$4,$3,$4,$A,$4,$FAAE20,aTilesetAnimation8487CE
-Chapter08ChapterData,sctiles,sctileset,csdpalette,mapeight,$FCEF5E,eventChapter08Data._StartingPositions,None,None,$2,6,12,$2,$4,$0,$1,$4,$A,$4,None,aTilesetAnimation848831 
+Chapter06ChapterData,$F8A3D6,$FB9ABD,$F68700,$FBF0A8,$FCEF06,eventChapter06Data._StartingPositions,$978012,None,$2,10,20,$2,$4,$4,$3,$4,$A,$4,None,None
+Chapter07ChapterData,$F6E885,$FAEB21,$F68800,$FBF54F,None,eventChapter07Data._StartingPositions,$97801D,None,$2,12,16,$2,$4,$4,$3,$7,$C,$7,$FAAE20,aTilesetAnimation8487CE
+Chapter08ChapterData,sctiles,sctileset,csdpalette,mapeight,$FCEF5E,eventChapter08Data._StartingPositions,None,None,$2,10,20,$2,$4,$0,$1,$8,$E,$8,None,aTilesetAnimation848831 
 Chapter08xChapterData,$F8A3D6,$FB9ABD,$F68A00,$FBFE79,$FCEFB4,eventChapter08xData._StartingPositions,None,3,$2,4,6,$2,$4,$0,$1,$1,$9,$1,None,None
 Chapter09ChapterData,$F6E885,$FAEB21,$F68B00,$FC8031,None,eventChapter09Data._StartingPositions,$978022,None,$2,6,8,$2,$4,$0,$1,$1,$A,$1,$FAB831,aTilesetAnimation8487CE
 Chapter10ChapterData,$F6E885,$FAEB21,$F68C00,$FC8627,$FCF027,eventChapter10Data._StartingPositions,None,None,$2,8,14,$2,$4,$0,$1,$2,$A,$2,None,aTilesetAnimation8487CE

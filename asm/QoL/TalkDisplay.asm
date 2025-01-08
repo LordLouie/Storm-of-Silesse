@@ -508,7 +508,7 @@ GUARD_ZQOL_TALK_DISPLAY :?= false
 
         aChapter4TalkTargetTable
           ZQOL_TALK_ENTRY Waulter, [Gerald]
-          ZQOL_TALK_ENTRY Lifis, [Dalsin]
+          ZQOL_TALK_ENTRY Neill, [Seadna]
         ZQOL_END_TALK_CHAPTER
 
         aChapter4xTalkTargetTable
