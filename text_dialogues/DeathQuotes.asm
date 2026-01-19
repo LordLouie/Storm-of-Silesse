@@ -95,9 +95,11 @@ dialogueLeifDeathQuote
 .byte EndText
 
 dialogueFinnDeathQuote
-.text "...Why?"
+.text "Hah... I'm... alright..."
 .byte NewLine
-.text "Why did it have to end this way?"
+.text "Jus' give me a second to..."
+.byte NewLine
+.text "cat...ch... up..."
 .byte WaitForA
 .byte EndText
 
@@ -109,11 +111,9 @@ dialogueOsianDeathQuote
 .byte EndText
 
 dialogueHalvanDeathQuote
-.text "Gah! I can't feel my leg!"
+.text "Gah! I'm bleedin' all over!"
 .byte NewLine
-.text "Guess I'll just..."
-.byte NewLine
-.text "sit this one out..."
+.text "I'd best fall back now..."
 .byte WaitForA
 .byte EndText
 
@@ -146,11 +146,11 @@ dialogueRonanDeathQuote
 .byte EndText
 
 dialogueMirandaDeathQuote
-.text "Aah, Prince Neill..."
+.text "It's over already...?"
 .byte NewLine
-.text "If I could just go back..."
+.text "No... I don't want to..."
 .byte NewLine
-.text "Back to that...time..."
+.text "leave this world behind..."
 .byte WaitForA
 .byte EndText
 
@@ -301,34 +301,6 @@ dialogueRobertDeathQuote
 .text "I wanted to be more useful to you."
 .byte NewLine
 .text "I wanted to...stand...beside..."
-.byte WaitForA
-.byte EndText
-
-dialogueWeissmannDeathQuote
-.text "Guh... never thought I'd die over"
-.byte NewLine
-.text "a few crumbs of bread..."
-.byte WaitForA
-.byte EndText
-
-dialogueBucksDeathQuote
-.text "Hrgh... I'm... "
-.byte NewLine
-.text "not cut out... for t-this..."
-.byte WaitForA
-.byte EndText
-
-dialogueFachtnaDeathQuote
-.text "Pfah-!"
-.byte NewLine
-.text "I can feel myself... wither away..."
-.byte WaitForA
-.byte EndText
-
-dialogueAgnesDeathQuote
-.text "Tadgh... Neill..."
-.byte NewLine
-.text "Why'd it have to end... like this?"
 .byte WaitForA
 .byte EndText
 
@@ -552,21 +524,12 @@ dialogueMooreDeathQuote
 .byte WaitForA
 .byte EndText
 
-dialogueMullerDeathQuote
+dialogueBeatriceDeathQuote
 .text "Ergh..."
 .byte NewLine
 .text "It's unthinkable..."
 .byte NewLine
 .text "We stand...defeated..."
-.byte WaitForA
-.byte EndText
-
-dialogueTrottierDeathQuote
-.text "Hnnnghh..."
-.byte NewLine
-.text "You'll pay for crossing us..."
-.byte NewLine
-.text "Mark my... d-damn words..."
 .byte WaitForA
 .byte EndText
 
@@ -679,15 +642,6 @@ dialogueCoulterDeathQuote
 .byte WaitForA
 .byte EndText
 
-dialogueAlphandDeathQuote
-.text "Ugh..."
-.byte NewLine
-.text "Not yet..."
-.byte NewLine
-.text "I won't...die...yet..."
-.byte WaitForA
-.byte EndText
-
 dialogueFadenDeathQuote
 .text "Ugh..."
 .byte NewLine
@@ -716,6 +670,70 @@ dialogueCedDeathQuote
 .byte WaitForA
 .byte EndText
 
+; Unused
+
+dialogueGunterDeathQuote
+.text "Oof..."
+.byte NewLine
+.text "I suppose I've lived long enough..."
+.byte NewLine
+.text "Asbel..."
+.byte WaitForA
+.byte EndText
+
+dialogueWeissmannDeathQuote
+.text "Guh... never thought I'd die over"
+.byte NewLine
+.text "a few crumbs of bread..."
+.byte WaitForA
+.byte EndText
+
+dialogueBucksDeathQuote
+.text "Hrgh... I'm... "
+.byte NewLine
+.text "not cut out... for t-this..."
+.byte WaitForA
+.byte EndText
+
+dialogueMannheimDeathQuote
+.text "Uhuhh... Why am I" 
+.byte NewLine
+.text "movin' so... slow?"
+.byte NewLine
+.text "Guh... dying... sucks..."
+.byte WaitForA
+.byte EndText
+
+dialogueFachtnaDeathQuote
+.text "Pfah-!"
+.byte NewLine
+.text "I can feel myself... wither away..."
+.byte WaitForA
+.byte EndText
+
+dialogueAgnesDeathQuote
+.text "Tadgh... Maxima..."
+.byte NewLine
+.text "Why'd it have to end... like this?"
+.byte WaitForA
+.byte EndText
+
+dialogueTrottierDeathQuote
+.text "Hnnnghh..."
+.byte NewLine
+.text "You'll pay for crossing us..."
+.byte NewLine
+.text "Mark my... d-damn words..."
+.byte WaitForA
+.byte EndText
+
+dialogueAlphandDeathQuote
+.text "We are all equal..."
+.byte NewLine
+.text "in the eyes of Loptous..."
+.byte WaitForA
+.byte EndText
+
 dialogueVeldDeathQuote
 .text "Gah..."
 .byte NewLine
@@ -741,25 +759,5 @@ dialogueVeldDeathQuote
 .text "Heh, heh, heh..."
 .byte NewLine
 .text "Eheheheheheh...!"
-.byte WaitForA
-.byte EndText
-
-; Unused
-
-dialogueGunterDeathQuote
-.text "Oof..."
-.byte NewLine
-.text "I suppose I've lived long enough..."
-.byte NewLine
-.text "Asbel..."
-.byte WaitForA
-.byte EndText
-
-dialogueMannheimDeathQuote
-.text "Ugh...!"
-.byte NewLine
-.text "King Bloom, I've failed you..."
-.byte NewLine
-.text "Please forgive me..."
 .byte WaitForA
 .byte EndText

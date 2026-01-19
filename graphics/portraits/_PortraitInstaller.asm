@@ -3,7 +3,7 @@
 
 	aPortraitPalette00 .binary "sprites/neillformatted.pal"
 	aPortraitPalette01 .binary "sprites/seadnaformatted.pal"
-	aPortraitPalette02 .binary "sprites/PortraitPalette02.bin"
+	aPortraitPalette02 .binary "sprites/gebformatted.pal"
 	aPortraitPalette03 .binary "sprites/PortraitPalette03.bin"
 	aPortraitPalette04 .binary "sprites/PortraitPalette04.bin"
 	aPortraitPalette05 .binary "sprites/PortraitPalette05.bin"
@@ -33,7 +33,7 @@
 	aPortraitPalette1D .binary "sprites/PortraitPalette1D.bin"
 	aPortraitPalette1E .binary "sprites/gazowmnformatted.pal"
 	aPortraitPalette1F .binary "sprites/trottierformatted.pal"
-	aPortraitPalette20 .binary "sprites/PortraitPalette20.bin"
+	aPortraitPalette20 .binary "sprites/matarformatted.pal"
 	aPortraitPalette21 .binary "sprites/PortraitPalette21.bin"
 	aPortraitPalette22 .binary "sprites/PortraitPalette22.bin"
 	aPortraitPalette23 .binary "sprites/PortraitPalette23.bin"
@@ -248,7 +248,7 @@
 
 	g4bppcPortraitEADE80 .binary "sprites/neillformatted.4bpp.comp"
 	g4bppcPortraitEAE3B9 .binary "sprites/seadnaformatted.4bpp.comp"
-	g4bppcPortraitEAE8B7 .binary "sprites/PortraitEAE8B7.4bpp.comp"
+	g4bppcPortraitEAE8B7 .binary "sprites/gebformatted.4bpp.comp"
 	g4bppcPortraitEAEE23 .binary "sprites/PortraitEAEE23.4bpp.comp"
 	g4bppcPortraitEAF322 .binary "sprites/PortraitEAF322.4bpp.comp"
 	g4bppcPortraitEAF8A6 .binary "sprites/PortraitEAF8A6.4bpp.comp"
@@ -307,7 +307,7 @@
 * = $360209
 .logical $EC8209
 
-	g4bppcPortraitEC8209 .binary "sprites/PortraitEC8209.4bpp.comp"
+	g4bppcPortraitEC8209 .binary "sprites/matarformatted.4bpp.comp"
 	g4bppcPortraitEC8729 .binary "sprites/PortraitEC8729.4bpp.comp"
 	g4bppcPortraitEC8C0D .binary "sprites/PortraitEC8C0D.4bpp.comp"
 	g4bppcPortraitEC9117 .binary "sprites/PortraitEC9117.4bpp.comp"

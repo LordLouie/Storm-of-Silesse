@@ -740,7 +740,7 @@ mirandaepi
 .byte NewLine
 .text "for Neill's answer,"
 .byte NewLine
-.text "Geb fell hopelessly"
+.text "Matar fell hopelessly"
 .byte NewLine
 .text "in love with another"
 .byte NewLine

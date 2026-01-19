@@ -83,7 +83,7 @@ dialogueChapter04Opening1
 .byte $02
 .text "That would discredit the efforts of"
 .byte $02
-.text "those who've supported me for so long!"
+.text "those who've supported me all this time!"
 .byte $08
 .byte $04
 .text "...Oh, pardon me, young man, but"
@@ -95,7 +95,6 @@ dialogueChapter04Opening1
 .byte $04
 .text "Call me Neill!"
 .byte $08
-.byte $04
 
 .byte Right_slot
 .byte $04
@@ -148,16 +147,10 @@ dialogueChapter04Opening1
 .byte $04
 .byte EndText
 
-dialogueChapter04Opening2
+dialogueChapter04Opening2A
 .byte right_slot
 .word LoadPortrait
 .word leif_portrait
-
-.byte Left_slot
-.word LoadPortrait
-.word amalda_portrait
-
-.byte right_slot
 
 .text "We hijacked an imperial supply,"
 .byte $02
@@ -166,12 +159,14 @@ dialogueChapter04Opening2
 .byte $04
 .text "The empire has been abducting children"
 .byte $02
-.text "for some kind of religious sacrifice."
+.text "for some kind of religious activity."
 .byte $02
 .text "It's too repulsive for words..."
 .byte $08
 
 .byte Left_slot
+.word LoadPortrait
+.word amalda_portrait
 .text "I'm speechless..."
 .byte $02
 .text "May the gods bless thee for your"
@@ -186,7 +181,7 @@ dialogueChapter04Opening2
 
 .byte right_slot
 .byte $04
-.text "The part that hurts me the most is"
+.text "The part that gets me the most is"
 .byte $02
 .text "knowing the empire likely has way"
 .byte $02
@@ -205,7 +200,7 @@ dialogueChapter04Opening2
 .text "they'll come in 'n conquer us!"
 .byte $08
 .byte $04
-.text "How can we ever hope to stop them?!"
+.text "How are we supposed to stop 'em?!"
 .byte $08
 .byte Left_slot
 .byte $04
@@ -218,9 +213,9 @@ dialogueChapter04Opening2
 .byte $04
 .text "But if you were to convene with a"
 .byte $02
-.text "larger army, you could repel them"
+.text "larger army, you might be able to"
 .byte $02
-.text "from Silesse."
+.text "repel them from Silesse."
 .byte $08
 .byte $04
 .text "I say we take this to the highest"
@@ -244,9 +239,9 @@ dialogueChapter04Opening2
 .text "strong enough to oppose Grannvale."
 .byte $08
 .byte Right_slot
+.byte $04
 .word LoadPortrait
 .word finn_portrait
-.byte $04
 .text "First of all- how would we even"
 .byte $02
 .text "reach Tófa in time? It's on the"
@@ -254,21 +249,26 @@ dialogueChapter04Opening2
 .text "opposite side of the country!"
 .byte $08
 .byte $04
-.text "The mountain range is utterly" 
+.text "The mountain range is perilous enough" 
 .byte $02
-.text "inhospitable!"
+.text "saddled on the back of a pegasus, but on foot?"
+.byte $08
+.byte $04
+.text "Why, I'd sooner cross the Aed Desert"
+.byte $02
+.text "in full winter clothing!"
 .byte $08
 .byte $04
 .word LoadPortrait
 .word leif_portrait
 .text "I'm with Seadna on this one."
 .byte $02
-.text "It's a nice thought... but do"
+.text "It's a nice thought... but would it work"
 .byte $02
-.text "you really think that's possible?"
+.text "even if we survived the trek?"
 .byte $08
 .byte $04
-.text "At best, I'd be a courier, delivering"
+.text "At best, I'd be a weary courier, delivering"
 .byte $02
 .text "urgent news to her majesty..."
 .byte $08
@@ -312,6 +312,9 @@ dialogueChapter04Opening2
 .byte $04
 .byte EndText
 
+dialogueChapter04Opening2B
+.byte EndText
+
 dialogueChapter04Opening3
 
 .byte Right_slot
@@ -331,6 +334,7 @@ dialogueChapter04Opening3
 .word LoadPortrait
 .word albaportrait
 .text "..."
+.byte $08
 .byte Right_slot
 .text "Men! You have your orders, and I have mine."
 .byte $02
@@ -339,7 +343,7 @@ dialogueChapter04Opening3
 .byte $04
 .byte EndText
 
-dialogueChapter04Opening4
+dialogueChapter04Opening4A
 .byte Right_slot
 .word LoadPortrait
 .word braidedgirl_portrait
@@ -419,6 +423,9 @@ dialogueChapter04Opening4
 .byte $04
 .byte EndText
 
+dialogueChapter04Opening4B
+.byte EndText
+
 dialogueChapter04civviesallescaped
 .byte Right_slot
 .word LoadPortrait
@@ -459,12 +466,12 @@ dialogueChapter04geraldwalter
 .byte $04
 .text "I was in the rear guard of the Beigenritter."
 .byte $02
-.text "It was a massacre. Silesse's finest, dropping"
+.text "It was a massacre. Silesse's finest,"
 .byte $02
-.text "like flies, rushing into the jaws o' death..."
+.text "running headlong into the jaws o' death..."
 .byte $08
 .byte $04
-.text "When I was out there, in thick of it..."
+.text "When I was out there, in the thick of it..."
 .byte $02
 .text "I saw an armored giant, setting men"
 .byte $02
@@ -504,7 +511,6 @@ dialogueChapter04geraldwalter
 .byte $02
 .text "fading to dust by the day..."
 .byte $08
-.byte $04
 
 .byte Right_slot
 .byte $04
@@ -534,7 +540,6 @@ dialogueChapter04geraldwalter
 .byte $02
 .text "stay here and give these kids a damn future!"
 .byte $08
-.byte $04
 
 .byte Left_slot
 .byte $04
@@ -552,7 +557,7 @@ dialogueChapter04civvydies
 .word LoadPortrait
 .word leif_portrait
 .byte $09 ; font 9(always use font 9)
-.text "We lost someone?!"
+.text "We... lost someone?"
 .byte $08
 
 .byte EndText
@@ -763,10 +768,30 @@ dialogueChapter04cavernexamination
 .byte EndText
 
 dialogueChapter04thirdsighting
-.byte Right_slot
+.byte right_slot
+.word LoadPortrait
+.word nanna_portrait
+.text "And the empire moves in!"
+.byte $02
+.text "How will those hapless rebels"
+.byte $02
+.text "save the day this time?"
+.byte $08
+.byte $04
+.text "I'm simply dying to know!"
+.byte $02
+.text "Hehehe... Ahahahaha!"
+.byte $08
+.byte left_slot
 .word LoadPortrait
 .word finn_portrait
-.text "Wait! Stop!"
+.text "Who the hell are you?"
+.byte $08
+.byte right_slot
+.byte $04
+.text "N-not important!"
+.byte $02
+.text "Goodbye!"
 .byte $08
 .byte EndText
 
@@ -805,7 +830,7 @@ dialogueChapter04lightningswordhouse
 .byte $04
 .text "If it's what Lady Ilse wants..."
 .byte $02
-.text "I'll ablige..."
+.text "I'll oblige..."
 .byte $08
 .byte $04
 .text "On one condition!"
@@ -815,9 +840,7 @@ dialogueChapter04lightningswordhouse
 .text "this sword in my sted."
 .byte $08
 .byte $04
-.text "Be warned- it is only for"
-.byte $02
-.text "warriors with a steeled mind."
+.text "...MERCILESSLY!"
 .byte $08
 .byte EndText
 
@@ -923,16 +946,20 @@ dialogueChapter04bodyringhouseilse
 .word LoadPortrait
 .word amalda_portrait
 .text "Granny Fitzgerald!"
+.byte $02
 .text "Why haven't you evacuated yet?"
 .byte $08
 .byte Right_slot
 .byte $04
 .text "I couldn't leave in good conscience"
+.byte $02
 .text "without giving you something"
+.byte $02
 .text "to thank you for all you've done."
 .byte $08
 .byte $04
 .text "Like when you treated my infant"
+.byte $02
 .text "grandson's illness..."
 .byte $08
 .byte $04
@@ -940,32 +967,42 @@ dialogueChapter04bodyringhouseilse
 .byte $08
 .byte $04
 .text "And that time you and Waulter"
+.byte $02
 .text "cleared the thickets around"
+.byte $02
 .text "the family farm..."
 .byte $08
 .byte left_slot
 .byte $04
 .text "Those were the days..."
+.byte $02
 .text "I bet I still have one of those"
+.byte $02
 .text "thorns stuck in my boot somewhere."
 .byte $08
 .byte Right_slot
 .byte $04
 .text "Please. Take this ring as"
+.byte $02
 .text "a token of Skanor's gratitude."
 .byte $08
 .byte left_slot
 .byte $04
 .text "I... you're the best, Granny."
+.byte $02
 .text "...like the grandmother I never had."
 .byte $08
 .byte Right_slot
 .byte $04
 .text "I'll get a move-on now."
-.text "Don'chu worry- I've lived 74 years,"
+.byte $08
+.byte $04
+.text "Don'chu worry- I've lived 74 years"
+.byte $02
 .text "on this barren rock, and no soldier"
+.byte $02
 .text "has ever caught Granny before!"
-
+.byte $08
 .byte EndText
 
 dialogueChapter04storehouseexamination
@@ -1267,7 +1304,6 @@ dialogueChapter04WorldMap1
 .text "for a job well done... would not last."
 .byte WaitForA
 .byte $04
-.byte NewLine
 .text "The empire had heard of their exploits,"
 .byte NewLine
 .text "and sent a battalion to snuff them out."

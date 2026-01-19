@@ -298,7 +298,7 @@ dialogueMooreBattleQuote
 .byte WaitForA
 .byte EndText
 
-dialogueMullerBattleQuote
+dialogueBeatriceBattleQuote
 .text "Now you'll see why the Gelbenritter"
 .byte NewLine
 .text "are so feared!"
@@ -471,6 +471,6 @@ dialogueIshtarBattleQuote
 .byte EndText
 
 dialogueMannheimBattleQuote
-.text "No! We can't get stranded here!"
+.text "I love violence!"
 .byte WaitForA
 .byte EndText

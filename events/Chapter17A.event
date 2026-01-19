@@ -21,7 +21,7 @@ GUARD_FE5_CHAPTER17A :?= false
 
 					_FlagTrottierBattleQuote 					= enum.enum($05)
 					_FlagMooreBattleQuote 						= enum.enum()
-					_FlagMullerBattleQuote 						= enum.enum()
+					_FlagBeatriceBattleQuote 						= enum.enum()
 					_FlagSaiasBattleQuote 						= enum.enum()
 					_FlagXavierBattleQuote 						= enum.enum()
 					_FlagKarinMishaTalk		 						= enum.enum()
@@ -53,7 +53,7 @@ GUARD_FE5_CHAPTER17A :?= false
 						CMP_WORD wCurrentPhase, Enemy
 						CMP_WORD wCurrentTurn, 10
 					END_DEFINITION
-					EVENT FlagAlwaysZero, _MullerSpawn
+					EVENT FlagAlwaysZero, _BeatriceSpawn
 						CMP_WORD wCurrentPhase, Enemy
 						CMP_WORD wCurrentTurn, 12
 					END_DEFINITION
@@ -148,7 +148,7 @@ GUARD_FE5_CHAPTER17A :?= false
 				_BattleEventDefinitions ; FD/BC44
 					macroECBossQuote _FlagTrottierBattleQuote, Trottier
 					macroECBossQuote _FlagMooreBattleQuote, Moore
-					macroECBossQuote _FlagMullerBattleQuote, Muller
+					macroECBossQuote _FlagBeatriceBattleQuote, Beatrice
 					macroECBossQuote _FlagSaiasBattleQuote, Saias
 					macroECBossQuote _FlagMishaBattleQuote, Misha
 					macroECBossQuote _FlagXavierBattleQuote, Xavier
@@ -159,7 +159,7 @@ GUARD_FE5_CHAPTER17A :?= false
 					macroECShop eventChapter17AData._Armory
 				END_DEFINITION_ARRAY
 			
-				_MullerSpawn ; FD/BC9E
+				_BeatriceSpawn ; FD/BC9E
 					PLAY_SOUND_FORCED $E0
 					PAUSE_SKIPPABLE 32
 					YIELD
@@ -167,18 +167,18 @@ GUARD_FE5_CHAPTER17A :?= false
 					SET_MUSIC $39
 					YIELD
 			
-					SCROLL_CAMERA_ADDRESS eventChapter17AData._MullerCameraCoordinates
+					SCROLL_CAMERA_ADDRESS eventChapter17AData._BeatriceCameraCoordinates
 					YIELD
 			
-					LOAD_GROUP eventChapter17AData._MullerGroup
+					LOAD_GROUP eventChapter17AData._BeatriceGroup
 					WAIT_MOVE
 					YIELD
 			
-					GET_CHARACTER_COORDS Muller
+					GET_CHARACTER_COORDS Beatrice
 					SCROLL_CAMERA 4
 					YIELD
 			
-					DIALOGUE dialogueChapter17AMullerSpawn
+					DIALOGUE dialogueChapter17ABeatriceSpawn
 					YIELD
 				END2
 			
@@ -621,20 +621,19 @@ GUARD_FE5_CHAPTER17A :?= false
 					UNIT FriegeSoldier1, Enemy, [17, 19], [17, 19], Trottier, [Javelin], 10, False, [$00, $03, $00, $00]
 				UNIT
 			
-				_MullerCameraCoordinates ; B1/ACA5
+				_BeatriceCameraCoordinates ; B1/ACA5
 					.byte 9, 20
 			
-				_MullerGroup ; B1/ACA7
-					UNIT Muller, Enemy, [1, 26], [1, 26], Muller, [MasterSword, Thoron, Vulnerary], 14, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [2, 26], [2, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [3, 26], [3, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [4, 26], [4, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [5, 26], [5, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [6, 26], [6, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [7, 26], [7, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [8, 26], [8, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [9, 26], [9, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
-					UNIT FriegeMageKnight1, Enemy, [10, 26], [10, 26], Muller, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+				_BeatriceGroup ; B1/ACA7
+					UNIT FriegeMageKnight1, Enemy, [2, 26], [2, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [3, 26], [3, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [4, 26], [4, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [5, 26], [5, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [6, 26], [6, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [7, 26], [7, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [8, 26], [8, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [9, 26], [9, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
+					UNIT FriegeMageKnight1, Enemy, [10, 26], [10, 26], Beatrice, [Rapier, Thoron], 10, False, [$00, $00, $00, $00]
 				UNIT
 			
 				_SaiasCameraCoordinates ; B1/AD71

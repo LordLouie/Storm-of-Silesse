@@ -1,707 +1,444 @@
-dialogueChapter04xOpening1
-
-.byte Left_slot
-.word LoadPortrait
-.word asbel_portrait
-
-.byte Right_slot
-.word LoadPortrait
-.word ced_portrait
-
-.byte Left_slot
-.text "Sir Ced, do you think the kids are safe?"
-.byte WaitForA
-
-.byte Right_slot
-.text "Think of it the way Raydrik would:"
-.byte NewLine
-.text "would you send a convoy all the way"
-.byte NewLine
-.text "to Belhalla with only three or four children?"
-.byte WaitForA
-.byte ScrollText
-.text "Or would you wait until you have plenty"
-.byte NewLine
-.text "to show for yourself? There's still time, Asbel."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Then we can send them all back home!"
-.byte NewLine
-.text "Their parents must be so worried."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Focus, Asbel. There's too many guards about"
-.byte NewLine
-.text "to celebrate just yet."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Yessir."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Listen closely: after you've rescued"
-.byte NewLine
-.text "the children, I want you to rejoin Brighton"
-.byte NewLine
-.text "and seek out Prince Neill of House Leonster."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "C-Come again? Prince Neill?!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Indeed. He fell prey to some trap of Raydrik's"
-.byte NewLine
-.text "and was imprisoned in this very castle."
-.byte WaitForA
-.byte ScrollText
-.text "...Asbel, what's wrong? You're white as a sheet!"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Lord Neill was a dear friend of mine, you see."
-.byte NewLine
-.text "We got separated in Tahra, years ago,"
-.byte NewLine
-.text "and I've been looking for him ever since."
-.byte WaitForA
-.byte ScrollText
-.text "For three whole years, I've been searching..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Then look alive—today is the day"
-.byte NewLine
-.text "you've been waiting for."
-.byte NewLine
-.text "Find the prince, and escape Munster with him."
-.byte WaitForA
-.byte ScrollText
-.text "I've ordered all Magi outside the castle"
-.byte NewLine
-.text "to flee Munster as well. We'll be sitting ducks"
-.byte NewLine
-.text "if we stay here much longer..."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Are you coming with us?"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "I...considered it, but I can't. There's many"
-.byte NewLine
-.text "villagers and townsfolk left in Munster,"
-.byte NewLine
-.text "and they need my aid just as much."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "You've spent this whole time teaching me,"
-.byte NewLine
-.text "and I can't even help you in return?"
-.byte NewLine
-.text "Some apprentice I turned out to be..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "No, this is my choice, Asbel."
-.byte NewLine
-.text "It's no fault of yours."
-.byte WaitForA
-.byte ScrollText
-.text "Besides, all I really taught you"
-.byte NewLine
-.text "was that Grafcalibur spell."
-.byte NewLine
-.text "Do me proud, and use it to protect Prince Neill."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Sir Ced, will... Will we see each other again?"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "If Prince Neill is the hero we've been"
-.byte NewLine
-.text "waiting for, then the long night is finally over,"
-.byte NewLine
-.text "and Thracia will breathe free again."
-.byte WaitForA
-.byte ScrollText
-.text "...We will see each other again, Asbel."
-.byte NewLine
-.text "Right here in Munster."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Munster...? R-Right! Munster it is!"
-.byte NewLine
-.text "Don't you forget it, Sir Ced!"
-.byte WaitForA
-
+dialogueChapter05WorldMap1
+.text "Using their wit, Storm Cabal"
+.word LoadPortraitalt_1
+.long LoadPortraitalt_2 
+.word $0101 ;leify-left
+.word $0A17 ;y then x
+.byte $02
+.text "evaded the Empire's forces."
+.byte $08
+.byte $04
+.text "Determined to lose their pursuers and"
+.byte $02
+.text "secure the safety of the villagers,"
+.byte $08
+.byte $04
+.text "They act on Lady Ilse's"
+.byte $02
+.text "advice, heading for Fort Kiruna."
+.byte $08
+.byte $04
+.text "Fort Kiruna is the base of operations"
+.byte $02
+.text "for Sionnach and his sellswords."
+.byte $08
+.byte $04
+.text "Beneath it is an underground"
+.byte $02
+.text "passage leading to Tófa,"
+.byte $08
+.byte $04
+.text "the duchy where Princess Fee"
+.byte $02
+.text "currently resides."
+.byte $08
+.byte $04
+.text "Before they know it, Storm Cabal"
+.byte $02
+.text "finds itself Sionnach's doorstep."
+.byte $08
+.byte $04
+.text "...But just who is Sionnach?"
+.byte $08
 .byte EndText
 
-dialogueChapter04xOpening2
-
-.byte Right_slot
+dialoguechapter05opening1
+.byte right_slot
 .word LoadPortrait
-.word girl_portrait
-.text "*Sniffle... Sniffle...*"
-.byte WaitForA
-
-.byte Left_slot
-.word LoadPortrait
-.word boy_portrait
-.text "C'mon, knock off the waterworks..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "B-B-But...!"
-.byte NewLine
-.text "*Sniffle*"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Don't make them soldiers mad at us again."
-.byte NewLine
-.text "They'll just tell us to “Quit yer bellyachin'!”"
-.byte NewLine
-.text "like last time..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "I don't care if they get mad!"
-.byte WaitForA
-.byte ScrollText
-.text "If I get caught cryin', an' they get angry..."
-.byte NewLine
-.text "Maybe they'll jus' send me home..."
-.byte WaitForA
-.byte ScrollText
-.text "I jus' wanna go home..."
-.byte WaitForA
-
+.word ronan_portrait
+.text "Oh, what's this?"
+.byte $02
+.text "Visitors! And lots of them!"
+.byte $08
+.byte $04
+.text "Some knights..."
+.byte $02
+.text "Some villagers..."
+.byte $02
+.text "Children too? Remarkably odd."
+.byte $08
+.byte $04
+.text "Reginald, open the door."
+.byte $02
+.text "I must greet our guests."
+.byte $08
+.byte $04
 .byte EndText
 
-dialogueChapter04xAsbelRecruitment
-
-.byte Right_slot
+dialoguechapter05opening2
+.byte right_slot
 .word LoadPortrait
-.word asbel_portrait
-.text "Lord Neill...!  "
+.word ronan_portrait
+.text "Salutations, my good people!"
+.byte $08
+.byte $04
+.text "You've reached the estate of Sionnach,"
+.byte $02
+.text "benefactor of Silesse and its"
+.byte $02
+.text "gracious populace!"
+.byte $08
+.byte $04
+.text "How can I help you this fine day?"
+.byte $08
+.byte left_slot
+.word LoadPortrait
+.word halvan_portrait
+.text "I'm Barra, lieutenant commander"
+.byte $02
+.text "of Storm Cabal."
+.byte $08
+.byte $04
+.text "...I would say more, but we're in a hurry."
+.byte $08
+.byte $04
+.text "We've got refugees with us, and"
+.byte $02
+.text "Lady Ilse told us you guard a tunnel"
+.byte $02
+.text "that stretches under the mountains."
+.byte $08
 
-.byte Left_slot
+.byte right_slot
+.byte $04
+.text "Traveling to Tofa on foot, eh?"
+.byte $02
+.text "That reminds me of my"
+.byte $02
+.text "globetrotting sellsword days..."
+.byte $08
+
+.byte left_slot
+.byte $04
+.text "Please! Tell us this story later!"
+.byte $02
+.text "We don't have the time for this!"
+.byte $08
+
+.byte right_slot
+.byte $04
+.text "I remember it well..."
+.byte $02
+.text "The Verdane Rebellion of 771..."
+.byte $08
+.byte $04
+.text "I pledged myself to the self-proclaimed"
+.byte $02
+.text "Emperor Magnon, who vied to unite"
+.byte $02
+.text "all of Verdane against Grannvale."
+.byte $08
+.byte $04
+.text "Getting hired was a cinch"
+.byte $02
+.text "thanks to my proud lineage,"
+.byte $02
+.text "a courtesy divined of the Crusader Ced..."
+.byte $08
+.byte $04
+.text "And what did they do with the"
+.byte $02
+.text "power of one of The Twelve at"
+.byte $02
+.text "their disposal?"
+.byte $08
+.byte $04
+.text "They made me guard a safehouse"
+.byte $02
+.text "full of watered-down liquor!"
+.byte $02
+.text "It was a decisive waste of my talent!"
+.byte $08
+.byte $04
+.text "When Barlow came and offered me"
+.byte $02
+.text "the chance to join a real cause..."
+.byte $08
+.byte $04
+.text "May Naga rest his soul..."
+.byte $08
+.byte $04
+.text "I was thrilled!"
+.byte $08
+
+.byte left_slot
+.byte $04
+.text "Sionnach! Cut the jabber!"
+.byte $08
+
+.byte right_slot
+.byte $04
+.text "Once the rebellion was quelled,"
+.byte $02
+.text "I returned to my homeland, seeking"
+.byte $02
+.text "to become a greater man."
+.byte $08
+.byte $04
+.text "I saw how the anguish of"
+.byte $02
+.text "the common folk grew under"
+.byte $02
+.text "the empire's tyrannical yoke,"
+.byte $08
+.byte $04
+.text "and dedicated my substantial"
+.byte $02
+.text "savings to bettering their lives..."
+.byte $08
+
+.byte left_slot
+.byte $04
+.text "OPEN YOUR DAMN EARDRUMS!"
+.byte $02
+.text "Imperial forces are on our heels!"
+.byte $08
+
+.byte right_slot
+.byte $04
+.text "Ah! There I go babbling again..."
+.byte $02
+.text "The empire, you say? Not a concern!"
+.byte $08
+.byte $04
+.text "I've hired some powerful men and women"
+.byte $02
+.text "Who will ensure you make a clean break"
+.byte $02
+.text "from those villains."
+.byte $08
+.byte $04
+.text "Sluggo here, for instance."
+.byte $08
+.byte $04
+.text "Sluggo, please show our guests the way out."
+.byte $08
+.byte left_slot
+.byte $04
+.word LoadPortrait
+.word eda_portrait
+.text "Guhuhuh... why certainly, Mr. Sionnach Sir."
+.byte $08
+.byte EndText
+
+dialoguechapter05opening3
+.byte right_slot
+.word LoadPortrait
+.word ronan_portrait
+.text "Sluggo! What's gotten into you?!"
+.byte $08
+
+.byte left_slot
+.word LoadPortrait
+.word eda_portrait
+.text "You paid me good money ta be here..."
+.byte $02
+.text "But what I didn't tell ya is I'd already"
+.byte $02
+.text "taken a job from the other guys!"
+.byte $08
+.byte $04
+.text "I think I goofed my chance to kill ya"
+.byte $02
+.text "here though... oooooops..."
+.byte $08
+.byte EndText
+
+dialoguechapter05opening4
+.byte right_slot
+.word LoadPortrait
+.word ronan_portrait
+.text "Quick, after him!"
+.byte $08
+.byte left_slot
 .word LoadPortrait
 .word leif_portrait
-
-.byte Right_slot
-.text "After all these years!"
-.byte NewLine
-.text "It's me, Asbel!"
-.byte WaitForA
-
-.byte Left_slot
-.text "Asbel?! What in the world are you doing here?"
-.byte NewLine
-.text "Why aren't you still in Tahra?"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "I set off after you just as soon as"
-.byte NewLine
-.text "we got separated! Lotta good that did..."
-.byte NewLine
-.text "I couldn't figure out where you'd gone."
-.byte WaitForA
-.byte ScrollText
-.text "For the last half-year now,"
-.byte NewLine
-.text "I've been sticking around Munster."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "You left Tahra that quickly?! Then...you've"
-.byte NewLine
-.text "spent the last three years looking for me..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Of course I did! I promised you as much,"
-.byte NewLine
-.text "remember? With your blade and my magic,"
-.byte NewLine
-.text "we were gonna take Thracia back—together!"
-.byte WaitForA
-.byte ScrollText
-.text "But you just up an' left me behind! That..."
-.byte NewLine
-.text "That was quite heartless of you, Neill."
-.byte NewLine
-.text "Er, Lord Neill."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "I'm sorry..."
-.byte NewLine
-.text "At the time, I didn't have a choice."
-.byte WaitForA
-.byte ScrollText
-.text "Tahra had been surrounded by the Empire."
-.byte NewLine
-.text "I had... I had prepared myself"
-.byte NewLine
-.text "for the very real possibility of dying."
-.byte WaitForA
-.byte ScrollText
-.text "When I fled, I never imagined I would make it"
-.byte NewLine
-.text "out alive. I didn't want to drag you down"
-.byte NewLine
-.text "with me, so I left you out of it."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "What a load of pegasus dung...! We swore"
-.byte NewLine
-.text "to live and die together, didn't we? Or was"
-.byte NewLine
-.text "that whole oath just part of some kids' game?"
-.byte WaitForA
-.byte ScrollText
-.text "I've spent all these years with those words"
-.byte NewLine
-.text "etched into my mind—and I chose to believe"
-.byte NewLine
-.text "in them."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "A-Asbel..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Lord Neill, if only for my sake,"
-.byte NewLine
-.text "you have to liberate Thracia! Make it so that"
-.byte NewLine
-.text "my years of searching meant something!"
-.byte WaitForA
-
+.byte $04
+.text "I don't understand..."
+.byte $02
+.text "Why not take this opportunity"
+.byte $02
+.text "to escape? He's running away from us."
+.byte $08
+.byte right_slot
+.byte $04
+.text "It appears that Sluggo absconded with"
+.byte $02
+.text "the storehouse key during our skirmish."
+.byte $02
+.text "We can't enter the tunnel without it."
+.byte $08
+.byte left_slot
+.byte $04
+.text "Keen!"
+.byte $08
+.byte right_slot
+.byte $04
+.text "Seeing as my blunder has imperiled"
+.byte $02
+.text "innocents, it is only proper that"
+.byte $02
+.text "I assist you."
+.byte $08
+.word ClearPortrait
+.word RetractBox
+.byte left_slot
+.byte $04
+.text "Alright, everyone!"
+.byte $02
+.text "Our target is Sluggo!"
+.byte $02
+.text "Once he's dead, run for it!"
+.byte $08
 .byte EndText
 
-dialogueChapter04xKarinCedTalk
-
-.byte Left_slot
-.word LoadPortrait
-.word karin_portrait
-
+dialogueChapter05ottoseadnatalk
 .byte Right_slot
 .word LoadPortrait
-.word ced_portrait
-
-.byte Left_slot
-.text "Lord Ced!"
-.byte NewLine
-.text "Oh, Lord Ced, after all this time..."
-.byte WaitForA
-
-.byte Right_slot
-.text "Yes? Wait... Karin? Has something happened?"
-.byte NewLine
-.text "Why have you left Silesse?"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "To... To find you, my prince!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "To find me...? Oh, for heaven's sake..."
-.byte NewLine
-.text "Did Fee put you up to this?"
-.byte NewLine
-.text "Or was it my mother?"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "......"
-.byte WaitForA
-.byte ScrollText
-.text "Lord Ced, I have some...important news"
-.byte NewLine
-.text "for you."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Is that so? Well, let's hear it."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "W-Well, to tell the truth... Oh, gods..."
-.byte WaitForA
-.byte ScrollText
-.text "......"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Karin, if you have something to tell me,"
-.byte NewLine
-.text "speak quickly and to the point."
-.byte NewLine
-.text "This is no time for weakness."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Y-You're right..."
-.byte NewLine
-.text "I... I regret to inform you that"
-.byte NewLine
-.text "Her Majesty the Queen has... She, um..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Mother?! No, she can't have...!"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "I'm...afraid so, milord. Two months ago..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Mother is..."
-.byte NewLine
-.text "My mother has...passed away...?"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Lord Ced... I'm sorry. You shouldn't have"
-.byte NewLine
-.text "found out like this. Here, of all places..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Does it matter? I was too late... Father..."
-.byte NewLine
-.text "I wanted them to see each other one last time..."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Lord Ced, return to Silesse with me—please."
-.byte NewLine
-.text "Lady Fee is waiting for you."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Fee... How is she? Is she all right?"
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Silesse faces dire times, milord."
-.byte WaitForA
-.byte ScrollText
-.text "Lady Fee can put up a tough front for"
-.byte NewLine
-.text "the others, but when it's just me and her, she..."
-.byte NewLine
-.text "She cries till her eyes dry up."
-.byte WaitForA
-.byte ScrollText
-.text "Lord Ced, with respect, you've done her"
-.byte NewLine
-.text "a great cruelty, running away like you did."
-.byte WaitForA
-.byte ScrollText
-.text "Lady Fee isn't much more than a kid, and"
-.byte NewLine
-.text "you've gone and forced the burden of ruling"
-.byte NewLine
-.text "Silesse onto her."
-.byte WaitForA
-.byte ScrollText
-.text "That holy blood in your veins"
-.byte NewLine
-.text "has gone to your head!"
-.byte WaitForA
-.byte ScrollText
-.text "You're the heir to Forseti's legacy,"
-.byte NewLine
-.text "good for you, but you up and walked out"
-.byte NewLine
-.text "on your mother and sister!"
-.byte WaitForA
-.byte ScrollText
-.text "Does that sound like what a hero would do?"
-.byte NewLine
-.text "Does that even sound like what a real prince"
-.byte NewLine
-.text "would do?!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Karin, I... You're right, of course, but..."
-.byte NewLine
-.text "But Father was the only one who could cure"
-.byte NewLine
-.text "Mother's illness!"
-.byte WaitForA
-.byte ScrollText
-.text "I couldn't do her any good just waiting"
-.byte NewLine
-.text "at her side! Was I supposed to just sit there"
-.byte NewLine
-.text "and watch her waste away?!"
-.byte WaitForA
-.byte ScrollText
-.text "So I... I went to find Father,"
-.byte NewLine
-.text "by whatever means I could."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Then why are you leading some rebel group"
-.byte NewLine
-.text "in Munster?!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "I heard tell that my father had been here"
-.byte NewLine
-.text "in Munster until half a year ago. I came here"
-.byte NewLine
-.text "to pick up the trail, but it had gone cold."
-.byte WaitForA
-.byte ScrollText
-.text "As I investigated, I discovered just how deeply"
-.byte NewLine
-.text "the people of Munster suffered."
-.byte WaitForA
-.byte ScrollText
-.text "I couldn't abandon them"
-.byte NewLine
-.text "as my father had abandoned Silesse."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Is that right...? I apologize, Lord Ced..."
-.byte NewLine
-.text "I should've heard your side of the story"
-.byte NewLine
-.text "before judging you..."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "I'm sorry, Karin, but I need more time."
-.byte NewLine
-.text "If I can drive that menace Raydrik"
-.byte NewLine
-.text "from Munster, I'll gladly return to Silesse."
-.byte WaitForA
-.byte ScrollText
-.text "By my estimation, that should only take"
-.byte NewLine
-.text "a half-year at most."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "...You're fixin' to overthrow that creep, huh?"
-.byte NewLine
-.text "Now that's a plan I can get behind!"
-.byte NewLine
-.text "Count me in—I'll stay here with you!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Heh. I'm flattered, Karin, but as your prince,"
-.byte NewLine
-.text "I insist you head back to Silesse. I couldn't"
-.byte NewLine
-.text "fight knowing you were endangering yourself."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "...That's a diplomatic way of saying"
-.byte NewLine
-.text "I would be a burden. But you're right:"
-.byte NewLine
-.text "I would just slow you down."
-.byte WaitForA
-.byte ScrollText
-.text "All right, I'll make my way back to Silesse—"
-.byte NewLine
-.text "but only if you promise to come home"
-.byte NewLine
-.text "yourself, Lord Ced."
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "You have my word—and as proof of my vow,"
-.byte NewLine
-.text "I bestow this upon you."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Er, what is it? A used handkerchief?"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Hah! Would you believe this is an heirloom"
-.byte NewLine
-.text "of the Silessian royal family?"
-.byte WaitForA
-.byte ScrollText
-.text "It's an ancient scroll, penned by my namesake—"
-.byte NewLine
-.text "the crusader Ced himself."
-.byte WaitForA
-.byte ScrollText
-.text "He imbued it with potent magic"
-.byte NewLine
-.text "that strengthens whoever so much as holds it."
-.byte WaitForA
-.byte ScrollText
-.text "I was...supposed to give it to my betrothed,"
-.byte NewLine
-.text "actually. Instead, I entrust it to you, Karin."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "Are you really trusting me"
-.byte NewLine
-.text "with something so valuable?"
-.byte WaitForA
-.byte ScrollText
-.text "I... This is most unexpected!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Karin... I did wrong by my mother,"
-.byte NewLine
-.text "and I'm sorry."
-.byte WaitForA
-.byte ScrollText
-.text "I owe you much for helping Fee in my absence,"
-.byte NewLine
-.text "and this is a token of my gratitude."
-.byte NewLine
-.text "I want you to have it."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "...OK, but I'm only keeping it safe for you."
-.byte NewLine
-.text "You'll get it back the second you return"
-.byte NewLine
-.text "to Silesse!"
-.byte WaitForA
-
-.byte Right_slot
-.byte ScrollText
-.text "Then the snowy banks of Silesse shall be"
-.byte NewLine
-.text "witness to our next meeting. Be well, Karin."
-.byte WaitForA
-
-.byte Left_slot
-.byte ScrollText
-.text "You said it!"
-.byte NewLine
-.text "Gods be with you, Lord Ced!"
-.byte WaitForA
-
+.word osian_portrait
+.text "Seadna."
+.byte left_slot
+.word LoadPortrait
+.word finn_portrait
+.text "Hmm?"
 .byte EndText
 
-dialogueChapter04xUpperCellUnlock
-
+dialoguechapter05gebrecruitment
 .byte Right_slot
 .word LoadPortrait
-.word girl_portrait
-.text "I jus' wanna go home..."
-.byte WaitForA
-.byte ScrollText
-.text "*Sniffle, sniffle*"
-.byte NewLine
-.text "H-How do I get home?"
-.byte NewLine
-.text "Uh-huh... The way to the right...?"
-.byte WaitForA
-.byte ScrollText
-.text "Then I'll run that way and won't stop"
-.byte NewLine
-.text "till I'm back home...! Th-Thank you..."
-.byte WaitForA
-
+.word nanna_portrait
+.text "Hello there, my good boy, Neill..."
+.byte $08
+.byte left_slot
+.word LoadPortrait
+.word leif_portrait
+.text "Ergh! An evil priest!"
+.byte $02
+.text "Why don't you creeps find a hobby"
+.byte $02
+.text "that comes without a mortality rate?!"
+.byte $08
+.byte Right_slot
+.byte $04
+.text "Hasty, hasty..."
+.byte $08
+.byte $04
+.text "There is no need to come to blows..."
+.byte $02
+.text "Strangers are but friends you've"
+.byte $02
+.text "yet to make."
+.byte $08
+.byte $04
+.text "One could say..."
+.byte $02
+.text "we are already colleagues!"
+.byte $08
+.byte left_slot
+.byte $04
+.text "Huh? Wait..."
+.byte $02
+.text "You're the one who's been stalking us!"
+.byte $02
+.text "What's your problem, man?!"
+.byte $08
+.byte Right_slot
+.byte $04
+.text "In my view, it was not stalking."
+.byte $02
+.text "Merely, observation."
+.byte $08
+.byte $04
+.text "It was by fleeting chance that I"
+.byte $02
+.text "first saw your Storm Cabal in action."
+.byte $08
+.byte $04
+.text "Seeing your resilience up close..."
+.byte $02
+.text "Gave me a stiring feeling."
+.byte $02
+.text "I watched your future battles intently."
+.byte $08
+.byte $04
+.text "What I could not expect, however,"
+.byte $02
+.text "was the lengths you'd go with which"
+.byte $02
+.text "to find me, time and time again."
+.byte $08
+.byte left_slot
+.byte $04
+.text "Enough of this! What is your point?!"
+.byte $08
+.byte right_slot
+.word LoadPortrait
+.word pan_portrait
+.byte $04
+.text "Would you mind if I joined your"
+.byte $02
+.text "army for a little while~?"
+.byte $08
+.byte $04
+.text "I wanna see what you guys do"
+.byte $02
+.text "up close."
+.byte $08
+.byte left_slot
+.byte $04
+.word $1200
+.byte 5
+.text "???"
+.byte $02
+.word $1200
+.byte 1
+.text "IS... IS THIS REAL?"
+.byte $08
+.byte Right_slot
+.byte $04
+.text "You didn't seriously think"
+.byte $02
+.text "I was some geriatric hag, did you~?"
+.byte $08
+.byte left_slot
+.byte $04
+.text "I wish I could say we've had"
+.byte $02
+.text "weirder recruits..."
+.byte $02
+.text "Alas, I cannot."
+.byte $08
+.byte $04
+.text "Just don't..."
+.byte $08
+.byte $04
+.text "(Do I even care if she betrays us?"
+.byte $02
+.text "How am I supposed to rationalize this?!)"
+.byte $08
+.byte Right_slot
+.byte $04
+.text "I can read your face perfectly."
+.byte $02
+.text "Let's just get started."
+.byte $08
 .byte EndText
 
-dialogueChapter04xLowerCellUnlock
+dialogueChapter05houseexamination
+.text "There's a nameplate lying"
+.text "in the rubble..."
+.byte $08
+.byte $04
+.text "It reads 'Guest Housing'."
+.byte $08
+.byte EndText
 
+dialogueChapter05sluggodeadzo
 .byte Right_slot
 .word LoadPortrait
-.word boy_portrait
-.text "Huh? Can I go home to my papa now?"
-.byte WaitForA
-.byte ScrollText
-.text "...Oh, I can escape if I go down that passage"
-.byte NewLine
-.text "to the right? Thank you! B-Bless you!"
-.byte WaitForA
-
+.word leif_portrait
+.text "I have the keys!"
+.byte $02
+.text "Now let's get the heck outta here!"
+.byte $08
 .byte EndText

@@ -2,10 +2,7 @@
 - scripted battle with agnes isn't in due to errors.
 - demo battles at the title screen freeze the game
 - palette on the enemy myrmidons in chapter 3 is messed up
-
+- battle animations need work in general
 - no talk popups for any events
 - camera snaps during the chapter 2 opening
 - gerald doesn't recruit himself
-
-- civvies trigger game over but ilse doesnt
-- event after civilians escape not in yet

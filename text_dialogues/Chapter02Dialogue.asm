@@ -821,7 +821,7 @@ dialogueChapter02edithrecruitment
 .byte $02
 .text "to buy some food, maybe crash at"
 .byte $02
-.text "a friend's place in Silesse..."
+.text "a friend's place..."
 .byte $08
 
 .byte Left_slot
@@ -1022,7 +1022,7 @@ dialogueChapter02javelinhouse
 
 dialogueChapter02purewaterhousenormal
 .byte Right_slot
-.text "...Who lives like this?"
+.text "The walls are lined with vacant sword mounts."
 .byte $08
 
 .byte EndText
@@ -1055,7 +1055,19 @@ dialogueChapter02wreckageexamination
 
 dialogueChapter02secondsighting
 .byte Right_slot
-.text "What was that for?!"
+.word LoadPortrait
+.word nanna_portrait
+.text "It seems the peasants have had enough..."
+.byte $02
+.text "Hehehe..."
+.byte $08
+.byte $04
+.text "Who is the boy with the blueish-black hair?"
+.byte $02
+.text "He seems very interesting..."
+.byte $08
+.byte $04
+.text "Ah-! Pardon me!"
 .byte $08
 
 .byte EndText

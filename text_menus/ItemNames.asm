@@ -245,7 +245,7 @@
 			.text "Fla[me S]word \n"
 		
 		menutextLightningSwordName
-			.text "Lightning S]word\n"
+			.text "Thunder S]word\n"
 		
 		menutextParagonSwordName
 			.text "Paragon S]word\n"
@@ -438,7 +438,7 @@
 			.text "Thunder \n"
 		
 		menutextDireThunderName
-			.text "Dire Thunder\n"
+			.text "Elthunder \n"
 		
 		menutextThoronName
 			.text "Thoron\n"

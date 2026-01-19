@@ -1,8 +1,8 @@
-dialogueChapter17AMullerSpawn
+dialogueChapter17ABeatriceSpawn
 
 .byte Right_slot
 .word LoadPortrait
-.word muller_portrait
+.word Beatrice_portrait
 .text "Damn... I didn't think it would take this long"
 .byte NewLine
 .text "to get here. There's no time to waste—"
@@ -13,7 +13,7 @@ dialogueChapter17AMullerSpawn
 .byte Left_slot
 .word LoadPortrait
 .word guard_portrait
-.text "General Muller?"
+.text "General Beatrice?"
 .byte NewLine
 .text "What happened to Commander Reinhardt?"
 .byte WaitForA

@@ -37,18 +37,6 @@ DSizeEnds		     := []
 .include "graphics/battle_animations/_WeaponsInstaller.asm"
 .include "graphics/battle_animations/_ShieldsInstaller.asm"
 
-.include "custom/_CustomInstaller.asm"
-
-;* = $00BB2B
-;.logical lorom($00BB2B, 1)
-;.binary "asm/hacky/range1.bin"
-;.here
-
-;* = $0299D5
-;.logical lorom($0299D5, 1)
-;.binary "asm/hacky/range2.bin"
-;.here
-
   * = $000000
   .logical $808000
   
@@ -1706,5 +1694,7 @@ DSizeEnds		     := []
 .logical lorom($0299D5, 1)
 .binary "custom/asm/range2.bin"
 .here
+
+.include "custom/_CustomInstaller.asm"
 
 .include "SizeHelpersEnd.h"

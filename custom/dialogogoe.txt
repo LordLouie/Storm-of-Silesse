@@ -928,7 +928,7 @@ neill/otto
 .text "No. Your concerns were"
 .text "reasonable."
 I am saying this now to
-avoid anything interupting
+avoid reducing
 our battle proficiency in the future.
 
 "Thanks for your time, man."
@@ -1417,7 +1417,7 @@ MAP
 .text "evaded the Empire's forces."
 .byte $08
 .byte $04
-.text "Determined to lose their pursuers"
+.text "Determined to lose their pursuers and"
 .text "secure the safety of the villagers,"
 .byte $08
 .byte $04
@@ -1450,53 +1450,118 @@ OPENING
 "So there was this guy, Duccar right? Fella was real chummy with my ma, but she neglected tell 'em that she was already seein' four other noble types. Why should she? Rejecting an advance from someone as high 'n mighty as the uncle of Silesse's heir? That's tantamount to soicial suicide!
 So you mus' be thinkin, "This has got to be how I was conceived, ye?" well, guess again! Duccar's got a real monkey's uncle of a disappointment of a sorry excuse for a manhood, so he couldn't do procreate if he was wantin' to! But that don't matter, point is, he gave my ma the special sauce, and that shit's da key to higher power, but before I can tell you about the story of my birth, I need to tell you about the economic climate of this country at the time, the seasonal rainfall that comes once every 17 months down at Lubeck, the process of extracting juice from a particular part o' the pegasi, and what I had for breakfast yesteday mornin'!
 
-"Oh, what's this?"
+chapter05opening1
+.byte right_slot
+.word LoadPortrait
+.word ronan_portrait
+.text "Oh, what's this?"
 .byte $02
-"Visitors! And lots of them!"
-
-"Some knights..."
-.byte $02
-"Some villagers..."
-.byte $02
-"Children too? Odd."
-
-"Reginald, open the door."
-.byte $02
-"I want to greet our guests"
-.byte $02
-"myself."
-
-"Salutations, my good people!"
+.text "Visitors! And lots of them!"
 .byte $08
 .byte $04
-"You've reached the estate of"
+.text "Some knights..."
 .byte $02
-"The Great Sionnach of Silesse!"
+.text "Some villagers..."
 .byte $02
-"How can I help you?"
+.text "Children too? Odd."
+.byte $08
+.byte $04
+"Reginald, open the door."
+.byte $02
+"I want to greet our guests myself."
+.byte $08
+.byte $04
+.byte EndText
 
-"I'm Barra, lieutenant commander of Storm Cabal"
+chapter05opening2
+.byte right_slot
+.word LoadPortrait
+.word ronan_portrait
+.text "Salutations, my good people!"
+.byte $08
+.byte $04
+.text "You've reached the estate of Sionnach,"
+.byte $02
+.text "benefactor of Silesse and its citizens!"
+.byte $08
+.byte $04
+.text "How can I help you this fine day?"
+.byte $08
+.byte left_slot
+.word LoadPortrait
+.word halvan_portrait
+.text "I'm Barra, lieutenant commander of Storm Cabal."
+"...I would say more, but we're in a hurry."
+"We've got refugees with us, and Ilse
+refered us to you. Something about a tunnel...
 
-Years ago, I took part in 
-The Verdane Rebellion of 771.
+"Traveling to Tofa on foot, eh?"
+"That reminds me of my"
+"globetrotting sellsword days..."
 
-I sold myself on my proud lineage,
-courtesy of the Crusader Ced...
-and they made me guard safehouses!
+"...Can this wait?"
+
+"I remember it well..."
+"The Verdane Rebellion of 771..."
+
+I sold myself to the warmongers
+on my proud lineage, courtesy 
+of the Crusader Ced...
+And they made me guard safehouses!
 It was a decisive waste of my talent!
 When Barlow came and offered me
 the chance to join a real cause...
 ...May Naga rest his soul...
 ...I was thrilled!
-Once the rebellion was over,
+
+Sionnach...
+
+Once the rebellion was quelled,
 I returned to my homeland, seeking
-to become a better man.
+to become a greater man.
 I heard of how the anguish of
 the common folk grew under
 the empire's tyrannical yoke,
 and dedicated my substantial
 savings to bettering their lives,
-by whatever means I could.
+through my boundless benevolence.
+
+Sionnach! Imperial forces are on our heels!
+
+"Ah! There I go babbling again..."
+"The empire, you say? Not a concern!"
+"I've hired some powerful men and women"
+"Who will ensure you make a clean break from those villains."
+"Sluggo here, for instance.
+
+"Sluggo, please show our guests the way out."
+
+"Guhuhuh... why certainly, Mr. Sionnach Sir."
+
+chapter05opening3
+
+"Sluggo! What's gotten into you?!"
+
+"You paid me good money ta be here..."
+"But what I didn't tell ya is I'd already"
+"taken a job from the other guys!"
+"I think I goofed my chance to kill ya"
+"here though... oooooops..."
+
+"Quick, after him!"
+
+"Why not escape now?"
+
+"...Sluggo has the storeroom key."
+"We can't open the tunnel without it."
+
+"Keen!"
+
+"Seeing how this has turned out,"
+"I suppose I have no choice but to come with you."
+"This is my mess, afterall."
+
+"Give Sluggo a beatdown, then book it out of here!"
 
 dialoguechapter05seadnailse
 .text "Why are you so obsessed"
@@ -1641,10 +1706,14 @@ dialoguechapter05gebrecruitment
 .text "give us info on the Loptrians...)"
 
 
+end
+
+.text 
+
 CHAPTER 6
 
 
-Otto/Geb
+Otto/Matar
 
 
 .text "What is your connection to"
@@ -1693,7 +1762,7 @@ Otto/Geb
 .text "a result of that, I now fight"
 .text "for a cause. Your cause."
 .text "..."
-.text "Your statements appear to"
+.text "I believe your stated motives"
 .text "to be true."
 .text "Please accept my apologies for"
 .text "wrongfully interrogating you."
@@ -1778,6 +1847,61 @@ in 15 years. She's leading her own life now."
 PROMOTION CEREMONY
 
 CHAPTER 7
+
+otto/geb 2
+
+.text "You are not who you say you are."
+.text "Explain yourself."
+
+.text "Oh swell and just Otto, whatever"
+.text "do you-"
+
+.text "Why did you conceal your identity?"
+
+.text "You know how weird the church is"
+.text "about girls..."
+
+.text "Please elaborate."
+
+.text "Women in the church are relegated to"
+.text "home life, and have no shot at"
+.text "becoming civil leaders."
+.text "It's all a matter of nepotism, anyway."
+.text "The church is full of fresh blood,"
+.text "but they only ever put haggish old men on the pulpit!"
+.text "Seniority over merit. That's the Loptyr way."
+.text "So I conjured up this disguise."
+.text "They ate it up. Couldn't get enough of"
+.text "me babbling creepy riff-raff."
+
+.text "Why did you stalk us?"
+.text "Surely your superiors did not approve"
+.text "of such an act."
+
+.text "Hehe... you really think so?"
+.text "They don't care what I do."
+.text "If I make it sound like what"
+.text "I'm doing is in some way useful"
+.text "to his emminence, they don't question me."
+
+.text "Gives me all the time in the world to"
+.text "stare at you..."
+.text "I like Neill. I like you too, Otto."
+.text "You're all such interesting people..."
+
+.text "This is all very confusing."
+.text "Despite that, I have no further questions."
+
+.text "You better not tell anyone about this."
+.text "I like you... but I like the thought"
+.text "of getting revenge more..."
+
+.text "Only if you promise to meet me again"
+.text "when everything is said and done."
+
+.text "Oh, but of course!"
+
+
 
 BATTLE QUOTES
 Why must you misunderstand us?
@@ -1912,16 +2036,15 @@ Durchval/Agnes
 
 "-Ulp!"
 
-Durchval/Geb
+Durchval/Matar
 .text "Is that..."
-.text "Geb! You worthless reprobate!"
+.text "Matar! You worthless reprobate!"
 .text "Have you turned on your own faith?!"
 
 .text "I pray to Loptous with all my heart..."
 .text "Sad though it is, it seems you've"
 .text "become an obstacle to him."
 
-.text "And you wish to kill me?"
 .text "I am your superior! You may have"
 .text "been assigned to reconnaissance by"
 .text "another, but you still defer to me!"
@@ -1941,11 +2064,11 @@ Durchval/Geb
 .text "life sitting down!"
 
 .text "You can kiss hell's pavement"
-.text "for the rest of your days, Geb!"
+.text "for the rest of your days, Matar!"
 
 .text "I weep for you, knowing the"
 .text "pain Loptous will wreak upon"
-.text "your soul."
+.text "your tarnished soul."
 
 
 

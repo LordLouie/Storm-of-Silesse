@@ -458,7 +458,7 @@ dialogueChapter03OpeningB4
 .text "Murderers."
 .byte $08
 .byte $04
-.text "Get everyone you can, we're gonna"
+.text "Get everyone you can, we're going"
 .byte $02
 .text "to be fighting till daybreak."
 .byte $02

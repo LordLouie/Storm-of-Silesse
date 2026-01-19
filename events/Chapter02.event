@@ -10,7 +10,7 @@ GUARD_FE5_CHAPTER02 :?= false
   ; Definitions
 
     .weak
-
+      rlAddSelectedUnitToPlayerPool     :?= address($83A3BF)
     .endweak
 
   ; Freespace inclusions
@@ -148,8 +148,7 @@ GUARD_FE5_CHAPTER02 :?= false
           DIALOGUE dialogueChapter02geraldrecruitment
           YIELD
 
-          macroASMCChangeAllegianceToPlayer Gerald
-          macroASMCSetCharacterDataWord Gerald, Leader, Neill
+          CALL_ASM_SKIPPABLE rlAddSelectedUnitToPlayerPool, Player
         END2
 
         _NeillGeraldTalk ; FD/8DE4
@@ -218,10 +217,10 @@ GUARD_FE5_CHAPTER02 :?= false
           +
           LOAD_GROUP eventChapter02Data._GebGroup
           YIELD
-          macroScriptedRewarpStaff Geb, [-1, -1]
-          macroASMCRemoveUnit Geb
-          YIELD
           macroDialogue dialogueChapter02secondsighting
+          YIELD
+          macroScriptedRewarpStaff Matar, [-1, -1]
+          macroASMCRemoveUnit Matar
           YIELD
           SET_FLAG FlagSecondSighting
         END2
@@ -517,7 +516,7 @@ GUARD_FE5_CHAPTER02 :?= false
         UNIT
 
         _GebGroup
-          UNIT Geb, Enemy, [6, 19], [6, 19], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
+          UNIT Matar, Enemy, [6, 19], [6, 19], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
         UNIT
         
         _PirateGroup2CameraCoordinates ; B1/FA64

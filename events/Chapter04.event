@@ -32,10 +32,9 @@ GUARD_FE5_CHAPTER04 :?= false
           _FlagVillager4Escaped = enum.enum()
           _FlagVillager5Escaped = enum.enum()
           _FlagVillager6Escaped = enum.enum()
-          _FlagIlseDead       = enum.enum()
           _FlagVillagerDeath  = enum.enum()
           _FlagEnding             = enum.enum()
-          _FlagLightningSwordHouseVisit = enum.enum($21)
+          _FlagThunderSwordHouseVisit = enum.enum($21)
           _FlagTofaScrollHouseVisit = enum.enum()
           _FlagBodyRingHouseVisit = enum.enum()
           _FlagCavernExamination = enum.enum()
@@ -48,27 +47,36 @@ GUARD_FE5_CHAPTER04 :?= false
         END_DEFINITION_ARRAY
 
         _TurnEventDefinitions ; 99/8785
-					EVENT FlagAlwaysZero, _VillagerSpawn
+        EVENT FlagAlwaysZero, _CounterIncrease
+                        CMP_WORD_RANGE wCurrentTurn, 1, 99
+                        CMP_WORD wCurrentPhase, Enemy
+                    END_DEFINITION
+        EVENT FlagAlwaysZero, _GameOverIlse
+                    CHECK_IF_BOSS_DEAD Ilse
+                        CMP_WORD_RANGE wCurrentTurn, 1, 99
+                        CMP_WORD wCurrentPhase, Enemy
+                    END_DEFINITION 
+					EVENT FlagAlwaysZero, _Villager1Spawn
 						CMP_WORD wCurrentTurn, 1
 						CMP_WORD wCurrentPhase, Player
 					END_DEFINITION
-					EVENT FlagAlwaysZero, _VillagerSpawn
+					EVENT FlagAlwaysZero, _Villager2Spawn
 						CMP_WORD wCurrentTurn, 2
 						CMP_WORD wCurrentPhase, Player
 					END_DEFINITION
-					EVENT FlagAlwaysZero, _VillagerSpawn
+					EVENT FlagAlwaysZero, _Villager3Spawn
 						CMP_WORD wCurrentTurn, 3
 						CMP_WORD wCurrentPhase, Player
 					END_DEFINITION
-					EVENT FlagAlwaysZero, _VillagerSpawn
+					EVENT FlagAlwaysZero, _Villager4Spawn
 						CMP_WORD wCurrentTurn, 4
 						CMP_WORD wCurrentPhase, Player
 					END_DEFINITION
-					EVENT FlagAlwaysZero, _VillagerSpawn
+					EVENT FlagAlwaysZero, _Villager5Spawn
 						CMP_WORD wCurrentTurn, 5
 						CMP_WORD wCurrentPhase, Player
 					END_DEFINITION
-					EVENT FlagAlwaysZero, _VillagerSpawn
+					EVENT FlagAlwaysZero, _Villager6Spawn
 						CMP_WORD wCurrentTurn, 6
 						CMP_WORD wCurrentPhase, Player
 					END_DEFINITION
@@ -84,18 +92,22 @@ GUARD_FE5_CHAPTER04 :?= false
             CMP_WORD wCurrentTurn, 7
             CMP_WORD wCurrentPhase, Enemy
           END_DEFINITION
-          EVENT FlagAlwaysZero, _Turn9GroupReinforcements
-            CMP_WORD wCurrentTurn, 9
+          EVENT FlagAlwaysZero, _Turn10GroupReinforcements
+            CMP_WORD wCurrentTurn, 10
             CMP_WORD wCurrentPhase, Player
           END_DEFINITION
             EVENT FlagAlwaysZero, _TrottierCharge
                 CMP_WORD wCurrentPhase, Enemy
-                TEST_FLAG_UNSET FlagBossDeath
                 CMP_WORD wCurrentTurn, 10
           END_DEFINITION
           EVENT FlagAlwaysZero, _Turn16GroupReinforcements
             CMP_WORD wCurrentTurn, 16
             CMP_WORD wCurrentPhase, Enemy
+          END_DEFINITION
+          EVENT FlagAlwaysZero, _AnnoyingPirateReinforcements
+            CMP_WORD wCurrentPhase, Enemy
+            CMP_WORD_RANGE wCurrentTurn, 4, 30
+            ROLL_RNG 40
           END_DEFINITION
         END_DEFINITION_ARRAY
 
@@ -109,7 +121,7 @@ GUARD_FE5_CHAPTER04 :?= false
         END_DEFINITION_ARRAY
 
         _LocationEventDefinitions ; 99/8862
-          EVENT _FlagLightningSwordHouseVisit, _LightningSwordHouseVisit
+          EVENT _FlagThunderSwordHouseVisit, _ThunderSwordHouseVisit
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [14, 8]
           END_DEFINITION
@@ -117,18 +129,21 @@ GUARD_FE5_CHAPTER04 :?= false
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [23, 2]
           END_DEFINITION
-          EVENT _FlagBodyRingHouseVisit, _BodyRingHouseVisitOther
-            CMP_WORD wCurrentPhase, Player
-            macroECCheckCoordinates [5, 3]
-          END_DEFINITION
           EVENT _FlagBodyRingHouseVisit, _BodyRingHouseVisitIlse
             CMP_WORD wCurrentPhase, Player
             macroECCheckCoordinates [5, 3]
             CMP_WORD aSelectedCharacterBuffer.Character, Ilse
           END_DEFINITION
+          EVENT _FlagBodyRingHouseVisit, _BodyRingHouseVisitOther
+            CMP_WORD wCurrentPhase, Player
+            macroECCheckCoordinates [5, 3]
+          END_DEFINITION
         END_DEFINITION_ARRAY
 
         _BeforeActionEventDefinitions ; 99/891E
+          EVENT FlagAlwaysZero, _GameOverIlse
+          CHECK_IF_BOSS_DEAD Ilse
+          END_DEFINITION
 					EVENT _FlagVillager1Escaped, _Villager1Saved
 						RUN_ASM rlEventDefinitionCheckRetreatCoordinates
 						CMP_WORD aSelectedCharacterBuffer.Character, Civilian2
@@ -169,12 +184,13 @@ GUARD_FE5_CHAPTER04 :?= false
             CMP_WORD aSelectedCharacterBuffer.Character, Waulter
             macroECCheckCoordinates [8, 6]
           END_DEFINITION
-          EVENT FlagAlwaysZero, _PlayerLoss1
+          EVENT FlagAlwaysZero, _GameOverCiv
             TEST_FLAG_SET _FlagVillagerDeath
           END_DEFINITION
-            EVENT FlagAlwaysZero, _PlayerLoss2
-            TEST_FLAG_SET _FlagIlseDead
+          EVENT FlagAlwaysZero, _GameOverIlse
+            CHECK_IF_BOSS_DEAD Ilse
           END_DEFINITION
+          
           EVENT FlagAlwaysZero, _EndingEvent
             TEST_FLAG_SET _FlagEnding
           END_DEFINITION
@@ -203,7 +219,7 @@ GUARD_FE5_CHAPTER04 :?= false
             macroASMCAddCharacterDataByte Gerald, Strength, 1
         END2
 
-        _LightningSwordHouseVisit
+        _ThunderSwordHouseVisit
           macroItemHouse dialogueChapter04lightningswordhouse, LightningSword, [14, 8], $0021
         END2
 
@@ -217,7 +233,6 @@ GUARD_FE5_CHAPTER04 :?= false
 
         _BodyRingHouseVisitIlse
           macroItemHouse dialogueChapter04bodyringhouseilse, BodyRing, [5, 3], $0021
-          macroASMCAddCharacterDataByte Ilse, Magic, 1
         END2
 
         _CavernExamination
@@ -227,11 +242,11 @@ GUARD_FE5_CHAPTER04 :?= false
           JUMP_FALSE +
           LOAD_GROUP eventChapter04Data._GebGroup
           YIELD
-          macroScriptedRewarpStaff Geb, [-1, -1]
-          macroASMCRemoveUnit Geb
-          YIELD
         macrodialogue dialogueChapter04thirdsighting
         YIELD
+          macroScriptedRewarpStaff Matar, [-1, -1]
+          macroASMCRemoveUnit Matar
+          YIELD
           SET_FLAG FlagThirdSighting
         END2
           +
@@ -271,11 +286,11 @@ GUARD_FE5_CHAPTER04 :?= false
           YIELD
         END2
 
-        _Turn9GroupReinforcements
+        _Turn10GroupReinforcements
           SCROLL_CAMERA_ADDRESS eventChapter04Data._Turn6GroupCameraCoordinates
           YIELD
 
-          LOAD_GROUP eventChapter04Data._Turn9Group
+          LOAD_GROUP eventChapter04Data._Turn10Group
           WAIT_MOVE
           YIELD
         END2
@@ -298,80 +313,47 @@ GUARD_FE5_CHAPTER04 :?= false
           YIELD
         END2
 
-				_VillagerSpawn ; CAN YOU TELL WHERE THE COPY PASTE WAS
-					EVENT_TEST_FLAG_SET _FlagVillager1Escaped
-					JUMP_TRUE +
-			
+        _AnnoyingPirateReinforcements
+          LOAD_GROUP eventChapter04Data._AnnoyingPirateGroup
+          WAIT_MOVE
+          YIELD
+        END2
 
-							LOAD_GROUP eventChapter04Data._NPC1Group
-							WAIT_MOVE
-							YIELD
-			
-							SET_FLAG _FlagVillager1Escaped
-						END2
-			
-					+
+        _Villager1Spawn
+          LOAD_GROUP eventChapter04Data._NPC1Group
+          WAIT_MOVE
+          YIELD
+        END2
 
-			
-							LOAD_GROUP eventChapter04Data._NPC2Group
-							WAIT_MOVE
-							YIELD
-			
-							SET_FLAG _FlagVillager2Escaped
-						END2
-			
-					+
-					EVENT_TEST_FLAG_SET _FlagVillager3Escaped
-					JUMP_TRUE +
-			
+        _Villager2Spawn
+          LOAD_GROUP eventChapter04Data._NPC2Group
+          WAIT_MOVE
+          YIELD
+        END2
 
-							LOAD_GROUP eventChapter04Data._NPC3Group
-							WAIT_MOVE
-							YIELD
-			
-							SET_FLAG _FlagVillager3Escaped
-						END2
-			
-					+
-					EVENT_TEST_FLAG_SET _FlagVillager4Escaped
-					JUMP_TRUE +
-			
+        _Villager3Spawn
+          LOAD_GROUP eventChapter04Data._NPC3Group
+          WAIT_MOVE
+          YIELD
+        END2
 
-			
-							LOAD_GROUP eventChapter04Data._NPC4Group
-							WAIT_MOVE
-							YIELD
-			
-							SET_FLAG _FlagVillager4Escaped
-						END2
-			
-					+
-					EVENT_TEST_FLAG_SET _FlagVillager5Escaped
-					JUMP_TRUE +
-			
+        _Villager4Spawn
+          LOAD_GROUP eventChapter04Data._NPC4Group
+          WAIT_MOVE
+          YIELD
+        END2
 
-			
-							LOAD_GROUP eventChapter04Data._NPC5Group
-							WAIT_MOVE
-							YIELD
-			
-							SET_FLAG _FlagVillager5Escaped
-						END2
-			
-					+
-					EVENT_TEST_FLAG_SET _FlagVillager6Escaped
-					JUMP_TRUE +
-			
+        _Villager5Spawn
+          LOAD_GROUP eventChapter04Data._NPC5Group
+          WAIT_MOVE
+          YIELD
+        END2
 
-			
-							LOAD_GROUP eventChapter04Data._NPC6Group
-							WAIT_MOVE
-							YIELD
-			
-							SET_FLAG _FlagVillager6Escaped
-			
-					+
-				END2
+        _Villager6Spawn
+          LOAD_GROUP eventChapter04Data._NPC6Group
+          WAIT_MOVE
+          YIELD
+        END2
 
 				_Villager1Saved ; FD/A5D8
 							SET_FLAG _FlagVillager1Escaped
@@ -482,12 +464,20 @@ GUARD_FE5_CHAPTER04 :?= false
           WAIT_MOVE
           YIELD
 
-            macroDialogue dialogueChapter04Opening1
-            YIELD
-            macroDialogue dialogueChapter04Opening2
-            YIELD
+          macroDialogue dialogueChapter04Opening1
+          YIELD
+                     macroASMCCountAllUnitsUncapturedAliveWithHidden Seadna
+          JUMP_FALSE +
 
-                ; ideally a future release has a version of this sans Seadna but its hard to write her out of the story
+          macroDialogue dialogueChapter04Opening2A
+          JUMP ++
+
+          +
+          macroDialogue dialogueChapter04Opening2B
+
+          +
+            
+          YIELD
 
           SET_MUSIC $39
           YIELD
@@ -502,8 +492,21 @@ GUARD_FE5_CHAPTER04 :?= false
           YIELD
           SCROLL_CAMERA_COORDS [18, 5], 4
           YIELD
-            DIALOGUE dialogueChapter04Opening4
-            YIELD
+          
+          ;one of the worst most unnecessary copypastes in this whole thing but im beyond caring atp
+          
+          macroASMCCountAllUnitsUncapturedAliveWithHidden Seadna
+          JUMP_FALSE +
+
+          macroDialogue dialogueChapter04Opening4A
+          JUMP ++
+
+          +
+          macroDialogue dialogueChapter04Opening4B
+
+          +
+            
+          YIELD
 
         END2
 
@@ -519,9 +522,6 @@ GUARD_FE5_CHAPTER04 :?= false
             CALL_ASM_LOOP rlASMCDialogueWithBGEnd
             YIELD
 
-            macroASMCUnsetUnitState Barra, (UnitStateUnknown1 | UnitStateDead) ;RESURRECTION
-            macroASMCUnsetUnitState Barra, UnitStateCaptured
-
             macroASMCGiveConvoyItem Jormungand ;Otto went through the goods and found a bunch of Loptrian gear
             macroASMCGiveConvoyItem Jormungand
             macroASMCGiveConvoyItem Jormungand
@@ -534,11 +534,15 @@ GUARD_FE5_CHAPTER04 :?= false
           FADE_OUT $01
           YIELD
 
+            macroASMCUnsetUnitState Barra, (UnitStateUnknown1 | UnitStateDead) ;RESURRECTION
+            macroASMCUnsetUnitState Barra, UnitStateCaptured
+            YIELD
+
           CALL_ASM_LOOP rlASMCChapterEnd
 
         END1
 
-        _PlayerLoss1
+        _GameOverCiv
 
         PLAY_SOUND_FORCED $00E0
         PAUSE_SKIPPABLE 32
@@ -554,22 +558,31 @@ GUARD_FE5_CHAPTER04 :?= false
 
         END1
 
-        _PlayerLoss2
+        _GameOverIlse
+        macroASMCCheckUnitStateSet Ilse, UnitStateCaptured
+					JUMP_TRUE +
+				
+						macroASMCCountAllUnitsAlive Ilse 
+						JUMP_TRUE +
 
         PLAY_SOUND_FORCED $00E0
-        PAUSE_SKIPPABLE 32
-        YIELD
 
-        SET_MUSIC $28 
-        YIELD
+        STORE_WORD wCurrentMapMusic, $00
 
         DIALOGUE dialogueChapter04ilsedies
         YIELD
 
         macroASMCGameOver
-
+        +
         END1
 
+        _CounterIncrease ; what is this thing
+        ADD_BYTE $7E4976, 1
+        YIELD_UNK
+        YIELD_UNK
+        
+        END1
+        
     .endsection Chapter04EventsSection
 
     .section Chapter04DataSection
@@ -609,10 +622,10 @@ GUARD_FE5_CHAPTER04 :?= false
         UNIT
 
         _TrottierGroup
-          UNIT Trottier, Enemy, [4, 24], [8, 22], Trottier, [Tornado, MasterSword, Vulnerary], 10, true, [$01, $03, $00, $80]
+          UNIT Trottier, Enemy, [4, 24], [8, 22], Trottier, [Tornado, MasterSword, Vulnerary], 10, true, [$00, $03, $00, $80]
           UNIT GrannvaleCavalier, Enemy, [5, 24], [6, 21], Trottier, [Longsword], 7, false, [$00, $00, $00, $80]
           UNIT GrannvaleCavalier, Enemy, [6, 24], [7, 21], Trottier, [Armorslayer], 8, false, [$00, $00, $00, $80]
-          UNIT GrannvaleCavalier, Enemy, [7, 24], [8, 20], Trottier, [Longlance], 7, false, [$00, $00, $00, $80]
+          UNIT GrannvaleCavalier, Enemy, [4, 24], [5, 21], Trottier, [Longlance], 7, false, [$00, $00, $00, $80]
           UNIT GrannvaleCavalier, Enemy, [8, 24], [9, 21], Trottier, [Ridersbane], 8, false, [$00, $00, $00, $80]
           UNIT GrannvaleBowKnight, Enemy, [9, 24], [10, 21], Trottier, [Longbow], 7, false, [$00, $00, $00, $80]
           UNIT GrannvaleBowKnight, Enemy, [10, 24], [11, 21], Trottier, [Longbow], 10, false, [$00, $00, $00, $80]
@@ -620,15 +633,15 @@ GUARD_FE5_CHAPTER04 :?= false
           UNIT GrannvaleArmoredLance, Enemy, [8, 24], [9, 22], Trottier, [Longlance], 10, false, [$00, $03, $00, $80]
           UNIT GrannvaleArmoredAxe, Enemy, [9, 24], [8, 21], Trottier, [SteelAxe], 8, false, [$00, $03, $00, $80]
           UNIT GrannvaleArmoredAxe, Enemy, [10, 24], [8, 23], Trottier, [SteelAxe], 10, false, [$00, $03, $00, $80]
-          UNIT GrannvaleBishop, Enemy, [2, 22], [2, 22], Trottier, [Physic, Meteor], 5, false, [$01, $03, $00, $80]
-          UNIT GrannvaleBishop, Enemy, [4, 24], [5, 21], Trottier, [Heal, Fire, Physic], 6, false, [$00, $00, $00, $80]
+          UNIT GrannvaleBishop, Enemy, [2, 22], [2, 22], Trottier, [Physic, Fire, Meteor], 5, false, [$01, $03, $00, $80]
+          UNIT GrannvaleBishop, Enemy, [7, 24], [8, 20], Trottier, [Heal, Fire, Physic], 6, false, [$12, $00, $00, $80]
         UNIT
 
         _Turn4GroupCameraCoordinates
           .byte [1, 18]
 
         _Turn4Group
-          UNIT GrannvaleTroubadour, Enemy, [5, 24], [5, 24], Trottier, [Longsword, Mend], 9, false, [$00, $00, $00, $80]
+          UNIT GrannvaleTroubadour, Enemy, [5, 24], [5, 24], Trottier, [Longsword, Mend], 9, false, [$12, $00, $00, $80]
           UNIT GrannvaleBowKnight, Enemy, [6, 24], [6, 24], Trottier, [Longbow], 7, false, [$00, $00, $00, $80]
           UNIT GrannvaleBowKnight, Enemy, [7, 24], [7, 24], Trottier, [Longbow], 8, false, [$00, $00, $00, $80]
           UNIT GrannvaleAxeKnight, Enemy, [8, 24], [8, 24], Trottier, [SteelAxe], 9, false, [$00, $00, $00, $80]
@@ -646,8 +659,8 @@ GUARD_FE5_CHAPTER04 :?= false
           UNIT GrannvaleArcher, Enemy, [6, 24], [6, 24], Trottier, [Longbow], 7, false, [$00, $00, $00, $80]
           UNIT GrannvaleMage, Enemy, [7, 24], [7, 24], Trottier, [Elfire], 8, false, [$00, $00, $00, $80]
           UNIT GrannvaleSniper, Enemy, [8, 24], [8, 24], Trottier, [Golgotha, Vulnerary], 8, false, [$00, $00, $00, $80]
-          UNIT GrannvalePriest, Enemy, [9, 24], [9, 24], Trottier, [Heal, Physic], 4, false, [$00, $00, $00, $80]
-          UNIT GrannvaleBishop, Enemy, [10, 24], [10, 24], Trottier, [PureWater, Fire, Heal], 5, false, [$00, $00, $00, $80]
+          UNIT GrannvalePriest, Enemy, [9, 24], [9, 24], Trottier, [Heal, Physic], 4, false, [$12, $00, $00, $80]
+          UNIT GrannvaleBishop, Enemy, [10, 24], [10, 24], Trottier, [PureWater, Fire, Heal], 5, false, [$12, $00, $00, $80]
         UNIT
 
         _Turn8Group
@@ -658,9 +671,11 @@ GUARD_FE5_CHAPTER04 :?= false
           UNIT GrannvaleArmoredBow, Enemy, [10, 24], [10, 20], Trottier, [Longbow], 10, false, [$00, $00, $00, $80]
         UNIT
 
-        _Turn9Group
-          UNIT GrannvaleHero, Enemy, [8, 24], [8, 24], Trottier, [SilverSword], 8, false, [$00, $00, $00, $00]
-          UNIT GrannvaleHero, Enemy, [9, 24], [9, 24], Trottier, [SilverSword], 8, false, [$00, $00, $00, $00]
+        _Turn10Group
+          UNIT GrannvaleMageKnight, Enemy, [7, 24], [7, 24], Trottier, [Elfire, SilverSword], 8, false, [$00, $00, $00, $80]
+          UNIT GrannvaleMageKnight, Enemy, [8, 24], [8, 24], Trottier, [DireThunder, SilverSword], 8, false, [$00, $00, $00, $80]
+          UNIT GrannvaleMageKnight, Enemy, [9, 24], [9, 24], Trottier, [Thoron, Longsword], 8, false, [$00, $00, $00, $80]
+          UNIT GrannvaleMageKnight, Enemy, [10, 24], [10, 24], Trottier, [Bolganone, Longsword], 8, false, [$00, $00, $00, $80]
         UNIT
 
         _Turn16Group ;if you see these guys you're probably dead
@@ -668,14 +683,18 @@ GUARD_FE5_CHAPTER04 :?= false
           UNIT GrannvaleArchKnight, Enemy, [5, 24], [5, 24], Trottier, [BraveBow], 16, false, [$00, $00, $00, $00]
           UNIT GrannvalePaladin,Enemy, [6, 24], [6, 24], Trottier, [BraveSword], 16, false, [$00, $00, $00, $00]
           UNIT GrannvaleSage, Enemy, [7, 24], [7, 24], Trottier, [Tornado, Physic, Sleep], 14, false, [$00, $00, $00, $00]
-          UNIT GrannvaleSage, Enemy, [8, 24], [8, 24], Trottier, [Bolganone, Physic], 14, false, [$00, $00, $00, $00]
+          UNIT GrannvaleSage, Enemy, [8, 24], [8, 24], Trottier, [Bolganone, Physic, Restore], 14, false, [$12, $00, $00, $00]
           UNIT GrannvalePaladin,Enemy, [9, 24], [9, 24], Trottier, [BraveLance], 16, false, [$00, $00, $00, $00]
           UNIT GrannvaleArchKnight, Enemy, [10, 24], [10, 24], Trottier, [KillerBow], 16, false, [$00, $00, $00, $00]
           UNIT GrannvaleArchKnight, Enemy, [11, 24], [11, 24], Trottier, [KillerBow], 16, false, [$00, $00, $00, $00]
         UNIT
 
         _GebGroup
-          UNIT Geb, Enemy, [2, 1], [3, 2], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
+          UNIT Matar, Enemy, [2, 1], [3, 2], Maurice, [Jormungand, Rewarp], 2, false, [$00, $00, $00, $00]
+        UNIT
+
+        _AnnoyingPirateGroup
+          UNIT PirateEnemy, Enemy, [24, 24], [24, 24], Maurice, [IronAxe], 8, false, [$00, $02, $00, $80]
         UNIT
 
         _StartingPositions ; B1/F5BC

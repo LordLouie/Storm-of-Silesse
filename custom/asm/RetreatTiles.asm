@@ -140,14 +140,14 @@
 
       aEnemyRetreatTilesCh4x ; 8F87CE
 
-        .byte  1,  7, 2
-        .byte  1,  8, 2
-        .byte 14,  7, 4
-        .byte 14,  8, 4
-        .byte  1, 15, 2
-        .byte  1, 16, 2
-        .byte 14, 15, 4
-        .byte 14, 16, 4
+        .byte 2,  1, 3
+        .byte 3,  1, 3
+        .byte 4,  1, 3
+        .byte 5,  1, 3
+        .byte 6,  1, 3
+        .byte 6,  1, 3
+        .byte 6,  1, 3
+        .byte 6,  1, 3
         .byte 0
 
       aEnemyRetreatTilesCh5 ; 8F87E7

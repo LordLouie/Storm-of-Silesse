@@ -432,7 +432,9 @@ dialogueMirandaRetreatQuote
 .byte Right_slot
 .word LoadPortrait
 .word miranda_portrait
-.text "I barely escaped with my life..."
+.text "Is this what they get up to?"
+.byte NewLine
+.text "Very interesting..."
 .byte WaitForA
 .byte EndText
 

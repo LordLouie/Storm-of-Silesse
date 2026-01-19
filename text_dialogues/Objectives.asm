@@ -24,7 +24,7 @@ dialogueChapterObjektivecChapter04
 
 
 dialogueChapterObjektiveChapter04x
-	.text "Escape the dungeon."
+	.text "Defeat Sluggo, then escape."
 .byte EndTextNoPortraitFade
 
 

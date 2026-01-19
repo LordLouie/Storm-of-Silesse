@@ -45,12 +45,12 @@ dialogueChapter16BMiranda
 .byte NewLine
 .text "You've forgotten me, have you?!"
 .byte NewLine
-.text "I'm Geb of Ulster!"
+.text "I'm Matar of Ulster!"
 .byte WaitForA
 
 .byte Right_slot
 .byte ScrollText
-.text "Geb... The princess? Princess of Ulster?"
+.text "Matar... The princess? Princess of Ulster?"
 .byte NewLine
 .text "How can that be?!"
 .byte NewLine
@@ -126,7 +126,7 @@ dialogueChapter16BMiranda
 .byte ScrollText
 .word LoadPortrait
 .word dorius_portrait
-.text "...Princess Geb, I must beg to differ."
+.text "...Princess Matar, I must beg to differ."
 .byte WaitForA
 .byte ScrollText
 .text "The Empire planned to conquer Ulster"
@@ -192,7 +192,7 @@ dialogueChapter16BMiranda
 .byte ScrollText
 .text "You have my apologies as well,"
 .byte NewLine
-.text "Princess Geb."
+.text "Princess Matar."
 .byte NewLine
 .text "I must beg your forgiveness..."
 .byte WaitForA
@@ -719,7 +719,7 @@ dialogueChapter16BOpening2
 .byte NewLine
 .text "Doubtless it's Count Conomor of Ulster,"
 .byte NewLine
-.text "trying to rescue his precious Princess Geb."
+.text "trying to rescue his precious Princess Matar."
 .byte WaitForA
 
 .byte Right_slot

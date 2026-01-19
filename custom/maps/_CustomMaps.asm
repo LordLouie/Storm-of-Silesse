@@ -9,7 +9,7 @@
     ch3mapchanges .binary "Chapter3MapChanges.bin.fe4"
     mapfour   .binary "TrailingSkanorMapMain.bin.fe4"
     mapfive   .binary "Chapter5MapMain.bin.fe4"
-    ch5mapchanges .binary "Chapter5MapChanges.asm"
+    ch5mapchanges .binary "Chapter5MapChanges.bin.fe4"
     mapeight   .binary "Chapter8MapMain.bin.fe4"
 
 .here

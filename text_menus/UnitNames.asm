@@ -59,7 +59,7 @@
 		.word	<>menutextUnitWeissmannName
 		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitBucksName
-		.word	<>menutextUnitJabalName		; Unused
+		.word	<>menutextUnitReginaldName
 	
 		.word	<>menutextUnitGrannvaleName
 		.word	<>menutextUnitGrannvaleName
@@ -157,7 +157,7 @@
 		.word	<>menutextUnitSilesseName
 		.word	<>menutextUnitTrottierName
 		.word	<>menutextUnitMooreName
-		.word	<>menutextUnitMullerName
+		.word	<>menutextUnitBeatriceName
 		.word	<>menutextUnitReinkochName
 		.word	<>menutextUnitPalmanName
 		.word	<>menutextUnitGrannvaleName
@@ -494,7 +494,7 @@
 			.text "Sionnach\n"
 		
 		menutextUnitMirandaName
-			.text "(Geb\n"
+			.text "(Matar\n"
 		
 		menutextUnitSafyName
 			.text "Fee \n"
@@ -634,8 +634,8 @@
 		menutextUnitBucksName
 			.text "Bucks \n"
 		
-		menutextUnitJabalName
-			.text "Jabal \n"
+		menutextUnitReginaldName
+			.text "Reginald\n"
 		
 		menutextUnitGrannvaleName
 			.text "Grannvale \n"
@@ -837,8 +837,8 @@
 		menutextUnitMooreName
 			.text "(Moore\n"
 		
-		menutextUnitMullerName
-			.text "(Muller \n"
+		menutextUnitBeatriceName
+			.text "Beatrice\n"
 		
 		menutextUnitReinkochName
 			.text "Reinkoch\n"
@@ -946,7 +946,7 @@
 			.text "Xavier\n"
 		
 		menutextUnitResistanceName
-			.text "Resistance\n"
+			.text "Sells]word\n"
 		
 		menutextUnitBharatName
 			.text "Bharat\n"

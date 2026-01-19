@@ -111,7 +111,7 @@ Schroff
 Sara
 //Shannam
   Shanna
-(Geb
+Matar
 Xavier
 A[malda
 Cono[mor
@@ -144,7 +144,7 @@ Seil
 Brook
 (Moore
 Trottier
-(Mueller
+Beatrice
 Reinkoch
 Pal[man
 Gustav
@@ -234,7 +234,7 @@ Thracia
 Arion
 Gunter
 Ishtar
-Jabal
+Reginald
 Julius
 Kant
 (Manfroy
@@ -268,8 +268,8 @@ Ulster's Ar[my
 Lifis Pirates
 (Magi Squad
 Bandits
-Resistance
-Pegasus Corps
+Sionnach's Cortège
+Renegades
 Colho's Boys
 Dandelion
 Sells]words
@@ -525,7 +525,7 @@ King[maker
 At[maisféar
 )Wind S]word
 Fla[me S]word
-Lightning S]word
+Thunder S]word
 Paragon S]word
 Ar[morslayer
 Rapier
@@ -587,7 +587,7 @@ Venin Ballista
 Fire
 Elfire
 Thunder
-Dire Thunder
+Elhunder
 Thoron
 )Wind
 Scirocco
@@ -883,8 +883,10 @@ Targets on thrones
 Poisons on hit
 Poisons the target
 on hit
-on hit if used
-by ene[my [mages
+
+(Mid range dark
+[magic, Poisons the
+target on hit
 
 Turns into an iron
 ]weapon if stolen
@@ -1013,7 +1015,8 @@ Casts aura magic
 (Mareeta, 
 Gives +Nihil
 
-Ol]wen, Reinhardt
+Potent thunder 
+[magic 
 
 Ol]wen, High crit
 Anti

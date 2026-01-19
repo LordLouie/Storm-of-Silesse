@@ -166,7 +166,7 @@ dialogueMooreReleaseQuote
 .byte WaitForA
 .byte EndText
 
-dialogueMullerReleaseQuote
+dialogueBeatriceReleaseQuote
 .text "How naive..."
 .byte WaitForA
 .byte EndText
@@ -255,9 +255,35 @@ dialogueCoulterReleaseQuote
 .byte EndText
 
 dialogueAlphandReleaseQuote
-.text "You're...sparing me?!"
+.text "You want to know more about... her?"
 .byte NewLine
-.text "Well, I'm...quite grateful."
+.text "I don't have all of the details..."
+.byte WaitForA
+.byte ScrollText
+.text "She was found on the doorstep of one"
+.byte NewLine
+.text "of our cathedrals, barely alive."
+.byte WaitForA
+.byte ScrollText
+.text "A bishop took pity on the girl,"
+.byte NewLine
+.text "raising her as his own."
+.byte NewLine
+.text "Bishop Maxima, I believe it was."
+.byte WaitForA
+.byte ScrollText
+.text "Master Durchval ordered her to leave"
+.byte NewLine
+.text "for Silesse while he lay bedridden."
+.byte WaitForA
+.byte ScrollText
+.text "Her resentment towards the archbishop"
+.byte NewLine
+.text "is... palpable. You may be able to"
+.byte NewLine
+.text "reason with her."
+.byte NewLine
+.text "...May I be released now?"
 .byte WaitForA
 .byte EndText
 
@@ -386,7 +412,11 @@ dialogueBharatReleaseQuote
 .byte EndText
 
 dialogueManheimReleaseQuote
-.text "I... I do not know what I should do now..."
+.text "Well uh... huhuh..."
+.byte NewLine
+.text "I got nothin' worth saying."
+.byte NewLine
+.text "Sorry."
 .byte WaitForA
 .byte EndText
 

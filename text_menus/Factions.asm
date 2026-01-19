@@ -119,7 +119,7 @@
 		.word Fraus
 		.word <>menutextFriege30thLeader
 		
-		.word Muller
+		.word Beatrice
 		.word <>menutextGelbenritterLeader
 		
 		.word Conomor
@@ -149,7 +149,7 @@
 		.word Bucks
 		.word <>menutextLifisCrewLeader
 		
-		.word Jabal
+		.word Tina
 		.word <>menutextLifisCrewLeader
 		
 		.word CedChp23
@@ -164,11 +164,11 @@
 		.word Fachtna
 		.word <>menutextBanditLeader
 		
-		.word Emily
+		.word Sionnach
 		.word <>menutextResistanceLeader
 		
-		.word Misha
-		.word <>menutextMischaLeader
+		.word Sluggo
+		.word <>menutextRenegadesLeader
 		
 		.word Colho
 		.word <>menutextKolkhoLeader
@@ -180,7 +180,7 @@
 		.word <>menutextMercenaryLeader
 		
 		.word Civilian8
-		.word <>menutextMischaLeader
+		.word <>menutextRenegadesLeader
 		
 		.word Ilse
 		.word <>menutextMercenaryLeader
@@ -294,10 +294,10 @@
 			.text "Bandits \n"
 		
 		menutextResistanceLeader
-			.text "Resistance\n"
+			.text "Sionnach's Cortège\n"
 		
-		menutextMischaLeader
-			.text "Pegasus Corps \n"
+		menutextRenegadesLeader
+			.text "Renegades \n"
 		
 		menutextKolkhoLeader
 			.text "Colho's Boys\n"

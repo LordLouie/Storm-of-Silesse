@@ -11,7 +11,7 @@ aEpilogueTitleTable ; 8F/DFB9
 	.long dialogueEpilogueRalphTitle ; Ilse
 	.long dialogueEpilogueMartyTitle ; Waulter
 	.long dialogueEpilogueRonanTitle ; Sionnach
-	.long dialogueEpilogueMirandaTitle ; Geb
+	.long dialogueEpilogueMirandaTitle ; Matar
 	.long dialogueEpilogueSafyTitle ; Fee
 	.long dialogueEpilogueLaraTitle ; Lara
 	.long dialogueEpilogueBrightonTitle ; Brighton

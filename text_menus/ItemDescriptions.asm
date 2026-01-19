@@ -231,6 +231,7 @@
     
     menutextBraveSwordDescription
     menutextMasterSwordDescription
+    menutextBraveLanceDescription
     menutextBraveAxeDescription
     .text "{BRA1}{BRA2}\n"
     .text "\n"
@@ -313,10 +314,9 @@
     .text "\n"
     
     menutextVeninDescription
-    .text "Long range dark \n"
-    .text "[magic, Poisons on\n"
-    .text "hit, Turns into \n"
-    .text "Fenrir if stolen\n"
+    .text "(Mid range dark \n"
+    .text "[magic, Poisons the \n"
+    .text "target on hit \n"
     .text "\n"
     
     
@@ -489,8 +489,7 @@
     menutextJormungandDescription
     .text "Potent dark [magic\n"
     .text "Poisons the target\n"
-    .text "on hit if used\n"
-    .text "by ene[my [mages\n"
+    .text "on hit\n"
     .text "\n"
     
     menutextHelDescription
@@ -548,12 +547,6 @@
     .text "Gives {+}{2}{0} (Mag \n"
     .text "\n"
     
-    
-    menutextBraveLanceDescription
-    .text "{Lock}Seadna, {BRA1}{BRA2}\n"
-    .text "Gives {+}{1}{0} Lck\n"
-    .text "\n"
-    
     menutextDragonpikeDescription
     .text "{Lock}Dean, Altena\n"
     .text "{BRA1}{BRA2}, Gives Vantage \n"
@@ -586,7 +579,6 @@
     
     menutextUnlockDescription
     .text "    Range   {INF1}{INF2}\n"
-    .text "{Lock}Tina\n"
     .text "Opens a door or \n"
     .text "chest, or lo]wers \n"
     .text "a dra]wbridge \n"
@@ -601,8 +593,8 @@
     
     
     menutextDireThunderDescription
-    .text "{Lock}Ol]wen, Reinhardt \n"
-    .text "{BRA1}{BRA2}\n"
+    .text "Potent thunder\n"
+    .text "[magic\n"
     .text "\n"
     
     

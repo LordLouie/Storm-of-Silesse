@@ -1,6 +1,6 @@
 ;	Refer to the "Chapter 5 Flowchart" file in the docs folder for more info.
 
-dialogueChapter05Opening1
+notdialogueChapter05Opening1
 
 .byte Left_slot
 .word LoadPortrait
@@ -89,7 +89,7 @@ dialogueChapter05Opening1
 
 .byte EndText
 
-dialogueChapter05Opening2
+notdialogueChapter05Opening2
 
 .byte Left_slot
 .word LoadPortrait

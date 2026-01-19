@@ -54,7 +54,7 @@ dialogueEpilogueRonanTitle
 
 dialogueEpilogueMirandaTitle
 .byte $09
-.text "Geb — Willful Princess"
+.text "Matar — Willful Princess"
 .byte $05
 .byte EndText
 

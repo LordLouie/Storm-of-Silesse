@@ -19,7 +19,7 @@ dialogueChapter04Title
 .byte $01
 
 dialogueChapter04xTitle
-.text "Chapter 4x: Hero on the Wind"
+.text "Chapter 5: The Lord of Babble"
 .byte $01
 
 dialogueChapter05Title
@@ -27,11 +27,11 @@ dialogueChapter05Title
 .byte $01
 
 dialogueChapter06Title
-.text "Chapter 6: Craggy Combat"
+.text "Chapter 6: An Unfortunate Report"
 .byte $01
 
 dialogueChapter07Title
-.text "Chapter 7: Thoughtless Prison"
+.text "Chapter 7: The White Swan"
 .byte $01
 
 dialogueChapter08Title

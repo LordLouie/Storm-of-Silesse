@@ -29,7 +29,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Sionnach
 
 	.word MirandaPortrait
-	.word Geb
+	.word Matar
 
 	.word SafyPortrait
 	.word Fee
@@ -188,7 +188,7 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word Bucks
 
 	.word JabalPortrait
-	.word Jabal
+	.word Sluggo
 
 	.word FachtnaPortrait
 	.word Fachtna
@@ -250,8 +250,8 @@ aActiveSpeakerAssociationTable ; 8C/C842
 	.word MoorePortrait
 	.word Moore
 
-	.word MullerPortrait
-	.word Muller
+	.word BeatricePortrait
+	.word Beatrice
 
 	.word ReinkochPortrait
 	.word Reinkoch

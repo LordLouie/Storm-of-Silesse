@@ -38,7 +38,7 @@ aBattleAnimationsOnMusicTable .block	; 96/846C
 .word	Brook
 .word	Trottier
 .word	Moore
-.word	Muller
+.word	Beatrice
 .word	Reinkoch
 .word	Palman
 .word	Dahud

@@ -78,7 +78,7 @@ GUARD_FE5_CHAPTER19 :?= false
 			
 				_TalkEventDefinitions ; FD/CC08
 					EVENT _FlagMirandaConomorTalk, _MirandaConomorTalk
-						CHECK_CHARS2 Geb, Conomor
+						CHECK_CHARS2 Matar, Conomor
 					END_DEFINITION
 					EVENT _FlagSchroffAmaldaTalk, _SchroffAmaldaTalk
 						CHECK_CHARS2 Schroff, Amalda

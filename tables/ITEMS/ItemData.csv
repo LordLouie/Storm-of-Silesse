@@ -86,7 +86,7 @@ DireThunder,TypeThunder,None,9,80,4,20,10,1,2,RankC,ItemEffectivenesses.aNoEffec
 Thoron,TypeThunder,None,13,75,6,15,20,1,2,RankB,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,3200,<>menutextThoronDescription,None,None,None,None,TraitWeapon | TraitTome,$53
 Mjolnir,TypeThunder,None,20,100,7,50,30,1,2,RankA,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,0,<>menutextMjolnirDescription,None,None,None,None,TraitWeapon | TraitTome | TraitUnsellable,$54
 Wind,TypeWind,None,5,80,1,25,10,1,2,RankE,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,2000,<>menutextWindDescription,None,None,None,None,TraitWeapon | TraitTome,$55
-Grafcalibur,TypeWind,None,3,70,0,60,0,1,2,WeaponLocks.aGrafcaliburWeaponLock,ItemEffectivenesses.aFlyingEffectiveness,aWindSwordItemBonuses,0,<>menutextGrafcaliburDescription,None,None,Skill2Vantage,Skill3Brave,TraitWeapon | TraitTome | TraitUnsellable,$56
+Grafcalibur,TypeWind,None,3,80,0,60,0,1,2,WeaponLocks.aGrafcaliburWeaponLock,ItemEffectivenesses.aFlyingEffectiveness,aWindSwordItemBonuses,0,<>menutextGrafcaliburDescription,None,None,Skill2Vantage,Skill3Brave,TraitWeapon | TraitTome | TraitUnsellable,$56
 Tornado,TypeWind,None,12,90,4,15,0,1,2,RankB,ItemEffectivenesses.aFlyingEffectiveness,aNoItemBonuses,2200,<>menutextTornadoDescription,None,None,None,None,TraitWeapon | TraitTome,$57
 Forseti,TypeWind,None,20,90,6,50,30,1,2,WeaponLocks.aForsetiWeaponLock,ItemEffectivenesses.aFlyingEffectiveness,aForsetiItemBonuses,0,<>menutextForsetiDescription,None,None,None,None,TraitWeapon | TraitTome | TraitUnsellable,$58
 Light,TypeLight,None,9,80,4,25,20,1,2,RankE,ItemEffectivenesses.aNoEffectiveness,aNoItemBonuses,3200,<>menutextLightDescription,None,None,None,None,TraitWeapon | TraitTome,$59
